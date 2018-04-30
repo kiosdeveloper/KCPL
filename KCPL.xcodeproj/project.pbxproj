@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2878D83411E958281BF7EF2E /* Pods_KCPL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4541987AA803930A3633FA2C /* Pods_KCPL.framework */; };
+		33D7AC10DE9248621BA7E8A3 /* Pods_KCPLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D96F448F88D11C81EE2252 /* Pods_KCPLTests.framework */; };
 		85B5EE70209798A300807A4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5EE6F209798A300807A4B /* AppDelegate.swift */; };
 		85B5EE72209798A300807A4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5EE71209798A300807A4B /* ViewController.swift */; };
 		85B5EE75209798A300807A4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE73209798A300807A4B /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		85B5EE7A209798A500807A4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE78209798A500807A4B /* LaunchScreen.storyboard */; };
 		85B5EE85209798A600807A4B /* KCPLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5EE84209798A600807A4B /* KCPLTests.swift */; };
 		85B5EE90209798A600807A4B /* KCPLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5EE8F209798A600807A4B /* KCPLUITests.swift */; };
+		F1BF6817767D5A93E8358F24 /* Pods_KCPLUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C4B2C88C385D685EB75034 /* Pods_KCPLUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		245C6858C4F0A6D75FA53AF5 /* Pods-KCPLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPLUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCPLUITests/Pods-KCPLUITests.release.xcconfig"; sourceTree = "<group>"; };
+		25FB3EC5A34E9E5A750C8CFA /* Pods-KCPL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCPL/Pods-KCPL.debug.xcconfig"; sourceTree = "<group>"; };
+		28C93834EBBD04507A59B451 /* Pods-KCPLTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPLTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCPLTests/Pods-KCPLTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4541987AA803930A3633FA2C /* Pods_KCPL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KCPL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8196E8941B194260AE1153D1 /* Pods-KCPLUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPLUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCPLUITests/Pods-KCPLUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8343198A2CB3D9DF953E5736 /* Pods-KCPL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPL.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCPL/Pods-KCPL.release.xcconfig"; sourceTree = "<group>"; };
 		85B5EE6C209798A300807A4B /* KCPL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCPL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B5EE6F209798A300807A4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85B5EE71209798A300807A4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +56,9 @@
 		85B5EE8B209798A600807A4B /* KCPLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KCPLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B5EE8F209798A600807A4B /* KCPLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCPLUITests.swift; sourceTree = "<group>"; };
 		85B5EE91209798A600807A4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A08F543B35E81E5E1719421 /* Pods-KCPLTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPLTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCPLTests/Pods-KCPLTests.release.xcconfig"; sourceTree = "<group>"; };
+		92C4B2C88C385D685EB75034 /* Pods_KCPLUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KCPLUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5D96F448F88D11C81EE2252 /* Pods_KCPLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KCPLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2878D83411E958281BF7EF2E /* Pods_KCPL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33D7AC10DE9248621BA7E8A3 /* Pods_KCPLTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1BF6817767D5A93E8358F24 /* Pods_KCPLUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		491519C581A94B77D5F89518 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4541987AA803930A3633FA2C /* Pods_KCPL.framework */,
+				D5D96F448F88D11C81EE2252 /* Pods_KCPLTests.framework */,
+				92C4B2C88C385D685EB75034 /* Pods_KCPLUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		85B5EE63209798A300807A4B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +106,8 @@
 				85B5EE83209798A600807A4B /* KCPLTests */,
 				85B5EE8E209798A600807A4B /* KCPLUITests */,
 				85B5EE6D209798A300807A4B /* Products */,
+				A943780D8201A8C533832DD8 /* Pods */,
+				491519C581A94B77D5F89518 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +152,19 @@
 			path = KCPLUITests;
 			sourceTree = "<group>";
 		};
+		A943780D8201A8C533832DD8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25FB3EC5A34E9E5A750C8CFA /* Pods-KCPL.debug.xcconfig */,
+				8343198A2CB3D9DF953E5736 /* Pods-KCPL.release.xcconfig */,
+				28C93834EBBD04507A59B451 /* Pods-KCPLTests.debug.xcconfig */,
+				8A08F543B35E81E5E1719421 /* Pods-KCPLTests.release.xcconfig */,
+				8196E8941B194260AE1153D1 /* Pods-KCPLUITests.debug.xcconfig */,
+				245C6858C4F0A6D75FA53AF5 /* Pods-KCPLUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +172,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85B5EE94209798A600807A4B /* Build configuration list for PBXNativeTarget "KCPL" */;
 			buildPhases = (
+				CBDED914B91AEEE5A165AFCB /* [CP] Check Pods Manifest.lock */,
 				85B5EE68209798A300807A4B /* Sources */,
 				85B5EE69209798A300807A4B /* Frameworks */,
 				85B5EE6A209798A300807A4B /* Resources */,
@@ -149,6 +190,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85B5EE97209798A600807A4B /* Build configuration list for PBXNativeTarget "KCPLTests" */;
 			buildPhases = (
+				B7AB07CABBB445D54CD3366A /* [CP] Check Pods Manifest.lock */,
 				85B5EE7C209798A600807A4B /* Sources */,
 				85B5EE7D209798A600807A4B /* Frameworks */,
 				85B5EE7E209798A600807A4B /* Resources */,
@@ -167,6 +209,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85B5EE9A209798A600807A4B /* Build configuration list for PBXNativeTarget "KCPLUITests" */;
 			buildPhases = (
+				412074E85335774DC3A4D103 /* [CP] Check Pods Manifest.lock */,
 				85B5EE87209798A600807A4B /* Sources */,
 				85B5EE88209798A600807A4B /* Frameworks */,
 				85B5EE89209798A600807A4B /* Resources */,
@@ -250,6 +293,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		412074E85335774DC3A4D103 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KCPLUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7AB07CABBB445D54CD3366A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KCPLTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBDED914B91AEEE5A165AFCB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KCPL-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		85B5EE68209798A300807A4B /* Sources */ = {
@@ -428,14 +528,12 @@
 		};
 		85B5EE95209798A600807A4B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25FB3EC5A34E9E5A750C8CFA /* Pods-KCPL.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KCPL/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -445,14 +543,12 @@
 		};
 		85B5EE96209798A600807A4B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8343198A2CB3D9DF953E5736 /* Pods-KCPL.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KCPL/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -462,16 +558,13 @@
 		};
 		85B5EE98209798A600807A4B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28C93834EBBD04507A59B451 /* Pods-KCPLTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KCPLTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -482,16 +575,13 @@
 		};
 		85B5EE99209798A600807A4B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A08F543B35E81E5E1719421 /* Pods-KCPLTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KCPLTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -502,15 +592,12 @@
 		};
 		85B5EE9B209798A600807A4B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8196E8941B194260AE1153D1 /* Pods-KCPLUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KCPLUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPLUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -521,15 +608,12 @@
 		};
 		85B5EE9C209798A600807A4B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 245C6858C4F0A6D75FA53AF5 /* Pods-KCPLUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KCPLUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPLUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
