@@ -1,5 +1,5 @@
 //
-//  SignUpViewController.swift
+//  SignUpVC.swift
 //  KCPL
 //
 //  Created by TechFlitter Solutions on 03/05/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpVC: UIViewController {
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -22,18 +22,28 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var deliveryAddressTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
 
+    @IBOutlet weak var navigationViewHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let loginText = "Already Have an account Log-in" as NSString
-        let loginAttributedString = NSMutableAttributedString(string: loginText as String, attributes: [NSAttributedStringKey.font:UIFont(name: "Helvetica Neue", size: CGFloat(17))!, NSAttributedStringKey.foregroundColor:UIColor.darkGray])
-        loginAttributedString.addAttributes([NSAttributedStringKey.font: UIFont(name: "Helvetica Neue", size: CGFloat(17))!, NSAttributedStringKey.foregroundColor:UIColor(red: 11.0/255.0, green: 92.0/255.0, blue: 174.0/255.0, alpha: 1.0)], range: appliedJobsText.range(of: "Log-in"))
+        self.configLoginButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    func configLoginButton() {
+        let loginText = "Already have an account? Log-in" as NSString
+        let loginAttributedString = NSMutableAttributedString(string: loginText as String, attributes: [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 17), NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_darkGray])
+        loginAttributedString.addAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17), NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Theme], range: loginText.range(of: "Log-in"))
         
         self.loginButton.setAttributedTitle(loginAttributedString, for: .normal)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     @IBAction func registerClicked(_ sender: Any) {
@@ -41,6 +51,6 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func loginClicked(_ sender: Any) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
 }

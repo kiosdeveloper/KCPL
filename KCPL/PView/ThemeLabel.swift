@@ -17,6 +17,25 @@ class ThemeLabelTitle: UILabel {
         self.font = UIFont.systemFont(ofSize: 16)
     }
 }
+
+class ThemeLabelLineLight: UILabel {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.backgroundColor = ConstantsUI.C_Color_darkGray
+    }
+}
+
+class ThemeLabelLineDark: UILabel {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.backgroundColor = ConstantsUI.C_Color_Theme
+    }
+}
+
 /*patel
 class ThemeLabelTitle: UILabel {
     
