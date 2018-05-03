@@ -14,7 +14,7 @@ class ThemeLabelTitle: UILabel {
         super.init(coder: aDecoder)
         
         self.textColor = ConstantsUI.C_Color_darkGray
-        self.font = UIFont.systemFont(ofSize: 16)
+        self.font = ConstantsUI.C_Font_LableTitle
     }
 }
 

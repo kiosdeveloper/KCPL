@@ -10,6 +10,8 @@
 		1129C34E209AE0B4005DC1B8 /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1129C34C209AE0AF005DC1B8 /* NavigationView.xib */; };
 		1129C34F209AE0B4005DC1B8 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C34D209AE0B1005DC1B8 /* NavigationView.swift */; };
 		1129C351209AEC66005DC1B8 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C350209AEC66005DC1B8 /* DashboardVC.swift */; };
+		1129C359209B2B29005DC1B8 /* DashboardItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C358209B2B29005DC1B8 /* DashboardItemCell.swift */; };
+		1129C35B209B2F3A005DC1B8 /* UtilExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C35A209B2F3A005DC1B8 /* UtilExtensions.swift */; };
 		11DD9D4E2099DE65006C00C9 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D4D2099DE65006C00C9 /* LoginVC.swift */; };
 		11DD9D522099EB8C006C00C9 /* ConstantUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D512099EB8B006C00C9 /* ConstantUI.swift */; };
 		11DD9D572099EBFD006C00C9 /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D542099EBFD006C00C9 /* ThemeLabel.swift */; };
@@ -49,6 +51,8 @@
 		1129C34C209AE0AF005DC1B8 /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
 		1129C34D209AE0B1005DC1B8 /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		1129C350209AEC66005DC1B8 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		1129C358209B2B29005DC1B8 /* DashboardItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemCell.swift; sourceTree = "<group>"; };
+		1129C35A209B2F3A005DC1B8 /* UtilExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilExtensions.swift; sourceTree = "<group>"; };
 		11DD9D4D2099DE65006C00C9 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		11DD9D512099EB8B006C00C9 /* ConstantUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantUI.swift; sourceTree = "<group>"; };
 		11DD9D542099EBFD006C00C9 /* ThemeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeLabel.swift; sourceTree = "<group>"; };
@@ -107,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1129C353209B269C005DC1B8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1129C358209B2B29005DC1B8 /* DashboardItemCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		11DD9D4C2099DE07006C00C9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				11DD9D502099EB64006C00C9 /* Constant */,
+				1129C35A209B2F3A005DC1B8 /* UtilExtensions.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -147,6 +160,7 @@
 		11DD9D5C2099F345006C00C9 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				1129C353209B269C005DC1B8 /* Cell */,
 				1129C34D209AE0B1005DC1B8 /* NavigationView.swift */,
 				1129C34C209AE0AF005DC1B8 /* NavigationView.xib */,
 			);
@@ -444,8 +458,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				11DD9D4E2099DE65006C00C9 /* LoginVC.swift in Sources */,
+				1129C35B209B2F3A005DC1B8 /* UtilExtensions.swift in Sources */,
 				1129C351209AEC66005DC1B8 /* DashboardVC.swift in Sources */,
 				1129C34F209AE0B4005DC1B8 /* NavigationView.swift in Sources */,
+				1129C359209B2B29005DC1B8 /* DashboardItemCell.swift in Sources */,
 				85B5EE70209798A300807A4B /* AppDelegate.swift in Sources */,
 				8515F372209ABAFB0039F801 /* SignUpVC.swift in Sources */,
 				11DD9D572099EBFD006C00C9 /* ThemeLabel.swift in Sources */,
