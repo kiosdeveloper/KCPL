@@ -7,7 +7,7 @@ target 'KCPL' do
 
   # Pods for KCPL
 
-	
+    pod 'IQKeyboardManager'
 
   target 'KCPLTests' do
     inherit! :search_paths
