@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1129C34E209AE0B4005DC1B8 /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1129C34C209AE0AF005DC1B8 /* NavigationView.xib */; };
+		1129C34F209AE0B4005DC1B8 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C34D209AE0B1005DC1B8 /* NavigationView.swift */; };
+		1129C351209AEC66005DC1B8 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C350209AEC66005DC1B8 /* DashboardVC.swift */; };
+		1129C359209B2B29005DC1B8 /* DashboardItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C358209B2B29005DC1B8 /* DashboardItemCell.swift */; };
+		1129C35B209B2F3A005DC1B8 /* UtilExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C35A209B2F3A005DC1B8 /* UtilExtensions.swift */; };
 		11DD9D4E2099DE65006C00C9 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D4D2099DE65006C00C9 /* LoginVC.swift */; };
 		11DD9D522099EB8C006C00C9 /* ConstantUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D512099EB8B006C00C9 /* ConstantUI.swift */; };
 		11DD9D572099EBFD006C00C9 /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D542099EBFD006C00C9 /* ThemeLabel.swift */; };
@@ -15,7 +20,7 @@
 		11DD9D5B2099EDB3006C00C9 /* navController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D5A2099EDB3006C00C9 /* navController.swift */; };
 		2878D83411E958281BF7EF2E /* Pods_KCPL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4541987AA803930A3633FA2C /* Pods_KCPL.framework */; };
 		33D7AC10DE9248621BA7E8A3 /* Pods_KCPLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D96F448F88D11C81EE2252 /* Pods_KCPLTests.framework */; };
-		8515F372209ABAFB0039F801 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F371209ABAFB0039F801 /* SignUpViewController.swift */; };
+		8515F372209ABAFB0039F801 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F371209ABAFB0039F801 /* SignUpVC.swift */; };
 		85B5EE70209798A300807A4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5EE6F209798A300807A4B /* AppDelegate.swift */; };
 		85B5EE75209798A300807A4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE73209798A300807A4B /* Main.storyboard */; };
 		85B5EE77209798A500807A4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE76209798A500807A4B /* Assets.xcassets */; };
@@ -43,6 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1129C34C209AE0AF005DC1B8 /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
+		1129C34D209AE0B1005DC1B8 /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		1129C350209AEC66005DC1B8 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		1129C358209B2B29005DC1B8 /* DashboardItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemCell.swift; sourceTree = "<group>"; };
+		1129C35A209B2F3A005DC1B8 /* UtilExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilExtensions.swift; sourceTree = "<group>"; };
 		11DD9D4D2099DE65006C00C9 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		11DD9D512099EB8B006C00C9 /* ConstantUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantUI.swift; sourceTree = "<group>"; };
 		11DD9D542099EBFD006C00C9 /* ThemeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeLabel.swift; sourceTree = "<group>"; };
@@ -55,7 +65,7 @@
 		4541987AA803930A3633FA2C /* Pods_KCPL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KCPL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8196E8941B194260AE1153D1 /* Pods-KCPLUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPLUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCPLUITests/Pods-KCPLUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8343198A2CB3D9DF953E5736 /* Pods-KCPL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPL.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCPL/Pods-KCPL.release.xcconfig"; sourceTree = "<group>"; };
-		8515F371209ABAFB0039F801 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8515F371209ABAFB0039F801 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		85B5EE6C209798A300807A4B /* KCPL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCPL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B5EE6F209798A300807A4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85B5EE74209798A300807A4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,12 +111,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1129C353209B269C005DC1B8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1129C358209B2B29005DC1B8 /* DashboardItemCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		11DD9D4C2099DE07006C00C9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				11DD9D5A2099EDB3006C00C9 /* navController.swift */,
 				11DD9D4D2099DE65006C00C9 /* LoginVC.swift */,
-				8515F371209ABAFB0039F801 /* SignUpViewController.swift */,
+				8515F371209ABAFB0039F801 /* SignUpVC.swift */,
+				1129C350209AEC66005DC1B8 /* DashboardVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -115,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				11DD9D502099EB64006C00C9 /* Constant */,
+				1129C35A209B2F3A005DC1B8 /* UtilExtensions.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -137,11 +157,14 @@
 			path = PView;
 			sourceTree = "<group>";
 		};
-		11DD9D5C2099F345006C00C9 /* View */ = {
+		11DD9D5C2099F345006C00C9 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				1129C353209B269C005DC1B8 /* Cell */,
+				1129C34D209AE0B1005DC1B8 /* NavigationView.swift */,
+				1129C34C209AE0AF005DC1B8 /* NavigationView.xib */,
 			);
-			path = View;
+			path = XIBs;
 			sourceTree = "<group>";
 		};
 		491519C581A94B77D5F89518 /* Frameworks */ = {
@@ -181,7 +204,7 @@
 			children = (
 				85B5EE6F209798A300807A4B /* AppDelegate.swift */,
 				11DD9D532099EBCC006C00C9 /* PView */,
-				11DD9D5C2099F345006C00C9 /* View */,
+				11DD9D5C2099F345006C00C9 /* XIBs */,
 				11DD9D4F2099EB31006C00C9 /* Utility */,
 				11DD9D4C2099DE07006C00C9 /* ViewControllers */,
 				85B5EE73209798A300807A4B /* Main.storyboard */,
@@ -333,6 +356,7 @@
 			files = (
 				85B5EE7A209798A500807A4B /* LaunchScreen.storyboard in Resources */,
 				85B5EE77209798A500807A4B /* Assets.xcassets in Resources */,
+				1129C34E209AE0B4005DC1B8 /* NavigationView.xib in Resources */,
 				85B5EE75209798A300807A4B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,8 +458,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				11DD9D4E2099DE65006C00C9 /* LoginVC.swift in Sources */,
+				1129C35B209B2F3A005DC1B8 /* UtilExtensions.swift in Sources */,
+				1129C351209AEC66005DC1B8 /* DashboardVC.swift in Sources */,
+				1129C34F209AE0B4005DC1B8 /* NavigationView.swift in Sources */,
+				1129C359209B2B29005DC1B8 /* DashboardItemCell.swift in Sources */,
 				85B5EE70209798A300807A4B /* AppDelegate.swift in Sources */,
-				8515F372209ABAFB0039F801 /* SignUpViewController.swift in Sources */,
+				8515F372209ABAFB0039F801 /* SignUpVC.swift in Sources */,
 				11DD9D572099EBFD006C00C9 /* ThemeLabel.swift in Sources */,
 				11DD9D592099EBFD006C00C9 /* ThemeTextfield.swift in Sources */,
 				11DD9D522099EB8C006C00C9 /* ConstantUI.swift in Sources */,
@@ -617,7 +645,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53AEW9QR5D;
 				INFOPLIST_FILE = KCPL/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -633,7 +664,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53AEW9QR5D;
 				INFOPLIST_FILE = KCPL/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -649,7 +683,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KCPLTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -666,7 +704,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KCPLTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -682,7 +724,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KCPLUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPLUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -698,7 +744,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KCPLUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPLUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

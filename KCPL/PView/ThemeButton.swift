@@ -15,7 +15,7 @@ class ThemeButton: UIButton {
         
         self.backgroundColor = ConstantsUI.C_Color_Theme
         self.setTitleColor(ConstantsUI.C_Color_White, for: UIControlState())
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        self.titleLabel?.font = ConstantsUI.C_Font_LableTitle
     }
 }
 
@@ -25,7 +25,7 @@ class ThemeButtonPlain: UIButton {
         super.init(coder: aDecoder)
         
         self.setTitleColor(ConstantsUI.C_Color_Theme, for: UIControlState())
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        self.titleLabel?.font = ConstantsUI.C_Font_LableTitle
     }
 }
 
