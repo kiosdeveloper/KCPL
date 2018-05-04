@@ -21,6 +21,9 @@
 		2878D83411E958281BF7EF2E /* Pods_KCPL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4541987AA803930A3633FA2C /* Pods_KCPL.framework */; };
 		33D7AC10DE9248621BA7E8A3 /* Pods_KCPLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D96F448F88D11C81EE2252 /* Pods_KCPLTests.framework */; };
 		8515F372209ABAFB0039F801 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F371209ABAFB0039F801 /* SignUpVC.swift */; };
+		8515F377209C0DFB0039F801 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F376209C0DFB0039F801 /* ItemDetailViewController.swift */; };
+		8515F379209C13A50039F801 /* ItemDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F378209C13A50039F801 /* ItemDetailTableViewCell.swift */; };
+		8515F37B209C13B90039F801 /* ImagesListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F37A209C13B90039F801 /* ImagesListCollectionViewCell.swift */; };
 		85B5EE70209798A300807A4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5EE6F209798A300807A4B /* AppDelegate.swift */; };
 		85B5EE75209798A300807A4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE73209798A300807A4B /* Main.storyboard */; };
 		85B5EE77209798A500807A4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE76209798A500807A4B /* Assets.xcassets */; };
@@ -66,6 +69,9 @@
 		8196E8941B194260AE1153D1 /* Pods-KCPLUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPLUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCPLUITests/Pods-KCPLUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8343198A2CB3D9DF953E5736 /* Pods-KCPL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPL.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCPL/Pods-KCPL.release.xcconfig"; sourceTree = "<group>"; };
 		8515F371209ABAFB0039F801 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		8515F376209C0DFB0039F801 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		8515F378209C13A50039F801 /* ItemDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailTableViewCell.swift; sourceTree = "<group>"; };
+		8515F37A209C13B90039F801 /* ImagesListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCollectionViewCell.swift; sourceTree = "<group>"; };
 		85B5EE6C209798A300807A4B /* KCPL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCPL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B5EE6F209798A300807A4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85B5EE74209798A300807A4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				1129C358209B2B29005DC1B8 /* DashboardItemCell.swift */,
+				8515F378209C13A50039F801 /* ItemDetailTableViewCell.swift */,
+				8515F37A209C13B90039F801 /* ImagesListCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -126,6 +134,7 @@
 				11DD9D4D2099DE65006C00C9 /* LoginVC.swift */,
 				8515F371209ABAFB0039F801 /* SignUpVC.swift */,
 				1129C350209AEC66005DC1B8 /* DashboardVC.swift */,
+				8515F376209C0DFB0039F801 /* ItemDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -459,14 +468,17 @@
 			files = (
 				11DD9D4E2099DE65006C00C9 /* LoginVC.swift in Sources */,
 				1129C35B209B2F3A005DC1B8 /* UtilExtensions.swift in Sources */,
+				8515F37B209C13B90039F801 /* ImagesListCollectionViewCell.swift in Sources */,
 				1129C351209AEC66005DC1B8 /* DashboardVC.swift in Sources */,
 				1129C34F209AE0B4005DC1B8 /* NavigationView.swift in Sources */,
 				1129C359209B2B29005DC1B8 /* DashboardItemCell.swift in Sources */,
+				8515F379209C13A50039F801 /* ItemDetailTableViewCell.swift in Sources */,
 				85B5EE70209798A300807A4B /* AppDelegate.swift in Sources */,
 				8515F372209ABAFB0039F801 /* SignUpVC.swift in Sources */,
 				11DD9D572099EBFD006C00C9 /* ThemeLabel.swift in Sources */,
 				11DD9D592099EBFD006C00C9 /* ThemeTextfield.swift in Sources */,
 				11DD9D522099EB8C006C00C9 /* ConstantUI.swift in Sources */,
+				8515F377209C0DFB0039F801 /* ItemDetailViewController.swift in Sources */,
 				11DD9D582099EBFD006C00C9 /* ThemeButton.swift in Sources */,
 				11DD9D5B2099EDB3006C00C9 /* navController.swift in Sources */,
 			);
