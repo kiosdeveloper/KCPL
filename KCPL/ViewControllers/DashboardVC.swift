@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DashboardVC: UIViewController {
+class DashboardVC: AbstractVC {
 
     @IBOutlet weak var itemsCollectionView: UICollectionView!
     var arr = ["Suspention & Brakes Suspention & Brakes", "Lamps", "Suspention & Brakes", "Lamps & Suspention & Brakes & Combo etc...", "Suspention & Brakes", "Lamps", "Suspention & Brakes", "Lamps"]
@@ -84,20 +84,16 @@ extension DashboardVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let itemDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemDetailViewController") as! ItemDetailViewController
-        self.navigationController?.pushViewController(itemDetailViewController, animated: true)
+        
+        self.performSegue(withIdentifier: "showItemDetailFromDashboard", sender: indexPath)        
     }
+}
+
+//MARK:- SideMenu
+extension DashboardVC: SlideNavigationControllerDelegate {
     
-    func estimatedHeightOfLabel(text: String) -> CGFloat {
-        
-        let size = CGSize(width: view.frame.width - 16, height: 1000)
-        
-        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-        
-        let attributes = [kCTFontAttributeName: UIFont.systemFont(ofSize: 17)]
-        
-        let rectangleHeight = String(text).boundingRect(with: size, options: options, attributes: attributes as [NSAttributedStringKey : Any], context: nil).height
-        
-        return rectangleHeight
+    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool
+    {
+        return true
     }
 }

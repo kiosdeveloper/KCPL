@@ -23,7 +23,7 @@ class ThemeLabelLineLight: UILabel {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.backgroundColor = ConstantsUI.C_Color_darkGray
+        self.backgroundColor = ConstantsUI.C_Color_lightGray
     }
 }
 
