@@ -16,3 +16,7 @@ extension String {
         return ceil(boundingBox.height)
     }
 }
+
+extension UISearchBar {
+    
+}

@@ -9,13 +9,15 @@
 import UIKit
 
 class DashboardVC: AbstractVC {
-
+    
     @IBOutlet weak var itemsCollectionView: UICollectionView!
+    
     var arr = ["Suspention & Brakes Suspention & Brakes", "Lamps", "Suspention & Brakes", "Lamps & Suspention & Brakes & Combo etc...", "Suspention & Brakes", "Lamps", "Suspention & Brakes", "Lamps"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.configNavigationBar()
     }
     
     override func viewWillLayoutSubviews() {
@@ -23,7 +25,38 @@ class DashboardVC: AbstractVC {
         
         itemsCollectionView.collectionViewLayout.invalidateLayout()
     }
-
+    
+    func configNavigationBar() {
+        let navProfile = UIBarButtonItem(image: UIImage(named: "clock"), style: .plain, target: self, action: #selector(DashboardVC.navProfilePressed))
+        
+        let navCart = UIBarButtonItem(image: UIImage(named: "clock"), style: .plain, target: self, action: #selector(DashboardVC.navCartPressed))
+        
+        let navCall = UIBarButtonItem(image: UIImage(named: "clock"), style: .plain, target: self, action:
+            #selector(DashboardVC.navCallPressed))
+        
+        let navNotification = UIBarButtonItem(image: UIImage(named: "clock"), style: .plain, target: self, action:
+            #selector(DashboardVC.navNotificationPressed))
+//
+        self.navigationItem.rightBarButtonItems  = [navProfile, navCart, navCall, navNotification]
+    }
+    
+    //    MARK:- Actions
+    
+    @objc func navProfilePressed() {
+        
+    }
+    
+    @objc func navCartPressed() {
+        self.performSegue(withIdentifier: "showCartFromDashboard", sender: nil)
+    }
+    
+    @objc func navCallPressed() {
+        
+    }
+    
+    @objc func navNotificationPressed() {
+        
+    }
 }
 
 extension DashboardVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {

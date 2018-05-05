@@ -34,6 +34,8 @@
 		8515F372209ABAFB0039F801 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F371209ABAFB0039F801 /* SignUpVC.swift */; };
 		8515F379209C13A50039F801 /* ItemDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F378209C13A50039F801 /* ItemDetailTableViewCell.swift */; };
 		8515F37B209C13B90039F801 /* ImagesListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F37A209C13B90039F801 /* ImagesListCollectionViewCell.swift */; };
+		854B3892209D899F008391BC /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B3891209D899F008391BC /* CartVC.swift */; };
+		854B3894209D903C008391BC /* ThemeSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B3893209D903C008391BC /* ThemeSearchBar.swift */; };
 		85B5EE70209798A300807A4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5EE6F209798A300807A4B /* AppDelegate.swift */; };
 		85B5EE75209798A300807A4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE73209798A300807A4B /* Main.storyboard */; };
 		85B5EE77209798A500807A4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE76209798A500807A4B /* Assets.xcassets */; };
@@ -100,6 +102,8 @@
 		8515F371209ABAFB0039F801 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		8515F378209C13A50039F801 /* ItemDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailTableViewCell.swift; sourceTree = "<group>"; };
 		8515F37A209C13B90039F801 /* ImagesListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCollectionViewCell.swift; sourceTree = "<group>"; };
+		854B3891209D899F008391BC /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		854B3893209D903C008391BC /* ThemeSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSearchBar.swift; sourceTree = "<group>"; };
 		85B5EE6C209798A300807A4B /* KCPL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCPL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B5EE6F209798A300807A4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85B5EE74209798A300807A4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 				1129C350209AEC66005DC1B8 /* DashboardVC.swift */,
 				112DA5CD209C92AD009F6A68 /* ItemDetailVC.swift */,
 				112DA5C6209C8D46009F6A68 /* OrderHistoryVC.swift */,
+				854B3891209D899F008391BC /* CartVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				11DD9D552099EBFD006C00C9 /* ThemeButton.swift */,
 				11DD9D542099EBFD006C00C9 /* ThemeLabel.swift */,
 				11DD9D562099EBFD006C00C9 /* ThemeTextfield.swift */,
+				854B3893209D903C008391BC /* ThemeSearchBar.swift */,
 			);
 			path = PView;
 			sourceTree = "<group>";
@@ -540,6 +546,7 @@
 				11DD9D4E2099DE65006C00C9 /* LoginVC.swift in Sources */,
 				112DA5BA209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				1129C35B209B2F3A005DC1B8 /* UtilExtensions.swift in Sources */,
+				854B3892209D899F008391BC /* CartVC.swift in Sources */,
 				112DA5B8209C6D87009F6A68 /* SlideNavigationContorllerAnimatorFade.m in Sources */,
 				112DA5C7209C8D46009F6A68 /* OrderHistoryVC.swift in Sources */,
 				112DA5BB209C6D87009F6A68 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
@@ -547,6 +554,7 @@
 				1129C351209AEC66005DC1B8 /* DashboardVC.swift in Sources */,
 				1129C34F209AE0B4005DC1B8 /* NavigationView.swift in Sources */,
 				1129C359209B2B29005DC1B8 /* DashboardItemCell.swift in Sources */,
+				854B3894209D903C008391BC /* ThemeSearchBar.swift in Sources */,
 				112DA5C2209C718E009F6A68 /* AppRouter.swift in Sources */,
 				112DA5B9209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				8515F379209C13A50039F801 /* ItemDetailTableViewCell.swift in Sources */,

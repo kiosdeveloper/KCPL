@@ -102,7 +102,9 @@ static SlideNavigationController *singletonInstance;
 	self.avoidSwitchingToSameClassViewController = YES;
 	self.enableShadow = YES;
 	self.enableSwipeGesture = YES;
+    
     self.navigationBar.barTintColor = [UIColor colorWithRed:0 green:159.0/255.0 blue:227.0/255.0 alpha:1.0];
+    self.navigationBar.tintColor = [UIColor whiteColor];
 	self.delegate = self;
 }
 
@@ -652,8 +654,13 @@ static SlideNavigationController *singletonInstance;
 	  willShowViewController:(UIViewController *)viewController
 					animated:(BOOL)animated
 {
-	if ([self shouldDisplayMenu:MenuLeft forViewController:viewController])
-		viewController.navigationItem.leftBarButtonItem = [self barButtonItemForMenu:MenuLeft];
+    if ([self shouldDisplayMenu:MenuLeft forViewController:viewController]) {
+        UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
+        logoImageView.frame = CGRectMake(0, 0, 44, 44);
+        
+        UIBarButtonItem *logoBarButton = [[UIBarButtonItem alloc] initWithCustomView:logoImageView];
+        viewController.navigationItem.leftBarButtonItems = @[[self barButtonItemForMenu:MenuLeft], logoBarButton];
+    }
 	
 	if ([self shouldDisplayMenu:MenuRight forViewController:viewController])
 		viewController.navigationItem.rightBarButtonItem = [self barButtonItemForMenu:MenuRight];

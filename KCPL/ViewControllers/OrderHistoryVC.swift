@@ -17,3 +17,12 @@ class OrderHistoryVC: AbstractVC {
     }
 
 }
+
+//MARK:- SideMenu
+extension OrderHistoryVC: SlideNavigationControllerDelegate {
+    
+    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool
+    {
+        return true
+    }
+}

@@ -114,7 +114,10 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
     {
         
         if indexPath.row == 0 {
+            let vc = AppRouter.sharedRouter().getViewController("DashboardVC") as! DashboardVC
             
+            SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
+
         } else if indexPath.row == 1 {//Order History
             let vc = AppRouter.sharedRouter().getViewController("OrderHistoryVC") as! OrderHistoryVC
             

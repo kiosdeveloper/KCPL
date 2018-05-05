@@ -706,7 +706,7 @@
                                     <outlet property="delegate" destination="iY6-ZK-vRE" id="fty-Qk-Xko"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" placeholder="Search for category, brand or item code" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNd-NJ-cF4">
+                            <searchBar contentMode="redraw" placeholder="Search for category, brand or item code" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNd-NJ-cF4" customClass="ThemeSearchBar" customModule="KCPL" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -727,6 +727,7 @@
                     <connections>
                         <outlet property="itemsCollectionView" destination="w9O-zq-ACb" id="k74-fw-I9C"/>
                         <segue destination="zCL-Dw-cIJ" kind="show" identifier="showItemDetailFromDashboard" id="t9c-wF-9HV"/>
+                        <segue destination="QmA-Aj-cYz" kind="show" identifier="showCartFromDashboard" id="osT-mD-yWI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOT-kJ-MwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -756,7 +757,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7W-wu-Z8R">
+                            <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7W-wu-Z8R" customClass="ThemeSearchBar" customModule="KCPL" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -904,7 +905,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txM-np-hBh">
-                                                    <rect key="frame" x="15" y="48" width="290" height="21"/>
+                                                    <rect key="frame" x="15" y="48" width="290" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -968,6 +969,33 @@
             </objects>
             <point key="canvasLocation" x="2439.375" y="391.90140845070425"/>
         </scene>
+        <!--CartVC-->
+        <scene sceneID="Xb2-oM-84c">
+            <objects>
+                <viewController storyboardIdentifier="CartVC" id="QmA-Aj-cYz" customClass="CartVC" customModule="KCPL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Isv-ei-5Fk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u1b-Hb-REX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KhW-Pv-Jx1" firstAttribute="bottom" secondItem="u1b-Hb-REX" secondAttribute="bottom" id="GHV-rK-MYe"/>
+                            <constraint firstItem="u1b-Hb-REX" firstAttribute="leading" secondItem="KhW-Pv-Jx1" secondAttribute="leading" id="MQp-Hz-8Qh"/>
+                            <constraint firstItem="u1b-Hb-REX" firstAttribute="top" secondItem="KhW-Pv-Jx1" secondAttribute="top" id="V59-cW-M5d"/>
+                            <constraint firstItem="KhW-Pv-Jx1" firstAttribute="trailing" secondItem="u1b-Hb-REX" secondAttribute="trailing" id="idO-ov-bdX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KhW-Pv-Jx1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ty8-7M-aBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3139" y="392"/>
+        </scene>
         <!--Slide Navigation Controller-->
         <scene sceneID="cdO-XW-8zu">
             <objects>
@@ -1003,7 +1031,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="51" id="qoO-8o-e1L" customClass="MenuCell" customModule="CMS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="51" id="qoO-8o-e1L" customClass="MenuCell" customModule="KCPL" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="240" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qoO-8o-e1L" id="Wvl-Ds-3Ps">
