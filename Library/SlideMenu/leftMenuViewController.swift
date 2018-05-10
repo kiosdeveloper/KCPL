@@ -123,6 +123,14 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
             
             SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
         }
+        else if indexPath.row == 5{
+           // if indexPath.row == 1 {
+                
+
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            navigateView(to: vc)
+
+            }
         /*if indexPath.section == 0 {
             let vc = AppRouter.sharedRouter().getViewController("TaskVC") as! TaskVC
 

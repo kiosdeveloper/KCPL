@@ -1,5 +1,5 @@
 //
-//  CartItemListCell.swift
+//  DeliveryAddressTableViewCell.swift
 //  KCPL
 //
 //  Created by TechFlitter Solutions on 11/05/18.
@@ -8,11 +8,18 @@
 
 import UIKit
 
-class CartItemListCell: UITableViewCell {
+class DeliveryAddressTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var editButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        if let button = self.editButton {
+            button.layer.borderWidth = 1.0
+            button.layer.borderColor = UIColor.lightGray.cgColor
+            button.layer.cornerRadius = 2.0
+            button.clipsToBounds = true
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

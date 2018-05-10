@@ -18,6 +18,21 @@ class DeliveryAddressVC: AbstractVC {
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func nextClicked(_ sender: Any) {
+        let alertController = UIAlertController.init(title: "Confirm", message: "Are you sure you want to place this order?", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: { (alertAction) in
+            for viewController in (self.navigationController?.viewControllers ?? []) {
+                if viewController is DashboardVC {
+                    _ = self.navigationController?.popToViewController(viewController, animated: true)
+                    return
+                }
+            }
+        }))
+        alertController.addAction(UIAlertAction.init(title: "Cancel", style: .default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 extension DeliveryAddressVC: UITableViewDelegate, UITableViewDataSource {
@@ -33,17 +48,14 @@ extension DeliveryAddressVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = deliveryAddressTableView.dequeueReusableCell(withIdentifier: "CartItemListCell") as! CartItemListCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "deliveryCell") as! DeliveryAddressTableViewCell
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        
         return titleLabel
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }

@@ -18,6 +18,66 @@
 
 import UIKit
 
+@IBDesignable
+
+class AddressTextField: UITextField {
+    
+//    @IBInspectable var cornerRadius: CGFloat = 0
+//    @IBInspectable var borderWidth: CGFloat = 0
+//    @IBInspectable var borderColor: UIColor = .lightGray
+//
+//    override func layoutSubviews() {
+//        self.layer.cornerRadius = cornerRadius
+//        self.layer.borderColor = self.borderColor.cgColor
+//        self.layer.borderWidth = self.borderWidth
+//    }
+    
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat = 0 {
+        didSet {
+            layer.borderWidth = borderWidth
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor = UIColor.clear {
+        didSet {
+            self.layer.borderColor = borderColor.cgColor
+        }
+    }
+    
+    let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5);
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds, padding)
+    }
+    
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds, padding)
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds, padding)
+    }
+}
+
+class AddressTextView: UITextView {
+    
+    @IBInspectable var cornerRadius: CGFloat = 0
+    @IBInspectable var borderWidth: CGFloat = 0
+    @IBInspectable var borderColor: UIColor = .lightGray
+    
+    override func layoutSubviews() {
+        self.layer.cornerRadius = cornerRadius
+        self.layer.borderColor = self.borderColor.cgColor
+        self.layer.borderWidth = self.borderWidth
+    }
+}
+
 /*@IBDesignable class ThemeTextField: UITextField {
     
     let animationDuration = 0.3

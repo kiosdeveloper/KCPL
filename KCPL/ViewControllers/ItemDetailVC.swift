@@ -19,6 +19,7 @@ class ItemDetailVC: AbstractVC {
     }
     
     @IBAction func addToCartClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func previousClicked(_ sender: UIButton) {
