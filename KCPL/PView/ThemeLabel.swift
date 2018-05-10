@@ -18,6 +18,26 @@ class ThemeLabelTitle: UILabel {
     }
 }
 
+class ThemeLabelDetail: UILabel {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.textColor = ConstantsUI.C_Color_darkGray
+        self.font = ConstantsUI.C_Font_LableSubTitle
+    }
+}
+
+class ThemeLabelPrice: UILabel {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.textColor = ConstantsUI.C_Color_Theme
+        self.font = ConstantsUI.C_Font_LableTitle
+    }
+}
+
 class ThemeLabelLineLight: UILabel {
     
     required init?(coder aDecoder: NSCoder) {
