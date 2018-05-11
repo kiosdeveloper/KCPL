@@ -27,14 +27,14 @@ class DashboardVC: AbstractVC {
     }
     
     func configNavigationBar() {
-        let navProfile = UIBarButtonItem(image: UIImage(named: "clock"), style: .plain, target: self, action: #selector(DashboardVC.navProfilePressed))
+        let navProfile = UIBarButtonItem(image: UIImage(named: "nav_profile"), style: .plain, target: self, action: #selector(DashboardVC.navProfilePressed))
         
-        let navCart = UIBarButtonItem(image: UIImage(named: "clock"), style: .plain, target: self, action: #selector(DashboardVC.navCartPressed))
+        let navCart = UIBarButtonItem(image: UIImage(named: "nav_cart"), style: .plain, target: self, action: #selector(DashboardVC.navCartPressed))
         
-        let navCall = UIBarButtonItem(image: UIImage(named: "clock"), style: .plain, target: self, action:
+        let navCall = UIBarButtonItem(image: UIImage(named: "nav_call"), style: .plain, target: self, action:
             #selector(DashboardVC.navCallPressed))
         
-        let navNotification = UIBarButtonItem(image: UIImage(named: "clock"), style: .plain, target: self, action:
+        let navNotification = UIBarButtonItem(image: UIImage(named: "nav_notification"), style: .plain, target: self, action:
             #selector(DashboardVC.navNotificationPressed))
 //
         self.navigationItem.rightBarButtonItems  = [navProfile, navCart, navCall, navNotification]

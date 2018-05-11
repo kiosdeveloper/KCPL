@@ -18,6 +18,8 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
     
     let dsTitle = ["Home","Order History","About","Contact Us", "Visit Our Website", "Sign Out"]
     
+    let dsIcons = ["ic_home","ic_orderHistory","ic_about","ic_contactUs", "ic_visitOurWebsite", "ic_signOut"]
+    
 //    let dsMenuImage = [UIImage(named: "side_myReservations"),UIImage(named: "side_myFavorites"),UIImage(named: "side_recentlyViewed"),UIImage(named: "side_setting"),UIImage(named: "side_contactUs"),UIImage(named: "side_privacyPolicy"),UIImage(named: "side_rateUs"),UIImage(named: "side_logout")]
 
     override func viewDidLoad() {
@@ -80,6 +82,7 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
         let cell = tblView.dequeueReusableCell(withIdentifier: "MenuCell") as! MenuCell
         
         cell.lblMenuTitle.text = dsTitle[indexPath.row]
+        cell.imgMenuIcon.image = UIImage(named: dsIcons[indexPath.row])
         
         if indexPath.row == 0 || indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 5 {
             cell.lblLine.isHidden = true

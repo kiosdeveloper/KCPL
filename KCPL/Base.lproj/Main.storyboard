@@ -62,21 +62,21 @@
                                         <color key="textColor" red="0.23529411759999999" green="0.71372549019999998" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="2VZ-dm-YbT">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_password" translatesAutoresizingMaskIntoConstraints="NO" id="2VZ-dm-YbT">
                                         <rect key="frame" x="16" y="93" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="EXb-Sg-QyW"/>
                                             <constraint firstAttribute="height" constant="24" id="eao-ST-f3t"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgF-hz-402">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgF-hz-402">
                                         <rect key="frame" x="16" y="160" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="kIm-oD-pQK"/>
                                             <constraint firstAttribute="width" constant="40" id="zpp-0h-Jqn"/>
                                         </constraints>
-                                        <state key="normal" title="UC"/>
-                                        <state key="selected" title="C"/>
+                                        <state key="normal" image="ic_uncheck"/>
+                                        <state key="selected" title="C" image="ic_check"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login as a Sales consultant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoa-gg-VrC" customClass="ThemeLabelTitle" customModule="KCPL" customModuleProvider="target">
                                         <rect key="frame" x="72" y="169" width="216" height="21"/>
@@ -110,7 +110,7 @@
                                             <segue destination="NPp-9g-aU4" kind="presentation" id="dio-px-bl2"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="ZUo-5p-euN">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_username" translatesAutoresizingMaskIntoConstraints="NO" id="ZUo-5p-euN">
                                         <rect key="frame" x="16" y="40" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="CSr-EV-wMq"/>
@@ -214,7 +214,7 @@
                                         <color key="textColor" red="0.23529411764705882" green="0.71372549019607845" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HGd-KX-J7N">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_firstName" translatesAutoresizingMaskIntoConstraints="NO" id="HGd-KX-J7N">
                                         <rect key="frame" x="54" y="81" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="0l3-0X-zYc"/>
@@ -240,7 +240,7 @@
                                         <color key="textColor" red="0.23529411759999999" green="0.71372549019999998" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Kr-jn-rxr">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_lastName" translatesAutoresizingMaskIntoConstraints="NO" id="8Kr-jn-rxr">
                                         <rect key="frame" x="54" y="134" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="c2R-oQ-4mJ"/>
@@ -281,7 +281,7 @@
                                         <color key="textColor" red="0.23529411759999999" green="0.71372549019999998" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RnH-8o-CWo">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_companyName" translatesAutoresizingMaskIntoConstraints="NO" id="RnH-8o-CWo">
                                         <rect key="frame" x="54" y="254" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="Ty1-fn-OVl"/>
@@ -307,7 +307,7 @@
                                         <color key="textColor" red="0.23529411759999999" green="0.71372549019999998" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fso-By-gqu">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_companyAddress" translatesAutoresizingMaskIntoConstraints="NO" id="Fso-By-gqu">
                                         <rect key="frame" x="54" y="307" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="VEF-Kg-NfH"/>
@@ -333,7 +333,7 @@
                                         <color key="textColor" red="0.23529411759999999" green="0.71372549019999998" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q7t-My-NuK">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mobileNumber" translatesAutoresizingMaskIntoConstraints="NO" id="q7t-My-NuK">
                                         <rect key="frame" x="54" y="360" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="76c-bO-yQz"/>
@@ -359,7 +359,7 @@
                                         <color key="textColor" red="0.23529411759999999" green="0.71372549019999998" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KPk-hz-hIL">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_emailId" translatesAutoresizingMaskIntoConstraints="NO" id="KPk-hz-hIL">
                                         <rect key="frame" x="54" y="413" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="CBe-5d-k8U"/>
@@ -385,7 +385,7 @@
                                         <color key="textColor" red="0.23529411759999999" green="0.71372549019999998" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5XO-GU-54D">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_password" translatesAutoresizingMaskIntoConstraints="NO" id="5XO-GU-54D">
                                         <rect key="frame" x="54" y="464" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="TTM-86-EIz"/>
@@ -411,7 +411,7 @@
                                         <color key="textColor" red="0.23529411759999999" green="0.71372549019999998" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0by-lZ-VRj">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_confirmPassword" translatesAutoresizingMaskIntoConstraints="NO" id="0by-lZ-VRj">
                                         <rect key="frame" x="54" y="517" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="W6e-Ed-OFS"/>
@@ -437,7 +437,7 @@
                                         <color key="textColor" red="0.23529411759999999" green="0.71372549019999998" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PMu-gg-Fnk">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_GSTNumber" translatesAutoresizingMaskIntoConstraints="NO" id="PMu-gg-Fnk">
                                         <rect key="frame" x="54" y="570" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="MWE-QC-yrU"/>
@@ -463,7 +463,7 @@
                                         <color key="textColor" red="0.23529411759999999" green="0.71372549019999998" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q4a-78-ewW">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_deliveryAddress" translatesAutoresizingMaskIntoConstraints="NO" id="Q4a-78-ewW">
                                         <rect key="frame" x="54" y="623" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="8dD-os-4pv"/>
@@ -1047,7 +1047,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txM-np-hBh">
-                                                    <rect key="frame" x="15" y="48" width="290" height="21"/>
+                                                    <rect key="frame" x="15" y="48" width="290" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1614,9 +1614,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vh5-uU-Sv8">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vh5-uU-Sv8">
                                                     <rect key="frame" x="8" y="13" width="24" height="24"/>
-                                                    <color key="backgroundColor" red="0.090196078430000007" green="0.66274509800000003" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="c4I-x7-evP"/>
                                                         <constraint firstAttribute="width" constant="24" id="sxw-ao-R5T"/>
@@ -1731,7 +1730,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clock" width="24" height="24"/>
+        <image name="ic_GSTNumber" width="64" height="64"/>
+        <image name="ic_check" width="64" height="64"/>
+        <image name="ic_companyAddress" width="64" height="64"/>
+        <image name="ic_companyName" width="64" height="64"/>
+        <image name="ic_confirmPassword" width="64" height="64"/>
+        <image name="ic_deliveryAddress" width="64" height="64"/>
+        <image name="ic_emailId" width="64" height="64"/>
+        <image name="ic_firstName" width="64" height="64"/>
+        <image name="ic_lastName" width="64" height="64"/>
+        <image name="ic_mobileNumber" width="64" height="64"/>
+        <image name="ic_password" width="64" height="64"/>
+        <image name="ic_uncheck" width="64" height="64"/>
+        <image name="ic_username" width="64" height="64"/>
         <image name="logo" width="64" height="64"/>
     </resources>
 </document>
