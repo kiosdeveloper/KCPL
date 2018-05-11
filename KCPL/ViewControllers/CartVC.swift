@@ -15,6 +15,8 @@ class CartVC: AbstractVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.cartTableView.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
     }
     @IBAction func btnNextPressed(_ sender: Any) {
         

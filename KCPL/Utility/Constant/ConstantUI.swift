@@ -11,6 +11,7 @@ import UIKit
 struct ConstantsUI {
     //    MARK:- COLORS
     static let C_Color_Theme = UIColor(red: 0, green: 159/255, blue: 227/255, alpha: 1.0)
+    static let C_Color_ThemeLightGray = UIColor(red: 233/255, green: 233/255, blue: 233/255, alpha: 1.0)
     static let C_Color_White = UIColor.white
     static let C_Color_lightGray = UIColor.lightGray
     static let C_Color_darkGray = UIColor.darkGray

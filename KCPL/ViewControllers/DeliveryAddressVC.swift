@@ -16,10 +16,10 @@ class DeliveryAddressVC: AbstractVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.deliveryAddressTableView.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
     }
     
-    
+//    MARK:- Actions
     @IBAction func nextClicked(_ sender: Any) {
         let alertController = UIAlertController.init(title: "Confirm", message: "Are you sure you want to place this order?", preferredStyle: .alert)
         alertController.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: { (alertAction) in
@@ -48,7 +48,7 @@ extension DeliveryAddressVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "deliveryCell") as! DeliveryAddressTableViewCell
+        let cell = deliveryAddressTableView.dequeueReusableCell(withIdentifier: "DeliveryAddressTableViewCell") as! DeliveryAddressTableViewCell
         return cell
     }
     

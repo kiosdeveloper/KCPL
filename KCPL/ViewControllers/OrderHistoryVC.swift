@@ -15,7 +15,7 @@ class OrderHistoryVC: AbstractVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.orderHistoryTableView.reloadData()
-
+        self.orderHistoryTableView.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
     }
 
 }

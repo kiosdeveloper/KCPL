@@ -62,7 +62,7 @@
                                         <color key="textColor" red="0.23529411759999999" green="0.71372549019999998" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2VZ-dm-YbT">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="2VZ-dm-YbT">
                                         <rect key="frame" x="16" y="93" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="EXb-Sg-QyW"/>
@@ -110,7 +110,7 @@
                                             <segue destination="NPp-9g-aU4" kind="presentation" id="dio-px-bl2"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZUo-5p-euN">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="ZUo-5p-euN">
                                         <rect key="frame" x="16" y="40" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="CSr-EV-wMq"/>
@@ -1047,7 +1047,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txM-np-hBh">
-                                                    <rect key="frame" x="15" y="48" width="290" height="20.5"/>
+                                                    <rect key="frame" x="15" y="48" width="290" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1389,7 +1389,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="deliveryCell" rowHeight="341" id="w2c-xU-zcq" customClass="DeliveryAddressTableViewCell" customModule="KCPL" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DeliveryAddressTableViewCell" rowHeight="341" id="w2c-xU-zcq" customClass="DeliveryAddressTableViewCell" customModule="KCPL" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="341"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w2c-xU-zcq" id="cbA-O9-Fpd">
@@ -1528,7 +1528,7 @@
                                     <outlet property="delegate" destination="Sjv-fr-pmm" id="hO2-uN-AZh"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsb-Aa-U2x">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsb-Aa-U2x" customClass="ThemeButton" customModule="KCPL" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="454" width="320" height="50"/>
                                 <color key="backgroundColor" red="0.26274509800000001" green="0.61960784310000006" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1543,7 +1543,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Wsb-Aa-U2x" firstAttribute="top" secondItem="HbB-gR-72D" secondAttribute="bottom" id="TCp-mb-dlW"/>
                             <constraint firstItem="Jgk-kI-QEX" firstAttribute="trailing" secondItem="Wsb-Aa-U2x" secondAttribute="trailing" id="Umu-we-gde"/>
@@ -1731,6 +1731,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clock" width="24" height="24"/>
         <image name="logo" width="64" height="64"/>
     </resources>
 </document>
