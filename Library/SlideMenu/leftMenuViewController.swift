@@ -16,9 +16,9 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
     
     @IBOutlet var tblTrailConstraints: NSLayoutConstraint!
     
-    let dsTitle = ["Home","Order History","About","Contact Us", "Visit Our Website", "Sign Out"]
+    let dsTitle = ["Home","My Customers","Order History","About","Contact Us", "Visit Our Website", "Sign Out"]
     
-    let dsIcons = ["ic_home","ic_orderHistory","ic_about","ic_contactUs", "ic_visitOurWebsite", "ic_signOut"]
+    let dsIcons = ["ic_home","ic_orderHistory","ic_orderHistory","ic_about","ic_contactUs", "ic_visitOurWebsite", "ic_signOut"]
     
 //    let dsMenuImage = [UIImage(named: "side_myReservations"),UIImage(named: "side_myFavorites"),UIImage(named: "side_recentlyViewed"),UIImage(named: "side_setting"),UIImage(named: "side_contactUs"),UIImage(named: "side_privacyPolicy"),UIImage(named: "side_rateUs"),UIImage(named: "side_logout")]
 
@@ -84,7 +84,7 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
         cell.lblMenuTitle.text = dsTitle[indexPath.row]
         cell.imgMenuIcon.image = UIImage(named: dsIcons[indexPath.row])
         
-        if indexPath.row == 0 || indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 5 {
+        if indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 3 || indexPath.row == 4 {
             cell.lblLine.isHidden = true
         } else {
             cell.lblLine.isHidden = false
@@ -121,24 +121,21 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
             
             SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
 
-        } else if indexPath.row == 1 {//Order History
-            let vc = AppRouter.sharedRouter().getViewController("OrderHistoryVC") as! OrderHistoryVC
-            
-            SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
-        }
-        else if indexPath.row == 2 {//Order History
+        } else if indexPath.row == 1 {//Customer Details
             let vc = AppRouter.sharedRouter().getViewController("CustomerDetailVC") as! CustomerDetailVC
             
             SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
-        }
-        else if indexPath.row == 5{
-           // if indexPath.row == 1 {
-                
+        } else if indexPath.row == 2 {//Order History
+            let vc = AppRouter.sharedRouter().getViewController("OrderHistoryVC") as! OrderHistoryVC
+            
+            SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
+        } else if indexPath.row == 5 {
 
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
             navigateView(to: vc)
 
-            }
+        }
+        
         /*if indexPath.section == 0 {
             let vc = AppRouter.sharedRouter().getViewController("TaskVC") as! TaskVC
 
