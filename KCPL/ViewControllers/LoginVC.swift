@@ -14,7 +14,12 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        #if SALES
+            print("Sales")
+        #else
+            print("Customer")
+        #endif
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,6 +33,10 @@ class LoginVC: UIViewController {
 //    MARK:- Prepare For Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+    }
+    
+    @IBAction func salesLoginClicked(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
     }
     
 //    MARK:- Actions

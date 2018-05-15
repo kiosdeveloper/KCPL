@@ -22,6 +22,14 @@ class CustomerListVC: AbstractVC {
     }
 }
 
+extension CustomerListVC: SlideNavigationControllerDelegate {
+    
+    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool
+    {
+        return true
+    }
+}
+
 extension CustomerListVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
