@@ -122,7 +122,7 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
             SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
 
         } else if indexPath.row == 1 {//Customer Details
-            let vc = AppRouter.sharedRouter().getViewController("CustomerDetailVC") as! CustomerDetailVC
+            let vc = AppRouter.sharedRouter().getViewController("CustomerListVC") as! CustomerListVC
             
             SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
         } else if indexPath.row == 2 {//Order History
