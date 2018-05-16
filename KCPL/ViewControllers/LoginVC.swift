@@ -14,12 +14,11 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        #if SALES
-            print("Sales")
-        #else
-            print("Customer")
-        #endif
-
+        
+        if Util.isSalesApp() {
+            
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

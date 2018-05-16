@@ -16,16 +16,18 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
     
     @IBOutlet var tblTrailConstraints: NSLayoutConstraint!
     
-    let dsTitle = ["Home","My Customers","Order History","About","Contact Us", "Visit Our Website", "Sign Out"]
+    var dsTitle = [Constant.C_SideMenu_Home,Constant.C_SideMenu_MyCustomers,Constant.C_SideMenu_OrderHistory,Constant.C_SideMenu_About,Constant.C_SideMenu_ContactUs,Constant.C_SideMenu_VisitOurWebsite,Constant.C_SideMenu_SignOut]
     
-    let dsIcons = ["ic_home","ic_orderHistory","ic_orderHistory","ic_about","ic_contactUs", "ic_visitOurWebsite", "ic_signOut"]
+    var dsIcons = ["ic_home","ic_orderHistory","ic_orderHistory","ic_about","ic_contactUs", "ic_visitOurWebsite", "ic_signOut"]
     
-//    let dsMenuImage = [UIImage(named: "side_myReservations"),UIImage(named: "side_myFavorites"),UIImage(named: "side_recentlyViewed"),UIImage(named: "side_setting"),UIImage(named: "side_contactUs"),UIImage(named: "side_privacyPolicy"),UIImage(named: "side_rateUs"),UIImage(named: "side_logout")]
-
     override func viewDidLoad() {
         
         //        lblUserName.text = "Me"
 //        viewHeader.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
+        if !Util.isSalesApp() {
+            dsTitle.remove(at: 1)
+            dsIcons.remove(at: 1)
+        }
         
         self.viewHeader.backgroundColor = ConstantsUI.C_Color_Theme
 
@@ -84,12 +86,12 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
         cell.lblMenuTitle.text = dsTitle[indexPath.row]
         cell.imgMenuIcon.image = UIImage(named: dsIcons[indexPath.row])
         
-        if indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 3 || indexPath.row == 4 {
-            cell.lblLine.isHidden = true
-        } else {
+        if dsTitle[indexPath.row] == Constant.C_SideMenu_OrderHistory || dsTitle[indexPath.row] == Constant.C_SideMenu_VisitOurWebsite || dsTitle[indexPath.row] == Constant.C_SideMenu_SignOut {
             cell.lblLine.isHidden = false
+        } else {
+            cell.lblLine.isHidden = true
         }
-
+        
         return cell
     }
     
@@ -116,24 +118,29 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         
-        if indexPath.row == 0 {
+        switch dsTitle[indexPath.row] {
+            
+        case Constant.C_SideMenu_Home:
             let vc = AppRouter.sharedRouter().getViewController("DashboardVC") as! DashboardVC
             
             SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
-
-        } else if indexPath.row == 1 {//Customer Details
+            
+        case Constant.C_SideMenu_MyCustomers:
             let vc = AppRouter.sharedRouter().getViewController("CustomerListVC") as! CustomerListVC
             
             SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
-        } else if indexPath.row == 2 {//Order History
+            
+        case Constant.C_SideMenu_OrderHistory:
             let vc = AppRouter.sharedRouter().getViewController("OrderHistoryVC") as! OrderHistoryVC
             
             SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
-        } else if indexPath.row == 6 {
-
+            
+        case Constant.C_SideMenu_SignOut:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
             navigateView(to: vc)
-
+            
+        default:
+            break
         }
         
         /*if indexPath.section == 0 {

@@ -25,7 +25,7 @@ class CartVC: AbstractVC {
     
 }
 
-extension CartVC: UITableViewDelegate, UITableViewDataSource {
+extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -43,6 +43,7 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.section == 0 {
             let cell = cartTableView.dequeueReusableCell(withIdentifier: "CartItemListCell") as! CartItemListCell
+            cell.delegate = self
             
             return cell
         } else {
@@ -67,6 +68,18 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             return 0
         }
+    }
+    
+    func btnPlusQuantity(cell: CartItemListCell) {
+        guard let indexPath = self.cartTableView.indexPath(for: cell) else { return }
+        
+        print("+ \(indexPath.row) pressed")
+    }
+    
+    func btnMinusQuantity(cell: CartItemListCell) {
+        guard let indexPath = self.cartTableView.indexPath(for: cell) else { return }
+        
+        print("- \(indexPath.row) pressed")
     }
 }
 

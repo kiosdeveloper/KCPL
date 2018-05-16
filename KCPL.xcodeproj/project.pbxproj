@@ -12,6 +12,10 @@
 		1129C351209AEC66005DC1B8 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C350209AEC66005DC1B8 /* DashboardVC.swift */; };
 		1129C359209B2B29005DC1B8 /* DashboardItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C358209B2B29005DC1B8 /* DashboardItemCell.swift */; };
 		1129C35B209B2F3A005DC1B8 /* UtilExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C35A209B2F3A005DC1B8 /* UtilExtensions.swift */; };
+		112CEAF720ABFAF8004BCF37 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112CEAF620ABFAF8004BCF37 /* Util.swift */; };
+		112CEAF820AC0868004BCF37 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112CEAF620ABFAF8004BCF37 /* Util.swift */; };
+		112CEAFA20AC0D6B004BCF37 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112CEAF920AC0D6B004BCF37 /* Constant.swift */; };
+		112CEAFB20AC0D71004BCF37 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112CEAF920AC0D6B004BCF37 /* Constant.swift */; };
 		112DA5B8209C6D87009F6A68 /* SlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5AC209C6D87009F6A68 /* SlideNavigationContorllerAnimatorFade.m */; };
 		112DA5B9209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5AE209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScale.m */; };
 		112DA5BA209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5B0209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScaleAndFade.m */; };
@@ -125,6 +129,8 @@
 		1129C350209AEC66005DC1B8 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		1129C358209B2B29005DC1B8 /* DashboardItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemCell.swift; sourceTree = "<group>"; };
 		1129C35A209B2F3A005DC1B8 /* UtilExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilExtensions.swift; sourceTree = "<group>"; };
+		112CEAF620ABFAF8004BCF37 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		112CEAF920AC0D6B004BCF37 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		112DA5AA209C6D87009F6A68 /* SlideNavigationContorllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimator.h; sourceTree = "<group>"; };
 		112DA5AB209C6D87009F6A68 /* SlideNavigationContorllerAnimatorFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorFade.h; sourceTree = "<group>"; };
 		112DA5AC209C6D87009F6A68 /* SlideNavigationContorllerAnimatorFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorFade.m; sourceTree = "<group>"; };
@@ -302,6 +308,7 @@
 			children = (
 				11DD9D502099EB64006C00C9 /* Constant */,
 				1129C35A209B2F3A005DC1B8 /* UtilExtensions.swift */,
+				112CEAF620ABFAF8004BCF37 /* Util.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -310,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				11DD9D512099EB8B006C00C9 /* ConstantUI.swift */,
+				112CEAF920AC0D6B004BCF37 /* Constant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -710,6 +718,7 @@
 				85B3948320AB9AC600E643DD /* UtilExtensions.swift in Sources */,
 				85B3948420AB9AC600E643DD /* CustomerTableViewCell.swift in Sources */,
 				85B3948520AB9AC600E643DD /* ThemeShadowView.swift in Sources */,
+				112CEAF820AC0868004BCF37 /* Util.swift in Sources */,
 				85B3948620AB9AC600E643DD /* CartVC.swift in Sources */,
 				85B3948720AB9AC600E643DD /* SlideNavigationContorllerAnimatorFade.m in Sources */,
 				85B3948820AB9AC600E643DD /* OrderHistoryVC.swift in Sources */,
@@ -729,6 +738,7 @@
 				85B3949620AB9AC600E643DD /* SignUpVC.swift in Sources */,
 				85B3949720AB9AC600E643DD /* ThemeLabel.swift in Sources */,
 				85B3949820AB9AC600E643DD /* ThemeTextfield.swift in Sources */,
+				112CEAFB20AC0D71004BCF37 /* Constant.swift in Sources */,
 				85B3949920AB9AC600E643DD /* CartTotalCell.swift in Sources */,
 				85B3949A20AB9AC600E643DD /* ConstantUI.swift in Sources */,
 				85B3949B20AB9AC600E643DD /* ThemeButton.swift in Sources */,
@@ -755,6 +765,7 @@
 				1129C35B209B2F3A005DC1B8 /* UtilExtensions.swift in Sources */,
 				11470FD320AAF569009ECB0B /* CustomerTableViewCell.swift in Sources */,
 				859701EA20A506A7008A08B4 /* ThemeShadowView.swift in Sources */,
+				112CEAF720ABFAF8004BCF37 /* Util.swift in Sources */,
 				854B3892209D899F008391BC /* CartVC.swift in Sources */,
 				112DA5B8209C6D87009F6A68 /* SlideNavigationContorllerAnimatorFade.m in Sources */,
 				112DA5C7209C8D46009F6A68 /* OrderHistoryVC.swift in Sources */,
@@ -774,6 +785,7 @@
 				8515F372209ABAFB0039F801 /* SignUpVC.swift in Sources */,
 				11DD9D572099EBFD006C00C9 /* ThemeLabel.swift in Sources */,
 				11DD9D592099EBFD006C00C9 /* ThemeTextfield.swift in Sources */,
+				112CEAFA20AC0D6B004BCF37 /* Constant.swift in Sources */,
 				859701E420A4EADD008A08B4 /* CartTotalCell.swift in Sources */,
 				11DD9D522099EB8C006C00C9 /* ConstantUI.swift in Sources */,
 				11DD9D582099EBFD006C00C9 /* ThemeButton.swift in Sources */,
