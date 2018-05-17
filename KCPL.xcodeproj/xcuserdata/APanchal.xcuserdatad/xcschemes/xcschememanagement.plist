@@ -14,10 +14,18 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>KCPL_Sales.xcscheme</key>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>85B3947C20AB9AC600E643DD</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85B5EE6B209798A300807A4B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

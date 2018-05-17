@@ -97,18 +97,12 @@
                                             <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ORI-cw-PDg"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cr-zd-tuc" customClass="ThemeLabelTitle" customModule="KCPL" customModuleProvider="target">
-                                        <rect key="frame" x="52" y="314" width="156" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnB-Jr-eTs" customClass="ThemeButtonPlain" customModule="KCPL" customModuleProvider="target">
-                                        <rect key="frame" x="216" y="304.5" width="60" height="40"/>
+                                        <rect key="frame" x="58.5" y="304" width="203" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ypi-Nj-uos"/>
                                         </constraints>
-                                        <state key="normal" title="SIGN UP"/>
+                                        <state key="normal" title="Don't have account? SIGN UP"/>
                                         <connections>
                                             <segue destination="NPp-9g-aU4" kind="presentation" id="dio-px-bl2"/>
                                         </connections>
@@ -123,10 +117,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="NnB-Jr-eTs" firstAttribute="centerY" secondItem="2Cr-zd-tuc" secondAttribute="centerY" id="2Rm-e0-fMQ"/>
-                                    <constraint firstItem="2Cr-zd-tuc" firstAttribute="top" secondItem="h2d-Vr-cv6" secondAttribute="bottom" constant="32" id="5ei-qh-a7N"/>
                                     <constraint firstItem="h2d-Vr-cv6" firstAttribute="leading" secondItem="EKP-q1-aI9" secondAttribute="leading" constant="16" id="5vf-Ph-bBh"/>
                                     <constraint firstItem="eoa-gg-VrC" firstAttribute="leading" secondItem="lgF-hz-402" secondAttribute="trailing" constant="16" id="6ZY-NH-4V2"/>
+                                    <constraint firstItem="NnB-Jr-eTs" firstAttribute="top" secondItem="h2d-Vr-cv6" secondAttribute="bottom" constant="22" id="BQO-Jt-fk9"/>
                                     <constraint firstItem="h2d-Vr-cv6" firstAttribute="top" secondItem="lgF-hz-402" secondAttribute="bottom" constant="32" id="BwN-9n-dDe"/>
                                     <constraint firstItem="ubP-FE-HKa" firstAttribute="leading" secondItem="acG-rZ-mtP" secondAttribute="leading" id="Dpl-oW-Hir"/>
                                     <constraint firstItem="PEJ-H6-EBs" firstAttribute="leading" secondItem="RcC-6Q-ig9" secondAttribute="leading" id="FG5-xy-lwD"/>
@@ -138,14 +131,13 @@
                                     <constraint firstItem="ubP-FE-HKa" firstAttribute="top" secondItem="RcC-6Q-ig9" secondAttribute="bottom" constant="10" id="WQc-4L-ZLw"/>
                                     <constraint firstItem="acG-rZ-mtP" firstAttribute="leading" secondItem="ZUo-5p-euN" secondAttribute="trailing" constant="8" id="bgB-pz-n9W"/>
                                     <constraint firstItem="lgF-hz-402" firstAttribute="top" secondItem="PEJ-H6-EBs" secondAttribute="bottom" constant="31.5" id="cZw-Ve-0fg"/>
-                                    <constraint firstItem="NnB-Jr-eTs" firstAttribute="leading" secondItem="2Cr-zd-tuc" secondAttribute="trailing" constant="8" id="fXl-K4-NKO"/>
                                     <constraint firstAttribute="trailing" secondItem="RcC-6Q-ig9" secondAttribute="trailing" constant="8" id="gCV-c0-2kA"/>
                                     <constraint firstItem="PEJ-H6-EBs" firstAttribute="top" secondItem="ubP-FE-HKa" secondAttribute="bottom" constant="2" id="jAV-eI-CSa"/>
                                     <constraint firstItem="ZUo-5p-euN" firstAttribute="leading" secondItem="EKP-q1-aI9" secondAttribute="leading" constant="16" id="kUc-p5-BWL"/>
                                     <constraint firstAttribute="height" constant="367" id="kvn-5y-Wzm"/>
                                     <constraint firstItem="lgF-hz-402" firstAttribute="leading" secondItem="EKP-q1-aI9" secondAttribute="leading" constant="16" id="l6j-FN-LUp"/>
                                     <constraint firstItem="eoa-gg-VrC" firstAttribute="centerY" secondItem="lgF-hz-402" secondAttribute="centerY" id="m02-pc-4qr"/>
-                                    <constraint firstItem="2Cr-zd-tuc" firstAttribute="centerX" secondItem="EKP-q1-aI9" secondAttribute="centerX" constant="-30" id="mzi-46-a0d"/>
+                                    <constraint firstItem="NnB-Jr-eTs" firstAttribute="centerX" secondItem="EKP-q1-aI9" secondAttribute="centerX" id="nZU-xC-5TX"/>
                                     <constraint firstItem="PEJ-H6-EBs" firstAttribute="trailing" secondItem="RcC-6Q-ig9" secondAttribute="trailing" id="nwh-gM-LDf"/>
                                     <constraint firstItem="RcC-6Q-ig9" firstAttribute="leading" secondItem="EKP-q1-aI9" secondAttribute="leading" constant="8" id="rkB-uy-K2B"/>
                                     <constraint firstAttribute="trailing" secondItem="eoa-gg-VrC" secondAttribute="trailing" constant="32" id="skd-7a-w9i"/>
@@ -177,6 +169,7 @@
                     <navigationItem key="navigationItem" id="QPZ-Qs-07v"/>
                     <connections>
                         <outlet property="navigationViewHeight" destination="Y4k-LG-hhq" id="dNL-yc-5f7"/>
+                        <outlet property="signUpButton" destination="NnB-Jr-eTs" id="yKM-FK-ZO1"/>
                         <segue destination="iY6-ZK-vRE" kind="show" identifier="showDashboardFromLogin" id="p3Z-yE-R50"/>
                     </connections>
                 </viewController>
@@ -507,9 +500,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q48-g9-Sc4">
-                                        <rect key="frame" x="84.5" y="752" width="246" height="32"/>
+                                        <rect key="frame" x="79.5" y="752" width="256" height="32"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="Already Have an Account Log-in"/>
+                                        <state key="normal" title="Already Have an Account? Log-in"/>
                                         <connections>
                                             <action selector="loginClicked:" destination="NPp-9g-aU4" eventType="touchUpInside" id="eqz-VY-9Ft"/>
                                         </connections>

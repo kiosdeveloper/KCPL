@@ -10,15 +10,27 @@ import UIKit
 
 class LoginVC: UIViewController {
 
+    @IBOutlet weak var signUpButton: UIButton!
+    
     @IBOutlet weak var navigationViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if Util.isSalesApp() {
-            
+            self.signUpButton.isHidden = true
+        } else {
+            self.configSignUpButton() 
         }
         
+    }
+    
+    func configSignUpButton() {
+        let signUpText = "Don't have account? SIGN UP" as NSString
+        let signUpAttributedString = NSMutableAttributedString(string: signUpText as String, attributes: [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 17), NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_darkGray])
+        signUpAttributedString.addAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17), NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Theme], range: signUpText.range(of: "SIGN UP"))
+        
+        self.signUpButton.setAttributedTitle(signUpAttributedString, for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {

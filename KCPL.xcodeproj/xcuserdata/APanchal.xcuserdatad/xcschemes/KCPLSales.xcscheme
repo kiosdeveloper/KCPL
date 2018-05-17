@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "85B5EE6B209798A300807A4B"
-               BuildableName = "KCPL.app"
-               BlueprintName = "KCPL"
+               BlueprintIdentifier = "85B3947C20AB9AC600E643DD"
+               BuildableName = "KCPLSales.app"
+               BlueprintName = "KCPLSales"
                ReferencedContainer = "container:KCPL.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "85B5EE6B209798A300807A4B"
-            BuildableName = "KCPL.app"
-            BlueprintName = "KCPL"
+            BlueprintIdentifier = "85B3947C20AB9AC600E643DD"
+            BuildableName = "KCPLSales.app"
+            BlueprintName = "KCPLSales"
             ReferencedContainer = "container:KCPL.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "85B5EE6B209798A300807A4B"
-            BuildableName = "KCPL.app"
-            BlueprintName = "KCPL"
+            BlueprintIdentifier = "85B3947C20AB9AC600E643DD"
+            BuildableName = "KCPLSales.app"
+            BlueprintName = "KCPLSales"
             ReferencedContainer = "container:KCPL.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "85B5EE6B209798A300807A4B"
-            BuildableName = "KCPL.app"
-            BlueprintName = "KCPL"
+            BlueprintIdentifier = "85B3947C20AB9AC600E643DD"
+            BuildableName = "KCPLSales.app"
+            BlueprintName = "KCPLSales"
             ReferencedContainer = "container:KCPL.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
