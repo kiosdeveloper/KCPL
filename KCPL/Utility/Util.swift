@@ -18,4 +18,14 @@ class Util {
             return false
         #endif
     }
+    
+    static func isAdminApp() -> Bool {
+        
+        #if ADMIN
+        return true
+        #else
+        return false
+        #endif
+    }
+    
 }

@@ -97,6 +97,61 @@
 		85B394B420AB9D2000E643DD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE7B209798A500807A4B /* Info.plist */; };
 		85B394B720AB9F6300E643DD /* KCPLSalesInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85B394B620AB9F6300E643DD /* KCPLSalesInfo.plist */; };
 		85B394B820AB9F6300E643DD /* KCPLSalesInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85B394B620AB9F6300E643DD /* KCPLSalesInfo.plist */; };
+		85B394BE20AE2ABB00E643DD /* AbstractVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5C4209C78EF009F6A68 /* AbstractVC.swift */; };
+		85B394BF20AE2ABB00E643DD /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D4D2099DE65006C00C9 /* LoginVC.swift */; };
+		85B394C020AE2ABB00E643DD /* OrderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701EB20A50702008A08B4 /* OrderHistoryTableViewCell.swift */; };
+		85B394C120AE2ABB00E643DD /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5B0209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScaleAndFade.m */; };
+		85B394C220AE2ABB00E643DD /* UtilExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C35A209B2F3A005DC1B8 /* UtilExtensions.swift */; };
+		85B394C320AE2ABB00E643DD /* CustomerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11470FD220AAF569009ECB0B /* CustomerTableViewCell.swift */; };
+		85B394C420AE2ABB00E643DD /* ThemeShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E920A506A7008A08B4 /* ThemeShadowView.swift */; };
+		85B394C520AE2ABB00E643DD /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112CEAF620ABFAF8004BCF37 /* Util.swift */; };
+		85B394C620AE2ABB00E643DD /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B3891209D899F008391BC /* CartVC.swift */; };
+		85B394C720AE2ABB00E643DD /* SlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5AC209C6D87009F6A68 /* SlideNavigationContorllerAnimatorFade.m */; };
+		85B394C820AE2ABB00E643DD /* OrderHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5C6209C8D46009F6A68 /* OrderHistoryVC.swift */; };
+		85B394C920AE2ABB00E643DD /* SlideNavigationContorllerAnimatorSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5B2209C6D87009F6A68 /* SlideNavigationContorllerAnimatorSlide.m */; };
+		85B394CA20AE2ABB00E643DD /* ImagesListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F37A209C13B90039F801 /* ImagesListCollectionViewCell.swift */; };
+		85B394CB20AE2ABB00E643DD /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C350209AEC66005DC1B8 /* DashboardVC.swift */; };
+		85B394CC20AE2ABB00E643DD /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C34D209AE0B1005DC1B8 /* NavigationView.swift */; };
+		85B394CD20AE2ABB00E643DD /* DashboardItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C358209B2B29005DC1B8 /* DashboardItemCell.swift */; };
+		85B394CE20AE2ABB00E643DD /* CustomerDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AC8D720A6677A002A3292 /* CustomerDetailCell.swift */; };
+		85B394CF20AE2ABB00E643DD /* ThemeSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B3893209D903C008391BC /* ThemeSearchBar.swift */; };
+		85B394D020AE2ABB00E643DD /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5C1209C718E009F6A68 /* AppRouter.swift */; };
+		85B394D120AE2ABB00E643DD /* CartItemListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E120A4EA8E008A08B4 /* CartItemListCell.swift */; };
+		85B394D220AE2ABB00E643DD /* SlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5AE209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScale.m */; };
+		85B394D320AE2ABB00E643DD /* ItemDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F378209C13A50039F801 /* ItemDetailTableViewCell.swift */; };
+		85B394D420AE2ABB00E643DD /* SlideNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5B7209C6D87009F6A68 /* SlideNavigationController.m */; };
+		85B394D520AE2ABB00E643DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5EE6F209798A300807A4B /* AppDelegate.swift */; };
+		85B394D620AE2ABB00E643DD /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F371209ABAFB0039F801 /* SignUpVC.swift */; };
+		85B394D720AE2ABB00E643DD /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D542099EBFD006C00C9 /* ThemeLabel.swift */; };
+		85B394D820AE2ABB00E643DD /* ThemeTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D562099EBFD006C00C9 /* ThemeTextfield.swift */; };
+		85B394D920AE2ABB00E643DD /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112CEAF920AC0D6B004BCF37 /* Constant.swift */; };
+		85B394DA20AE2ABB00E643DD /* CartTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E320A4EADD008A08B4 /* CartTotalCell.swift */; };
+		85B394DB20AE2ABB00E643DD /* ConstantUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D512099EB8B006C00C9 /* ConstantUI.swift */; };
+		85B394DC20AE2ABB00E643DD /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D552099EBFD006C00C9 /* ThemeButton.swift */; };
+		85B394DD20AE2ABB00E643DD /* leftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5B5209C6D87009F6A68 /* leftMenuViewController.swift */; };
+		85B394DE20AE2ABB00E643DD /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5B4209C6D87009F6A68 /* SlideNavigationContorllerAnimatorSlideAndFade.m */; };
+		85B394DF20AE2ABB00E643DD /* CustomerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11470FD020AAF3A2009ECB0B /* CustomerListVC.swift */; };
+		85B394E020AE2ABB00E643DD /* DeliveryAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E720A4F54B008A08B4 /* DeliveryAddressVC.swift */; };
+		85B394E120AE2ABB00E643DD /* ItemDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5CD209C92AD009F6A68 /* ItemDetailVC.swift */; };
+		85B394E220AE2ABB00E643DD /* CustomerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AC8D520A66691002A3292 /* CustomerDetailVC.swift */; };
+		85B394E320AE2ABB00E643DD /* ThemeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11470FD420AAFB6D009ECB0B /* ThemeTableView.swift */; };
+		85B394E420AE2ABB00E643DD /* DeliveryAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E520A4F45B008A08B4 /* DeliveryAddressTableViewCell.swift */; };
+		85B394E520AE2ABB00E643DD /* navController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D5A2099EDB3006C00C9 /* navController.swift */; };
+		85B394E720AE2ABB00E643DD /* Pods_KCPL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4541987AA803930A3633FA2C /* Pods_KCPL.framework */; };
+		85B394E920AE2ABB00E643DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE78209798A500807A4B /* LaunchScreen.storyboard */; };
+		85B394EA20AE2ABB00E643DD /* KCPLSalesInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85B394B620AB9F6300E643DD /* KCPLSalesInfo.plist */; };
+		85B394EB20AE2ABB00E643DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE76209798A500807A4B /* Assets.xcassets */; };
+		85B394EC20AE2ABB00E643DD /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1129C34C209AE0AF005DC1B8 /* NavigationView.xib */; };
+		85B394ED20AE2ABB00E643DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE73209798A300807A4B /* Main.storyboard */; };
+		85B394F520AE2BAE00E643DD /* KCPLAdminInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85B394F420AE2BAE00E643DD /* KCPLAdminInfo.plist */; };
+		85B394F620AE2BAE00E643DD /* KCPLAdminInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85B394F420AE2BAE00E643DD /* KCPLAdminInfo.plist */; };
+		85B394F720AE2BAE00E643DD /* KCPLAdminInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85B394F420AE2BAE00E643DD /* KCPLAdminInfo.plist */; };
+		85B394FA20AE2BF100E643DD /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B394F920AE2BF100E643DD /* Admin.storyboard */; };
+		85B394FB20AE2BF100E643DD /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B394F920AE2BF100E643DD /* Admin.storyboard */; };
+		85B394FC20AE2BF100E643DD /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B394F920AE2BF100E643DD /* Admin.storyboard */; };
+		85B3950020AE2E3800E643DD /* AdminLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B394FF20AE2E3800E643DD /* AdminLoginViewController.swift */; };
+		85B3950120AE2E3800E643DD /* AdminLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B394FF20AE2E3800E643DD /* AdminLoginViewController.swift */; };
+		85B3950220AE2E3800E643DD /* AdminLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B394FF20AE2E3800E643DD /* AdminLoginViewController.swift */; };
 		85B5EE70209798A300807A4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5EE6F209798A300807A4B /* AppDelegate.swift */; };
 		85B5EE75209798A300807A4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE73209798A300807A4B /* Main.storyboard */; };
 		85B5EE77209798A500807A4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE76209798A500807A4B /* Assets.xcassets */; };
@@ -180,6 +235,10 @@
 		859701EB20A50702008A08B4 /* OrderHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		85B394B020AB9AC600E643DD /* KCPLSales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCPLSales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B394B620AB9F6300E643DD /* KCPLSalesInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KCPLSalesInfo.plist; sourceTree = "<group>"; };
+		85B394F220AE2ABB00E643DD /* KCPLAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCPLAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85B394F420AE2BAE00E643DD /* KCPLAdminInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KCPLAdminInfo.plist; sourceTree = "<group>"; };
+		85B394F920AE2BF100E643DD /* Admin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
+		85B394FF20AE2E3800E643DD /* AdminLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginViewController.swift; sourceTree = "<group>"; };
 		85B5EE6C209798A300807A4B /* KCPL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCPL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B5EE6F209798A300807A4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85B5EE74209798A300807A4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -203,6 +262,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				85B394A620AB9AC600E643DD /* Pods_KCPL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85B394E620AE2ABB00E643DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85B394E720AE2ABB00E643DD /* Pods_KCPL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,16 +356,8 @@
 		11DD9D4C2099DE07006C00C9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				11DD9D5A2099EDB3006C00C9 /* navController.swift */,
-				11DD9D4D2099DE65006C00C9 /* LoginVC.swift */,
-				8515F371209ABAFB0039F801 /* SignUpVC.swift */,
-				1129C350209AEC66005DC1B8 /* DashboardVC.swift */,
-				112DA5CD209C92AD009F6A68 /* ItemDetailVC.swift */,
-				859701E720A4F54B008A08B4 /* DeliveryAddressVC.swift */,
-				112DA5C6209C8D46009F6A68 /* OrderHistoryVC.swift */,
-				854B3891209D899F008391BC /* CartVC.swift */,
-				853AC8D520A66691002A3292 /* CustomerDetailVC.swift */,
-				11470FD020AAF3A2009ECB0B /* CustomerListVC.swift */,
+				85B394FD20AE2D2500E643DD /* Sales */,
+				85B394FE20AE2D4700E643DD /* Admin */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -355,6 +414,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		85B394F820AE2BB900E643DD /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				85B5EE73209798A300807A4B /* Main.storyboard */,
+				85B394F920AE2BF100E643DD /* Admin.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		85B394FD20AE2D2500E643DD /* Sales */ = {
+			isa = PBXGroup;
+			children = (
+				11DD9D5A2099EDB3006C00C9 /* navController.swift */,
+				11DD9D4D2099DE65006C00C9 /* LoginVC.swift */,
+				8515F371209ABAFB0039F801 /* SignUpVC.swift */,
+				1129C350209AEC66005DC1B8 /* DashboardVC.swift */,
+				112DA5CD209C92AD009F6A68 /* ItemDetailVC.swift */,
+				859701E720A4F54B008A08B4 /* DeliveryAddressVC.swift */,
+				112DA5C6209C8D46009F6A68 /* OrderHistoryVC.swift */,
+				854B3891209D899F008391BC /* CartVC.swift */,
+				853AC8D520A66691002A3292 /* CustomerDetailVC.swift */,
+				11470FD020AAF3A2009ECB0B /* CustomerListVC.swift */,
+			);
+			path = Sales;
+			sourceTree = "<group>";
+		};
+		85B394FE20AE2D4700E643DD /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				85B394FF20AE2E3800E643DD /* AdminLoginViewController.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
 		85B5EE63209798A300807A4B = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +467,7 @@
 				85B5EE80209798A600807A4B /* KCPLTests.xctest */,
 				85B5EE8B209798A600807A4B /* KCPLUITests.xctest */,
 				85B394B020AB9AC600E643DD /* KCPLSales.app */,
+				85B394F220AE2ABB00E643DD /* KCPLAdmin.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -389,11 +483,12 @@
 				11DD9D5C2099F345006C00C9 /* XIBs */,
 				11DD9D4F2099EB31006C00C9 /* Utility */,
 				11DD9D4C2099DE07006C00C9 /* ViewControllers */,
-				85B5EE73209798A300807A4B /* Main.storyboard */,
+				85B394F820AE2BB900E643DD /* StoryBoard */,
 				85B5EE76209798A500807A4B /* Assets.xcassets */,
 				85B5EE78209798A500807A4B /* LaunchScreen.storyboard */,
 				85B5EE7B209798A500807A4B /* Info.plist */,
 				85B394B620AB9F6300E643DD /* KCPLSalesInfo.plist */,
+				85B394F420AE2BAE00E643DD /* KCPLAdminInfo.plist */,
 				112DA5C3209C7837009F6A68 /* KCPL-Bridging-Header.h */,
 			);
 			path = KCPL;
@@ -450,6 +545,25 @@
 			name = KCPLSales;
 			productName = KCPL;
 			productReference = 85B394B020AB9AC600E643DD /* KCPLSales.app */;
+			productType = "com.apple.product-type.application";
+		};
+		85B394BB20AE2ABB00E643DD /* KCPLAdmin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85B394EF20AE2ABB00E643DD /* Build configuration list for PBXNativeTarget "KCPLAdmin" */;
+			buildPhases = (
+				85B394BC20AE2ABB00E643DD /* [CP] Check Pods Manifest.lock */,
+				85B394BD20AE2ABB00E643DD /* Sources */,
+				85B394E620AE2ABB00E643DD /* Frameworks */,
+				85B394E820AE2ABB00E643DD /* Resources */,
+				85B394EE20AE2ABB00E643DD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KCPLAdmin;
+			productName = KCPL;
+			productReference = 85B394F220AE2ABB00E643DD /* KCPLAdmin.app */;
 			productType = "com.apple.product-type.application";
 		};
 		85B5EE6B209798A300807A4B /* KCPL */ = {
@@ -547,6 +661,7 @@
 			targets = (
 				85B5EE6B209798A300807A4B /* KCPL */,
 				85B3947C20AB9AC600E643DD /* KCPLSales */,
+				85B394BB20AE2ABB00E643DD /* KCPLAdmin */,
 				85B5EE7F209798A600807A4B /* KCPLTests */,
 				85B5EE8A209798A600807A4B /* KCPLUITests */,
 			);
@@ -559,10 +674,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				85B394A820AB9AC600E643DD /* LaunchScreen.storyboard in Resources */,
+				85B394FB20AE2BF100E643DD /* Admin.storyboard in Resources */,
 				85B394B820AB9F6300E643DD /* KCPLSalesInfo.plist in Resources */,
+				85B394F620AE2BAE00E643DD /* KCPLAdminInfo.plist in Resources */,
 				85B394A920AB9AC600E643DD /* Assets.xcassets in Resources */,
 				85B394AA20AB9AC600E643DD /* NavigationView.xib in Resources */,
 				85B394AB20AB9AC600E643DD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85B394E820AE2ABB00E643DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85B394E920AE2ABB00E643DD /* LaunchScreen.storyboard in Resources */,
+				85B394FC20AE2BF100E643DD /* Admin.storyboard in Resources */,
+				85B394EA20AE2ABB00E643DD /* KCPLSalesInfo.plist in Resources */,
+				85B394F720AE2BAE00E643DD /* KCPLAdminInfo.plist in Resources */,
+				85B394EB20AE2ABB00E643DD /* Assets.xcassets in Resources */,
+				85B394EC20AE2ABB00E643DD /* NavigationView.xib in Resources */,
+				85B394ED20AE2ABB00E643DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,7 +701,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85B394FA20AE2BF100E643DD /* Admin.storyboard in Resources */,
 				85B5EE7A209798A500807A4B /* LaunchScreen.storyboard in Resources */,
+				85B394F520AE2BAE00E643DD /* KCPLAdminInfo.plist in Resources */,
 				85B394B420AB9D2000E643DD /* Info.plist in Resources */,
 				85B5EE77209798A500807A4B /* Assets.xcassets in Resources */,
 				1129C34E209AE0B4005DC1B8 /* NavigationView.xib in Resources */,
@@ -668,6 +801,42 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KCPL/Pods-KCPL-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		85B394BC20AE2ABB00E643DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KCPL-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85B394EE20AE2ABB00E643DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KCPL/Pods-KCPL-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KCPL/Pods-KCPL-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B7AB07CABBB445D54CD3366A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -712,6 +881,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85B3947F20AB9AC600E643DD /* AbstractVC.swift in Sources */,
+				85B3950120AE2E3800E643DD /* AdminLoginViewController.swift in Sources */,
 				85B3948020AB9AC600E643DD /* LoginVC.swift in Sources */,
 				85B3948120AB9AC600E643DD /* OrderHistoryTableViewCell.swift in Sources */,
 				85B3948220AB9AC600E643DD /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
@@ -754,11 +924,60 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85B394BD20AE2ABB00E643DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85B394BE20AE2ABB00E643DD /* AbstractVC.swift in Sources */,
+				85B3950220AE2E3800E643DD /* AdminLoginViewController.swift in Sources */,
+				85B394BF20AE2ABB00E643DD /* LoginVC.swift in Sources */,
+				85B394C020AE2ABB00E643DD /* OrderHistoryTableViewCell.swift in Sources */,
+				85B394C120AE2ABB00E643DD /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
+				85B394C220AE2ABB00E643DD /* UtilExtensions.swift in Sources */,
+				85B394C320AE2ABB00E643DD /* CustomerTableViewCell.swift in Sources */,
+				85B394C420AE2ABB00E643DD /* ThemeShadowView.swift in Sources */,
+				85B394C520AE2ABB00E643DD /* Util.swift in Sources */,
+				85B394C620AE2ABB00E643DD /* CartVC.swift in Sources */,
+				85B394C720AE2ABB00E643DD /* SlideNavigationContorllerAnimatorFade.m in Sources */,
+				85B394C820AE2ABB00E643DD /* OrderHistoryVC.swift in Sources */,
+				85B394C920AE2ABB00E643DD /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
+				85B394CA20AE2ABB00E643DD /* ImagesListCollectionViewCell.swift in Sources */,
+				85B394CB20AE2ABB00E643DD /* DashboardVC.swift in Sources */,
+				85B394CC20AE2ABB00E643DD /* NavigationView.swift in Sources */,
+				85B394CD20AE2ABB00E643DD /* DashboardItemCell.swift in Sources */,
+				85B394CE20AE2ABB00E643DD /* CustomerDetailCell.swift in Sources */,
+				85B394CF20AE2ABB00E643DD /* ThemeSearchBar.swift in Sources */,
+				85B394D020AE2ABB00E643DD /* AppRouter.swift in Sources */,
+				85B394D120AE2ABB00E643DD /* CartItemListCell.swift in Sources */,
+				85B394D220AE2ABB00E643DD /* SlideNavigationContorllerAnimatorScale.m in Sources */,
+				85B394D320AE2ABB00E643DD /* ItemDetailTableViewCell.swift in Sources */,
+				85B394D420AE2ABB00E643DD /* SlideNavigationController.m in Sources */,
+				85B394D520AE2ABB00E643DD /* AppDelegate.swift in Sources */,
+				85B394D620AE2ABB00E643DD /* SignUpVC.swift in Sources */,
+				85B394D720AE2ABB00E643DD /* ThemeLabel.swift in Sources */,
+				85B394D820AE2ABB00E643DD /* ThemeTextfield.swift in Sources */,
+				85B394D920AE2ABB00E643DD /* Constant.swift in Sources */,
+				85B394DA20AE2ABB00E643DD /* CartTotalCell.swift in Sources */,
+				85B394DB20AE2ABB00E643DD /* ConstantUI.swift in Sources */,
+				85B394DC20AE2ABB00E643DD /* ThemeButton.swift in Sources */,
+				85B394DD20AE2ABB00E643DD /* leftMenuViewController.swift in Sources */,
+				85B394DE20AE2ABB00E643DD /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
+				85B394DF20AE2ABB00E643DD /* CustomerListVC.swift in Sources */,
+				85B394E020AE2ABB00E643DD /* DeliveryAddressVC.swift in Sources */,
+				85B394E120AE2ABB00E643DD /* ItemDetailVC.swift in Sources */,
+				85B394E220AE2ABB00E643DD /* CustomerDetailVC.swift in Sources */,
+				85B394E320AE2ABB00E643DD /* ThemeTableView.swift in Sources */,
+				85B394E420AE2ABB00E643DD /* DeliveryAddressTableViewCell.swift in Sources */,
+				85B394E520AE2ABB00E643DD /* navController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85B5EE68209798A300807A4B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				112DA5C5209C78F0009F6A68 /* AbstractVC.swift in Sources */,
+				85B3950020AE2E3800E643DD /* AdminLoginViewController.swift in Sources */,
 				11DD9D4E2099DE65006C00C9 /* LoginVC.swift in Sources */,
 				859701EC20A50702008A08B4 /* OrderHistoryTableViewCell.swift in Sources */,
 				112DA5BA209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
@@ -891,6 +1110,52 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DSALES";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL.sales;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KCPL/KCPL-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		85B394F020AE2ABB00E643DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25FB3EC5A34E9E5A750C8CFA /* Pods-KCPL.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53AEW9QR5D;
+				INFOPLIST_FILE = KCPL/KCPLAdminInfo.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DADMIN";
+				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL.admin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KCPL/KCPL-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		85B394F120AE2ABB00E643DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8343198A2CB3D9DF953E5736 /* Pods-KCPL.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53AEW9QR5D;
+				INFOPLIST_FILE = KCPL/KCPLAdminInfo.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DADMIN";
+				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL.admin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "KCPL/KCPL-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -1146,6 +1411,15 @@
 			buildConfigurations = (
 				85B394AE20AB9AC600E643DD /* Debug */,
 				85B394AF20AB9AC600E643DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85B394EF20AE2ABB00E643DD /* Build configuration list for PBXNativeTarget "KCPLAdmin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85B394F020AE2ABB00E643DD /* Debug */,
+				85B394F120AE2ABB00E643DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -62,11 +62,14 @@ class AppRouter: NSObject, Controller {
 //    }
     
     func configSlideNavigation() {
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let leftMenu = mainStoryboard.instantiateViewController(withIdentifier: "leftMenuViewController") as! leftMenuViewController
-        
-        SlideNavigationController.sharedInstance().leftMenu = leftMenu
+    
+        if !Util.isAdminApp() {
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let leftMenu = mainStoryboard.instantiateViewController(withIdentifier: "leftMenuViewController") as! leftMenuViewController
+            
+            SlideNavigationController.sharedInstance().leftMenu = leftMenu
+        }
     }    
 }
 
