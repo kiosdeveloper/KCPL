@@ -28,4 +28,11 @@ class AdminLoginViewController: UIViewController {
         
         self.signUpButton.setAttributedTitle(signUpAttributedString, for: .normal)
     }
+    
+//    MARK:- Actions
+    
+    @IBAction func LoginPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "showAdminDashboardFromAdminLogin", sender: nil)
+    }
+    
 }

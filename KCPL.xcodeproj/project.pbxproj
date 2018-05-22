@@ -30,6 +30,8 @@
 		11470FD120AAF3A2009ECB0B /* CustomerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11470FD020AAF3A2009ECB0B /* CustomerListVC.swift */; };
 		11470FD320AAF569009ECB0B /* CustomerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11470FD220AAF569009ECB0B /* CustomerTableViewCell.swift */; };
 		11470FD520AAFB6D009ECB0B /* ThemeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11470FD420AAFB6D009ECB0B /* ThemeTableView.swift */; };
+		1188BD0620B4269000F5ECFF /* AdminDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188BD0520B4269000F5ECFF /* AdminDashboardVC.swift */; };
+		1188BD0920B430CA00F5ECFF /* AdminDashboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188BD0820B430C900F5ECFF /* AdminDashboardCollectionViewCell.swift */; };
 		11DD9D4E2099DE65006C00C9 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D4D2099DE65006C00C9 /* LoginVC.swift */; };
 		11DD9D522099EB8C006C00C9 /* ConstantUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D512099EB8B006C00C9 /* ConstantUI.swift */; };
 		11DD9D572099EBFD006C00C9 /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D542099EBFD006C00C9 /* ThemeLabel.swift */; };
@@ -208,6 +210,8 @@
 		11470FD020AAF3A2009ECB0B /* CustomerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListVC.swift; sourceTree = "<group>"; };
 		11470FD220AAF569009ECB0B /* CustomerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewCell.swift; sourceTree = "<group>"; };
 		11470FD420AAFB6D009ECB0B /* ThemeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableView.swift; sourceTree = "<group>"; };
+		1188BD0520B4269000F5ECFF /* AdminDashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboardVC.swift; sourceTree = "<group>"; };
+		1188BD0820B430C900F5ECFF /* AdminDashboardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboardCollectionViewCell.swift; sourceTree = "<group>"; };
 		11DD9D4D2099DE65006C00C9 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		11DD9D512099EB8B006C00C9 /* ConstantUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantUI.swift; sourceTree = "<group>"; };
 		11DD9D542099EBFD006C00C9 /* ThemeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeLabel.swift; sourceTree = "<group>"; };
@@ -303,6 +307,7 @@
 		1129C353209B269C005DC1B8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				1188BD0720B4307E00F5ECFF /* Admin */,
 				859701E320A4EADD008A08B4 /* CartTotalCell.swift */,
 				1129C358209B2B29005DC1B8 /* DashboardItemCell.swift */,
 				8515F378209C13A50039F801 /* ItemDetailTableViewCell.swift */,
@@ -351,6 +356,14 @@
 				112DA5B4209C6D87009F6A68 /* SlideNavigationContorllerAnimatorSlideAndFade.m */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		1188BD0720B4307E00F5ECFF /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				1188BD0820B430C900F5ECFF /* AdminDashboardCollectionViewCell.swift */,
+			);
+			path = Admin;
 			sourceTree = "<group>";
 		};
 		11DD9D4C2099DE07006C00C9 /* ViewControllers */ = {
@@ -444,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				85B394FF20AE2E3800E643DD /* AdminLoginViewController.swift */,
+				1188BD0520B4269000F5ECFF /* AdminDashboardVC.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -948,6 +962,7 @@
 				85B394CE20AE2ABB00E643DD /* CustomerDetailCell.swift in Sources */,
 				85B394CF20AE2ABB00E643DD /* ThemeSearchBar.swift in Sources */,
 				85B394D020AE2ABB00E643DD /* AppRouter.swift in Sources */,
+				1188BD0920B430CA00F5ECFF /* AdminDashboardCollectionViewCell.swift in Sources */,
 				85B394D120AE2ABB00E643DD /* CartItemListCell.swift in Sources */,
 				85B394D220AE2ABB00E643DD /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				85B394D320AE2ABB00E643DD /* ItemDetailTableViewCell.swift in Sources */,
@@ -967,6 +982,7 @@
 				85B394E120AE2ABB00E643DD /* ItemDetailVC.swift in Sources */,
 				85B394E220AE2ABB00E643DD /* CustomerDetailVC.swift in Sources */,
 				85B394E320AE2ABB00E643DD /* ThemeTableView.swift in Sources */,
+				1188BD0620B4269000F5ECFF /* AdminDashboardVC.swift in Sources */,
 				85B394E420AE2ABB00E643DD /* DeliveryAddressTableViewCell.swift in Sources */,
 				85B394E520AE2ABB00E643DD /* navController.swift in Sources */,
 			);

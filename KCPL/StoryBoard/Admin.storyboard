@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tjI-gU-vpj">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController storyboardIdentifier="AdminLoginViewController" id="tjI-gU-vpj" customClass="AdminLoginViewController" customModule="KCPL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R0H-a9-6Bb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aD1-e4-gS2">
-                                <rect key="frame" x="31.5" y="160" width="311.5" height="367"/>
+                                <rect key="frame" x="31.5" y="110.5" width="256.5" height="367"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rXt-hb-Tvv">
-                                        <rect key="frame" x="48" y="32" width="247.5" height="40"/>
+                                        <rect key="frame" x="48" y="32" width="192.5" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="9cL-AI-nae"/>
                                         </constraints>
@@ -31,7 +31,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dy8-u2-nmt" customClass="ThemeLabelLineLight" customModule="KCPL" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="74.5" width="295.5" height="1"/>
+                                        <rect key="frame" x="8" y="74.5" width="240.5" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="VUI-B7-2tg"/>
@@ -41,7 +41,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Es-Vj-HUR">
-                                        <rect key="frame" x="48" y="85" width="247.5" height="40"/>
+                                        <rect key="frame" x="48" y="85" width="192.5" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Jr7-OQ-Lfv"/>
                                         </constraints>
@@ -50,7 +50,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ig3-sY-9zN" customClass="ThemeLabelLineLight" customModule="KCPL" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="127.5" width="295.5" height="1"/>
+                                        <rect key="frame" x="8" y="127.5" width="240.5" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="tvi-jP-Ja3"/>
@@ -67,14 +67,17 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWT-Wf-myU" customClass="ThemeButton" customModule="KCPL" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="232" width="279.5" height="50"/>
+                                        <rect key="frame" x="16" y="232" width="224.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="uPB-gG-oiA"/>
                                         </constraints>
                                         <state key="normal" title="LOG IN"/>
+                                        <connections>
+                                            <action selector="LoginPressed:" destination="tjI-gU-vpj" eventType="touchUpInside" id="Z1H-dR-jlB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3i3-wM-57K" customClass="ThemeButtonPlain" customModule="KCPL" customModuleProvider="target">
-                                        <rect key="frame" x="54" y="304" width="203" height="40"/>
+                                        <rect key="frame" x="26.5" y="304" width="203" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="rEC-TN-HEn"/>
                                         </constraints>
@@ -124,13 +127,112 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zPc-Wn-GOf"/>
                     </view>
+                    <navigationItem key="navigationItem" id="yvE-E9-L50"/>
                     <connections>
                         <outlet property="signUpButton" destination="3i3-wM-57K" id="aZF-y1-pOO"/>
+                        <segue destination="Bdq-mq-hw4" kind="presentation" identifier="showAdminDashboardFromAdminLogin" id="RTU-Vf-Pqt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXP-wR-RsU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="434" y="-292"/>
+            <point key="canvasLocation" x="519" y="-291"/>
+        </scene>
+        <!--Admin DashboardVC-->
+        <scene sceneID="hpd-FQ-PTF">
+            <objects>
+                <viewController storyboardIdentifier="AdminDashboardVC" id="wJi-hY-XZM" customClass="AdminDashboardVC" customModule="KCPLAdmin" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V8R-VR-aAo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6cU-Ta-pR5">
+                                <rect key="frame" x="8" y="72" width="304" height="488"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Ez-nq-EQO">
+                                    <size key="itemSize" width="129" height="144"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AdminDashboardCollectionViewCell" id="we1-q8-4Ya" customClass="AdminDashboardCollectionViewCell" customModule="KCPLAdmin">
+                                        <rect key="frame" x="0.0" y="0.0" width="129" height="144"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="129" height="144"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bhq-WS-kSq">
+                                                    <rect key="frame" x="8" y="8" width="113" height="106"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2b-UW-KJn" customClass="ThemeLabelTitle" customModule="KCPL" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="114" width="129" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="rQL-Lb-rhT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="H2b-UW-KJn" firstAttribute="top" secondItem="bhq-WS-kSq" secondAttribute="bottom" id="EFp-XP-Aub"/>
+                                            <constraint firstAttribute="trailing" secondItem="bhq-WS-kSq" secondAttribute="trailing" constant="8" id="Ekc-UW-pNz"/>
+                                            <constraint firstItem="bhq-WS-kSq" firstAttribute="leading" secondItem="we1-q8-4Ya" secondAttribute="leading" constant="8" id="FfM-Xn-RKF"/>
+                                            <constraint firstItem="H2b-UW-KJn" firstAttribute="leading" secondItem="we1-q8-4Ya" secondAttribute="leading" id="aWE-kD-9mS"/>
+                                            <constraint firstItem="bhq-WS-kSq" firstAttribute="top" secondItem="we1-q8-4Ya" secondAttribute="top" constant="8" id="f2n-6b-aWd"/>
+                                            <constraint firstAttribute="trailing" secondItem="H2b-UW-KJn" secondAttribute="trailing" id="y5P-RV-MOf"/>
+                                            <constraint firstAttribute="bottom" secondItem="H2b-UW-KJn" secondAttribute="bottom" id="zly-lz-vzI"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dashboardItemImageView" destination="bhq-WS-kSq" id="Cku-Eu-ynM"/>
+                                            <outlet property="dashboardItemName" destination="H2b-UW-KJn" id="mIx-42-5nK"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="wJi-hY-XZM" id="VFQ-0N-YgF"/>
+                                    <outlet property="delegate" destination="wJi-hY-XZM" id="pMu-TX-EIh"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6cU-Ta-pR5" firstAttribute="leading" secondItem="933-iU-0ZH" secondAttribute="leading" constant="8" id="311-iM-JEs"/>
+                            <constraint firstItem="933-iU-0ZH" firstAttribute="trailing" secondItem="6cU-Ta-pR5" secondAttribute="trailing" constant="8" id="cSO-Rz-glG"/>
+                            <constraint firstItem="933-iU-0ZH" firstAttribute="bottom" secondItem="6cU-Ta-pR5" secondAttribute="bottom" constant="8" id="hud-U9-Z2I"/>
+                            <constraint firstItem="6cU-Ta-pR5" firstAttribute="top" secondItem="933-iU-0ZH" secondAttribute="top" constant="8" id="tzI-sJ-edk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="933-iU-0ZH"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uvP-oc-wYN"/>
+                    <connections>
+                        <outlet property="dashboardCollectionView" destination="6cU-Ta-pR5" id="Z4l-6W-39R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Skn-HP-Chl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2111.25" y="-291.54929577464787"/>
+        </scene>
+        <!--Nav Controller-->
+        <scene sceneID="ZoN-KQ-K2f">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bdq-mq-hw4" customClass="navController" customModule="KCPL" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HfW-Jf-37Z">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wJi-hY-XZM" kind="relationship" relationship="rootViewController" id="BKQ-t9-bPb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gBp-1G-r3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1342" y="-291"/>
         </scene>
     </scenes>
     <resources>
