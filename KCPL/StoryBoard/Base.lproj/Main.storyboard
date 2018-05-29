@@ -212,7 +212,7 @@
                                         <color key="textColor" red="0.23529411764705882" green="0.71372549019607845" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_firstName" translatesAutoresizingMaskIntoConstraints="NO" id="HGd-KX-J7N">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_username" translatesAutoresizingMaskIntoConstraints="NO" id="HGd-KX-J7N">
                                         <rect key="frame" x="54" y="81" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="0l3-0X-zYc"/>
@@ -238,7 +238,7 @@
                                         <color key="textColor" red="0.23529411759999999" green="0.71372549019999998" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_lastName" translatesAutoresizingMaskIntoConstraints="NO" id="8Kr-jn-rxr">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_username" translatesAutoresizingMaskIntoConstraints="NO" id="8Kr-jn-rxr">
                                         <rect key="frame" x="54" y="134" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="c2R-oQ-4mJ"/>
@@ -345,7 +345,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2T-Lz-tny" customClass="ThemeLabelLineLight" customModule="KCPL" customModuleProvider="target">
                                         <rect key="frame" x="54" y="394" width="306" height="1"/>
@@ -371,7 +371,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jf-sH-0nD" customClass="ThemeLabelLineLight" customModule="KCPL" customModuleProvider="target">
                                         <rect key="frame" x="54" y="447" width="306" height="1"/>
@@ -397,7 +397,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRI-Nd-BPv" customClass="ThemeLabelLineLight" customModule="KCPL" customModuleProvider="target">
                                         <rect key="frame" x="54" y="498" width="306" height="1"/>
@@ -423,7 +423,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCo-qn-rIH" customClass="ThemeLabelLineLight" customModule="KCPL" customModuleProvider="target">
                                         <rect key="frame" x="54" y="551" width="306" height="1"/>
@@ -1258,9 +1258,6 @@
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ba2-At-Gai" customClass="ThemeButton" customModule="KCPL" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                                     <state key="normal" title="-"/>
-                                                                    <connections>
-                                                                        <action selector="btnMinusQuantityPressed:" destination="CSu-ic-jIU" eventType="touchUpInside" id="Vxf-sZ-Xxe"/>
-                                                                    </connections>
                                                                 </button>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DmM-T6-Pcm">
                                                                     <rect key="frame" x="30" y="1" width="40" height="28"/>
@@ -1275,9 +1272,6 @@
                                                                         <constraint firstAttribute="width" constant="30" id="w0s-wZ-LYk"/>
                                                                     </constraints>
                                                                     <state key="normal" title="+"/>
-                                                                    <connections>
-                                                                        <action selector="btnPlusQuantityPressed:" destination="CSu-ic-jIU" eventType="touchUpInside" id="pq9-Yf-QgS"/>
-                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.0" green="0.62352941179999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -1505,7 +1499,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txM-np-hBh">
-                                                    <rect key="frame" x="15" y="48" width="290" height="20.5"/>
+                                                    <rect key="frame" x="15" y="48" width="290" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2204,8 +2198,6 @@
         <image name="ic_confirmPassword" width="64" height="64"/>
         <image name="ic_deliveryAddress" width="64" height="64"/>
         <image name="ic_emailId" width="64" height="64"/>
-        <image name="ic_firstName" width="64" height="64"/>
-        <image name="ic_lastName" width="64" height="64"/>
         <image name="ic_mobileNumber" width="64" height="64"/>
         <image name="ic_password" width="24" height="24"/>
         <image name="ic_uncheck" width="24" height="24"/>

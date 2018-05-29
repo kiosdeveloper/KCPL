@@ -9,13 +9,16 @@ struct ComunicateService {
 //        static var OAuthToken: String?
         case Login(Parameters)
         case SignUp(Parameters)
+        case GetCategories()
         
         var method: Alamofire.HTTPMethod {
             switch self {
-                case .Login( _):
-                    return .post
-                case .SignUp(_):
-                    return .post
+            case .Login( _),
+                 .SignUp(_):
+                return .post
+                
+            case .GetCategories():
+                return .get
             }
         }
         
@@ -25,6 +28,17 @@ struct ComunicateService {
                     return "customers/sign_in"
                 case .SignUp(_):
                     return "customers"
+            case .GetCategories():
+                return "categories"
+            }
+        }
+        
+        var isAuthToken: Bool {
+            switch self {
+            case .Login, .SignUp:
+                return false
+            default:
+                return true
             }
         }
 
@@ -36,9 +50,12 @@ struct ComunicateService {
             urlRequest.addValue("q1pros2iytAbQ62s1pkJGAbqR", forHTTPHeaderField: "APP-ID")
 //            urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
             
-//            if let token = Router.OAuthToken {
-//                urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-//            }
+            if isAuthToken, let user = UserDefault.getUser(), let token = user.auth_token, let id = user.id {
+                 urlRequest.setValue("\(token)", forHTTPHeaderField: "TOKEN")
+                urlRequest.setValue("\(id)", forHTTPHeaderField: "USER-ID")
+
+            }
+            print("UrlRequest \(urlRequest)")
             
             switch self {
             case .Login(let params):
@@ -48,6 +65,8 @@ struct ComunicateService {
             case .SignUp(let params):
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: params)
                 
+            case .GetCategories():
+                return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
             default:
                 return urlRequest
             }

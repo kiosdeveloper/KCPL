@@ -1,17 +1,20 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'KCPL' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for KCPL
-
+def app_pods
+    use_frameworks!
+    
+    # Pods for KCPL
+    
     pod 'IQKeyboardManager'
     pod 'Alamofire'
     pod 'SwiftyJSON'
     pod 'BRYXBanner'
     pod 'MRProgress'
+end
+
+target 'KCPL' do
+  app_pods
     
   target 'KCPLTests' do
     inherit! :search_paths
@@ -22,5 +25,12 @@ target 'KCPL' do
     inherit! :search_paths
     # Pods for testing
   end
+end
 
+target 'KCPLSales' do
+    app_pods
+end
+
+target 'KCPLAdmin' do
+   app_pods
 end

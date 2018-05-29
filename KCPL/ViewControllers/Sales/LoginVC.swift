@@ -38,6 +38,9 @@ class LoginVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+        if let user = UserDefault.getUser(), let token = user.auth_token, let id = user.id {
+            self.performSegue(withIdentifier: "showDashboardFromLogin", sender: nil)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

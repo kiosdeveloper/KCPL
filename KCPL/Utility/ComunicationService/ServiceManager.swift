@@ -28,7 +28,12 @@ class ServiceManager {
                             
                         } else {
                             Util.dissmissProgress()
-                            completion(false, (json.dictionaryObject![Constant.c_res_message])! as? String, nil)
+                            if let error = (json.dictionaryObject![Constant.c_res_message])! as? [String] {
+                                completion(false, error[0], nil)
+                            }
+                            else {
+                                completion(false, "Something went wrong", nil)
+                            }
                         }
                     }
                 case .failure(let error):
@@ -38,7 +43,7 @@ class ServiceManager {
                 }
             }
         } catch let error{
-//            print(error)
+            print(error)
             Util.dissmissProgress()
             completion(false, error.localizedDescription, nil)
         }

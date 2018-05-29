@@ -18,6 +18,7 @@ class DashboardVC: AbstractVC {
         super.viewDidLoad()
         
         self.configNavigationBar()
+        self.getCategoryList()
     }
     
     override func viewWillLayoutSubviews() {
@@ -56,6 +57,19 @@ class DashboardVC: AbstractVC {
     
     @objc func navNotificationPressed() {
         
+    }
+}
+
+extension DashboardVC {
+    func getCategoryList() {
+        ServiceManager().processService(urlRequest: ComunicateService.Router.GetCategories()) { (isSuccess, error , responseData) in
+            if isSuccess {
+                print(responseData!)
+            } else {
+                error?.configToast(isError: true)
+            }
+        }
+
     }
 }
 

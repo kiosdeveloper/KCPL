@@ -1,0 +1,6 @@
+framework module Pods_KCPLAdmin {
+  umbrella header "Pods-KCPLAdmin-umbrella.h"
+
+  export *
+  module * { export * }
+}
