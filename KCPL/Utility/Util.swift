@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MRProgress
 
 class Util {
     
@@ -28,4 +29,25 @@ class Util {
         #endif
     }
     
+    static func isProgressing() -> Any? {
+        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+            return MRProgressOverlayView.overlay(for: window)
+        }
+        return nil
+    }
+    
+    static func showProgress() {
+        
+        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+            if isProgressing() == nil {
+                MRProgressOverlayView.showOverlayAdded(to: window, animated: true)
+            }
+        }
+    }
+    
+    static func dissmissProgress() {
+        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+            MRProgressOverlayView.dismissOverlay(for: window, animated: true)
+        }
+    }
 }

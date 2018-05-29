@@ -10,6 +10,9 @@ import UIKit
 
 class LoginVC: UIViewController {
 
+    @IBOutlet weak var usernameTextFeild: UITextField!
+    @IBOutlet weak var passwordTextFeild: UITextField!
+    
     @IBOutlet weak var signUpButton: UIButton!
     
     @IBOutlet weak var navigationViewHeight: NSLayoutConstraint!
@@ -50,9 +53,54 @@ class LoginVC: UIViewController {
         sender.isSelected = !sender.isSelected
     }
     
+    func isValidateLogin() -> Bool {
+        
+        if usernameTextFeild.text == "" {
+            Constant.c_error_email.configToast(isError: true)
+            return false
+        }
+        
+        if !(usernameTextFeild.text!.isValidEmail()) {
+            Constant.c_error_valid_email.configToast(isError: true)
+            return false
+        }
+        
+        if passwordTextFeild.text == "" {
+            Constant.c_error_password.configToast(isError: true)
+            return false
+        }
+        
+        return true
+    }
+    
 //    MARK:- Actions
     @IBAction func loginPressed(_ sender: Any) {
+        if self.isValidateLogin() {
+            self.Login()
+        }
+    }
+}
+
+//MARK:- Helper Method
+extension LoginVC {
+    func Login() {
+        let params: [String: Any] = [
+            Constant.c_req_customer_email: usernameTextFeild.text!,
+            Constant.c_req_customer_password: passwordTextFeild.text!
+        ]
         
-        self.performSegue(withIdentifier: "showDashboardFromLogin", sender: nil)
+        ServiceManager().processService(urlRequest: ComunicateService.Router.Login(params)) { (isSuccess, error , responseData) in
+            if isSuccess {
+                //print(responseData)
+                
+                ServiceManagerModel().processLogin(json: responseData, completion: { (isComplete) in
+                    if isComplete {
+                        self.performSegue(withIdentifier: "showDashboardFromLogin", sender: nil)
+                    }
+                })
+            } else {
+                error?.configToast(isError: true)
+            }
+        }
     }
 }

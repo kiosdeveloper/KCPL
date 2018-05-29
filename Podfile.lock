@@ -1,16 +1,59 @@
 PODS:
+  - Alamofire (4.7.2)
+  - BRYXBanner (0.8.0)
   - IQKeyboardManager (6.0.2)
+  - MRProgress (0.8.3):
+    - MRProgress/ActivityIndicator (= 0.8.3)
+    - MRProgress/Blur (= 0.8.3)
+    - MRProgress/Circular (= 0.8.3)
+    - MRProgress/Icons (= 0.8.3)
+    - MRProgress/NavigationBarProgress (= 0.8.3)
+    - MRProgress/Overlay (= 0.8.3)
+  - MRProgress/ActivityIndicator (0.8.3):
+    - MRProgress/Stopable
+  - MRProgress/Blur (0.8.3):
+    - MRProgress/Helper
+  - MRProgress/Circular (0.8.3):
+    - MRProgress/Helper
+    - MRProgress/ProgressBaseClass
+    - MRProgress/Stopable
+  - MRProgress/Helper (0.8.3)
+  - MRProgress/Icons (0.8.3)
+  - MRProgress/NavigationBarProgress (0.8.3):
+    - MRProgress/ProgressBaseClass
+  - MRProgress/Overlay (0.8.3):
+    - MRProgress/ActivityIndicator
+    - MRProgress/Blur
+    - MRProgress/Circular
+    - MRProgress/Helper
+    - MRProgress/Icons
+  - MRProgress/ProgressBaseClass (0.8.3)
+  - MRProgress/Stopable (0.8.3):
+    - MRProgress/Helper
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
+  - Alamofire
+  - BRYXBanner
   - IQKeyboardManager
+  - MRProgress
+  - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - BRYXBanner
     - IQKeyboardManager
+    - MRProgress
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  BRYXBanner: 406c3775789136531da6f3c98058be2f16e08a34
   IQKeyboardManager: c49d59e358aeeffaa0280aa305093c2b194d2607
+  MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 98126a43f2ccd8ea598fd90f2e6f291b34b8080f
+PODFILE CHECKSUM: 12702313875c182b0c67408c8d0ed44c45ebb299
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2

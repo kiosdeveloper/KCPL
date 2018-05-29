@@ -3,10 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		111BE25E20BD31BE00190718 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE25D20BD31BE00190718 /* Global.swift */; };
+		111BE25F20BD31C200190718 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE25D20BD31BE00190718 /* Global.swift */; };
+		111BE26020BD31C300190718 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE25D20BD31BE00190718 /* Global.swift */; };
+		111BE26420BD320C00190718 /* ComunicateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE26220BD320B00190718 /* ComunicateService.swift */; };
+		111BE26520BD320C00190718 /* ComunicateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE26220BD320B00190718 /* ComunicateService.swift */; };
+		111BE26620BD320C00190718 /* ComunicateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE26220BD320B00190718 /* ComunicateService.swift */; };
+		111BE26720BD320C00190718 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE26320BD320B00190718 /* ServiceManager.swift */; };
+		111BE26820BD320C00190718 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE26320BD320B00190718 /* ServiceManager.swift */; };
+		111BE26920BD320C00190718 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE26320BD320B00190718 /* ServiceManager.swift */; };
+		111BE26B20BD58F400190718 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE26A20BD58F400190718 /* UserDefault.swift */; };
+		111BE26C20BD590700190718 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE26A20BD58F400190718 /* UserDefault.swift */; };
+		111BE26D20BD590700190718 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE26A20BD58F400190718 /* UserDefault.swift */; };
+		111BE27020BD594A00190718 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE26F20BD594A00190718 /* User.swift */; };
 		1129C34E209AE0B4005DC1B8 /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1129C34C209AE0AF005DC1B8 /* NavigationView.xib */; };
 		1129C34F209AE0B4005DC1B8 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C34D209AE0B1005DC1B8 /* NavigationView.swift */; };
 		1129C351209AEC66005DC1B8 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C350209AEC66005DC1B8 /* DashboardVC.swift */; };
@@ -27,6 +40,12 @@
 		112DA5C5209C78F0009F6A68 /* AbstractVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5C4209C78EF009F6A68 /* AbstractVC.swift */; };
 		112DA5C7209C8D46009F6A68 /* OrderHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5C6209C8D46009F6A68 /* OrderHistoryVC.swift */; };
 		112DA5CE209C92AD009F6A68 /* ItemDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5CD209C92AD009F6A68 /* ItemDetailVC.swift */; };
+		11388F8D20BD855A00E54FB2 /* ProductListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11388F8C20BD855A00E54FB2 /* ProductListVC.swift */; };
+		11388F8E20BD856100E54FB2 /* ProductListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11388F8C20BD855A00E54FB2 /* ProductListVC.swift */; };
+		11388F8F20BD856200E54FB2 /* ProductListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11388F8C20BD855A00E54FB2 /* ProductListVC.swift */; };
+		11388F9520BD89DB00E54FB2 /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11388F9420BD89DB00E54FB2 /* ProductListTableViewCell.swift */; };
+		11388F9620BD89DF00E54FB2 /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11388F9420BD89DB00E54FB2 /* ProductListTableViewCell.swift */; };
+		11388F9720BD89E100E54FB2 /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11388F9420BD89DB00E54FB2 /* ProductListTableViewCell.swift */; };
 		11470FD120AAF3A2009ECB0B /* CustomerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11470FD020AAF3A2009ECB0B /* CustomerListVC.swift */; };
 		11470FD320AAF569009ECB0B /* CustomerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11470FD220AAF569009ECB0B /* CustomerTableViewCell.swift */; };
 		11470FD520AAFB6D009ECB0B /* ThemeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11470FD420AAFB6D009ECB0B /* ThemeTableView.swift */; };
@@ -91,7 +110,6 @@
 		85B394A220AB9AC600E643DD /* ThemeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11470FD420AAFB6D009ECB0B /* ThemeTableView.swift */; };
 		85B394A320AB9AC600E643DD /* DeliveryAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E520A4F45B008A08B4 /* DeliveryAddressTableViewCell.swift */; };
 		85B394A420AB9AC600E643DD /* navController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D5A2099EDB3006C00C9 /* navController.swift */; };
-		85B394A620AB9AC600E643DD /* Pods_KCPL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4541987AA803930A3633FA2C /* Pods_KCPL.framework */; };
 		85B394A820AB9AC600E643DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE78209798A500807A4B /* LaunchScreen.storyboard */; };
 		85B394A920AB9AC600E643DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE76209798A500807A4B /* Assets.xcassets */; };
 		85B394AA20AB9AC600E643DD /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1129C34C209AE0AF005DC1B8 /* NavigationView.xib */; };
@@ -139,7 +157,6 @@
 		85B394E320AE2ABB00E643DD /* ThemeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11470FD420AAFB6D009ECB0B /* ThemeTableView.swift */; };
 		85B394E420AE2ABB00E643DD /* DeliveryAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E520A4F45B008A08B4 /* DeliveryAddressTableViewCell.swift */; };
 		85B394E520AE2ABB00E643DD /* navController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D5A2099EDB3006C00C9 /* navController.swift */; };
-		85B394E720AE2ABB00E643DD /* Pods_KCPL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4541987AA803930A3633FA2C /* Pods_KCPL.framework */; };
 		85B394E920AE2ABB00E643DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE78209798A500807A4B /* LaunchScreen.storyboard */; };
 		85B394EA20AE2ABB00E643DD /* KCPLSalesInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85B394B620AB9F6300E643DD /* KCPLSalesInfo.plist */; };
 		85B394EB20AE2ABB00E643DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE76209798A500807A4B /* Assets.xcassets */; };
@@ -161,6 +178,7 @@
 		85B5EE85209798A600807A4B /* KCPLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5EE84209798A600807A4B /* KCPLTests.swift */; };
 		85B5EE90209798A600807A4B /* KCPLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5EE8F209798A600807A4B /* KCPLUITests.swift */; };
 		F1BF6817767D5A93E8358F24 /* Pods_KCPLUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C4B2C88C385D685EB75034 /* Pods_KCPLUITests.framework */; };
+		F82CE5035EDDEB9FCA967CDE /* Pods_KCPL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4541987AA803930A3633FA2C /* Pods_KCPL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +199,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		111BE25D20BD31BE00190718 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		111BE26220BD320B00190718 /* ComunicateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComunicateService.swift; sourceTree = "<group>"; };
+		111BE26320BD320B00190718 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		111BE26A20BD58F400190718 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		111BE26F20BD594A00190718 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1129C34C209AE0AF005DC1B8 /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
 		1129C34D209AE0B1005DC1B8 /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		1129C350209AEC66005DC1B8 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
@@ -207,6 +230,8 @@
 		112DA5C4209C78EF009F6A68 /* AbstractVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractVC.swift; sourceTree = "<group>"; };
 		112DA5C6209C8D46009F6A68 /* OrderHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryVC.swift; sourceTree = "<group>"; };
 		112DA5CD209C92AD009F6A68 /* ItemDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailVC.swift; sourceTree = "<group>"; };
+		11388F8C20BD855A00E54FB2 /* ProductListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListVC.swift; sourceTree = "<group>"; };
+		11388F9420BD89DB00E54FB2 /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
 		11470FD020AAF3A2009ECB0B /* CustomerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListVC.swift; sourceTree = "<group>"; };
 		11470FD220AAF569009ECB0B /* CustomerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewCell.swift; sourceTree = "<group>"; };
 		11470FD420AAFB6D009ECB0B /* ThemeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableView.swift; sourceTree = "<group>"; };
@@ -219,11 +244,9 @@
 		11DD9D562099EBFD006C00C9 /* ThemeTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextfield.swift; sourceTree = "<group>"; };
 		11DD9D5A2099EDB3006C00C9 /* navController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navController.swift; sourceTree = "<group>"; };
 		245C6858C4F0A6D75FA53AF5 /* Pods-KCPLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPLUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCPLUITests/Pods-KCPLUITests.release.xcconfig"; sourceTree = "<group>"; };
-		25FB3EC5A34E9E5A750C8CFA /* Pods-KCPL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCPL/Pods-KCPL.debug.xcconfig"; sourceTree = "<group>"; };
 		28C93834EBBD04507A59B451 /* Pods-KCPLTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPLTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCPLTests/Pods-KCPLTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4541987AA803930A3633FA2C /* Pods_KCPL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KCPL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8196E8941B194260AE1153D1 /* Pods-KCPLUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPLUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCPLUITests/Pods-KCPLUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		8343198A2CB3D9DF953E5736 /* Pods-KCPL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPL.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCPL/Pods-KCPL.release.xcconfig"; sourceTree = "<group>"; };
 		8515F371209ABAFB0039F801 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		8515F378209C13A50039F801 /* ItemDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailTableViewCell.swift; sourceTree = "<group>"; };
 		8515F37A209C13B90039F801 /* ImagesListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -257,7 +280,9 @@
 		85B5EE91209798A600807A4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A08F543B35E81E5E1719421 /* Pods-KCPLTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPLTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCPLTests/Pods-KCPLTests.release.xcconfig"; sourceTree = "<group>"; };
 		92C4B2C88C385D685EB75034 /* Pods_KCPLUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KCPLUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		983FAF9CB6828BC2F9D703CC /* Pods-KCPL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPL.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCPL/Pods-KCPL.release.xcconfig"; sourceTree = "<group>"; };
 		D5D96F448F88D11C81EE2252 /* Pods_KCPLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KCPLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB83A66C58839970557171CB /* Pods-KCPL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCPL/Pods-KCPL.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,7 +290,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85B394A620AB9AC600E643DD /* Pods_KCPL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +297,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85B394E720AE2ABB00E643DD /* Pods_KCPL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2878D83411E958281BF7EF2E /* Pods_KCPL.framework in Frameworks */,
+				F82CE5035EDDEB9FCA967CDE /* Pods_KCPL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +328,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		111BE26120BD320B00190718 /* ComunicationService */ = {
+			isa = PBXGroup;
+			children = (
+				111BE26220BD320B00190718 /* ComunicateService.swift */,
+				111BE26320BD320B00190718 /* ServiceManager.swift */,
+			);
+			path = ComunicationService;
+			sourceTree = "<group>";
+		};
+		111BE26E20BD591F00190718 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				111BE26F20BD594A00190718 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1129C353209B269C005DC1B8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +358,7 @@
 				859701EB20A50702008A08B4 /* OrderHistoryTableViewCell.swift */,
 				853AC8D720A6677A002A3292 /* CustomerDetailCell.swift */,
 				11470FD220AAF569009ECB0B /* CustomerTableViewCell.swift */,
+				11388F9420BD89DB00E54FB2 /* ProductListTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -378,9 +420,11 @@
 		11DD9D4F2099EB31006C00C9 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				11DD9D502099EB64006C00C9 /* Constant */,
 				1129C35A209B2F3A005DC1B8 /* UtilExtensions.swift */,
 				112CEAF620ABFAF8004BCF37 /* Util.swift */,
+				111BE26A20BD58F400190718 /* UserDefault.swift */,
+				11DD9D502099EB64006C00C9 /* Constant */,
+				111BE26120BD320B00190718 /* ComunicationService */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -390,6 +434,7 @@
 			children = (
 				11DD9D512099EB8B006C00C9 /* ConstantUI.swift */,
 				112CEAF920AC0D6B004BCF37 /* Constant.swift */,
+				111BE25D20BD31BE00190718 /* Global.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -449,6 +494,7 @@
 				854B3891209D899F008391BC /* CartVC.swift */,
 				853AC8D520A66691002A3292 /* CustomerDetailVC.swift */,
 				11470FD020AAF3A2009ECB0B /* CustomerListVC.swift */,
+				11388F8C20BD855A00E54FB2 /* ProductListVC.swift */,
 			);
 			path = Sales;
 			sourceTree = "<group>";
@@ -496,6 +542,7 @@
 				11DD9D532099EBCC006C00C9 /* PView */,
 				11DD9D5C2099F345006C00C9 /* XIBs */,
 				11DD9D4F2099EB31006C00C9 /* Utility */,
+				111BE26E20BD591F00190718 /* Model */,
 				11DD9D4C2099DE07006C00C9 /* ViewControllers */,
 				85B394F820AE2BB900E643DD /* StoryBoard */,
 				85B5EE76209798A500807A4B /* Assets.xcassets */,
@@ -529,12 +576,12 @@
 		A943780D8201A8C533832DD8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				25FB3EC5A34E9E5A750C8CFA /* Pods-KCPL.debug.xcconfig */,
-				8343198A2CB3D9DF953E5736 /* Pods-KCPL.release.xcconfig */,
 				28C93834EBBD04507A59B451 /* Pods-KCPLTests.debug.xcconfig */,
 				8A08F543B35E81E5E1719421 /* Pods-KCPLTests.release.xcconfig */,
 				8196E8941B194260AE1153D1 /* Pods-KCPLUITests.debug.xcconfig */,
 				245C6858C4F0A6D75FA53AF5 /* Pods-KCPLUITests.release.xcconfig */,
+				FB83A66C58839970557171CB /* Pods-KCPL.debug.xcconfig */,
+				983FAF9CB6828BC2F9D703CC /* Pods-KCPL.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -546,11 +593,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85B394AD20AB9AC600E643DD /* Build configuration list for PBXNativeTarget "KCPLSales" */;
 			buildPhases = (
-				85B3947D20AB9AC600E643DD /* [CP] Check Pods Manifest.lock */,
 				85B3947E20AB9AC600E643DD /* Sources */,
 				85B394A520AB9AC600E643DD /* Frameworks */,
 				85B394A720AB9AC600E643DD /* Resources */,
-				85B394AC20AB9AC600E643DD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -565,11 +610,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85B394EF20AE2ABB00E643DD /* Build configuration list for PBXNativeTarget "KCPLAdmin" */;
 			buildPhases = (
-				85B394BC20AE2ABB00E643DD /* [CP] Check Pods Manifest.lock */,
 				85B394BD20AE2ABB00E643DD /* Sources */,
 				85B394E620AE2ABB00E643DD /* Frameworks */,
 				85B394E820AE2ABB00E643DD /* Resources */,
-				85B394EE20AE2ABB00E643DD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -647,21 +690,30 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = KCPL;
 				TargetAttributes = {
+					85B3947C20AB9AC600E643DD = {
+						ProvisioningStyle = Automatic;
+					};
+					85B394BB20AE2ABB00E643DD = {
+						ProvisioningStyle = Automatic;
+					};
 					85B5EE6B209798A300807A4B = {
 						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
 					};
 					85B5EE7F209798A600807A4B = {
 						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 85B5EE6B209798A300807A4B;
 					};
 					85B5EE8A209798A600807A4B = {
 						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 85B5EE6B209798A300807A4B;
 					};
 				};
 			};
 			buildConfigurationList = 85B5EE67209798A300807A4B /* Build configuration list for PBXProject "KCPL" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -768,83 +820,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KCPL/Pods-KCPL-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BRYXBanner/BRYXBanner.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/MRProgress/MRProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BRYXBanner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KCPL/Pods-KCPL-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		85B3947D20AB9AC600E643DD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KCPL-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		85B394AC20AB9AC600E643DD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-KCPL/Pods-KCPL-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KCPL/Pods-KCPL-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		85B394BC20AE2ABB00E643DD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KCPL-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		85B394EE20AE2ABB00E643DD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-KCPL/Pods-KCPL-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MRProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -894,6 +882,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11388F8E20BD856100E54FB2 /* ProductListVC.swift in Sources */,
 				85B3947F20AB9AC600E643DD /* AbstractVC.swift in Sources */,
 				85B3950120AE2E3800E643DD /* AdminLoginViewController.swift in Sources */,
 				85B3948020AB9AC600E643DD /* LoginVC.swift in Sources */,
@@ -905,6 +894,7 @@
 				112CEAF820AC0868004BCF37 /* Util.swift in Sources */,
 				85B3948620AB9AC600E643DD /* CartVC.swift in Sources */,
 				85B3948720AB9AC600E643DD /* SlideNavigationContorllerAnimatorFade.m in Sources */,
+				111BE26820BD320C00190718 /* ServiceManager.swift in Sources */,
 				85B3948820AB9AC600E643DD /* OrderHistoryVC.swift in Sources */,
 				85B3948920AB9AC600E643DD /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				85B3948A20AB9AC600E643DD /* ImagesListCollectionViewCell.swift in Sources */,
@@ -914,16 +904,19 @@
 				85B3948E20AB9AC600E643DD /* CustomerDetailCell.swift in Sources */,
 				85B3948F20AB9AC600E643DD /* ThemeSearchBar.swift in Sources */,
 				85B3949020AB9AC600E643DD /* AppRouter.swift in Sources */,
+				111BE25F20BD31C200190718 /* Global.swift in Sources */,
 				85B3949120AB9AC600E643DD /* CartItemListCell.swift in Sources */,
 				85B3949220AB9AC600E643DD /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				85B3949320AB9AC600E643DD /* ItemDetailTableViewCell.swift in Sources */,
 				85B3949420AB9AC600E643DD /* SlideNavigationController.m in Sources */,
 				85B3949520AB9AC600E643DD /* AppDelegate.swift in Sources */,
+				11388F9620BD89DF00E54FB2 /* ProductListTableViewCell.swift in Sources */,
 				85B3949620AB9AC600E643DD /* SignUpVC.swift in Sources */,
 				85B3949720AB9AC600E643DD /* ThemeLabel.swift in Sources */,
 				85B3949820AB9AC600E643DD /* ThemeTextfield.swift in Sources */,
 				112CEAFB20AC0D71004BCF37 /* Constant.swift in Sources */,
 				85B3949920AB9AC600E643DD /* CartTotalCell.swift in Sources */,
+				111BE26C20BD590700190718 /* UserDefault.swift in Sources */,
 				85B3949A20AB9AC600E643DD /* ConstantUI.swift in Sources */,
 				85B3949B20AB9AC600E643DD /* ThemeButton.swift in Sources */,
 				85B3949C20AB9AC600E643DD /* leftMenuViewController.swift in Sources */,
@@ -934,6 +927,7 @@
 				85B394A120AB9AC600E643DD /* CustomerDetailVC.swift in Sources */,
 				85B394A220AB9AC600E643DD /* ThemeTableView.swift in Sources */,
 				85B394A320AB9AC600E643DD /* DeliveryAddressTableViewCell.swift in Sources */,
+				111BE26520BD320C00190718 /* ComunicateService.swift in Sources */,
 				85B394A420AB9AC600E643DD /* navController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -943,11 +937,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				85B394BE20AE2ABB00E643DD /* AbstractVC.swift in Sources */,
+				111BE26620BD320C00190718 /* ComunicateService.swift in Sources */,
 				85B3950220AE2E3800E643DD /* AdminLoginViewController.swift in Sources */,
+				111BE26920BD320C00190718 /* ServiceManager.swift in Sources */,
 				85B394BF20AE2ABB00E643DD /* LoginVC.swift in Sources */,
 				85B394C020AE2ABB00E643DD /* OrderHistoryTableViewCell.swift in Sources */,
 				85B394C120AE2ABB00E643DD /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				85B394C220AE2ABB00E643DD /* UtilExtensions.swift in Sources */,
+				11388F9720BD89E100E54FB2 /* ProductListTableViewCell.swift in Sources */,
 				85B394C320AE2ABB00E643DD /* CustomerTableViewCell.swift in Sources */,
 				85B394C420AE2ABB00E643DD /* ThemeShadowView.swift in Sources */,
 				85B394C520AE2ABB00E643DD /* Util.swift in Sources */,
@@ -960,6 +957,7 @@
 				85B394CC20AE2ABB00E643DD /* NavigationView.swift in Sources */,
 				85B394CD20AE2ABB00E643DD /* DashboardItemCell.swift in Sources */,
 				85B394CE20AE2ABB00E643DD /* CustomerDetailCell.swift in Sources */,
+				11388F8F20BD856200E54FB2 /* ProductListVC.swift in Sources */,
 				85B394CF20AE2ABB00E643DD /* ThemeSearchBar.swift in Sources */,
 				85B394D020AE2ABB00E643DD /* AppRouter.swift in Sources */,
 				1188BD0920B430CA00F5ECFF /* AdminDashboardCollectionViewCell.swift in Sources */,
@@ -970,6 +968,7 @@
 				85B394D520AE2ABB00E643DD /* AppDelegate.swift in Sources */,
 				85B394D620AE2ABB00E643DD /* SignUpVC.swift in Sources */,
 				85B394D720AE2ABB00E643DD /* ThemeLabel.swift in Sources */,
+				111BE26020BD31C300190718 /* Global.swift in Sources */,
 				85B394D820AE2ABB00E643DD /* ThemeTextfield.swift in Sources */,
 				85B394D920AE2ABB00E643DD /* Constant.swift in Sources */,
 				85B394DA20AE2ABB00E643DD /* CartTotalCell.swift in Sources */,
@@ -979,6 +978,7 @@
 				85B394DE20AE2ABB00E643DD /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				85B394DF20AE2ABB00E643DD /* CustomerListVC.swift in Sources */,
 				85B394E020AE2ABB00E643DD /* DeliveryAddressVC.swift in Sources */,
+				111BE26D20BD590700190718 /* UserDefault.swift in Sources */,
 				85B394E120AE2ABB00E643DD /* ItemDetailVC.swift in Sources */,
 				85B394E220AE2ABB00E643DD /* CustomerDetailVC.swift in Sources */,
 				85B394E320AE2ABB00E643DD /* ThemeTableView.swift in Sources */,
@@ -1003,6 +1003,7 @@
 				112CEAF720ABFAF8004BCF37 /* Util.swift in Sources */,
 				854B3892209D899F008391BC /* CartVC.swift in Sources */,
 				112DA5B8209C6D87009F6A68 /* SlideNavigationContorllerAnimatorFade.m in Sources */,
+				111BE26720BD320C00190718 /* ServiceManager.swift in Sources */,
 				112DA5C7209C8D46009F6A68 /* OrderHistoryVC.swift in Sources */,
 				112DA5BB209C6D87009F6A68 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				8515F37B209C13B90039F801 /* ImagesListCollectionViewCell.swift in Sources */,
@@ -1010,8 +1011,11 @@
 				1129C34F209AE0B4005DC1B8 /* NavigationView.swift in Sources */,
 				1129C359209B2B29005DC1B8 /* DashboardItemCell.swift in Sources */,
 				853AC8D820A6677A002A3292 /* CustomerDetailCell.swift in Sources */,
+				11388F8D20BD855A00E54FB2 /* ProductListVC.swift in Sources */,
 				854B3894209D903C008391BC /* ThemeSearchBar.swift in Sources */,
 				112DA5C2209C718E009F6A68 /* AppRouter.swift in Sources */,
+				111BE25E20BD31BE00190718 /* Global.swift in Sources */,
+				111BE27020BD594A00190718 /* User.swift in Sources */,
 				859701E220A4EA8E008A08B4 /* CartItemListCell.swift in Sources */,
 				112DA5B9209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				8515F379209C13A50039F801 /* ItemDetailTableViewCell.swift in Sources */,
@@ -1022,16 +1026,19 @@
 				11DD9D592099EBFD006C00C9 /* ThemeTextfield.swift in Sources */,
 				112CEAFA20AC0D6B004BCF37 /* Constant.swift in Sources */,
 				859701E420A4EADD008A08B4 /* CartTotalCell.swift in Sources */,
+				111BE26B20BD58F400190718 /* UserDefault.swift in Sources */,
 				11DD9D522099EB8C006C00C9 /* ConstantUI.swift in Sources */,
 				11DD9D582099EBFD006C00C9 /* ThemeButton.swift in Sources */,
 				112DA5BD209C6D87009F6A68 /* leftMenuViewController.swift in Sources */,
 				112DA5BC209C6D87009F6A68 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				11470FD120AAF3A2009ECB0B /* CustomerListVC.swift in Sources */,
 				859701E820A4F54B008A08B4 /* DeliveryAddressVC.swift in Sources */,
+				11388F9520BD89DB00E54FB2 /* ProductListTableViewCell.swift in Sources */,
 				112DA5CE209C92AD009F6A68 /* ItemDetailVC.swift in Sources */,
 				853AC8D620A66691002A3292 /* CustomerDetailVC.swift in Sources */,
 				11470FD520AAFB6D009ECB0B /* ThemeTableView.swift in Sources */,
 				859701E620A4F45B008A08B4 /* DeliveryAddressTableViewCell.swift in Sources */,
+				111BE26420BD320C00190718 /* ComunicateService.swift in Sources */,
 				11DD9D5B2099EDB3006C00C9 /* navController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1089,7 +1096,6 @@
 /* Begin XCBuildConfiguration section */
 		85B394AE20AB9AC600E643DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25FB3EC5A34E9E5A750C8CFA /* Pods-KCPL.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1097,10 +1103,7 @@
 				DEVELOPMENT_TEAM = 53AEW9QR5D;
 				INFOPLIST_FILE = KCPL/KCPLSalesInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DSALES";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL.sales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1112,7 +1115,6 @@
 		};
 		85B394AF20AB9AC600E643DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8343198A2CB3D9DF953E5736 /* Pods-KCPL.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1120,10 +1122,7 @@
 				DEVELOPMENT_TEAM = 53AEW9QR5D;
 				INFOPLIST_FILE = KCPL/KCPLSalesInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DSALES";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL.sales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1135,7 +1134,6 @@
 		};
 		85B394F020AE2ABB00E643DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25FB3EC5A34E9E5A750C8CFA /* Pods-KCPL.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1143,10 +1141,7 @@
 				DEVELOPMENT_TEAM = 53AEW9QR5D;
 				INFOPLIST_FILE = KCPL/KCPLAdminInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DADMIN";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL.admin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1158,7 +1153,6 @@
 		};
 		85B394F120AE2ABB00E643DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8343198A2CB3D9DF953E5736 /* Pods-KCPL.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1166,10 +1160,7 @@
 				DEVELOPMENT_TEAM = 53AEW9QR5D;
 				INFOPLIST_FILE = KCPL/KCPLAdminInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DADMIN";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL.admin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1287,25 +1278,21 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		85B5EE95209798A600807A4B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25FB3EC5A34E9E5A750C8CFA /* Pods-KCPL.debug.xcconfig */;
+			baseConfigurationReference = FB83A66C58839970557171CB /* Pods-KCPL.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53AEW9QR5D;
 				INFOPLIST_FILE = KCPL/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DCUSTOMER";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1317,17 +1304,14 @@
 		};
 		85B5EE96209798A600807A4B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8343198A2CB3D9DF953E5736 /* Pods-KCPL.release.xcconfig */;
+			baseConfigurationReference = 983FAF9CB6828BC2F9D703CC /* Pods-KCPL.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53AEW9QR5D;
 				INFOPLIST_FILE = KCPL/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DCUSTOMER";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1345,11 +1329,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KCPLTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1366,11 +1346,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KCPLTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1386,11 +1362,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KCPLUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPLUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1406,11 +1378,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KCPLUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPLUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

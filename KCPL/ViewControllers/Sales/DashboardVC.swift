@@ -118,7 +118,7 @@ extension DashboardVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        self.performSegue(withIdentifier: "showItemDetailFromDashboard", sender: indexPath)        
+        self.performSegue(withIdentifier: "showProductListFromDashboard", sender: indexPath)        
     }
 }
 

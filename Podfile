@@ -8,7 +8,11 @@ target 'KCPL' do
   # Pods for KCPL
 
     pod 'IQKeyboardManager'
-
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
+    pod 'BRYXBanner'
+    pod 'MRProgress'
+    
   target 'KCPLTests' do
     inherit! :search_paths
     # Pods for testing
