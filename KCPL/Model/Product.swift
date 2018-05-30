@@ -15,8 +15,8 @@ class Product: NSObject, NSCoding {
     var name: String?
     var descriptionProduct : String?
     var brand_name : String?
-    var tax: String?
-    var price: String?
+    var tax: Double?
+    var price: Int?
     
     override init () {
         // uncomment this line if your class has been inherited from any other class
@@ -37,10 +37,10 @@ class Product: NSObject, NSCoding {
             brand_name = json.dictionaryObject![Constant.c_res_brand_name] as! String?
         }
         if json[Constant.c_res_tax].type != .null {
-            tax = json.dictionaryObject![Constant.c_res_tax] as! String?
+            tax = json.dictionaryObject![Constant.c_res_tax] as! Double?
         }
         if json[Constant.c_res_price].type != .null {
-            price = json.dictionaryObject![Constant.c_res_price] as! String?
+            price = json.dictionaryObject![Constant.c_res_price] as! Int?
         }
     }
     
@@ -49,8 +49,8 @@ class Product: NSObject, NSCoding {
         name = aDecoder.decodeObject(forKey: Constant.c_res_name) as? String
         descriptionProduct = aDecoder.decodeObject(forKey: Constant.c_res_description) as? String
         brand_name = aDecoder.decodeObject(forKey: Constant.c_res_brand_name) as? String
-        tax = aDecoder.decodeObject(forKey: Constant.c_res_tax) as? String
-        price = aDecoder.decodeObject(forKey: Constant.c_res_price) as? String
+        tax = aDecoder.decodeObject(forKey: Constant.c_res_tax) as? Double
+        price = aDecoder.decodeObject(forKey: Constant.c_res_price) as? Int
     }
     
     public func encode(with aCoder: NSCoder) {
