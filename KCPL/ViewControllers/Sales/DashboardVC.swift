@@ -12,7 +12,7 @@ class DashboardVC: AbstractVC {
     
     @IBOutlet weak var itemsCollectionView: UICollectionView!
     
-    var arr = ["Suspention & Brakes Suspention & Brakes", "Lamps", "Suspention & Brakes", "Lamps & Suspention & Brakes & Combo etc...", "Suspention & Brakes", "Lamps", "Suspention & Brakes", "Lamps"]
+    var categoriesDatasource = [Category]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,13 +58,39 @@ class DashboardVC: AbstractVC {
     @objc func navNotificationPressed() {
         
     }
+    
+    //    MARK:- Prepare for Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showProductListFromDashboard" {
+            
+            if let toVC = segue.destination as? ProductListVC, let indexPath = sender as? IndexPath {
+                
+                toVC.category = categoriesDatasource[indexPath.row]
+            }
+        }
+    }
+    
 }
 
 extension DashboardVC {
     func getCategoryList() {
         ServiceManager().processService(urlRequest: ComunicateService.Router.GetCategories()) { (isSuccess, error , responseData) in
             if isSuccess {
-                print(responseData!)
+                ServiceManagerModel().processCategories(json: responseData, completion: { (isComplete, categories) in
+                    
+                    if isComplete {
+                        self.categoriesDatasource = categories!
+                        
+                        self.itemsCollectionView.delegate = self
+                        self.itemsCollectionView.dataSource = self
+                        
+                        self.itemsCollectionView.reloadData()
+                    } else {
+                        
+                    }
+                })
+
+                
             } else {
                 error?.configToast(isError: true)
             }
@@ -79,14 +105,14 @@ extension DashboardVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.itemsCollectionView.isHidden = !(arr.count > 0)
-        return self.arr.count
+        self.itemsCollectionView.isHidden = !(categoriesDatasource.count > 0)
+        return self.categoriesDatasource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.itemsCollectionView.dequeueReusableCell(withReuseIdentifier: "DashboardItemCell", for: indexPath) as! DashboardItemCell
         
-        cell.itemNameLabel.text = self.arr[indexPath.row]
+        cell.itemNameLabel.text = self.categoriesDatasource[indexPath.row].name
         
         return cell
     }
@@ -110,7 +136,7 @@ extension DashboardVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataS
             }
         }
         
-        let h = w + self.arr[indexPath.row].height(withConstrainedWidth: w, font: ConstantsUI.C_Font_LableTitle)
+        let h = w + (self.categoriesDatasource[indexPath.row].name?.height(withConstrainedWidth: w, font: ConstantsUI.C_Font_LableTitle))!
         
         return CGSize(width: w, height: h)
     }

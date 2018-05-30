@@ -699,10 +699,6 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="iY6-ZK-vRE" id="5VZ-R7-OED"/>
-                                    <outlet property="delegate" destination="iY6-ZK-vRE" id="fty-Qk-Xko"/>
-                                </connections>
                             </collectionView>
                             <searchBar contentMode="redraw" placeholder="Search for category, brand or item code" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNd-NJ-cF4" customClass="ThemeSearchBar" customModule="KCPL" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
@@ -1499,7 +1495,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txM-np-hBh">
-                                                    <rect key="frame" x="15" y="48" width="290" height="21"/>
+                                                    <rect key="frame" x="15" y="48" width="290" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

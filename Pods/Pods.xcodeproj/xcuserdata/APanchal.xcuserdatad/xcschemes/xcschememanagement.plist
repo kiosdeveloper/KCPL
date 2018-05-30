@@ -39,6 +39,16 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>Pods-KCPLAdmin.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
+		<key>Pods-KCPLSales.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>Pods-KCPLTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>

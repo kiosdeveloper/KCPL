@@ -10,14 +10,16 @@ struct ComunicateService {
         case Login(Parameters)
         case SignUp(Parameters)
         case GetCategories()
+        case GetProductList()
         
         var method: Alamofire.HTTPMethod {
             switch self {
             case .Login( _),
                  .SignUp(_):
                 return .post
-                
-            case .GetCategories():
+
+            case .GetCategories(),
+                 .GetProductList():
                 return .get
             }
         }
@@ -28,8 +30,10 @@ struct ComunicateService {
                     return "customers/sign_in"
                 case .SignUp(_):
                     return "customers"
-            case .GetCategories():
-                return "categories"
+                case .GetCategories():
+                    return "categories"
+                case .GetProductList():
+                    return "categories/2/products"
             }
         }
         
@@ -55,7 +59,8 @@ struct ComunicateService {
                 urlRequest.setValue("\(id)", forHTTPHeaderField: "USER-ID")
 
             }
-            print("UrlRequest \(urlRequest)")
+            
+//            print("UrlRequest \(urlRequest)")
             
             switch self {
             case .Login(let params):
@@ -66,6 +71,9 @@ struct ComunicateService {
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: params)
                 
             case .GetCategories():
+                return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
+                
+            case .GetProductList():
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
             default:
                 return urlRequest

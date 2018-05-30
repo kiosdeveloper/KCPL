@@ -9,7 +9,7 @@ class ServiceManager {
         Util.showProgress()
         
         do {
-            try Alamofire.request(urlRequest.asURLRequest()).responseJSON(options: [JSONSerialization.ReadingOptions.allowFragments, JSONSerialization.ReadingOptions.mutableContainers])
+            try Alamofire.request(urlRequest.asURLRequest()).debugLog().responseJSON(options: [JSONSerialization.ReadingOptions.allowFragments, JSONSerialization.ReadingOptions.mutableContainers])
             {
                 (response) -> Void in
                 
@@ -20,7 +20,7 @@ class ServiceManager {
                         let json = JSON(value)
                         
                         print(json)
-                        if (json.dictionaryObject![Constant.c_res_status] as? Int)! == 200 {
+                        if (json.dictionaryObject![Constant.c_res_type] as? String)! != "Error" {
                             Util.dissmissProgress()
                             
 //                            UserDefault.saveUser(user: User(json: json))
@@ -70,21 +70,38 @@ class ServiceManagerModel {
 //        completion(false)
 //    }
 //
-//    //    MARK:- Categories
-//    func processCategories(json: JSON?, completion: @escaping (_ isComplete: Bool, _ categories: [Category]? )-> Void) {
-//        if let response_json = json {
-//
-//            var category_arr = [Category]()
-//
-//            for i in 0 ..< response_json.count {
-//                let jsonValue = response_json.arrayValue[i]
-//                let cData = Category(json: jsonValue)
-//                category_arr.append(cData)
-//            }
-//
-//            completion(true, category_arr)
-//        }
-//        completion(false, nil)
-//    }
+    //    MARK:- Categories
+    func processCategories(json: JSON?, completion: @escaping (_ isComplete: Bool, _ categories: [Category]? )-> Void) {
+        if let response_json = json {
+
+            var category_arr = [Category]()
+
+            for i in 0 ..< response_json.count {
+                let jsonValue = response_json.arrayValue[i]
+                let cData = Category(json: jsonValue)
+                category_arr.append(cData)
+            }
+
+            completion(true, category_arr)
+        }
+        completion(false, nil)
+    }
+    
+    //    MARK:- Products
+    func processProducts(json: JSON?, completion: @escaping (_ isComplete: Bool, _ products: [Product]? )-> Void) {
+        if let response_json = json {
+            
+            var product_arr = [Product]()
+            
+            for i in 0 ..< response_json.count {
+                let jsonValue = response_json.arrayValue[i]
+                let pData = Product(json: jsonValue)
+                product_arr.append(pData)
+            }
+            
+            completion(true, product_arr)
+        }
+        completion(false, nil)
+    }
 
 }

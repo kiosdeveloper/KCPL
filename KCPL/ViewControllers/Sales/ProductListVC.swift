@@ -12,10 +12,42 @@ class ProductListVC: AbstractVC {
 
     @IBOutlet weak var productlistTableView: ThemeTableView!
     
+    var productsDatasource = [Product]()
+    
+    var category: Category?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.getProductList()
+    }
+}
+
+extension ProductListVC {
+    func getProductList() {
+        ServiceManager().processService(urlRequest: ComunicateService.Router.GetProductList()) { (isSuccess, error , responseData) in
+            if isSuccess {
+                ServiceManagerModel().processProducts(json: responseData, completion: { (isComplete, products) in
+                    
+                    if isComplete {
+                        self.productsDatasource = products!
+                        
+                        self.productlistTableView.delegate = self
+                        self.productlistTableView.dataSource = self
+                        
+                        self.productlistTableView.reloadData()
+                    } else {
+                        
+                    }
+                })
+                
+                
+            } else {
+                error?.configToast(isError: true)
+            }
+        }
+        
     }
 }
 
@@ -40,7 +72,7 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = productlistTableView.dequeueReusableCell(withIdentifier: "ProductlistTableViewCell") as! ProductListTableViewCell
+        let cell = productlistTableView.dequeueReusableCell(withIdentifier: "ProductListTableViewCell") as! ProductListTableViewCell
         return cell
     }
     

@@ -57,6 +57,14 @@ struct Constant {
     static let c_res_phone = "phone"
     static let c_res_auth_token = "auth_token"
     
+    static let c_res_name = "name"
+    static let c_res_image = "image"
+    
+    static let c_res_description = "description"
+    static let c_res_brand_name = "brand_name"
+    static let c_res_tax = "tax"
+    static let c_res_price = "price"
+    
     //    MARK:- Userdefault Keys
     static let c_ud_userData = "userData"
 }
