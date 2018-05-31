@@ -33,6 +33,14 @@ extension String {
     }
 }
 
-extension UISearchBar {
-    
+extension UITextField {
+    func addRightSubView() {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 12))
+        let imgView = UIImageView(frame: CGRect(x: 0.0, y: 0, width: 12, height: 12))
+        imgView.image = UIImage(named: "down-arrow")
+        imgView.contentMode = .center
+        view.addSubview(imgView)
+        self.rightView = view
+        rightViewMode = .always
+    }
 }
