@@ -17,11 +17,21 @@ class Product: NSObject, NSCoding {
     var brand_name : String?
     var tax: Double?
     var price: Int?
-    var quantity: Int = 0
+    var quantity: Int = 1
     
     override init () {
         // uncomment this line if your class has been inherited from any other class
         //super.init()
+    }
+    
+    init(product: Product, quantity: Int) {
+        self.id = product.id
+        self.name = product.name
+        self.descriptionProduct = product.descriptionProduct
+        self.brand_name = product.brand_name
+        self.tax = product.tax
+        self.price = product.price
+        self.quantity = quantity
     }
     
     init(json: JSON) {

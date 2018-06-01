@@ -36,4 +36,31 @@ class UserDefault {
     static func removeUser() {
         C_UserDefault.removeObject(forKey: Constant.c_ud_userData)
     }
+    
+    //    MARK:- Cart Data
+    private static func archiveCartProducts(products : [Product]) -> NSData {
+        
+        return NSKeyedArchiver.archivedData(withRootObject: products) as NSData
+    }
+    
+    static func getCartProducts() -> [Product]? {
+        
+        if let unarchivedObject = C_UserDefault.object(forKey: Constant.c_ud_cartData) as? Data {
+            
+            return NSKeyedUnarchiver.unarchiveObject(with: unarchivedObject as Data) as? [Product]
+        }
+        
+        return nil
+    }
+    
+    static func saveCartProducts(products : [Product]?) {
+        
+        let archivedObject = archiveCartProducts(products: products!)
+        C_UserDefault.set(archivedObject, forKey: Constant.c_ud_cartData)
+        C_UserDefault.synchronize()
+    }
+    
+    static func removeCartProducts() {
+        C_UserDefault.removeObject(forKey: Constant.c_ud_cartData)
+    }
 }//End UserDefault

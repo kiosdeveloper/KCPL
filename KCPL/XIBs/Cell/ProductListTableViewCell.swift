@@ -22,6 +22,8 @@ class ProductListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var quantityTextField: UITextField!
     
+    @IBOutlet weak var addToCartButton: ThemeButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -1297,19 +1297,30 @@
                                                                 <constraint firstAttribute="bottom" secondItem="Ba2-At-Gai" secondAttribute="bottom" id="zME-nG-zuU"/>
                                                             </constraints>
                                                         </view>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avz-2p-pxP" customClass="ThemeButton" customModule="KCPL" customModuleProvider="target">
+                                                            <rect key="frame" x="188" y="105" width="100" height="30"/>
+                                                            <state key="normal" title="Add to Cart"/>
+                                                            <connections>
+                                                                <action selector="addToCartPressed:" destination="2Dj-kg-JTN" eventType="touchUpInside" id="bev-vk-IvA"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="uTM-q2-Ffh" firstAttribute="leading" secondItem="fDp-vf-p5i" secondAttribute="leading" id="2Cw-Pp-LMb"/>
                                                         <constraint firstItem="zgG-Vt-g3z" firstAttribute="leading" secondItem="fDp-vf-p5i" secondAttribute="leading" id="4Hr-aW-9rH"/>
+                                                        <constraint firstItem="qNd-Hb-1Xe" firstAttribute="leading" secondItem="Avz-2p-pxP" secondAttribute="leading" id="7iH-jt-4Oo"/>
                                                         <constraint firstItem="36I-k9-kJ3" firstAttribute="leading" secondItem="Klf-dv-WIc" secondAttribute="leading" constant="8" id="8uB-rs-MrS"/>
                                                         <constraint firstItem="qNd-Hb-1Xe" firstAttribute="trailing" secondItem="fDp-vf-p5i" secondAttribute="trailing" id="8xo-9J-Z1c"/>
                                                         <constraint firstItem="fDp-vf-p5i" firstAttribute="leading" secondItem="36I-k9-kJ3" secondAttribute="trailing" constant="8" id="Ho0-eX-dEe"/>
+                                                        <constraint firstItem="qNd-Hb-1Xe" firstAttribute="bottom" secondItem="Avz-2p-pxP" secondAttribute="bottom" id="I0a-wP-qQO"/>
                                                         <constraint firstItem="uTM-q2-Ffh" firstAttribute="top" secondItem="fDp-vf-p5i" secondAttribute="bottom" constant="16" id="NWp-S5-UOX"/>
                                                         <constraint firstItem="36I-k9-kJ3" firstAttribute="centerY" secondItem="Klf-dv-WIc" secondAttribute="centerY" id="RrF-kD-yJO"/>
                                                         <constraint firstItem="qNd-Hb-1Xe" firstAttribute="top" secondItem="uTM-q2-Ffh" secondAttribute="top" id="SM2-Tf-oeW"/>
                                                         <constraint firstItem="fDp-vf-p5i" firstAttribute="top" secondItem="Klf-dv-WIc" secondAttribute="top" constant="16" id="WcX-iK-dQJ"/>
                                                         <constraint firstItem="zgG-Vt-g3z" firstAttribute="top" secondItem="uTM-q2-Ffh" secondAttribute="bottom" constant="4" id="ZsJ-h5-vvX"/>
+                                                        <constraint firstItem="qNd-Hb-1Xe" firstAttribute="trailing" secondItem="Avz-2p-pxP" secondAttribute="trailing" id="aO4-ed-VWx"/>
+                                                        <constraint firstItem="qNd-Hb-1Xe" firstAttribute="top" secondItem="Avz-2p-pxP" secondAttribute="top" id="lfb-cK-Otr"/>
                                                         <constraint firstAttribute="trailing" secondItem="fDp-vf-p5i" secondAttribute="trailing" constant="16" id="q2B-ss-BWZ"/>
                                                         <constraint firstAttribute="bottom" secondItem="zgG-Vt-g3z" secondAttribute="bottom" constant="16" id="u0g-ZH-Riw"/>
                                                     </constraints>
@@ -1324,6 +1335,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="addToCartButton" destination="Avz-2p-pxP" id="4Ux-GL-WCf"/>
                                             <outlet property="minusButton" destination="Ba2-At-Gai" id="6e0-S7-wUL"/>
                                             <outlet property="plusButton" destination="ako-9Q-yZ4" id="umk-zW-BpW"/>
                                             <outlet property="productImageView" destination="36I-k9-kJ3" id="R8b-Ry-n7e"/>
@@ -1525,7 +1537,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txM-np-hBh">
-                                                    <rect key="frame" x="15" y="48" width="290" height="20.5"/>
+                                                    <rect key="frame" x="15" y="48" width="290" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1686,6 +1698,9 @@
                                                                 <constraint firstAttribute="height" constant="30" id="QAr-ra-YlK"/>
                                                             </constraints>
                                                             <state key="normal" title="Remove"/>
+                                                            <connections>
+                                                                <action selector="btnRemoveFromCartPressed:" destination="CSu-ic-jIU" eventType="touchUpInside" id="2Z0-D4-Ond"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1721,6 +1736,10 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="itemContentView" destination="TLe-jW-KBj" id="5bk-DF-vhM"/>
+                                            <outlet property="productImageView" destination="VFB-bu-5BW" id="apF-JX-Or9"/>
+                                            <outlet property="productNameLabel" destination="XYX-bw-muI" id="c3m-hi-Syf"/>
+                                            <outlet property="productPriceLabel" destination="Xvc-88-LQh" id="h1c-kn-W06"/>
+                                            <outlet property="productQuantityTextfeild" destination="RZK-PN-iVj" id="2Ed-9f-Gxd"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartTotalCell" rowHeight="185" id="O15-oU-jIQ" customClass="CartTotalCell" customModule="KCPL" customModuleProvider="target">

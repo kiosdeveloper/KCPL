@@ -12,11 +12,17 @@ class CartVC: AbstractVC {
 
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet var titleLabel: UILabel!
+    var cartProductsDatasource = [Product]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.cartTableView.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
+        
+        if let cartArray_temp = UserDefault.getCartProducts() {
+            cartProductsDatasource = cartArray_temp
+        }
+        
     }
     @IBAction func btnNextPressed(_ sender: Any) {
         
@@ -33,7 +39,7 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 3
+            return cartProductsDatasource.count
         } else {
             return 1
         }
@@ -44,6 +50,15 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
         if indexPath.section == 0 {
             let cell = cartTableView.dequeueReusableCell(withIdentifier: "CartItemListCell") as! CartItemListCell
             cell.delegate = self
+            
+            cell.productNameLabel.text = cartProductsDatasource[indexPath.row].name
+            
+            if let price = cartProductsDatasource[indexPath.row].price {
+                cell.productPriceLabel.text = "\(price) Rs."
+            }
+            
+            cell.productQuantityTextfeild.text = "\(cartProductsDatasource[indexPath.row].quantity)"
+            
             
             return cell
         } else {
@@ -74,12 +89,37 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
         guard let indexPath = self.cartTableView.indexPath(for: cell) else { return }
         
         print("+ \(indexPath.row) pressed")
+        
+        cartProductsDatasource[indexPath.row].quantity += 1
+        UserDefault.saveCartProducts(products: cartProductsDatasource)
+        cartTableView.reloadRows(at: [indexPath], with: .none)
+        
+        
     }
     
     func btnMinusQuantity(cell: CartItemListCell) {
         guard let indexPath = self.cartTableView.indexPath(for: cell) else { return }
         
         print("- \(indexPath.row) pressed")
+        
+        if self.cartProductsDatasource[indexPath.row].quantity > 0 {
+            cartProductsDatasource[indexPath.row].quantity -= 1
+            UserDefault.saveCartProducts(products: cartProductsDatasource)
+            cartTableView.reloadRows(at: [indexPath], with: .none)
+        }
+    }
+    
+    func btnRemoveFromCart(cell: CartItemListCell) {
+        guard let indexPath = self.cartTableView.indexPath(for: cell) else { return }
+        
+        print("remove \(indexPath.row) pressed")
+        
+        if self.cartProductsDatasource[indexPath.row].quantity > 0 {
+            cartProductsDatasource.remove(at: indexPath.row)
+            
+            UserDefault.saveCartProducts(products: cartProductsDatasource)
+            cartTableView.deleteRows(at: [indexPath], with: .middle)
+        }
     }
 }
 

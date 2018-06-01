@@ -41,7 +41,11 @@ class ProductListVC: AbstractVC {
     }
     
     @IBAction func plusClicked(_ sender: ThemeButton) {
+        
         self.productsDatasource[sender.tag].quantity += 1
+        self.productlistTableView.reloadData()
+        
+        /*self.productsDatasource[sender.tag].quantity += 1
         print(self.productsDatasource)
         if let productListArray = UserDefaults.standard.value(forKey: "cartArray") as? [[String : Data]] {
 //            print(productListArray["product"] as! [Data])
@@ -56,16 +60,44 @@ class ProductListVC: AbstractVC {
             let dict = [["product\(self.productsDatasource[sender.tag].id)": product]] as [[String : Data]]
             UserDefaults.standard.set(dict, forKey: "cartArray")
             UserDefaults.standard.synchronize()
-        }
-        self.productlistTableView.reloadData()
+        } */
+        
     }
     
     @IBAction func minusClicked(_ sender: ThemeButton) {
         if self.productsDatasource[sender.tag].quantity > 0 {
             self.productsDatasource[sender.tag].quantity -= 1
-            print(self.productsDatasource)
+            self.productlistTableView.reloadData()
         }
+        
+        
+        /*if self.productsDatasource[sender.tag].quantity > 0 {
+            self.productsDatasource[sender.tag].quantity -= 1
+            print(self.productsDatasource)
+        }*/
     }
+    
+    @IBAction func addToCartPressed(_ sender: ThemeButton) {
+//        self.productsDatasource[sender.tag].quantity += 1
+        let product = Product(product: self.productsDatasource[sender.tag], quantity: 1)
+        
+        if var cartArray_temp = UserDefault.getCartProducts() {
+            cartArray_temp.append(product)
+            
+//            cartArray_temp.last?.quantity += 1
+            
+            UserDefault.saveCartProducts(products: cartArray_temp)
+        } else {
+            var cartArray_temp = [Product]()
+            cartArray_temp.append(product)
+            
+//                cartArray_temp.last?.quantity += 1
+            UserDefault.saveCartProducts(products: cartArray_temp)
+        }
+        
+        print(UserDefault.getCartProducts())
+    }
+    
 }
 
 extension ProductListVC {
@@ -118,6 +150,7 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource {
         }
         cell.minusButton.tag = indexPath.row
         cell.plusButton.tag = indexPath.row
+        cell.addToCartButton.tag = indexPath.row
         cell.quantityTextField.tag = indexPath.row
         cell.quantityTextField.text = "\(productsDatasource[indexPath.row].quantity)"
         return cell
