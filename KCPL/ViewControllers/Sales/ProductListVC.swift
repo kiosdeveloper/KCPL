@@ -39,6 +39,33 @@ class ProductListVC: AbstractVC {
         pickerFilter.dataSource = self
         pickerFilter.delegate = self
     }
+    
+    @IBAction func plusClicked(_ sender: ThemeButton) {
+        self.productsDatasource[sender.tag].quantity += 1
+        print(self.productsDatasource)
+        if let productListArray = UserDefaults.standard.value(forKey: "cartArray") as? [[String : Data]] {
+//            print(productListArray["product"] as! [Data])
+            for product in productListArray {
+                    
+                }
+//            let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: productListArray["product"]) as! [Product]
+//            print(decodedTeams[0].name)
+        }
+        else {
+            let product = NSKeyedArchiver.archivedData(withRootObject: self.productsDatasource[sender.tag])
+            let dict = [["product\(self.productsDatasource[sender.tag].id)": product]] as [[String : Data]]
+            UserDefaults.standard.set(dict, forKey: "cartArray")
+            UserDefaults.standard.synchronize()
+        }
+        self.productlistTableView.reloadData()
+    }
+    
+    @IBAction func minusClicked(_ sender: ThemeButton) {
+        if self.productsDatasource[sender.tag].quantity > 0 {
+            self.productsDatasource[sender.tag].quantity -= 1
+            print(self.productsDatasource)
+        }
+    }
 }
 
 extension ProductListVC {
@@ -46,7 +73,6 @@ extension ProductListVC {
         ServiceManager().processService(urlRequest: ComunicateService.Router.GetProductList()) { (isSuccess, error , responseData) in
             if isSuccess {
                 ServiceManagerModel().processProducts(json: responseData, completion: { (isComplete, products) in
-                    
                     if isComplete {
                         self.productsDatasource = products!
                         
@@ -55,11 +81,8 @@ extension ProductListVC {
                         
                         self.productlistTableView.reloadData()
                     } else {
-                        
                     }
                 })
-                
-                
             } else {
                 error?.configToast(isError: true)
             }
@@ -70,8 +93,7 @@ extension ProductListVC {
 
 extension ProductListVC: SlideNavigationControllerDelegate {
     
-    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool
-    {
+    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool {
         return true
     }
 }
@@ -83,7 +105,6 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return productsDatasource.count
     }
     
@@ -95,8 +116,10 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource {
         if let price = productsDatasource[indexPath.row].price {
             cell.productPriceLabel.text = "\(price) Rs."
         }
-        
-        
+        cell.minusButton.tag = indexPath.row
+        cell.plusButton.tag = indexPath.row
+        cell.quantityTextField.tag = indexPath.row
+        cell.quantityTextField.text = "\(productsDatasource[indexPath.row].quantity)"
         return cell
     }
     
@@ -137,11 +160,17 @@ extension ProductListVC: UIPickerViewDelegate, UIPickerViewDataSource {
 //MARK: - TextFeild Delegate
 extension ProductListVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-       
-        pickerFilter.selectRow(0, inComponent: 0, animated: true)
+        if textField == self.filterByTextfeild {
+            pickerFilter.selectRow(0, inComponent: 0, animated: true)
+        }
+        else {
+            self.productsDatasource[textField.tag].quantity = Int(textField.text!)!
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.filterByTextfeild.text = selectedFilter
+        if textField == self.filterByTextfeild {
+            self.filterByTextfeild.text = selectedFilter
+        }
     }
 }

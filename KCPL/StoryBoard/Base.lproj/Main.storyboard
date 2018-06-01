@@ -1255,6 +1255,9 @@
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ba2-At-Gai" customClass="ThemeButton" customModule="KCPL" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                                     <state key="normal" title="-"/>
+                                                                    <connections>
+                                                                        <action selector="minusClicked:" destination="2Dj-kg-JTN" eventType="touchUpInside" id="1eh-Bs-isd"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DmM-T6-Pcm">
                                                                     <rect key="frame" x="30" y="1" width="40" height="28"/>
@@ -1262,6 +1265,9 @@
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                                                    <connections>
+                                                                        <outlet property="delegate" destination="2Dj-kg-JTN" id="RDC-wK-U74"/>
+                                                                    </connections>
                                                                 </textField>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ako-9Q-yZ4" customClass="ThemeButton" customModule="KCPL" customModuleProvider="target">
                                                                     <rect key="frame" x="70" y="0.0" width="30" height="30"/>
@@ -1269,6 +1275,9 @@
                                                                         <constraint firstAttribute="width" constant="30" id="w0s-wZ-LYk"/>
                                                                     </constraints>
                                                                     <state key="normal" title="+"/>
+                                                                    <connections>
+                                                                        <action selector="plusClicked:" destination="2Dj-kg-JTN" eventType="touchUpInside" id="GDX-wZ-qda"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.0" green="0.62352941179999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -1315,9 +1324,12 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="minusButton" destination="Ba2-At-Gai" id="6e0-S7-wUL"/>
+                                            <outlet property="plusButton" destination="ako-9Q-yZ4" id="umk-zW-BpW"/>
                                             <outlet property="productImageView" destination="36I-k9-kJ3" id="R8b-Ry-n7e"/>
                                             <outlet property="productNameLabel" destination="fDp-vf-p5i" id="LjC-07-YVb"/>
                                             <outlet property="productPriceLabel" destination="uTM-q2-Ffh" id="O5a-6b-Z2p"/>
+                                            <outlet property="quantityTextField" destination="DmM-T6-Pcm" id="DLo-d7-1tU"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1513,7 +1525,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txM-np-hBh">
-                                                    <rect key="frame" x="15" y="48" width="290" height="21"/>
+                                                    <rect key="frame" x="15" y="48" width="290" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

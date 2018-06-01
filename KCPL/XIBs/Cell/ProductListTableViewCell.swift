@@ -16,6 +16,11 @@ class ProductListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var productPriceLabel: UILabel!
     
+    @IBOutlet weak var minusButton: ThemeButton!
+    
+    @IBOutlet weak var plusButton: ThemeButton!
+    
+    @IBOutlet weak var quantityTextField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
