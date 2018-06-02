@@ -1,5 +1,6 @@
 
 import UIKit
+import SafariServices
 
 class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDelegate
 {
@@ -10,7 +11,7 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
     
     @IBOutlet var lblUserName: UILabel!
     
-    @IBOutlet var lblPointsCount: UILabel!
+    @IBOutlet var lblEmail: UILabel!
     
     @IBOutlet var imgUser: UIImageView!
     
@@ -22,8 +23,13 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
     
     override func viewDidLoad() {
         
-        //        lblUserName.text = "Me"
+        if let user = UserDefault.getUser(), let fName = user.first_name, let lname = user.last_name, let email = user.email {
+            lblUserName.text = fName + " " + lname
+            lblEmail.text = email
+        }
+        
 //        viewHeader.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
+        
         if !Util.isSalesApp() {
             dsTitle.remove(at: 1)
             dsIcons.remove(at: 1)
@@ -86,7 +92,7 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
         cell.lblMenuTitle.text = dsTitle[indexPath.row]
         cell.imgMenuIcon.image = UIImage(named: dsIcons[indexPath.row])
         
-        if dsTitle[indexPath.row] == Constant.C_SideMenu_OrderHistory || dsTitle[indexPath.row] == Constant.C_SideMenu_VisitOurWebsite || dsTitle[indexPath.row] == Constant.C_SideMenu_SignOut {
+        if dsTitle[indexPath.row] == Constant.C_SideMenu_OrderHistory || dsTitle[indexPath.row] == Constant.C_SideMenu_VisitOurWebsite {
             cell.lblLine.isHidden = false
         } else {
             cell.lblLine.isHidden = true
@@ -135,8 +141,30 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
             
             SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
             
+        case Constant.C_SideMenu_About:
+            let vc = AppRouter.sharedRouter().getViewController("WebViewVc") as! WebViewVc
+            vc.url = "http://karnavatiautomall.com/about.html"
+            vc.title = Constant.C_SideMenu_About
+            
+            SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
+            
+        case Constant.C_SideMenu_ContactUs:
+            let vc = AppRouter.sharedRouter().getViewController("WebViewVc") as! WebViewVc
+            vc.url = "http://karnavatiautomall.com/contact.html"
+            vc.title = Constant.C_SideMenu_ContactUs
+            
+            SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
+            
+        case Constant.C_SideMenu_VisitOurWebsite:
+            let vc = AppRouter.sharedRouter().getViewController("WebViewVc") as! WebViewVc
+            vc.url = "http://karnavatiautomall.com/"
+            vc.title = Constant.C_SideMenu_VisitOurWebsite
+            
+            SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
+            
         case Constant.C_SideMenu_SignOut:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            UserDefault.removeUser()
             navigateView(to: vc)
             
         default:
@@ -215,7 +243,7 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
-            return 122.0
+            return 150.0
         } else {
             return 0
         }

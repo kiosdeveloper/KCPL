@@ -11,21 +11,39 @@ import UIKit
 class ItemDetailVC: AbstractVC {
     
     @IBOutlet weak var itemDetailTableView: UITableView!
+    @IBOutlet weak var addToCartButton: ThemeButton!
+
+    var product: Product!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.itemDetailTableView.rowHeight = UITableViewAutomaticDimension
         self.itemDetailTableView.estimatedRowHeight = 500
+        
+        if let i = cartArray.index(where: { $0.id == product.id }) {
+            addToCartButton.isDisableConfig()
+            addToCartButton.setTitle("Added", for: .normal)
+        }
+        
+        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
+//    MARK:- Action
     @IBAction func addToCartClicked(_ sender: Any) {
+        self.product.quantity += 1
+        
+        cartArray.append(self.product)
+        
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func previousClicked(_ sender: UIButton) {
+        
     }
     
     @IBAction func nextClicked(_ sender: UIButton) {
+        
     }
 }
 
@@ -41,15 +59,18 @@ extension ItemDetailVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "itemDetailCell") as! ItemDetailTableViewCell
-            cell.itemNameLabel.text = "Carburetor-Innova Crysta-\n2.8 Z,Direct Fit"
+            cell.itemNameLabel.text = self.product.name //"Carburetor-Innova Crysta-\n2.8 Z,Direct Fit"
             cell.manufactureNumberLabel.text = "Manufacture Number: 11250"
             cell.portNumberLabel.text = "Part No: A123587"
-            cell.priceLabel.text = "Rs. 2975 + GST extra applicable"
+            if let price = self.product.price {
+                cell.priceLabel.text = "Rs. \(price) + GST extra applicable"
+            }
+            
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "descriptionCell") as! ItemDetailTableViewCell
-            cell.itemDescriptionLabel.text = "Radiaters are heat exchangers used for cooling internal combustion engines, mainly in automobiles but also in piston-engined aircraft, railway locomatives, motercycles,stationary etc."
+            cell.itemDescriptionLabel.text = self.product.descriptionProduct // "Radiaters are heat exchangers used for cooling internal combustion engines, mainly in automobiles but also in piston-engined aircraft, railway locomatives, motercycles,stationary etc."
             return cell
         }
     }
@@ -72,8 +93,9 @@ extension ItemDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageListCell", for: indexPath)
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageListCell", for: indexPath) as! ImagesListCollectionViewCell
+        cell.itemImageView.sd_setImage(with: URL.init(string: self.product.imageUrl!), placeholderImage: UIImage.init(named: "item_detail"), options: .fromCacheOnly, completed: nil)
+
         return cell
     }
     

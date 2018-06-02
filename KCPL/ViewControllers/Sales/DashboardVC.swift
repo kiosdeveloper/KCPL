@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DashboardVC: AbstractVC {
     
     @IBOutlet weak var itemsCollectionView: UICollectionView!
     
     var categoriesDatasource = [Category]()
+    var filterCategories = [Category]()
+
+    var navCart = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +25,23 @@ class DashboardVC: AbstractVC {
         self.getCategoryList()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if cartArray.count > 0 {
+            navCart.addBadge(number: cartArray.count)
+        }
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
+        self.itemsCollectionView.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
         itemsCollectionView.collectionViewLayout.invalidateLayout()
     }
     
     func configNavigationBar() {
         let navProfile = UIBarButtonItem(image: UIImage(named: "nav_profile"), style: .plain, target: self, action: #selector(DashboardVC.navProfilePressed))
         
-        let navCart = UIBarButtonItem(image: UIImage(named: "nav_cart"), style: .plain, target: self, action: #selector(DashboardVC.navCartPressed))
+        navCart = UIBarButtonItem(image: UIImage(named: "nav_cart"), style: .plain, target: self, action: #selector(DashboardVC.navCartPressed))
         
         let navCall = UIBarButtonItem(image: UIImage(named: "nav_call"), style: .plain, target: self, action:
             #selector(DashboardVC.navCallPressed))
@@ -62,14 +73,12 @@ class DashboardVC: AbstractVC {
     //    MARK:- Prepare for Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showProductListFromDashboard" {
-            
             if let toVC = segue.destination as? ProductListVC, let indexPath = sender as? IndexPath {
-                
-                toVC.category = categoriesDatasource[indexPath.row]
+                toVC.category = filterCategories[indexPath.row]
+                toVC.categoryId = filterCategories[indexPath.row].id
             }
         }
     }
-    
 }
 
 extension DashboardVC {
@@ -77,10 +86,9 @@ extension DashboardVC {
         ServiceManager().processService(urlRequest: ComunicateService.Router.GetCategories()) { (isSuccess, error , responseData) in
             if isSuccess {
                 ServiceManagerModel().processCategories(json: responseData, completion: { (isComplete, categories) in
-                    
                     if isComplete {
                         self.categoriesDatasource = categories!
-                        
+                        self.filterCategories = self.categoriesDatasource
                         self.itemsCollectionView.delegate = self
                         self.itemsCollectionView.dataSource = self
                         
@@ -89,13 +97,28 @@ extension DashboardVC {
                         
                     }
                 })
-
-                
             } else {
                 error?.configToast(isError: true)
             }
         }
+    }
+}
 
+extension DashboardVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filterCategories.removeAll()
+        if searchText.count > 0 {
+            self.filterCategories = self.categoriesDatasource.filter({($0.name?.lowercased().contains(searchText.lowercased()))!})
+            self.itemsCollectionView.reloadData()
+        }
+        else {
+            self.filterCategories = self.categoriesDatasource
+            self.itemsCollectionView.reloadData()
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
 
@@ -105,14 +128,15 @@ extension DashboardVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.itemsCollectionView.isHidden = !(categoriesDatasource.count > 0)
-        return self.categoriesDatasource.count
+        self.itemsCollectionView.isHidden = !(filterCategories.count > 0)
+        return self.filterCategories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.itemsCollectionView.dequeueReusableCell(withReuseIdentifier: "DashboardItemCell", for: indexPath) as! DashboardItemCell
         
-        cell.itemNameLabel.text = self.categoriesDatasource[indexPath.row].name
+        cell.itemNameLabel.text = self.filterCategories[indexPath.row].name
+        cell.itemImageView.sd_setImage(with: URL.init(string: self.filterCategories[indexPath.row].image!), placeholderImage: UIImage.init(named: "item_detail"), options: .fromCacheOnly, completed: nil)
         
         return cell
     }
@@ -136,7 +160,7 @@ extension DashboardVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataS
             }
         }
         
-        let h = w + (self.categoriesDatasource[indexPath.row].name?.height(withConstrainedWidth: w, font: ConstantsUI.C_Font_LableTitle))!
+        let h = w + (self.filterCategories[indexPath.row].name?.height(withConstrainedWidth: w, font: ConstantsUI.C_Font_LableTitle))!
         
         return CGSize(width: w, height: h)
     }

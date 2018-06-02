@@ -187,6 +187,13 @@
 		85B5EE7A209798A500807A4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B5EE78209798A500807A4B /* LaunchScreen.storyboard */; };
 		85B5EE85209798A600807A4B /* KCPLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5EE84209798A600807A4B /* KCPLTests.swift */; };
 		85B5EE90209798A600807A4B /* KCPLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5EE8F209798A600807A4B /* KCPLUITests.swift */; };
+		85E8A1E320C26CF000349073 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E8A1E220C26CF000349073 /* SafariServices.framework */; };
+		85E8A1E520C26E7200349073 /* WebViewVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8A1E420C26E7200349073 /* WebViewVc.swift */; };
+		85E8A1E620C26E7200349073 /* WebViewVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8A1E420C26E7200349073 /* WebViewVc.swift */; };
+		85E8A1E720C26E7200349073 /* WebViewVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8A1E420C26E7200349073 /* WebViewVc.swift */; };
+		85E8A1E920C29CE600349073 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8A1E820C29CE600349073 /* GradientView.swift */; };
+		85E8A1EA20C29CE600349073 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8A1E820C29CE600349073 /* GradientView.swift */; };
+		85E8A1EB20C29CE600349073 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8A1E820C29CE600349073 /* GradientView.swift */; };
 		F1BF6817767D5A93E8358F24 /* Pods_KCPLUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C4B2C88C385D685EB75034 /* Pods_KCPLUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -295,6 +302,9 @@
 		85B5EE8B209798A600807A4B /* KCPLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KCPLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B5EE8F209798A600807A4B /* KCPLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCPLUITests.swift; sourceTree = "<group>"; };
 		85B5EE91209798A600807A4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85E8A1E220C26CF000349073 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		85E8A1E420C26E7200349073 /* WebViewVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVc.swift; sourceTree = "<group>"; };
+		85E8A1E820C29CE600349073 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = KCPL/Library/GradientView.swift; sourceTree = SOURCE_ROOT; };
 		8A08F543B35E81E5E1719421 /* Pods-KCPLTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPLTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCPLTests/Pods-KCPLTests.release.xcconfig"; sourceTree = "<group>"; };
 		92C4B2C88C385D685EB75034 /* Pods_KCPLUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KCPLUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		954A3F9A31FE89E46E0FD1B7 /* Pods-KCPLSales.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPLSales.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCPLSales/Pods-KCPLSales.debug.xcconfig"; sourceTree = "<group>"; };
@@ -323,6 +333,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85E8A1E320C26CF000349073 /* SafariServices.framework in Frameworks */,
 				295FF10E4C7A09125D3D473F /* Pods_KCPL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +397,7 @@
 		112DA5A7209C6D5B009F6A68 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				85E8A1E820C29CE600349073 /* GradientView.swift */,
 				112DA5A8209C6D87009F6A68 /* SlideMenu */,
 			);
 			path = Library;
@@ -485,6 +497,7 @@
 		491519C581A94B77D5F89518 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85E8A1E220C26CF000349073 /* SafariServices.framework */,
 				4541987AA803930A3633FA2C /* Pods_KCPL.framework */,
 				D5D96F448F88D11C81EE2252 /* Pods_KCPLTests.framework */,
 				92C4B2C88C385D685EB75034 /* Pods_KCPLUITests.framework */,
@@ -517,6 +530,7 @@
 				853AC8D520A66691002A3292 /* CustomerDetailVC.swift */,
 				11470FD020AAF3A2009ECB0B /* CustomerListVC.swift */,
 				11388F8C20BD855A00E54FB2 /* ProductListVC.swift */,
+				85E8A1E420C26E7200349073 /* WebViewVc.swift */,
 			);
 			path = Sales;
 			sourceTree = "<group>";
@@ -890,6 +904,7 @@
 				"${BUILT_PRODUCTS_DIR}/BRYXBanner/BRYXBanner.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/MRProgress/MRProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -898,6 +913,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BRYXBanner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MRProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -916,6 +932,7 @@
 				"${BUILT_PRODUCTS_DIR}/BRYXBanner/BRYXBanner.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/MRProgress/MRProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -924,6 +941,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BRYXBanner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MRProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -942,6 +960,7 @@
 				"${BUILT_PRODUCTS_DIR}/BRYXBanner/BRYXBanner.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/MRProgress/MRProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -950,6 +969,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BRYXBanner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MRProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1004,11 +1024,13 @@
 				85B3947F20AB9AC600E643DD /* AbstractVC.swift in Sources */,
 				85B3950120AE2E3800E643DD /* AdminLoginViewController.swift in Sources */,
 				85B3948020AB9AC600E643DD /* LoginVC.swift in Sources */,
+				85E8A1E620C26E7200349073 /* WebViewVc.swift in Sources */,
 				85B3948120AB9AC600E643DD /* OrderHistoryTableViewCell.swift in Sources */,
 				85B3948220AB9AC600E643DD /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				111525DF20BEAC7800153E6C /* Category.swift in Sources */,
 				854DEC0220C0F0980035F61D /* Product.swift in Sources */,
 				85B3948320AB9AC600E643DD /* UtilExtensions.swift in Sources */,
+				85E8A1EA20C29CE600349073 /* GradientView.swift in Sources */,
 				85B3948420AB9AC600E643DD /* CustomerTableViewCell.swift in Sources */,
 				85B3948520AB9AC600E643DD /* ThemeShadowView.swift in Sources */,
 				112CEAF820AC0868004BCF37 /* Util.swift in Sources */,
@@ -1065,6 +1087,7 @@
 				85B394C020AE2ABB00E643DD /* OrderHistoryTableViewCell.swift in Sources */,
 				85B394C120AE2ABB00E643DD /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				85B394C220AE2ABB00E643DD /* UtilExtensions.swift in Sources */,
+				85E8A1EB20C29CE600349073 /* GradientView.swift in Sources */,
 				11388F9720BD89E100E54FB2 /* ProductListTableViewCell.swift in Sources */,
 				85B394C320AE2ABB00E643DD /* CustomerTableViewCell.swift in Sources */,
 				85B394C420AE2ABB00E643DD /* ThemeShadowView.swift in Sources */,
@@ -1106,6 +1129,7 @@
 				85B394E120AE2ABB00E643DD /* ItemDetailVC.swift in Sources */,
 				85B394E220AE2ABB00E643DD /* CustomerDetailVC.swift in Sources */,
 				85B394E320AE2ABB00E643DD /* ThemeTableView.swift in Sources */,
+				85E8A1E720C26E7200349073 /* WebViewVc.swift in Sources */,
 				1188BD0620B4269000F5ECFF /* AdminDashboardVC.swift in Sources */,
 				85B394E420AE2ABB00E643DD /* DeliveryAddressTableViewCell.swift in Sources */,
 				85B394E520AE2ABB00E643DD /* navController.swift in Sources */,
@@ -1120,11 +1144,13 @@
 				85B3950020AE2E3800E643DD /* AdminLoginViewController.swift in Sources */,
 				11DD9D4E2099DE65006C00C9 /* LoginVC.swift in Sources */,
 				859701EC20A50702008A08B4 /* OrderHistoryTableViewCell.swift in Sources */,
+				85E8A1E520C26E7200349073 /* WebViewVc.swift in Sources */,
 				112DA5BA209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				1129C35B209B2F3A005DC1B8 /* UtilExtensions.swift in Sources */,
 				111525DE20BEAC7800153E6C /* Category.swift in Sources */,
 				111525E420BEDC5500153E6C /* Product.swift in Sources */,
 				11470FD320AAF569009ECB0B /* CustomerTableViewCell.swift in Sources */,
+				85E8A1E920C29CE600349073 /* GradientView.swift in Sources */,
 				859701EA20A506A7008A08B4 /* ThemeShadowView.swift in Sources */,
 				112CEAF720ABFAF8004BCF37 /* Util.swift in Sources */,
 				854B3892209D899F008391BC /* CartVC.swift in Sources */,

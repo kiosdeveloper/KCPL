@@ -17,6 +17,13 @@ class DeliveryAddressVC: AbstractVC {
         super.viewDidLoad()
 
         self.deliveryAddressTableView.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
+        self.configNavigationBar()
+    }
+    
+    func configNavigationBar() {
+        self.title = "Choose delivery address"
+        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
 //    MARK:- Actions
@@ -25,6 +32,8 @@ class DeliveryAddressVC: AbstractVC {
         alertController.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: { (alertAction) in
             for viewController in (self.navigationController?.viewControllers ?? []) {
                 if viewController is DashboardVC {
+                    
+                    cartArray.removeAll()
                     _ = self.navigationController?.popToViewController(viewController, animated: true)
                     return
                 }

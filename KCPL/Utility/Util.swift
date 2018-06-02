@@ -50,4 +50,5 @@ class Util {
             MRProgressOverlayView.dismissOverlay(for: window, animated: true)
         }
     }
+    
 }

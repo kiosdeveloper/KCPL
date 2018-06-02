@@ -15,7 +15,8 @@ struct ConstantsUI {
     static let C_Color_White = UIColor.white
     static let C_Color_lightGray = UIColor.lightGray
     static let C_Color_darkGray = UIColor.darkGray
-    
+    static let C_Color_Title = UIColor.white
+
     //    MARK:- Fonts
     static let C_Font_LableTitle = UIFont.systemFont(ofSize: 16)
     static let C_Font_LableSubTitle = UIFont.systemFont(ofSize: 14)

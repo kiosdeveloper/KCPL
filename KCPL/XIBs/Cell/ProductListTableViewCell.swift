@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol ProductListDelegate {
+    func btnPlusQuantity(cell: ProductListTableViewCell)
+    func btnMinusQuantity(cell: ProductListTableViewCell)
+    func btnAddToCart(cell: ProductListTableViewCell)
+}
+
 class ProductListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var productImageView: UIImageView!
@@ -24,6 +30,8 @@ class ProductListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var addToCartButton: ThemeButton!
     
+    var delegate: ProductListDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,6 +41,24 @@ class ProductListTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func btnPlusQuantityPressed(_ sender: Any) {
+        if let _ = delegate {
+            delegate?.btnPlusQuantity(cell: self)
+        }
+    }
+    
+    @IBAction func btnMinusQuantityPressed(_ sender: Any) {
+        if let _ = delegate {
+            delegate?.btnMinusQuantity(cell: self)
+        }
+    }
+    
+    @IBAction func btnAddToCartPressed(_ sender: Any) {
+        if let _ = delegate {
+            delegate?.btnAddToCart(cell: self)
+        }
     }
 
 }

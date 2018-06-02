@@ -11,6 +11,7 @@ def app_pods
     pod 'SwiftyJSON'
     pod 'BRYXBanner'
     pod 'MRProgress'
+    pod 'SDWebImage'
 end
 
 target 'KCPL' do

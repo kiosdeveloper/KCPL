@@ -12,18 +12,30 @@ class CartVC: AbstractVC {
 
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet var titleLabel: UILabel!
-    var cartProductsDatasource = [Product]()
     
+    @IBOutlet weak var nextButton: ThemeButton!
+    
+    var cartProductsDatasource = [Product]()
+    var productsDatasource = [Product]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.cartTableView.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
         
-        if let cartArray_temp = UserDefault.getCartProducts() {
-            cartProductsDatasource = cartArray_temp
-        }
-        
+//        if let cartArray_temp = UserDefault.getCartProducts() {
+//            cartProductsDatasource = cartArray
+//        }
+        cartProductsDatasource = cartArray
+        self.configNavigationBar()
     }
+    
+    func configNavigationBar() {
+        self.title = "Cart"
+        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+    }
+    
     @IBAction func btnNextPressed(_ sender: Any) {
         
         self.performSegue(withIdentifier: "showDeliveryAddressFromCart", sender: nil)
@@ -38,10 +50,14 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        cartTableView.isHidden = !(cartProductsDatasource.count > 0)
+        nextButton.isHidden = !(cartProductsDatasource.count > 0)
+
         if section == 0 {
             return cartProductsDatasource.count
         } else {
-            return 1
+            return (cartProductsDatasource.count > 0) ? 1 : 0
         }
     }
     
@@ -91,21 +107,37 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
         print("+ \(indexPath.row) pressed")
         
         cartProductsDatasource[indexPath.row].quantity += 1
-        UserDefault.saveCartProducts(products: cartProductsDatasource)
-        cartTableView.reloadRows(at: [indexPath], with: .none)
+        for cart in cartArray  where cart.id == cartProductsDatasource[indexPath.row].id {
+            cart.quantity = cartProductsDatasource[indexPath.row].quantity
+        }
         
-        
+//        UserDefault.saveCartProducts(products: cartProductsDatasource)
+////        cartTableView.reloadRows(at: [indexPath], with: .none)
+        cartTableView.reloadData()
     }
     
     func btnMinusQuantity(cell: CartItemListCell) {
         guard let indexPath = self.cartTableView.indexPath(for: cell) else { return }
         
-        print("- \(indexPath.row) pressed")
         
         if self.cartProductsDatasource[indexPath.row].quantity > 0 {
             cartProductsDatasource[indexPath.row].quantity -= 1
-            UserDefault.saveCartProducts(products: cartProductsDatasource)
-            cartTableView.reloadRows(at: [indexPath], with: .none)
+            
+            if self.cartProductsDatasource[indexPath.row].quantity == 0 {
+                for (index, cart) in cartArray.enumerated() where cart.id == cartProductsDatasource[indexPath.row].id {
+                    cartArray.remove(at: index)
+                }
+            } else {
+                for cart in cartArray {
+                    if cart.id == cartProductsDatasource[indexPath.row].id {
+                        cart.quantity = cartProductsDatasource[indexPath.row].quantity
+                    }
+                }
+            }
+            cartTableView.reloadData()
+            
+//            UserDefault.saveCartProducts(products: cartProductsDatasource)
+//            cartTableView.reloadRows(at: [indexPath], with: .none)
         }
     }
     
@@ -116,18 +148,11 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
         
         if self.cartProductsDatasource[indexPath.row].quantity > 0 {
             cartProductsDatasource.remove(at: indexPath.row)
-            
-            UserDefault.saveCartProducts(products: cartProductsDatasource)
-            cartTableView.deleteRows(at: [indexPath], with: .middle)
+            cartArray = cartProductsDatasource
+            cartTableView.reloadData()
+//            if cartProductsDatasource.count > 0 {
+//            UserDefault.saveCartProducts(products: cartProductsDatasource)
+//            }
         }
-    }
-}
-
-//MARK:- SideMenu
-extension CartVC: SlideNavigationControllerDelegate {
-    
-    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool
-    {
-        return true
     }
 }

@@ -30,6 +30,9 @@ PODS:
   - MRProgress/ProgressBaseClass (0.8.3)
   - MRProgress/Stopable (0.8.3):
     - MRProgress/Helper
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
   - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
@@ -37,6 +40,7 @@ DEPENDENCIES:
   - BRYXBanner
   - IQKeyboardManager
   - MRProgress
+  - SDWebImage
   - SwiftyJSON
 
 SPEC REPOS:
@@ -45,6 +49,7 @@ SPEC REPOS:
     - BRYXBanner
     - IQKeyboardManager
     - MRProgress
+    - SDWebImage
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -52,8 +57,9 @@ SPEC CHECKSUMS:
   BRYXBanner: 406c3775789136531da6f3c98058be2f16e08a34
   IQKeyboardManager: c49d59e358aeeffaa0280aa305093c2b194d2607
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: eead7fe513b5ae0075ae57123ad27854fb37a6e9
+PODFILE CHECKSUM: ca188ed15f358ac88650bc7924b389d0b835bddd
 
 COCOAPODS: 1.5.0

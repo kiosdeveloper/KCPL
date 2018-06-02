@@ -17,8 +17,11 @@ class ProductListVC: AbstractVC {
     
     var category: Category?
     var pickerFilter = UIPickerView()
-    var filterArray = ["1","2","3","4"]
+    var filterArray = ["Honda","Ceat","Mahindra","Tata"]
     var selectedFilter = ""
+    var categoryId: Int!
+    
+    var navCart = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,32 @@ class ProductListVC: AbstractVC {
         self.configPicker()
         
         self.getProductList()
+        
+        self.configNavigationBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.updateBadge()
+    }
+    
+    func updateBadge() {
+        if cartArray.count > 0 {
+            navCart.addBadge(number: cartArray.count)
+        } else {
+            navCart.removeBadge()
+        }
+    }
+    
+    func configNavigationBar() {
+        self.title = self.category?.name!
+        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+
+        let navProfile = UIBarButtonItem(image: UIImage(named: "nav_profile"), style: .plain, target: self, action: #selector(DashboardVC.navProfilePressed))
+        
+        navCart = UIBarButtonItem(image: UIImage(named: "nav_cart"), style: .plain, target: self, action: #selector(DashboardVC.navCartPressed))
+        self.navigationItem.rightBarButtonItems = [navProfile, navCart]
     }
     
     func configPicker() {
@@ -40,69 +69,19 @@ class ProductListVC: AbstractVC {
         pickerFilter.delegate = self
     }
     
-    @IBAction func plusClicked(_ sender: ThemeButton) {
-        
-        self.productsDatasource[sender.tag].quantity += 1
-        self.productlistTableView.reloadData()
-        
-        /*self.productsDatasource[sender.tag].quantity += 1
-        print(self.productsDatasource)
-        if let productListArray = UserDefaults.standard.value(forKey: "cartArray") as? [[String : Data]] {
-//            print(productListArray["product"] as! [Data])
-            for product in productListArray {
-                    
-                }
-//            let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: productListArray["product"]) as! [Product]
-//            print(decodedTeams[0].name)
-        }
-        else {
-            let product = NSKeyedArchiver.archivedData(withRootObject: self.productsDatasource[sender.tag])
-            let dict = [["product\(self.productsDatasource[sender.tag].id)": product]] as [[String : Data]]
-            UserDefaults.standard.set(dict, forKey: "cartArray")
-            UserDefaults.standard.synchronize()
-        } */
+    @objc func navProfilePressed() {
         
     }
     
-    @IBAction func minusClicked(_ sender: ThemeButton) {
-        if self.productsDatasource[sender.tag].quantity > 0 {
-            self.productsDatasource[sender.tag].quantity -= 1
-            self.productlistTableView.reloadData()
-        }
-        
-        
-        /*if self.productsDatasource[sender.tag].quantity > 0 {
-            self.productsDatasource[sender.tag].quantity -= 1
-            print(self.productsDatasource)
-        }*/
-    }
-    
-    @IBAction func addToCartPressed(_ sender: ThemeButton) {
-//        self.productsDatasource[sender.tag].quantity += 1
-        let product = Product(product: self.productsDatasource[sender.tag], quantity: 1)
-        
-        if var cartArray_temp = UserDefault.getCartProducts() {
-            cartArray_temp.append(product)
-            
-//            cartArray_temp.last?.quantity += 1
-            
-            UserDefault.saveCartProducts(products: cartArray_temp)
-        } else {
-            var cartArray_temp = [Product]()
-            cartArray_temp.append(product)
-            
-//                cartArray_temp.last?.quantity += 1
-            UserDefault.saveCartProducts(products: cartArray_temp)
-        }
-        
-        print(UserDefault.getCartProducts())
+    @objc func navCartPressed() {
+        self.performSegue(withIdentifier: "showCartFromProductList", sender: nil)
     }
     
 }
 
 extension ProductListVC {
     func getProductList() {
-        ServiceManager().processService(urlRequest: ComunicateService.Router.GetProductList()) { (isSuccess, error , responseData) in
+        ServiceManager().processService(urlRequest: ComunicateService.Router.GetProductList(categoryId: self.categoryId)) { (isSuccess, error , responseData) in
             if isSuccess {
                 ServiceManagerModel().processProducts(json: responseData, completion: { (isComplete, products) in
                     if isComplete {
@@ -119,18 +98,19 @@ extension ProductListVC {
                 error?.configToast(isError: true)
             }
         }
-        
     }
-}
-
-extension ProductListVC: SlideNavigationControllerDelegate {
     
-    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool {
-        return true
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showItemDetailFromProductList" {
+            if let toVC = segue.destination as? ItemDetailVC, let indexPath = sender as? IndexPath {
+                toVC.title = self.category?.name
+                toVC.product = productsDatasource[indexPath.row]
+            }
+        }
     }
 }
 
-extension ProductListVC: UITableViewDelegate, UITableViewDataSource {
+extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductListDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -148,16 +128,100 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource {
         if let price = productsDatasource[indexPath.row].price {
             cell.productPriceLabel.text = "\(price) Rs."
         }
-        cell.minusButton.tag = indexPath.row
-        cell.plusButton.tag = indexPath.row
-        cell.addToCartButton.tag = indexPath.row
+        cell.delegate = self
         cell.quantityTextField.tag = indexPath.row
         cell.quantityTextField.text = "\(productsDatasource[indexPath.row].quantity)"
+        
+        cell.productImageView.sd_setImage(with: URL.init(string: self.productsDatasource[indexPath.row].imageUrl!), placeholderImage: UIImage(named: "item_detail"), options: .fromCacheOnly, completed: nil)
+        cell.addToCartButton.isHidden = productsDatasource[indexPath.row].quantity > 0
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "showItemDetailFromProductList", sender: indexPath)
+    }
+    
+    //    MARK:- Action
+    func btnPlusQuantity(cell: ProductListTableViewCell) {
+         guard let indexPath = self.productlistTableView.indexPath(for: cell) else { return }
+        
+        self.productsDatasource[indexPath.row].quantity += 1
+        
+        for cart in cartArray  where cart.id == productsDatasource[indexPath.row].id {
+                cart.quantity = productsDatasource[indexPath.row].quantity
+        }
+        self.updateBadge()
+        self.productlistTableView.reloadData()
+
+        /*self.productsDatasource[sender.tag].quantity += 1
+         print(self.productsDatasource)
+         if let productListArray = UserDefaults.standard.value(forKey: "cartArray") as? [[String : Data]] {
+         //            print(productListArray["product"] as! [Data])
+         for product in productListArray {
+         
+         }
+         //            let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: productListArray["product"]) as! [Product]
+         //            print(decodedTeams[0].name)
+         }
+         else {
+         let product = NSKeyedArchiver.archivedData(withRootObject: self.productsDatasource[sender.tag])
+         let dict = [["product\(self.productsDatasource[sender.tag].id)": product]] as [[String : Data]]
+         UserDefaults.standard.set(dict, forKey: "cartArray")
+         UserDefaults.standard.synchronize()
+         } */
+    }
+    
+    func btnMinusQuantity(cell: ProductListTableViewCell) {
+        guard let indexPath = self.productlistTableView.indexPath(for: cell) else { return }
+
+        if self.productsDatasource[indexPath.row].quantity > 0 {
+            self.productsDatasource[indexPath.row].quantity -= 1
+//            let product = Product(product: self.productsDatasource[indexPath.row], quantity: self.productsDatasource[indexPath.row].quantity)
+            if self.productsDatasource[indexPath.row].quantity == 0 {
+                for (index, cart) in cartArray.enumerated() where cart.id == productsDatasource[indexPath.row].id {
+                    cartArray.remove(at: index)
+                }
+            } else {
+                for cart in cartArray {
+                    if cart.id == productsDatasource[indexPath.row].id {
+                        cart.quantity = productsDatasource[indexPath.row].quantity
+                    }
+                }
+            }
+        }
+        self.updateBadge()
+        self.productlistTableView.reloadData()
+
+        /*if self.productsDatasource[sender.tag].quantity > 0 {
+         self.productsDatasource[sender.tag].quantity -= 1
+         print(self.productsDatasource)
+         }*/
+    }
+    
+    func btnAddToCart(cell: ProductListTableViewCell) {
+        guard let indexPath = self.productlistTableView.indexPath(for: cell) else { return }
+
+        self.productsDatasource[indexPath.row].quantity += 1
+        
+        let product = Product(product: self.productsDatasource[indexPath.row], quantity: 1)
+        cartArray.append(product)
+        self.productlistTableView.reloadData()
+        
+            if var cartArray_temp = UserDefault.getCartProducts() {
+                cartArray_temp.append(product)
+
+    //            cartArray_temp.last?.quantity += 1
+
+                UserDefault.saveCartProducts(products: cartArray_temp)
+            } else {
+                var cartArray_temp = [Product]()
+                cartArray_temp.append(product)
+
+    //                cartArray_temp.last?.quantity += 1
+                UserDefault.saveCartProducts(products: cartArray_temp)
+            }
+        self.updateBadge()
     }
 }
 
