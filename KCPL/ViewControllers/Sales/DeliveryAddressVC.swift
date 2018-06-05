@@ -32,8 +32,8 @@ class DeliveryAddressVC: AbstractVC {
         alertController.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: { (alertAction) in
             for viewController in (self.navigationController?.viewControllers ?? []) {
                 if viewController is DashboardVC {
+                    UserDefault.removeCartProducts()
                     
-                    cartArray.removeAll()
                     _ = self.navigationController?.popToViewController(viewController, animated: true)
                     return
                 }

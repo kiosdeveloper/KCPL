@@ -17,7 +17,7 @@ class Product: NSObject, NSCoding {
     var brand_name : String?
     var tax: Double?
     var price: Int?
-    var quantity: Int = 0
+    var quantity: Int?
     var imageUrl: String?
     
     override init () {
@@ -58,6 +58,7 @@ class Product: NSObject, NSCoding {
         if json[Constant.c_res_image_url].type != .null {
             imageUrl = json.dictionaryObject![Constant.c_res_image_url] as! String?
         }
+        quantity = 0
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -68,7 +69,7 @@ class Product: NSObject, NSCoding {
         tax = aDecoder.decodeObject(forKey: Constant.c_res_tax) as? Double
         price = aDecoder.decodeObject(forKey: Constant.c_res_price) as? Int
         imageUrl = aDecoder.decodeObject(forKey: Constant.c_res_image_url) as? String
-//        quantity = (aDecoder.decodeObject(forKey: Constant.c_res_quantity) as? Int)!
+        quantity = aDecoder.decodeObject(forKey: Constant.c_res_quantity) as? Int
     }
     
     public func encode(with aCoder: NSCoder) {
@@ -79,6 +80,6 @@ class Product: NSObject, NSCoding {
         aCoder.encode(tax, forKey: Constant.c_res_tax)
         aCoder.encode(price, forKey: Constant.c_res_price)
         aCoder.encode(imageUrl, forKey: Constant.c_res_image_url)
-//        aCoder.encode(quantity, forKey: Constant.c_res_quantity)
+        aCoder.encode(quantity, forKey: Constant.c_res_quantity)
     }
 }

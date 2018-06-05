@@ -39,8 +39,8 @@ class ProductListVC: AbstractVC {
     }
     
     func updateBadge() {
-        if cartArray.count > 0 {
-            navCart.addBadge(number: cartArray.count)
+        if let cartArray_temp = UserDefault.getCartProducts(), cartArray_temp.count > 0 {
+            navCart.addBadge(number: cartArray_temp.count)
         } else {
             navCart.removeBadge()
         }
@@ -130,10 +130,21 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
         }
         cell.delegate = self
         cell.quantityTextField.tag = indexPath.row
-        cell.quantityTextField.text = "\(productsDatasource[indexPath.row].quantity)"
+        
+        if let cartArray_temp = UserDefault.getCartProducts(), let i = cartArray_temp.index(where: { $0.id == productsDatasource[indexPath.row].id }) {
+            
+            if let qty = cartArray_temp[i].quantity {
+                cell.quantityTextField.text = "\(qty)"
+            }
+        } else {
+            cell.quantityTextField.text = "0"
+        }
         
         cell.productImageView.sd_setImage(with: URL.init(string: self.productsDatasource[indexPath.row].imageUrl!), placeholderImage: UIImage(named: "item_detail"), options: .fromCacheOnly, completed: nil)
-        cell.addToCartButton.isHidden = productsDatasource[indexPath.row].quantity > 0
+        
+        if let qty = self.productsDatasource[indexPath.row].quantity {
+            cell.addToCartButton.isHidden = qty > 0
+        }
         
         return cell
     }
@@ -146,81 +157,94 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
     func btnPlusQuantity(cell: ProductListTableViewCell) {
          guard let indexPath = self.productlistTableView.indexPath(for: cell) else { return }
         
-        self.productsDatasource[indexPath.row].quantity += 1
+        self.productsDatasource[indexPath.row] = Util().plusQuantity(product: self.productsDatasource[indexPath.row])
         
-        for cart in cartArray  where cart.id == productsDatasource[indexPath.row].id {
-                cart.quantity = productsDatasource[indexPath.row].quantity
+        /*if let qty = self.productsDatasource[indexPath.row].quantity {
+            self.productsDatasource[indexPath.row].quantity = qty + 1
         }
+        
+        if let cartArray_temp = UserDefault.getCartProducts() {
+            for cart in cartArray_temp  where cart.id == productsDatasource[indexPath.row].id {
+                cart.quantity = productsDatasource[indexPath.row].quantity
+            }
+            UserDefault.saveCartProducts(products: cartArray_temp)
+        }*/
+        
         self.updateBadge()
         self.productlistTableView.reloadData()
 
-        /*self.productsDatasource[sender.tag].quantity += 1
-         print(self.productsDatasource)
-         if let productListArray = UserDefaults.standard.value(forKey: "cartArray") as? [[String : Data]] {
-         //            print(productListArray["product"] as! [Data])
-         for product in productListArray {
-         
-         }
-         //            let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: productListArray["product"]) as! [Product]
-         //            print(decodedTeams[0].name)
-         }
-         else {
-         let product = NSKeyedArchiver.archivedData(withRootObject: self.productsDatasource[sender.tag])
-         let dict = [["product\(self.productsDatasource[sender.tag].id)": product]] as [[String : Data]]
-         UserDefaults.standard.set(dict, forKey: "cartArray")
-         UserDefaults.standard.synchronize()
-         } */
+        
     }
     
     func btnMinusQuantity(cell: ProductListTableViewCell) {
         guard let indexPath = self.productlistTableView.indexPath(for: cell) else { return }
-
-        if self.productsDatasource[indexPath.row].quantity > 0 {
-            self.productsDatasource[indexPath.row].quantity -= 1
-//            let product = Product(product: self.productsDatasource[indexPath.row], quantity: self.productsDatasource[indexPath.row].quantity)
-            if self.productsDatasource[indexPath.row].quantity == 0 {
-                for (index, cart) in cartArray.enumerated() where cart.id == productsDatasource[indexPath.row].id {
-                    cartArray.remove(at: index)
-                }
-            } else {
-                for cart in cartArray {
-                    if cart.id == productsDatasource[indexPath.row].id {
-                        cart.quantity = productsDatasource[indexPath.row].quantity
+        
+        if let product = Util().minusQuantity(product: self.productsDatasource[indexPath.row]) {
+            self.productsDatasource[indexPath.row] = product
+            
+            if product.quantity == 0 {
+                if var cartArray_temp = UserDefault.getCartProducts() {
+                   
+                    if let i = cartArray_temp.index(where: { $0.id == product.id }) {
+                        cartArray_temp.remove(at: i)
                     }
+                    
+                    UserDefault.saveCartProducts(products: cartArray_temp)
                 }
             }
         }
+        
+        /*
+        if let qty = self.productsDatasource[indexPath.row].quantity, qty > 0 {
+            self.productsDatasource[indexPath.row].quantity = qty - 1
+            
+            if self.productsDatasource[indexPath.row].quantity == 0 {
+                if var cartArray_temp = UserDefault.getCartProducts() {
+                    for (index, cart) in cartArray_temp.enumerated() where cart.id == productsDatasource[indexPath.row].id {
+                        cartArray_temp.remove(at: index)
+                    }
+                    UserDefault.saveCartProducts(products: cartArray_temp)
+                }
+                
+            } else {
+                if let cartArray_temp = UserDefault.getCartProducts() {
+                    for cart in cartArray_temp {
+                        if cart.id == productsDatasource[indexPath.row].id {
+                            cart.quantity = productsDatasource[indexPath.row].quantity
+                        }
+                    }
+                    UserDefault.saveCartProducts(products: cartArray_temp)
+                }
+            }
+        }*/
         self.updateBadge()
         self.productlistTableView.reloadData()
-
-        /*if self.productsDatasource[sender.tag].quantity > 0 {
-         self.productsDatasource[sender.tag].quantity -= 1
-         print(self.productsDatasource)
-         }*/
     }
     
     func btnAddToCart(cell: ProductListTableViewCell) {
         guard let indexPath = self.productlistTableView.indexPath(for: cell) else { return }
-
-        self.productsDatasource[indexPath.row].quantity += 1
+        
+        self.productsDatasource[indexPath.row] = Util().plusQuantity(product: self.productsDatasource[indexPath.row])
+        
+        /*if let qty = self.productsDatasource[indexPath.row].quantity {
+            self.productsDatasource[indexPath.row].quantity = qty + 1
+        }
         
         let product = Product(product: self.productsDatasource[indexPath.row], quantity: 1)
-        cartArray.append(product)
-        self.productlistTableView.reloadData()
         
-            if var cartArray_temp = UserDefault.getCartProducts() {
-                cartArray_temp.append(product)
+        if var cartArray_temp = UserDefault.getCartProducts() {
+            cartArray_temp.append(product)
 
-    //            cartArray_temp.last?.quantity += 1
+            UserDefault.saveCartProducts(products: cartArray_temp)
+        } else {
+            var cartArray_temp = [Product]()
+            cartArray_temp.append(product)
 
-                UserDefault.saveCartProducts(products: cartArray_temp)
-            } else {
-                var cartArray_temp = [Product]()
-                cartArray_temp.append(product)
-
-    //                cartArray_temp.last?.quantity += 1
-                UserDefault.saveCartProducts(products: cartArray_temp)
-            }
+//                cartArray_temp.last?.quantity += 1
+            UserDefault.saveCartProducts(products: cartArray_temp)
+        }*/
+        
+        self.productlistTableView.reloadData()
         self.updateBadge()
     }
 }

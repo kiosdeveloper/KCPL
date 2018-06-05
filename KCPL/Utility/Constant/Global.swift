@@ -11,5 +11,3 @@ var C_ServerName = "http://dev-kcpl.herokuapp.com"
 let REGEX_EMAIL = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
 
 let C_UserDefault = UserDefaults.standard
-
-var cartArray = [Product]()

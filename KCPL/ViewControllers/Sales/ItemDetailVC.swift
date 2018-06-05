@@ -20,7 +20,7 @@ class ItemDetailVC: AbstractVC {
         self.itemDetailTableView.rowHeight = UITableViewAutomaticDimension
         self.itemDetailTableView.estimatedRowHeight = 500
         
-        if let i = cartArray.index(where: { $0.id == product.id }) {
+        if let cartArray_temp = UserDefault.getCartProducts(), let i = cartArray_temp.index(where: { $0.id == product.id }) {
             addToCartButton.isDisableConfig()
             addToCartButton.setTitle("Added", for: .normal)
         }
@@ -31,9 +31,18 @@ class ItemDetailVC: AbstractVC {
     
 //    MARK:- Action
     @IBAction func addToCartClicked(_ sender: Any) {
-        self.product.quantity += 1
         
-        cartArray.append(self.product)
+        self.product = Util().plusQuantity(product: self.product)
+        /*
+        if let qty = self.product.quantity {
+            self.product.quantity = qty + 1
+        }
+        
+        if var cartArray_temp = UserDefault.getCartProducts() {
+            cartArray_temp.append(self.product)
+            UserDefault.saveCartProducts(products: cartArray_temp)
+        }*/
+        
         
         self.navigationController?.popViewController(animated: true)
     }

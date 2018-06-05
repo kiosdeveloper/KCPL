@@ -23,10 +23,10 @@ class CartVC: AbstractVC {
         
         self.cartTableView.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
         
-//        if let cartArray_temp = UserDefault.getCartProducts() {
-//            cartProductsDatasource = cartArray
-//        }
-        cartProductsDatasource = cartArray
+        if let cartArray_temp = UserDefault.getCartProducts() {
+            cartProductsDatasource = cartArray_temp
+        }
+        
         self.configNavigationBar()
     }
     
@@ -72,9 +72,9 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
             if let price = cartProductsDatasource[indexPath.row].price {
                 cell.productPriceLabel.text = "\(price) Rs."
             }
-            
-            cell.productQuantityTextfeild.text = "\(cartProductsDatasource[indexPath.row].quantity)"
-            
+            if let qty = cartProductsDatasource[indexPath.row].quantity {
+                cell.productQuantityTextfeild.text = "\(qty)"
+            }            
             
             return cell
         } else {
@@ -105,14 +105,17 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
         guard let indexPath = self.cartTableView.indexPath(for: cell) else { return }
         
         print("+ \(indexPath.row) pressed")
-        
-        cartProductsDatasource[indexPath.row].quantity += 1
-        for cart in cartArray  where cart.id == cartProductsDatasource[indexPath.row].id {
-            cart.quantity = cartProductsDatasource[indexPath.row].quantity
+        if let qty = cartProductsDatasource[indexPath.row].quantity {
+            cartProductsDatasource[indexPath.row].quantity = qty + 1
         }
         
-//        UserDefault.saveCartProducts(products: cartProductsDatasource)
-////        cartTableView.reloadRows(at: [indexPath], with: .none)
+        if let cartArray_temp = UserDefault.getCartProducts() {
+            for cart in cartArray_temp  where cart.id == cartProductsDatasource[indexPath.row].id {
+                cart.quantity = cartProductsDatasource[indexPath.row].quantity
+                UserDefault.saveCartProducts(products: cartArray_temp)
+            }
+        }
+        
         cartTableView.reloadData()
     }
     
@@ -120,18 +123,25 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
         guard let indexPath = self.cartTableView.indexPath(for: cell) else { return }
         
         
-        if self.cartProductsDatasource[indexPath.row].quantity > 0 {
-            cartProductsDatasource[indexPath.row].quantity -= 1
+        if self.cartProductsDatasource[indexPath.row].quantity! > 0 {
+            cartProductsDatasource[indexPath.row].quantity! -= 1
             
             if self.cartProductsDatasource[indexPath.row].quantity == 0 {
-                for (index, cart) in cartArray.enumerated() where cart.id == cartProductsDatasource[indexPath.row].id {
-                    cartArray.remove(at: index)
-                }
-            } else {
-                for cart in cartArray {
-                    if cart.id == cartProductsDatasource[indexPath.row].id {
-                        cart.quantity = cartProductsDatasource[indexPath.row].quantity
+                if var cartArray_temp = UserDefault.getCartProducts() {
+                    for (index, cart) in cartArray_temp.enumerated() where cart.id == cartProductsDatasource[indexPath.row].id {
+                        cartArray_temp.remove(at: index)
                     }
+                    UserDefault.saveCartProducts(products: cartArray_temp)
+                }
+                
+            } else {
+                if let cartArray_temp = UserDefault.getCartProducts() {
+                    for cart in cartArray_temp {
+                        if cart.id == cartProductsDatasource[indexPath.row].id {
+                            cart.quantity = cartProductsDatasource[indexPath.row].quantity
+                        }
+                    }
+                    UserDefault.saveCartProducts(products: cartArray_temp)
                 }
             }
             cartTableView.reloadData()
@@ -146,9 +156,13 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
         
         print("remove \(indexPath.row) pressed")
         
-        if self.cartProductsDatasource[indexPath.row].quantity > 0 {
+        if self.cartProductsDatasource[indexPath.row].quantity! > 0 {
             cartProductsDatasource.remove(at: indexPath.row)
-            cartArray = cartProductsDatasource
+            if var cartArray_temp = UserDefault.getCartProducts() {
+                cartArray_temp = cartProductsDatasource
+                UserDefault.saveCartProducts(products: cartArray_temp)
+            }
+            
             cartTableView.reloadData()
 //            if cartProductsDatasource.count > 0 {
 //            UserDefault.saveCartProducts(products: cartProductsDatasource)

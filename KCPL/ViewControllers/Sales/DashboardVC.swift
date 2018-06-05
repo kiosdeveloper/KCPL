@@ -26,9 +26,14 @@ class DashboardVC: AbstractVC {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        if cartArray.count > 0 {
-            navCart.addBadge(number: cartArray.count)
+        self.updateBadge()
+    }
+    
+    func updateBadge() {
+        if let cartArray_temp = UserDefault.getCartProducts(), cartArray_temp.count > 0 {
+            navCart.addBadge(number: cartArray_temp.count)
+        } else {
+            navCart.removeBadge()
         }
     }
     
