@@ -66,6 +66,8 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
         if indexPath.section == 0 {
             let cell = cartTableView.dequeueReusableCell(withIdentifier: "CartItemListCell") as! CartItemListCell
             cell.delegate = self
+            cell.productQuantityTextfeild.delegate = self
+            cell.productQuantityTextfeild.tag = indexPath.row
             
             cell.productNameLabel.text = cartProductsDatasource[indexPath.row].name
             
@@ -79,6 +81,25 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
             return cell
         } else {
             let cell = cartTableView.dequeueReusableCell(withIdentifier: "CartTotalCell") as! CartTotalCell
+            
+            var subtotle = 0
+            var tax = 0.0
+            
+            for cartProduct in cartProductsDatasource {
+                if let qty = cartProduct.quantity {
+                    if let productPrice = cartProduct.price {
+                        subtotle += (productPrice * qty)
+                    }
+                    
+                    if let productGST = cartProduct.tax {
+                        tax += (productGST * Double(qty))
+                    }
+                }
+            }
+            
+            cell.subTotalLable.text = "Rs. \(subtotle)"
+            cell.gstLabel.text = "Rs. \(tax)"
+            cell.totalLabel.text = "Rs. \(Double(subtotle) + tax)"
             
             return cell
         }
@@ -105,6 +126,9 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
         guard let indexPath = self.cartTableView.indexPath(for: cell) else { return }
         
         print("+ \(indexPath.row) pressed")
+        
+        self.cartProductsDatasource[indexPath.row] = Util().plusQuantity(product: self.cartProductsDatasource[indexPath.row], quantity: nil)
+        /*
         if let qty = cartProductsDatasource[indexPath.row].quantity {
             cartProductsDatasource[indexPath.row].quantity = qty + 1
         }
@@ -114,15 +138,32 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
                 cart.quantity = cartProductsDatasource[indexPath.row].quantity
                 UserDefault.saveCartProducts(products: cartArray_temp)
             }
-        }
+        }*/
         
-        cartTableView.reloadData()
+        self.cartTableView.reloadData()
     }
     
     func btnMinusQuantity(cell: CartItemListCell) {
         guard let indexPath = self.cartTableView.indexPath(for: cell) else { return }
         
+        if let product = Util().minusQuantity(product: self.cartProductsDatasource[indexPath.row]) {
+            self.cartProductsDatasource[indexPath.row] = product
+            
+            if product.quantity == 0 {
+                if var cartArray_temp = UserDefault.getCartProducts() {
+                    
+                    if let i = cartArray_temp.index(where: { $0.id == product.id }) {
+                        cartArray_temp.remove(at: i)
+                        self.cartProductsDatasource.remove(at: indexPath.row)
+                    }
+                    
+                    UserDefault.saveCartProducts(products: cartArray_temp)
+                }
+            }
+        }
         
+        cartTableView.reloadData()
+        /*
         if self.cartProductsDatasource[indexPath.row].quantity! > 0 {
             cartProductsDatasource[indexPath.row].quantity! -= 1
             
@@ -145,28 +186,47 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
                 }
             }
             cartTableView.reloadData()
-            
-//            UserDefault.saveCartProducts(products: cartProductsDatasource)
-//            cartTableView.reloadRows(at: [indexPath], with: .none)
-        }
+        }*/
     }
     
     func btnRemoveFromCart(cell: CartItemListCell) {
         guard let indexPath = self.cartTableView.indexPath(for: cell) else { return }
-        
-        print("remove \(indexPath.row) pressed")
-        
-        if self.cartProductsDatasource[indexPath.row].quantity! > 0 {
-            cartProductsDatasource.remove(at: indexPath.row)
-            if var cartArray_temp = UserDefault.getCartProducts() {
-                cartArray_temp = cartProductsDatasource
-                UserDefault.saveCartProducts(products: cartArray_temp)
+        if var cartArray_temp = UserDefault.getCartProducts() {
+            
+            if let i = cartArray_temp.index(where: { $0.id == self.cartProductsDatasource[indexPath.row].id }) {
+                cartArray_temp.remove(at: i)
+                self.cartProductsDatasource.remove(at: indexPath.row)
             }
             
-            cartTableView.reloadData()
-//            if cartProductsDatasource.count > 0 {
-//            UserDefault.saveCartProducts(products: cartProductsDatasource)
-//            }
+            UserDefault.saveCartProducts(products: cartArray_temp)
+        }
+        
+        cartTableView.reloadData()
+//        if let qty = self.cartProductsDatasource[indexPath.row].quantity {
+//
+//
+//        }
+    }
+}
+
+//MARK: - TextFeild Delegate
+extension CartVC: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let qtyString = textField.text, let qty = Int(qtyString) {
+            self.cartProductsDatasource[textField.tag] = Util().plusQuantity(product: self.cartProductsDatasource[textField.tag], quantity: qty)
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // For Length //
+        guard let text = textField.text else { return true }
+        let newLength = text.count + string.count - range.length
+        
+        if let newValue = Int(text+string) {
+            return (newValue < 1000 && newLength <= 3)
+        } else {
+            return false
         }
     }
 }

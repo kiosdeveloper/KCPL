@@ -28,13 +28,16 @@ class ProductListVC: AbstractVC {
         
         self.configPicker()
         
-        self.getProductList()
+//        self.getProductList()
         
         self.configNavigationBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        self.getProductList()
+//        self.productlistTableView.reloadData()
         self.updateBadge()
     }
     
@@ -85,6 +88,15 @@ extension ProductListVC {
             if isSuccess {
                 ServiceManagerModel().processProducts(json: responseData, completion: { (isComplete, products) in
                     if isComplete {
+                        
+                        if let cartArray_temp = UserDefault.getCartProducts() {
+                            for product in products! {
+                                if let i = cartArray_temp.index(where: { $0.id == product.id }) {
+
+                                    product.quantity = cartArray_temp[i].quantity
+                                }
+                            }
+                        }
                         self.productsDatasource = products!
                         
                         self.productlistTableView.delegate = self
@@ -129,22 +141,26 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
             cell.productPriceLabel.text = "\(price) Rs."
         }
         cell.delegate = self
+        cell.quantityTextField.delegate = self
         cell.quantityTextField.tag = indexPath.row
         
-        if let cartArray_temp = UserDefault.getCartProducts(), let i = cartArray_temp.index(where: { $0.id == productsDatasource[indexPath.row].id }) {
-            
-            if let qty = cartArray_temp[i].quantity {
-                cell.quantityTextField.text = "\(qty)"
-            }
-        } else {
-            cell.quantityTextField.text = "0"
+//        if let cartArray_temp = UserDefault.getCartProducts(), let i = cartArray_temp.index(where: { $0.id == productsDatasource[indexPath.row].id }) {
+//
+//            if let qty = cartArray_temp[i].quantity {
+//                cell.quantityTextField.text = "\(qty)"
+//                cell.addToCartButton.isHidden = qty > 0
+//            }
+//        } else {
+//            cell.quantityTextField.text = "0"
+//            cell.addToCartButton.isHidden = false
+//        }
+        
+        if let qty = productsDatasource[indexPath.row].quantity {
+            cell.quantityTextField.text = "\(qty)"
+            cell.addToCartButton.isHidden = qty > 0
         }
         
         cell.productImageView.sd_setImage(with: URL.init(string: self.productsDatasource[indexPath.row].imageUrl!), placeholderImage: UIImage(named: "item_detail"), options: .fromCacheOnly, completed: nil)
-        
-        if let qty = self.productsDatasource[indexPath.row].quantity {
-            cell.addToCartButton.isHidden = qty > 0
-        }
         
         return cell
     }
@@ -157,7 +173,7 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
     func btnPlusQuantity(cell: ProductListTableViewCell) {
          guard let indexPath = self.productlistTableView.indexPath(for: cell) else { return }
         
-        self.productsDatasource[indexPath.row] = Util().plusQuantity(product: self.productsDatasource[indexPath.row])
+        self.productsDatasource[indexPath.row] = Util().plusQuantity(product: self.productsDatasource[indexPath.row], quantity: nil)
         
         /*if let qty = self.productsDatasource[indexPath.row].quantity {
             self.productsDatasource[indexPath.row].quantity = qty + 1
@@ -224,7 +240,7 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
     func btnAddToCart(cell: ProductListTableViewCell) {
         guard let indexPath = self.productlistTableView.indexPath(for: cell) else { return }
         
-        self.productsDatasource[indexPath.row] = Util().plusQuantity(product: self.productsDatasource[indexPath.row])
+        self.productsDatasource[indexPath.row] = Util().plusQuantity(product: self.productsDatasource[indexPath.row], quantity: nil)
         
         /*if let qty = self.productsDatasource[indexPath.row].quantity {
             self.productsDatasource[indexPath.row].quantity = qty + 1
@@ -284,14 +300,31 @@ extension ProductListVC: UITextFieldDelegate {
         if textField == self.filterByTextfeild {
             pickerFilter.selectRow(0, inComponent: 0, animated: true)
         }
-        else {
-            self.productsDatasource[textField.tag].quantity = Int(textField.text!)!
-        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == self.filterByTextfeild {
             self.filterByTextfeild.text = selectedFilter
+        } else {
+            if let qtyString = textField.text, let qty = Int(qtyString) {
+                self.productsDatasource[textField.tag] = Util().plusQuantity(product: self.productsDatasource[textField.tag], quantity: qty)
+            }
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == self.filterByTextfeild {
+            return true
+        } else {
+            // For Length //
+            guard let text = textField.text else { return true }
+            let newLength = text.count + string.count - range.length
+            
+            if let newValue = Int(text+string) {
+                return (newValue < 1000 && newLength <= 3)
+            } else {
+                return false
+            }
         }
     }
 }

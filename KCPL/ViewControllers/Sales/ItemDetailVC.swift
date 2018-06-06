@@ -32,7 +32,7 @@ class ItemDetailVC: AbstractVC {
 //    MARK:- Action
     @IBAction func addToCartClicked(_ sender: Any) {
         
-        self.product = Util().plusQuantity(product: self.product)
+        self.product = Util().plusQuantity(product: self.product, quantity: nil)
         /*
         if let qty = self.product.quantity {
             self.product.quantity = qty + 1

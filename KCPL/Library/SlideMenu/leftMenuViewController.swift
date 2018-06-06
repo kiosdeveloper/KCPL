@@ -165,6 +165,7 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
         case Constant.C_SideMenu_SignOut:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
             UserDefault.removeUser()
+            UserDefault.removeCartProducts()
             navigateView(to: vc)
             
         default:

@@ -10,6 +10,14 @@ import UIKit
 
 class CartTotalCell: UITableViewCell {
 
+    @IBOutlet var subTotalLable: ThemeLabelDetail!
+    
+    @IBOutlet var shippingLable: ThemeLabelDetail!
+    
+    @IBOutlet var gstLabel: ThemeLabelDetail!
+    
+    @IBOutlet var totalLabel: ThemeLabelTitle!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
