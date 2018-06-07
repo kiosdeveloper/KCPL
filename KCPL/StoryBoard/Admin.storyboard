@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tjI-gU-vpj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tjI-gU-vpj">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -213,6 +213,7 @@
                         <segue destination="R7G-YM-502" kind="show" identifier="showSalesFromDashboard" id="QLE-La-8SM"/>
                         <segue destination="UeM-5i-oUc" kind="show" identifier="showPurchaseFromDashboard" id="Gzv-JN-GAh"/>
                         <segue destination="7Nc-Ib-r0t" kind="show" identifier="showVendorFromDashboard" id="ANP-kf-u5I"/>
+                        <segue destination="GwV-B0-r6w" kind="show" id="uoo-ie-vv0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Skn-HP-Chl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -355,6 +356,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqj-mi-Vcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3191.25" y="-526.05633802816897"/>
+        </scene>
+        <!--Admin Inventory View Controller-->
+        <scene sceneID="3dc-Rd-VbT">
+            <objects>
+                <viewController storyboardIdentifier="AdminInventoryViewController" id="GwV-B0-r6w" customClass="AdminInventoryViewController" customModule="KCPL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="edn-1s-VkI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Z5q-VC-6vK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pOr-8v-ozO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1341" y="491"/>
         </scene>
         <!--Admin Vendor View Controller-->
         <scene sceneID="J6m-BK-aof">

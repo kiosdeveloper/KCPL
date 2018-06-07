@@ -21,6 +21,7 @@ class DashboardVC: AbstractVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
         self.configNavigationBar()
         self.getCategoryList()
     }
@@ -72,7 +73,7 @@ class DashboardVC: AbstractVC {
     }
     
     @objc func navNotificationPressed() {
-        
+        self.performSegue(withIdentifier: "showNotificationFromDashboard", sender: nil)
     }
     
     //    MARK:- Prepare for Segue
@@ -160,7 +161,7 @@ extension DashboardVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataS
             if UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation) { //if iPhone is in landscape
                 w = (itemsCollectionView.bounds.width/3.0) - 2.0
             } else { //if iPhone is in portrait
-                w = (itemsCollectionView.bounds.width/2.0) - 1.0
+                w = (itemsCollectionView.bounds.width/2.0) - 8.0
                 
             }
         }
@@ -177,12 +178,12 @@ extension DashboardVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 2
+        return 16
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 2
+        return 16
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

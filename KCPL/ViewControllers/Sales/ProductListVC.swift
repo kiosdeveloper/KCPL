@@ -14,11 +14,12 @@ class ProductListVC: AbstractVC {
     
     @IBOutlet weak var filterByTextfeild: UITextField!
     var productsDatasource = [Product]()
+    var filteredProductsDatasource = [Product]()
     
     var category: Category?
     var pickerFilter = UIPickerView()
-    var filterArray = ["Honda","Ceat","Mahindra","Tata"]
-    var selectedFilter = ""
+    var brandNameArray = [String]()
+    var selectedBrandName = ""
     var categoryId: Int!
     
     var navCart = UIBarButtonItem()
@@ -29,7 +30,6 @@ class ProductListVC: AbstractVC {
         self.configPicker()
         
 //        self.getProductList()
-        
         self.configNavigationBar()
     }
     
@@ -39,6 +39,23 @@ class ProductListVC: AbstractVC {
         self.getProductList()
 //        self.productlistTableView.reloadData()
         self.updateBadge()
+    }
+    
+    func getBrandNameArray() {
+        self.brandNameArray.removeAll()
+        self.brandNameArray.append("All brand")
+        
+        for product in self.productsDatasource where product.brand_name != nil {
+            if !self.brandNameArray.contains(product.brand_name!) {
+                self.brandNameArray.append(product.brand_name!)
+            }
+        }
+    }
+    
+    func refreshMainDatasource(index: Int) {
+        if let i = productsDatasource.index(where: { $0.id == self.filteredProductsDatasource[index].id }) {
+            self.productsDatasource[i] = self.filteredProductsDatasource[index]
+        }
     }
     
     func updateBadge() {
@@ -98,7 +115,13 @@ extension ProductListVC {
                             }
                         }
                         self.productsDatasource = products!
+                        if self.selectedBrandName != "" {// If already filtered...
+                            self.filteredProductsDatasource = self.productsDatasource.filter({($0.brand_name!.lowercased().contains(self.selectedBrandName.lowercased()))})
+                        } else {
+                            self.filteredProductsDatasource = self.productsDatasource
+                        }
                         
+                        self.getBrandNameArray()
                         self.productlistTableView.delegate = self
                         self.productlistTableView.dataSource = self
                         
@@ -116,7 +139,7 @@ extension ProductListVC {
         if segue.identifier == "showItemDetailFromProductList" {
             if let toVC = segue.destination as? ItemDetailVC, let indexPath = sender as? IndexPath {
                 toVC.title = self.category?.name
-                toVC.product = productsDatasource[indexPath.row]
+                toVC.product = filteredProductsDatasource[indexPath.row]
             }
         }
     }
@@ -129,15 +152,16 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return productsDatasource.count
+        self.productlistTableView.isHidden = !(filteredProductsDatasource.count > 0)
+        return filteredProductsDatasource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = productlistTableView.dequeueReusableCell(withIdentifier: "ProductListTableViewCell") as! ProductListTableViewCell
         
-        cell.productNameLabel.text = productsDatasource[indexPath.row].name
-        if let price = productsDatasource[indexPath.row].price {
+        cell.productNameLabel.text = filteredProductsDatasource[indexPath.row].name
+        if let price = filteredProductsDatasource[indexPath.row].price {
             cell.productPriceLabel.text = "\(price) Rs."
         }
         cell.delegate = self
@@ -155,12 +179,12 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
 //            cell.addToCartButton.isHidden = false
 //        }
         
-        if let qty = productsDatasource[indexPath.row].quantity {
+        if let qty = filteredProductsDatasource[indexPath.row].quantity {
             cell.quantityTextField.text = "\(qty)"
             cell.addToCartButton.isHidden = qty > 0
         }
         
-        cell.productImageView.sd_setImage(with: URL.init(string: self.productsDatasource[indexPath.row].imageUrl!), placeholderImage: UIImage(named: "item_detail"), options: .fromCacheOnly, completed: nil)
+        cell.productImageView.sd_setImage(with: URL.init(string: self.filteredProductsDatasource[indexPath.row].imageUrl!), placeholderImage: UIImage(named: "item_detail"), options: .fromCacheOnly, completed: nil)
         
         return cell
     }
@@ -170,10 +194,17 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
     }
     
     //    MARK:- Action
+    
+    @IBAction func NextPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "showCartFromProductList", sender: nil)
+    }
+    
     func btnPlusQuantity(cell: ProductListTableViewCell) {
          guard let indexPath = self.productlistTableView.indexPath(for: cell) else { return }
         
-        self.productsDatasource[indexPath.row] = Util().plusQuantity(product: self.productsDatasource[indexPath.row], quantity: nil)
+        self.filteredProductsDatasource[indexPath.row] = Util().plusQuantity(product: self.filteredProductsDatasource[indexPath.row], quantity: nil)
+        
+        self.refreshMainDatasource(index: indexPath.row)
         
         /*if let qty = self.productsDatasource[indexPath.row].quantity {
             self.productsDatasource[indexPath.row].quantity = qty + 1
@@ -195,8 +226,10 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
     func btnMinusQuantity(cell: ProductListTableViewCell) {
         guard let indexPath = self.productlistTableView.indexPath(for: cell) else { return }
         
-        if let product = Util().minusQuantity(product: self.productsDatasource[indexPath.row]) {
-            self.productsDatasource[indexPath.row] = product
+        if let product = Util().minusQuantity(product: self.filteredProductsDatasource[indexPath.row]) {
+            self.filteredProductsDatasource[indexPath.row] = product
+            
+            self.refreshMainDatasource(index: indexPath.row)
             
             if product.quantity == 0 {
                 if var cartArray_temp = UserDefault.getCartProducts() {
@@ -240,7 +273,9 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
     func btnAddToCart(cell: ProductListTableViewCell) {
         guard let indexPath = self.productlistTableView.indexPath(for: cell) else { return }
         
-        self.productsDatasource[indexPath.row] = Util().plusQuantity(product: self.productsDatasource[indexPath.row], quantity: nil)
+        self.filteredProductsDatasource[indexPath.row] = Util().plusQuantity(product: self.filteredProductsDatasource[indexPath.row], quantity: nil)
+        
+        self.refreshMainDatasource(index: indexPath.row)
         
         /*if let qty = self.productsDatasource[indexPath.row].quantity {
             self.productsDatasource[indexPath.row].quantity = qty + 1
@@ -274,12 +309,16 @@ extension ProductListVC: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        return filterArray.count
+        return brandNameArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("You select \(row)")
-        selectedFilter = self.filterArray[row]
+        if row == 0 {
+            selectedBrandName = ""
+        } else {
+            selectedBrandName = self.brandNameArray[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -288,7 +327,7 @@ extension ProductListVC: UIPickerViewDelegate, UIPickerViewDataSource {
         label.font = UIFont(name: "Helvetica", size: 18)
         label.textAlignment = NSTextAlignment.center
         
-        label.text = filterArray[row]
+        label.text = brandNameArray[row]
         
         return label
     }
@@ -298,16 +337,33 @@ extension ProductListVC: UIPickerViewDelegate, UIPickerViewDataSource {
 extension ProductListVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == self.filterByTextfeild {
-            pickerFilter.selectRow(0, inComponent: 0, animated: true)
+            
+            if let i = brandNameArray.index(where: { $0 == selectedBrandName }) {
+                pickerFilter.selectRow(i, inComponent: 0, animated: true)
+            } else {
+                pickerFilter.selectRow(0, inComponent: 0, animated: true)
+            }
         }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == self.filterByTextfeild {
-            self.filterByTextfeild.text = selectedFilter
+            self.filterByTextfeild.text = "Filter By " + selectedBrandName
+            
+            self.filteredProductsDatasource.removeAll()
+            if selectedBrandName == "" {
+                self.filteredProductsDatasource = self.productsDatasource
+                self.productlistTableView.reloadData()
+            } else {
+                self.filteredProductsDatasource = self.productsDatasource.filter({($0.brand_name!.lowercased().contains(selectedBrandName.lowercased()))})
+                self.productlistTableView.reloadData()
+            }
+            
+            
+            
         } else {
             if let qtyString = textField.text, let qty = Int(qtyString) {
-                self.productsDatasource[textField.tag] = Util().plusQuantity(product: self.productsDatasource[textField.tag], quantity: qty)
+                self.filteredProductsDatasource[textField.tag] = Util().plusQuantity(product: self.filteredProductsDatasource[textField.tag], quantity: qty)
             }
         }
     }

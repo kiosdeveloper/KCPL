@@ -33,7 +33,7 @@ class DeliveryAddressVC: AbstractVC {
             for viewController in (self.navigationController?.viewControllers ?? []) {
                 if viewController is DashboardVC {
                     UserDefault.removeCartProducts()
-                    
+                    "Your order placed successfully.".configToast(isError: false)
                     _ = self.navigationController?.popToViewController(viewController, animated: true)
                     return
                 }

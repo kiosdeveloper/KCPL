@@ -1,0 +1,255 @@
+
+/* Class = "UILabel"; text = "JohnDoe"; ObjectID = "0Ag-SC-83s"; */
+"0Ag-SC-83s.text" = "JohnDoe";
+
+/* Class = "UITextField"; placeholder = "Delivery Address"; ObjectID = "1sI-iQ-ORY"; */
+"1sI-iQ-ORY.placeholder" = "Delivery Address";
+
+/* Class = "UIButton"; normalTitle = "Add To Cart"; ObjectID = "2NL-c8-vve"; */
+"2NL-c8-vve.normalTitle" = "Add To Cart";
+
+/* Class = "UILabel"; text = "Rs. 0"; ObjectID = "31B-Kh-KXF"; */
+"31B-Kh-KXF.text" = "Rs. 0";
+
+/* Class = "UIButton"; normalTitle = "Confirmed"; ObjectID = "3CG-5J-XO8"; */
+"3CG-5J-XO8.normalTitle" = "Confirmed";
+
+/* Class = "UILabel"; text = "Customers"; ObjectID = "3EK-qc-asR"; */
+"3EK-qc-asR.text" = "Customers";
+
+/* Class = "UITextField"; placeholder = "Company Address"; ObjectID = "3PS-ML-4fU"; */
+"3PS-ML-4fU.placeholder" = "Company Address";
+
+/* Class = "UILabel"; text = "Shipping"; ObjectID = "41r-IK-M9Y"; */
+"41r-IK-M9Y.text" = "Shipping";
+
+/* Class = "UILabel"; text = "Company Information"; ObjectID = "8yq-ai-EhU"; */
+"8yq-ai-EhU.text" = "Company Information";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "9F2-N5-iM0"; */
+"9F2-N5-iM0.placeholder" = "First Name";
+
+/* Class = "UIButton"; normalTitle = "Add to Cart"; ObjectID = "Avz-2p-pxP"; */
+"Avz-2p-pxP.normalTitle" = "Add to Cart";
+
+/* Class = "UILabel"; text = "Order Summary"; ObjectID = "B1B-do-KYx"; */
+"B1B-do-KYx.text" = "Order Summary";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "Ba2-At-Gai"; */
+"Ba2-At-Gai.normalTitle" = "-";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "Bl1-lP-gY3"; */
+"Bl1-lP-gY3.placeholder" = "Last Name";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CHr-Gn-DoF"; */
+"CHr-Gn-DoF.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DAO-3R-qPk"; */
+"DAO-3R-qPk.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "0"; ObjectID = "DmM-T6-Pcm"; */
+"DmM-T6-Pcm.placeholder" = "0";
+
+/* Class = "UITextField"; text = "Filter By"; ObjectID = "EIE-dA-xuf"; */
+"EIE-dA-xuf.text" = "Filter By";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "Eqk-ar-yhF"; */
+"Eqk-ar-yhF.normalTitle" = "-";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Erv-lj-9eE"; */
+"Erv-lj-9eE.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "Et6-zQ-VsO"; */
+"Et6-zQ-VsO.normalTitle" = "+";
+
+/* Class = "UITextField"; placeholder = "Email Id"; ObjectID = "HFu-Ss-ep7"; */
+"HFu-Ss-ep7.placeholder" = "Email Id";
+
+/* Class = "UIButton"; normalTitle = ">"; ObjectID = "Mhx-Vc-6Cf"; */
+"Mhx-Vc-6Cf.normalTitle" = ">";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Mtx-Jb-TwD"; */
+"Mtx-Jb-TwD.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Don't have account? SIGN UP"; ObjectID = "NnB-Jr-eTs"; */
+"NnB-Jr-eTs.normalTitle" = "Don't have account? SIGN UP";
+
+/* Class = "UILabel"; text = "Shipping To"; ObjectID = "O9u-eS-Q3G"; */
+"O9u-eS-Q3G.text" = "Shipping To";
+
+/* Class = "UIButton"; normalTitle = "Already Have an Account? Log-in"; ObjectID = "Q48-g9-Sc4"; */
+"Q48-g9-Sc4.normalTitle" = "Already Have an Account? Log-in";
+
+/* Class = "UITextField"; placeholder = "0"; ObjectID = "RZK-PN-iVj"; */
+"RZK-PN-iVj.placeholder" = "0";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "SWQ-Bi-gPS"; */
+"SWQ-Bi-gPS.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "A"; ObjectID = "SYc-pU-bkx"; */
+"SYc-pU-bkx.text" = "A";
+
+/* Class = "UITextField"; placeholder = "Company Name"; ObjectID = "Scw-DU-0TK"; */
+"Scw-DU-0TK.placeholder" = "Company Name";
+
+/* Class = "UILabel"; text = "Porject Description"; ObjectID = "Snb-tk-xLA"; */
+"Snb-tk-xLA.text" = "Porject Description";
+
+/* Class = "UILabel"; text = "Customer Details"; ObjectID = "UMO-rK-Jft"; */
+"UMO-rK-Jft.text" = "Customer Details";
+
+/* Class = "UITextField"; text = "9893912121"; ObjectID = "UaM-3E-Ncn"; */
+"UaM-3E-Ncn.text" = "9893912121";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "Wsb-Aa-U2x"; */
+"Wsb-Aa-U2x.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "gsd hdgs fghsdgh dgh gdsh sdhgg hsgh ghghfh sdgh fgf hsg"; ObjectID = "XYX-bw-muI"; */
+"XYX-bw-muI.text" = "gsd hdgs fghsdgh dgh gdsh sdhgg hsgh ghghfh sdgh fgf hsg";
+
+/* Class = "UILabel"; text = "Rs. 2750"; ObjectID = "Xvc-88-LQh"; */
+"Xvc-88-LQh.text" = "Rs. 2750";
+
+/* Class = "UILabel"; text = "Personal Information"; ObjectID = "YZv-VV-K34"; */
+"YZv-VV-K34.text" = "Personal Information";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Zes-v5-hxV"; */
+"Zes-v5-hxV.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "acG-rZ-mtP"; */
+"acG-rZ-mtP.placeholder" = "Username";
+
+/* Class = "UITextField"; text = "saneparapiyush@gmail.com"; ObjectID = "acG-rZ-mtP"; */
+"acG-rZ-mtP.text" = "saneparapiyush@gmail.com";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "ako-9Q-yZ4"; */
+"ako-9Q-yZ4.normalTitle" = "+";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "bRh-NK-cDy"; */
+"bRh-NK-cDy.normalTitle" = "Register";
+
+/* Class = "UILabel"; text = "GST"; ObjectID = "bbL-Ih-WKt"; */
+"bbL-Ih-WKt.text" = "GST";
+
+/* Class = "UILabel"; text = "Contact"; ObjectID = "bf3-ZQ-Wot"; */
+"bf3-ZQ-Wot.text" = "Contact";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "bjB-lh-9Ij"; */
+"bjB-lh-9Ij.normalTitle" = "Edit";
+
+/* Class = "UILabel"; text = "Rs. 0"; ObjectID = "cKr-ZK-55R"; */
+"cKr-ZK-55R.text" = "Rs. 0";
+
+/* Class = "UITextField"; placeholder = "GSTin Number"; ObjectID = "cyi-mD-AVO"; */
+"cyi-mD-AVO.placeholder" = "GSTin Number";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dEs-Ri-5B0"; */
+"dEs-Ri-5B0.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "dOZ-US-zUx"; */
+"dOZ-US-zUx.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "dia-FQ-Pw7"; */
+"dia-FQ-Pw7.normalTitle" = "Edit";
+
+/* Class = "UILabel"; text = "Login as a Sales consultant"; ObjectID = "eoa-gg-VrC"; */
+"eoa-gg-VrC.text" = "Login as a Sales consultant";
+
+/* Class = "UILabel"; text = "afs gdfg afasg    fgsfa afg asf gasg"; ObjectID = "f0B-pd-rli"; */
+"f0B-pd-rli.text" = "afs gdfg afasg    fgsfa afg asf gasg";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fDp-vf-p5i"; */
+"fDp-vf-p5i.text" = "Label";
+
+/* Class = "UITextField"; text = "Mr. Sunil Chettri"; ObjectID = "fPn-zl-z4q"; */
+"fPn-zl-z4q.text" = "Mr. Sunil Chettri";
+
+/* Class = "UITextField"; text = "Karnavati Corpo."; ObjectID = "fVZ-7Z-MHp"; */
+"fVZ-7Z-MHp.text" = "Karnavati Corpo.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fmd-zI-sdP"; */
+"fmd-zI-sdP.text" = "Label";
+
+/* Class = "UITextView"; text = "A/8 GIDC Mamtapura ,                         Ahmedabad                                          Gujarat - 3800115"; ObjectID = "ftq-i7-mNr"; */
+"ftq-i7-mNr.text" = "A/8 GIDC Mamtapura ,                         Ahmedabad                                          Gujarat - 3800115";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gas-jw-Sdp"; */
+"gas-jw-Sdp.text" = "Label";
+
+/* Class = "UILabel"; text = "Rs. 0"; ObjectID = "goo-TA-o6V"; */
+"goo-TA-o6V.text" = "Rs. 0";
+
+/* Class = "UIButton"; normalTitle = "LOG IN"; ObjectID = "h2d-Vr-cv6"; */
+"h2d-Vr-cv6.normalTitle" = "LOG IN";
+
+/* Class = "UILabel"; text = "Subtotal"; ObjectID = "h84-lW-chG"; */
+"h84-lW-chG.text" = "Subtotal";
+
+/* Class = "UILabel"; text = "Rs.0"; ObjectID = "ip7-o3-Xj8"; */
+"ip7-o3-Xj8.text" = "Rs.0";
+
+/* Class = "UILabel"; text = "Order #ASD2347"; ObjectID = "kqY-rh-eFy"; */
+"kqY-rh-eFy.text" = "Order #ASD2347";
+
+/* Class = "UILabel"; text = "Woops! Your cart is empty."; ObjectID = "ktS-Le-Rg1"; */
+"ktS-Le-Rg1.text" = "Woops! Your cart is empty.";
+
+/* Class = "UIButton"; normalTitle = "<"; ObjectID = "lmP-gg-D5W"; */
+"lmP-gg-D5W.normalTitle" = "<";
+
+/* Class = "UITextField"; placeholder = "Mobile Number"; ObjectID = "ncd-io-A4J"; */
+"ncd-io-A4J.placeholder" = "Mobile Number";
+
+/* Class = "UILabel"; text = "Part No: A123567"; ObjectID = "oVY-29-7NK"; */
+"oVY-29-7NK.text" = "Part No: A123567";
+
+/* Class = "UILabel"; text = "Cart Items"; ObjectID = "pG7-td-1aK"; */
+"pG7-td-1aK.text" = "Cart Items";
+
+/* Class = "UISearchBar"; placeholder = "Search for category, brand or item code"; ObjectID = "pNd-NJ-cF4"; */
+"pNd-NJ-cF4.placeholder" = "Search for category, brand or item code";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "pbH-u8-ljl"; */
+"pbH-u8-ljl.text" = "Total";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "qRX-fa-qqK"; */
+"qRX-fa-qqK.text" = "Title";
+
+/* Class = "UILabel"; text = "111-02  Galatic Avenue                       Sg Highway, Ahmedabad"; ObjectID = "qt5-s3-RfW"; */
+"qt5-s3-RfW.text" = "111-02  Galatic Avenue                       Sg Highway, Ahmedabad";
+
+/* Class = "UILabel"; text = "13 May. 2018"; ObjectID = "r2v-iV-X3S"; */
+"r2v-iV-X3S.text" = "13 May. 2018";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uLX-Up-9tw"; */
+"uLX-Up-9tw.text" = "Label";
+
+/* Class = "UILabel"; text = "Processing: 02-May 2018"; ObjectID = "uPm-IV-Mqb"; */
+"uPm-IV-Mqb.text" = "Processing: 02-May 2018";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uTM-q2-Ffh"; */
+"uTM-q2-Ffh.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "ubP-FE-HKa"; */
+"ubP-FE-HKa.placeholder" = "Password";
+
+/* Class = "UITextField"; text = "123456"; ObjectID = "ubP-FE-HKa"; */
+"ubP-FE-HKa.text" = "123456";
+
+/* Class = "UILabel"; text = "Person Detail"; ObjectID = "vDX-g8-GPC"; */
+"vDX-g8-GPC.text" = "Person Detail";
+
+/* Class = "UILabel"; text = "8452956485"; ObjectID = "wTh-I6-xTr"; */
+"wTh-I6-xTr.text" = "8452956485";
+
+/* Class = "UILabel"; text = "9945 Points"; ObjectID = "wa1-PP-4N8"; */
+"wa1-PP-4N8.text" = "9945 Points";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "xEy-Vt-6Gq"; */
+"xEy-Vt-6Gq.placeholder" = "Confirm Password";
+
+/* Class = "UILabel"; text = "Submitted On"; ObjectID = "xHI-ku-IjT"; */
+"xHI-ku-IjT.text" = "Submitted On";
+
+/* Class = "UILabel"; text = "Select Delivery Address"; ObjectID = "xo3-hs-Km2"; */
+"xo3-hs-Km2.text" = "Select Delivery Address";
