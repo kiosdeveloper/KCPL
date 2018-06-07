@@ -87,7 +87,15 @@ extension AdminDashboardVC: UICollectionViewDelegateFlowLayout, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if indexPath.item == 0 {
+            self.performSegue(withIdentifier: "showSalesFromDashboard", sender: nil)
+        }
+        else if indexPath.item == 1 {
+            self.performSegue(withIdentifier: "showPurchaseFromDashboard", sender: nil)
+        }
+        else if indexPath.item == 5 {
+            self.performSegue(withIdentifier: "showVendorFromDashboard", sender: nil)
+        }
     }
     
 }
