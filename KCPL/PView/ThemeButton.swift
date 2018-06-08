@@ -29,6 +29,20 @@ class ThemeButtonPlain: UIButton {
     }
 }
 
+class ThemeButtonBorder: UIButton {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.layer.cornerRadius = self.frame.size.height / 2
+        self.layer.borderWidth = 1
+        self.layer.borderColor = ConstantsUI.C_Color_Theme.cgColor
+        self.setTitleColor(ConstantsUI.C_Color_Theme, for: UIControlState())
+        self.titleLabel?.font = ConstantsUI.C_Font_LableTitle
+    }
+}
+
+
 /*
 class ThemeButtonSignUp: UIButton {
     

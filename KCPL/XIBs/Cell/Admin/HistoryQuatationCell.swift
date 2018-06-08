@@ -1,5 +1,5 @@
 //
-//  CartTotalCell.swift
+//  HistoryQuatationCell.swift
 //  KCPL
 //
 //  Created by Piyush Sanepara on 08/06/18.
@@ -8,16 +8,8 @@
 
 import UIKit
 
-class CartTotalCell: UITableViewCell {
-    
-    @IBOutlet var subTotalLable: ThemeLabelDetail!
-    
-    @IBOutlet var shippingLable: ThemeLabelDetail!
-    
-    @IBOutlet var gstLabel: ThemeLabelDetail!
-    
-    @IBOutlet var totalLabel: ThemeLabelTitle!
-    
+class HistoryQuatationCell: UITableViewCell {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

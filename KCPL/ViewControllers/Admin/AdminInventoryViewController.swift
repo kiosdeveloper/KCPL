@@ -12,9 +12,14 @@ class AdminInventoryViewController: AbstractVC {
     
     @IBOutlet var inventoryTableview: UITableView!
     
+    @IBOutlet var headerView: ThemeShadowView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.headerView.layer.borderColor = ConstantsUI.C_Color_Theme.cgColor
+        self.headerView.layer.borderWidth = 1.0
+        
         inventoryTableview.register(UINib.init(nibName: "InventoryTableViewCell", bundle: nil), forCellReuseIdentifier: "InventoryTableViewCell")
     }
 }

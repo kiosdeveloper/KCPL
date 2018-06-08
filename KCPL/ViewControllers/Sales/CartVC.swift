@@ -27,6 +27,9 @@ class CartVC: AbstractVC {
             cartProductsDatasource = cartArray_temp
         }
         
+        cartTableView.register(UINib.init(nibName: "CartCell", bundle: nil), forCellReuseIdentifier: "CartCell")
+        cartTableView.register(UINib.init(nibName: "CartTotalCell", bundle: nil), forCellReuseIdentifier: "CartTotalCell")
+        
         self.configNavigationBar()
     }
     
@@ -64,7 +67,7 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
-            let cell = cartTableView.dequeueReusableCell(withIdentifier: "CartItemListCell") as! CartItemListCell
+            let cell = cartTableView.dequeueReusableCell(withIdentifier: "CartCell") as! CartCell
             cell.delegate = self
             cell.productQuantityTextfeild.delegate = self
             cell.productQuantityTextfeild.tag = indexPath.row
@@ -122,7 +125,7 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
         }
     }
     
-    func btnPlusQuantity(cell: CartItemListCell) {
+    func btnPlusQuantity(cell: CartCell) {
         guard let indexPath = self.cartTableView.indexPath(for: cell) else { return }
         
         print("+ \(indexPath.row) pressed")
@@ -143,7 +146,7 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
         self.cartTableView.reloadData()
     }
     
-    func btnMinusQuantity(cell: CartItemListCell) {
+    func btnMinusQuantity(cell: CartCell) {
         guard let indexPath = self.cartTableView.indexPath(for: cell) else { return }
         
         if let product = Util().minusQuantity(product: self.cartProductsDatasource[indexPath.row]) {
@@ -189,7 +192,7 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
         }*/
     }
     
-    func btnRemoveFromCart(cell: CartItemListCell) {
+    func btnRemoveFromCart(cell: CartCell) {
         guard let indexPath = self.cartTableView.indexPath(for: cell) else { return }
         if var cartArray_temp = UserDefault.getCartProducts() {
             

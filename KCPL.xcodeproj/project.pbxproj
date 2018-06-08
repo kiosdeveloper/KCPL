@@ -8,6 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		000763DA1A31F7E74E0F2743 /* Pods_KCPLAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6681FEE6865CBCD7C3E7DC /* Pods_KCPLAdmin.framework */; };
+		110993AA20CA858B001C9109 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993A820CA858B001C9109 /* CartCell.swift */; };
+		110993AB20CA858B001C9109 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110993A920CA858B001C9109 /* CartCell.xib */; };
+		110993AC20CA85E0001C9109 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993A820CA858B001C9109 /* CartCell.swift */; };
+		110993AD20CA85E0001C9109 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110993A920CA858B001C9109 /* CartCell.xib */; };
+		110993AE20CA85E1001C9109 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993A820CA858B001C9109 /* CartCell.swift */; };
+		110993AF20CA85E1001C9109 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110993A920CA858B001C9109 /* CartCell.xib */; };
+		110993B420CA8E0E001C9109 /* CartTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993B220CA8E0E001C9109 /* CartTotalCell.swift */; };
+		110993B520CA8E0E001C9109 /* CartTotalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110993B320CA8E0E001C9109 /* CartTotalCell.xib */; };
+		110993B720CA9349001C9109 /* AdminQuataionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993B620CA9349001C9109 /* AdminQuataionViewController.swift */; };
+		110993B820CA9349001C9109 /* AdminQuataionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993B620CA9349001C9109 /* AdminQuataionViewController.swift */; };
+		110993B920CA9349001C9109 /* AdminQuataionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993B620CA9349001C9109 /* AdminQuataionViewController.swift */; };
+		110993BC20CA9387001C9109 /* AdminPendingQuatationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993BB20CA9387001C9109 /* AdminPendingQuatationViewController.swift */; };
+		110993BD20CA9387001C9109 /* AdminPendingQuatationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993BB20CA9387001C9109 /* AdminPendingQuatationViewController.swift */; };
+		110993BE20CA9387001C9109 /* AdminPendingQuatationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993BB20CA9387001C9109 /* AdminPendingQuatationViewController.swift */; };
+		110993C420CA9413001C9109 /* AdminHistoryQuatationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993C320CA9413001C9109 /* AdminHistoryQuatationViewController.swift */; };
+		110993C520CA9413001C9109 /* AdminHistoryQuatationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993C320CA9413001C9109 /* AdminHistoryQuatationViewController.swift */; };
+		110993C620CA9413001C9109 /* AdminHistoryQuatationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993C320CA9413001C9109 /* AdminHistoryQuatationViewController.swift */; };
+		110993C720CA99C7001C9109 /* CartTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993B220CA8E0E001C9109 /* CartTotalCell.swift */; };
+		110993C820CA99C7001C9109 /* CartTotalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110993B320CA8E0E001C9109 /* CartTotalCell.xib */; };
+		110993C920CA99C8001C9109 /* CartTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993B220CA8E0E001C9109 /* CartTotalCell.swift */; };
+		110993CA20CA99C8001C9109 /* CartTotalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110993B320CA8E0E001C9109 /* CartTotalCell.xib */; };
+		110993CD20CA9E8E001C9109 /* PendingQuatationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993CB20CA9E8E001C9109 /* PendingQuatationCell.swift */; };
+		110993CE20CA9E8E001C9109 /* PendingQuatationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993CB20CA9E8E001C9109 /* PendingQuatationCell.swift */; };
+		110993CF20CA9E8E001C9109 /* PendingQuatationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993CB20CA9E8E001C9109 /* PendingQuatationCell.swift */; };
+		110993D020CA9E8E001C9109 /* PendingQuatationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110993CC20CA9E8E001C9109 /* PendingQuatationCell.xib */; };
+		110993D120CA9E8E001C9109 /* PendingQuatationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110993CC20CA9E8E001C9109 /* PendingQuatationCell.xib */; };
+		110993D220CA9E8E001C9109 /* PendingQuatationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110993CC20CA9E8E001C9109 /* PendingQuatationCell.xib */; };
+		110993D520CA9EBB001C9109 /* HistoryQuatationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993D320CA9EBB001C9109 /* HistoryQuatationCell.swift */; };
+		110993D620CA9EBB001C9109 /* HistoryQuatationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993D320CA9EBB001C9109 /* HistoryQuatationCell.swift */; };
+		110993D720CA9EBB001C9109 /* HistoryQuatationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110993D320CA9EBB001C9109 /* HistoryQuatationCell.swift */; };
+		110993D820CA9EBB001C9109 /* HistoryQuatationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110993D420CA9EBB001C9109 /* HistoryQuatationCell.xib */; };
+		110993D920CA9EBB001C9109 /* HistoryQuatationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110993D420CA9EBB001C9109 /* HistoryQuatationCell.xib */; };
+		110993DA20CA9EBB001C9109 /* HistoryQuatationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110993D420CA9EBB001C9109 /* HistoryQuatationCell.xib */; };
 		111525DE20BEAC7800153E6C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111525DD20BEAC7800153E6C /* Category.swift */; };
 		111525DF20BEAC7800153E6C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111525DD20BEAC7800153E6C /* Category.swift */; };
 		111525E020BEAC7800153E6C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111525DD20BEAC7800153E6C /* Category.swift */; };
@@ -109,8 +142,6 @@
 		85516BA920C8E82300BD617C /* AdminVendorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85516BA820C8E82300BD617C /* AdminVendorTableViewCell.swift */; };
 		85516BAA20C8E82300BD617C /* AdminVendorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85516BA820C8E82300BD617C /* AdminVendorTableViewCell.swift */; };
 		85516BAB20C8E82300BD617C /* AdminVendorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85516BA820C8E82300BD617C /* AdminVendorTableViewCell.swift */; };
-		859701E220A4EA8E008A08B4 /* CartItemListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E120A4EA8E008A08B4 /* CartItemListCell.swift */; };
-		859701E420A4EADD008A08B4 /* CartTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E320A4EADD008A08B4 /* CartTotalCell.swift */; };
 		859701E620A4F45B008A08B4 /* DeliveryAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E520A4F45B008A08B4 /* DeliveryAddressTableViewCell.swift */; };
 		859701E820A4F54B008A08B4 /* DeliveryAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E720A4F54B008A08B4 /* DeliveryAddressVC.swift */; };
 		859701EA20A506A7008A08B4 /* ThemeShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E920A506A7008A08B4 /* ThemeShadowView.swift */; };
@@ -133,7 +164,6 @@
 		85B3948E20AB9AC600E643DD /* CustomerDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AC8D720A6677A002A3292 /* CustomerDetailCell.swift */; };
 		85B3948F20AB9AC600E643DD /* ThemeSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B3893209D903C008391BC /* ThemeSearchBar.swift */; };
 		85B3949020AB9AC600E643DD /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5C1209C718E009F6A68 /* AppRouter.swift */; };
-		85B3949120AB9AC600E643DD /* CartItemListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E120A4EA8E008A08B4 /* CartItemListCell.swift */; };
 		85B3949220AB9AC600E643DD /* SlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5AE209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScale.m */; };
 		85B3949320AB9AC600E643DD /* ItemDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F378209C13A50039F801 /* ItemDetailTableViewCell.swift */; };
 		85B3949420AB9AC600E643DD /* SlideNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5B7209C6D87009F6A68 /* SlideNavigationController.m */; };
@@ -141,7 +171,6 @@
 		85B3949620AB9AC600E643DD /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F371209ABAFB0039F801 /* SignUpVC.swift */; };
 		85B3949720AB9AC600E643DD /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D542099EBFD006C00C9 /* ThemeLabel.swift */; };
 		85B3949820AB9AC600E643DD /* ThemeTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D562099EBFD006C00C9 /* ThemeTextfield.swift */; };
-		85B3949920AB9AC600E643DD /* CartTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E320A4EADD008A08B4 /* CartTotalCell.swift */; };
 		85B3949A20AB9AC600E643DD /* ConstantUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D512099EB8B006C00C9 /* ConstantUI.swift */; };
 		85B3949B20AB9AC600E643DD /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D552099EBFD006C00C9 /* ThemeButton.swift */; };
 		85B3949C20AB9AC600E643DD /* leftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5B5209C6D87009F6A68 /* leftMenuViewController.swift */; };
@@ -179,7 +208,6 @@
 		85B394CE20AE2ABB00E643DD /* CustomerDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AC8D720A6677A002A3292 /* CustomerDetailCell.swift */; };
 		85B394CF20AE2ABB00E643DD /* ThemeSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B3893209D903C008391BC /* ThemeSearchBar.swift */; };
 		85B394D020AE2ABB00E643DD /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5C1209C718E009F6A68 /* AppRouter.swift */; };
-		85B394D120AE2ABB00E643DD /* CartItemListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E120A4EA8E008A08B4 /* CartItemListCell.swift */; };
 		85B394D220AE2ABB00E643DD /* SlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5AE209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScale.m */; };
 		85B394D320AE2ABB00E643DD /* ItemDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F378209C13A50039F801 /* ItemDetailTableViewCell.swift */; };
 		85B394D420AE2ABB00E643DD /* SlideNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5B7209C6D87009F6A68 /* SlideNavigationController.m */; };
@@ -188,7 +216,6 @@
 		85B394D720AE2ABB00E643DD /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D542099EBFD006C00C9 /* ThemeLabel.swift */; };
 		85B394D820AE2ABB00E643DD /* ThemeTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D562099EBFD006C00C9 /* ThemeTextfield.swift */; };
 		85B394D920AE2ABB00E643DD /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112CEAF920AC0D6B004BCF37 /* Constant.swift */; };
-		85B394DA20AE2ABB00E643DD /* CartTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E320A4EADD008A08B4 /* CartTotalCell.swift */; };
 		85B394DB20AE2ABB00E643DD /* ConstantUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D512099EB8B006C00C9 /* ConstantUI.swift */; };
 		85B394DC20AE2ABB00E643DD /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D552099EBFD006C00C9 /* ThemeButton.swift */; };
 		85B394DD20AE2ABB00E643DD /* leftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5B5209C6D87009F6A68 /* leftMenuViewController.swift */; };
@@ -248,6 +275,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		110993A820CA858B001C9109 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		110993A920CA858B001C9109 /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
+		110993B220CA8E0E001C9109 /* CartTotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTotalCell.swift; sourceTree = "<group>"; };
+		110993B320CA8E0E001C9109 /* CartTotalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTotalCell.xib; sourceTree = "<group>"; };
+		110993B620CA9349001C9109 /* AdminQuataionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminQuataionViewController.swift; sourceTree = "<group>"; };
+		110993BB20CA9387001C9109 /* AdminPendingQuatationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPendingQuatationViewController.swift; sourceTree = "<group>"; };
+		110993C320CA9413001C9109 /* AdminHistoryQuatationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHistoryQuatationViewController.swift; sourceTree = "<group>"; };
+		110993CB20CA9E8E001C9109 /* PendingQuatationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingQuatationCell.swift; sourceTree = "<group>"; };
+		110993CC20CA9E8E001C9109 /* PendingQuatationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PendingQuatationCell.xib; sourceTree = "<group>"; };
+		110993D320CA9EBB001C9109 /* HistoryQuatationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryQuatationCell.swift; sourceTree = "<group>"; };
+		110993D420CA9EBB001C9109 /* HistoryQuatationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryQuatationCell.xib; sourceTree = "<group>"; };
 		111525DD20BEAC7800153E6C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		111525E320BEDC5500153E6C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		111BE25D20BD31BE00190718 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -323,8 +361,6 @@
 		85516B9F20C8E21E00BD617C /* AdminPurchaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPurchaseTableViewCell.swift; sourceTree = "<group>"; };
 		85516BA420C8E80400BD617C /* AdminVendorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminVendorViewController.swift; sourceTree = "<group>"; };
 		85516BA820C8E82300BD617C /* AdminVendorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminVendorTableViewCell.swift; sourceTree = "<group>"; };
-		859701E120A4EA8E008A08B4 /* CartItemListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemListCell.swift; sourceTree = "<group>"; };
-		859701E320A4EADD008A08B4 /* CartTotalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTotalCell.swift; sourceTree = "<group>"; };
 		859701E520A4F45B008A08B4 /* DeliveryAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAddressTableViewCell.swift; sourceTree = "<group>"; };
 		859701E720A4F54B008A08B4 /* DeliveryAddressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryAddressVC.swift; sourceTree = "<group>"; };
 		859701E920A506A7008A08B4 /* ThemeShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeShadowView.swift; sourceTree = "<group>"; };
@@ -477,6 +513,10 @@
 				85516BA820C8E82300BD617C /* AdminVendorTableViewCell.swift */,
 				11EFFC5220C95D84007686B9 /* InventoryTableViewCell.swift */,
 				11EFFC5320C95D84007686B9 /* InventoryTableViewCell.xib */,
+				110993CB20CA9E8E001C9109 /* PendingQuatationCell.swift */,
+				110993CC20CA9E8E001C9109 /* PendingQuatationCell.xib */,
+				110993D320CA9EBB001C9109 /* HistoryQuatationCell.swift */,
+				110993D420CA9EBB001C9109 /* HistoryQuatationCell.xib */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -551,17 +591,19 @@
 		85516BA320C8E33E00BD617C /* Sales */ = {
 			isa = PBXGroup;
 			children = (
-				859701E320A4EADD008A08B4 /* CartTotalCell.swift */,
 				1129C358209B2B29005DC1B8 /* DashboardItemCell.swift */,
 				8515F378209C13A50039F801 /* ItemDetailTableViewCell.swift */,
 				8515F37A209C13B90039F801 /* ImagesListCollectionViewCell.swift */,
-				859701E120A4EA8E008A08B4 /* CartItemListCell.swift */,
 				859701E520A4F45B008A08B4 /* DeliveryAddressTableViewCell.swift */,
 				859701EB20A50702008A08B4 /* OrderHistoryTableViewCell.swift */,
 				853AC8D720A6677A002A3292 /* CustomerDetailCell.swift */,
 				11470FD220AAF569009ECB0B /* CustomerTableViewCell.swift */,
 				11388F9420BD89DB00E54FB2 /* ProductListTableViewCell.swift */,
 				11EFFC4E20C95318007686B9 /* NotificationTableViewCell.swift */,
+				110993A820CA858B001C9109 /* CartCell.swift */,
+				110993A920CA858B001C9109 /* CartCell.xib */,
+				110993B220CA8E0E001C9109 /* CartTotalCell.swift */,
+				110993B320CA8E0E001C9109 /* CartTotalCell.xib */,
 			);
 			path = Sales;
 			sourceTree = "<group>";
@@ -604,6 +646,9 @@
 				85516B9B20C8E04500BD617C /* AdminPurchaseViewController.swift */,
 				85516BA420C8E80400BD617C /* AdminVendorViewController.swift */,
 				11EFFC5A20C96067007686B9 /* AdminInventoryViewController.swift */,
+				110993B620CA9349001C9109 /* AdminQuataionViewController.swift */,
+				110993BB20CA9387001C9109 /* AdminPendingQuatationViewController.swift */,
+				110993C320CA9413001C9109 /* AdminHistoryQuatationViewController.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -847,13 +892,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				110993CA20CA99C8001C9109 /* CartTotalCell.xib in Resources */,
 				85B394A820AB9AC600E643DD /* LaunchScreen.storyboard in Resources */,
 				85B394FB20AE2BF100E643DD /* Admin.storyboard in Resources */,
 				85B394B820AB9F6300E643DD /* KCPLSalesInfo.plist in Resources */,
+				110993AD20CA85E0001C9109 /* CartCell.xib in Resources */,
+				110993D920CA9EBB001C9109 /* HistoryQuatationCell.xib in Resources */,
 				85B394F620AE2BAE00E643DD /* KCPLAdminInfo.plist in Resources */,
 				11EFFC5820C95D84007686B9 /* InventoryTableViewCell.xib in Resources */,
 				85B394A920AB9AC600E643DD /* Assets.xcassets in Resources */,
 				85B394AA20AB9AC600E643DD /* NavigationView.xib in Resources */,
+				110993D120CA9E8E001C9109 /* PendingQuatationCell.xib in Resources */,
 				85B394AB20AB9AC600E643DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -862,13 +911,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				110993C820CA99C7001C9109 /* CartTotalCell.xib in Resources */,
 				85B394E920AE2ABB00E643DD /* LaunchScreen.storyboard in Resources */,
 				85B394FC20AE2BF100E643DD /* Admin.storyboard in Resources */,
 				85B394EA20AE2ABB00E643DD /* KCPLSalesInfo.plist in Resources */,
+				110993AF20CA85E1001C9109 /* CartCell.xib in Resources */,
+				110993DA20CA9EBB001C9109 /* HistoryQuatationCell.xib in Resources */,
 				85B394F720AE2BAE00E643DD /* KCPLAdminInfo.plist in Resources */,
 				11EFFC5920C95D84007686B9 /* InventoryTableViewCell.xib in Resources */,
 				85B394EB20AE2ABB00E643DD /* Assets.xcassets in Resources */,
 				85B394EC20AE2ABB00E643DD /* NavigationView.xib in Resources */,
+				110993D220CA9E8E001C9109 /* PendingQuatationCell.xib in Resources */,
 				85B394ED20AE2ABB00E643DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -877,12 +930,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				110993AB20CA858B001C9109 /* CartCell.xib in Resources */,
 				85B394FA20AE2BF100E643DD /* Admin.storyboard in Resources */,
 				85B5EE7A209798A500807A4B /* LaunchScreen.storyboard in Resources */,
+				110993B520CA8E0E001C9109 /* CartTotalCell.xib in Resources */,
 				85B394F520AE2BAE00E643DD /* KCPLAdminInfo.plist in Resources */,
 				11EFFC5720C95D84007686B9 /* InventoryTableViewCell.xib in Resources */,
 				85B394B420AB9D2000E643DD /* Info.plist in Resources */,
+				110993D820CA9EBB001C9109 /* HistoryQuatationCell.xib in Resources */,
 				85B5EE77209798A500807A4B /* Assets.xcassets in Resources */,
+				110993D020CA9E8E001C9109 /* PendingQuatationCell.xib in Resources */,
 				1129C34E209AE0B4005DC1B8 /* NavigationView.xib in Resources */,
 				85B5EE75209798A300807A4B /* Main.storyboard in Resources */,
 				85B394B720AB9F6300E643DD /* KCPLSalesInfo.plist in Resources */,
@@ -1088,16 +1145,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				11388F8E20BD856100E54FB2 /* ProductListVC.swift in Sources */,
+				110993BD20CA9387001C9109 /* AdminPendingQuatationViewController.swift in Sources */,
 				85516B9D20C8E04500BD617C /* AdminPurchaseViewController.swift in Sources */,
 				85B3947F20AB9AC600E643DD /* AbstractVC.swift in Sources */,
 				85B3950120AE2E3800E643DD /* AdminLoginViewController.swift in Sources */,
 				85516BA120C8E21E00BD617C /* AdminPurchaseTableViewCell.swift in Sources */,
 				85516B9920C8D70C00BD617C /* AdminSalesViewController.swift in Sources */,
+				110993C920CA99C8001C9109 /* CartTotalCell.swift in Sources */,
 				11EFFC4C20C95273007686B9 /* NatificationVC.swift in Sources */,
+				110993AC20CA85E0001C9109 /* CartCell.swift in Sources */,
 				85B3948020AB9AC600E643DD /* LoginVC.swift in Sources */,
 				85E8A1E620C26E7200349073 /* WebViewVc.swift in Sources */,
+				110993D620CA9EBB001C9109 /* HistoryQuatationCell.swift in Sources */,
 				85B3948120AB9AC600E643DD /* OrderHistoryTableViewCell.swift in Sources */,
 				85B3948220AB9AC600E643DD /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
+				110993B820CA9349001C9109 /* AdminQuataionViewController.swift in Sources */,
 				111525DF20BEAC7800153E6C /* Category.swift in Sources */,
 				854DEC0220C0F0980035F61D /* Product.swift in Sources */,
 				85B3948320AB9AC600E643DD /* UtilExtensions.swift in Sources */,
@@ -1122,7 +1184,6 @@
 				85B3948F20AB9AC600E643DD /* ThemeSearchBar.swift in Sources */,
 				85B3949020AB9AC600E643DD /* AppRouter.swift in Sources */,
 				111BE25F20BD31C200190718 /* Global.swift in Sources */,
-				85B3949120AB9AC600E643DD /* CartItemListCell.swift in Sources */,
 				85B3949220AB9AC600E643DD /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				11EFFC5020C95318007686B9 /* NotificationTableViewCell.swift in Sources */,
 				85B3949320AB9AC600E643DD /* ItemDetailTableViewCell.swift in Sources */,
@@ -1134,7 +1195,7 @@
 				85B3949820AB9AC600E643DD /* ThemeTextfield.swift in Sources */,
 				112CEAFB20AC0D71004BCF37 /* Constant.swift in Sources */,
 				85516B9520C8D6A500BD617C /* AdminSalesTableViewCell.swift in Sources */,
-				85B3949920AB9AC600E643DD /* CartTotalCell.swift in Sources */,
+				110993CE20CA9E8E001C9109 /* PendingQuatationCell.swift in Sources */,
 				111BE26C20BD590700190718 /* UserDefault.swift in Sources */,
 				85B3949A20AB9AC600E643DD /* ConstantUI.swift in Sources */,
 				85B3949B20AB9AC600E643DD /* ThemeButton.swift in Sources */,
@@ -1144,6 +1205,7 @@
 				85B3949E20AB9AC600E643DD /* CustomerListVC.swift in Sources */,
 				85B3949F20AB9AC600E643DD /* DeliveryAddressVC.swift in Sources */,
 				85B394A020AB9AC600E643DD /* ItemDetailVC.swift in Sources */,
+				110993C520CA9413001C9109 /* AdminHistoryQuatationViewController.swift in Sources */,
 				85B394A120AB9AC600E643DD /* CustomerDetailVC.swift in Sources */,
 				85B394A220AB9AC600E643DD /* ThemeTableView.swift in Sources */,
 				85B394A320AB9AC600E643DD /* DeliveryAddressTableViewCell.swift in Sources */,
@@ -1159,12 +1221,14 @@
 				85B394BE20AE2ABB00E643DD /* AbstractVC.swift in Sources */,
 				111BE26620BD320C00190718 /* ComunicateService.swift in Sources */,
 				85B3950220AE2E3800E643DD /* AdminLoginViewController.swift in Sources */,
+				110993C620CA9413001C9109 /* AdminHistoryQuatationViewController.swift in Sources */,
 				111BE26920BD320C00190718 /* ServiceManager.swift in Sources */,
 				85B394BF20AE2ABB00E643DD /* LoginVC.swift in Sources */,
 				85B394C020AE2ABB00E643DD /* OrderHistoryTableViewCell.swift in Sources */,
 				85B394C120AE2ABB00E643DD /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				85B394C220AE2ABB00E643DD /* UtilExtensions.swift in Sources */,
 				85E8A1EB20C29CE600349073 /* GradientView.swift in Sources */,
+				110993C720CA99C7001C9109 /* CartTotalCell.swift in Sources */,
 				11388F9720BD89E100E54FB2 /* ProductListTableViewCell.swift in Sources */,
 				85B394C320AE2ABB00E643DD /* CustomerTableViewCell.swift in Sources */,
 				85B394C420AE2ABB00E643DD /* ThemeShadowView.swift in Sources */,
@@ -1182,12 +1246,12 @@
 				85B394CE20AE2ABB00E643DD /* CustomerDetailCell.swift in Sources */,
 				11388F8F20BD856200E54FB2 /* ProductListVC.swift in Sources */,
 				85B394CF20AE2ABB00E643DD /* ThemeSearchBar.swift in Sources */,
+				110993CF20CA9E8E001C9109 /* PendingQuatationCell.swift in Sources */,
 				85B394D020AE2ABB00E643DD /* AppRouter.swift in Sources */,
 				85516B9E20C8E04500BD617C /* AdminPurchaseViewController.swift in Sources */,
 				854DEC0320C0F0980035F61D /* Product.swift in Sources */,
 				1188BD0920B430CA00F5ECFF /* AdminDashboardCollectionViewCell.swift in Sources */,
 				11EFFC5120C95318007686B9 /* NotificationTableViewCell.swift in Sources */,
-				85B394D120AE2ABB00E643DD /* CartItemListCell.swift in Sources */,
 				85B394D220AE2ABB00E643DD /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				85B394D320AE2ABB00E643DD /* ItemDetailTableViewCell.swift in Sources */,
 				8513DBEB20BDEA4B001E25F0 /* User.swift in Sources */,
@@ -1196,10 +1260,10 @@
 				85516BA720C8E80400BD617C /* AdminVendorViewController.swift in Sources */,
 				85B394D620AE2ABB00E643DD /* SignUpVC.swift in Sources */,
 				85B394D720AE2ABB00E643DD /* ThemeLabel.swift in Sources */,
+				110993BE20CA9387001C9109 /* AdminPendingQuatationViewController.swift in Sources */,
 				111BE26020BD31C300190718 /* Global.swift in Sources */,
 				85B394D820AE2ABB00E643DD /* ThemeTextfield.swift in Sources */,
 				85B394D920AE2ABB00E643DD /* Constant.swift in Sources */,
-				85B394DA20AE2ABB00E643DD /* CartTotalCell.swift in Sources */,
 				85B394DB20AE2ABB00E643DD /* ConstantUI.swift in Sources */,
 				85B394DC20AE2ABB00E643DD /* ThemeButton.swift in Sources */,
 				11EFFC5620C95D84007686B9 /* InventoryTableViewCell.swift in Sources */,
@@ -1208,6 +1272,8 @@
 				85B394DE20AE2ABB00E643DD /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				85B394DF20AE2ABB00E643DD /* CustomerListVC.swift in Sources */,
 				85B394E020AE2ABB00E643DD /* DeliveryAddressVC.swift in Sources */,
+				110993B920CA9349001C9109 /* AdminQuataionViewController.swift in Sources */,
+				110993AE20CA85E1001C9109 /* CartCell.swift in Sources */,
 				111BE26D20BD590700190718 /* UserDefault.swift in Sources */,
 				85B394E120AE2ABB00E643DD /* ItemDetailVC.swift in Sources */,
 				85516BA220C8E21E00BD617C /* AdminPurchaseTableViewCell.swift in Sources */,
@@ -1220,6 +1286,7 @@
 				85B394E420AE2ABB00E643DD /* DeliveryAddressTableViewCell.swift in Sources */,
 				85B394E520AE2ABB00E643DD /* navController.swift in Sources */,
 				11EFFC5D20C96067007686B9 /* AdminInventoryViewController.swift in Sources */,
+				110993D720CA9EBB001C9109 /* HistoryQuatationCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1236,9 +1303,12 @@
 				11EFFC4B20C95273007686B9 /* NatificationVC.swift in Sources */,
 				859701EC20A50702008A08B4 /* OrderHistoryTableViewCell.swift in Sources */,
 				85E8A1E520C26E7200349073 /* WebViewVc.swift in Sources */,
+				110993B420CA8E0E001C9109 /* CartTotalCell.swift in Sources */,
 				112DA5BA209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				1129C35B209B2F3A005DC1B8 /* UtilExtensions.swift in Sources */,
+				110993D520CA9EBB001C9109 /* HistoryQuatationCell.swift in Sources */,
 				111525DE20BEAC7800153E6C /* Category.swift in Sources */,
+				110993B720CA9349001C9109 /* AdminQuataionViewController.swift in Sources */,
 				111525E420BEDC5500153E6C /* Product.swift in Sources */,
 				11470FD320AAF569009ECB0B /* CustomerTableViewCell.swift in Sources */,
 				85E8A1E920C29CE600349073 /* GradientView.swift in Sources */,
@@ -1262,18 +1332,20 @@
 				112DA5C2209C718E009F6A68 /* AppRouter.swift in Sources */,
 				111BE25E20BD31BE00190718 /* Global.swift in Sources */,
 				111BE27020BD594A00190718 /* User.swift in Sources */,
-				859701E220A4EA8E008A08B4 /* CartItemListCell.swift in Sources */,
 				112DA5B9209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				11EFFC4F20C95318007686B9 /* NotificationTableViewCell.swift in Sources */,
+				110993BC20CA9387001C9109 /* AdminPendingQuatationViewController.swift in Sources */,
 				8515F379209C13A50039F801 /* ItemDetailTableViewCell.swift in Sources */,
 				112DA5BE209C6D87009F6A68 /* SlideNavigationController.m in Sources */,
 				85B5EE70209798A300807A4B /* AppDelegate.swift in Sources */,
 				8515F372209ABAFB0039F801 /* SignUpVC.swift in Sources */,
 				11DD9D572099EBFD006C00C9 /* ThemeLabel.swift in Sources */,
+				110993AA20CA858B001C9109 /* CartCell.swift in Sources */,
+				110993C420CA9413001C9109 /* AdminHistoryQuatationViewController.swift in Sources */,
 				11DD9D592099EBFD006C00C9 /* ThemeTextfield.swift in Sources */,
 				112CEAFA20AC0D6B004BCF37 /* Constant.swift in Sources */,
-				859701E420A4EADD008A08B4 /* CartTotalCell.swift in Sources */,
 				85516B9420C8D6A500BD617C /* AdminSalesTableViewCell.swift in Sources */,
+				110993CD20CA9E8E001C9109 /* PendingQuatationCell.swift in Sources */,
 				111BE26B20BD58F400190718 /* UserDefault.swift in Sources */,
 				11DD9D522099EB8C006C00C9 /* ConstantUI.swift in Sources */,
 				11DD9D582099EBFD006C00C9 /* ThemeButton.swift in Sources */,

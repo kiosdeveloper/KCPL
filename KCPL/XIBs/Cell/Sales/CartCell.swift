@@ -1,21 +1,21 @@
 //
-//  CartItemListCell.swift
+//  CartCell.swift
 //  KCPL
 //
-//  Created by TechFlitter Solutions on 11/05/18.
+//  Created by Piyush Sanepara on 08/06/18.
 //  Copyright © 2018 KCPL. All rights reserved.
 //
 
 import UIKit
 
 protocol CartQuantityDelegate {
-    func btnPlusQuantity(cell: CartItemListCell)
-    func btnMinusQuantity(cell: CartItemListCell)
-    func btnRemoveFromCart(cell: CartItemListCell)
+    func btnPlusQuantity(cell: CartCell)
+    func btnMinusQuantity(cell: CartCell)
+    func btnRemoveFromCart(cell: CartCell)
 }
 
-class CartItemListCell: UITableViewCell {
-
+class CartCell: UITableViewCell {
+    
     @IBOutlet weak var itemContentView: UIView!
     
     @IBOutlet weak var productImageView: UIImageView!
@@ -31,10 +31,10 @@ class CartItemListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         if let view = self.itemContentView {
-//            view.layer.borderColor = UIColor.black.cgColor
-//            view.layer.borderWidth = 1.0
-//            view.layer.cornerRadius = 2.0
-//            view.clipsToBounds = true
+            //            view.layer.borderColor = UIColor.black.cgColor
+            //            view.layer.borderWidth = 1.0
+            //            view.layer.cornerRadius = 2.0
+            //            view.clipsToBounds = true
         }
     }
 
@@ -43,7 +43,6 @@ class CartItemListCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
     //    MARK:- Actions
     @IBAction func btnPlusQuantityPressed(_ sender: Any) {
         if let _ = delegate {
