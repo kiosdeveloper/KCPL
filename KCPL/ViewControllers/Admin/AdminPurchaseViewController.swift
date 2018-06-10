@@ -29,6 +29,13 @@ class AdminPurchaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //    MARK:- Action
+    
+    @IBAction func addPurchaseOrderPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "showAdminSelectVendorFromAdminPurchase", sender: nil)
+    }
+    
 }
 
 extension AdminPurchaseViewController: UITableViewDelegate, UITableViewDataSource {

@@ -22,6 +22,33 @@ class AdminInventoryViewController: AbstractVC {
         
         inventoryTableview.register(UINib.init(nibName: "InventoryTableViewCell", bundle: nil), forCellReuseIdentifier: "InventoryTableViewCell")
     }
+    
+//    MARK:- Action
+    @IBAction func ActionPressed(_ sender: Any) {
+        let actionSheet = UIAlertController(title: "Select Action", message: nil, preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Make Sales Order", style: .default, handler: { (action) in
+            self.performSegue(withIdentifier: "showAdminCartFromAdminInventory", sender: ScreenType.SalesScreen)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Make Purchase Order", style: .default, handler: { (action) in
+            self.performSegue(withIdentifier: "showAdminCartFromAdminInventory", sender: ScreenType.PurchaseScreen)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAdminCartFromAdminInventory" {
+                
+            if let toVC = segue.destination as? AdminCartViewController, let screenType = sender as? ScreenType {
+                toVC.fromScreenType = screenType
+            }
+        }
+    }
+    
 }
 
 extension AdminInventoryViewController: UITableViewDelegate, UITableViewDataSource {

@@ -42,6 +42,19 @@ class ThemeButtonBorder: UIButton {
     }
 }
 
+class ThemeButtonForInventory: UIButton {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.layer.cornerRadius = 4
+        self.layer.borderWidth = 1
+        self.layer.borderColor = ConstantsUI.C_Color_Theme.cgColor
+        self.setTitleColor(ConstantsUI.C_Color_darkGray, for: UIControlState())
+        self.titleLabel?.font = ConstantsUI.C_Font_LableSubTitle
+    }
+}
+
 
 /*
 class ThemeButtonSignUp: UIButton {

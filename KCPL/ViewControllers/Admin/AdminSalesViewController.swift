@@ -15,17 +15,19 @@ class AdminSalesViewController: UIViewController {
     let cellIdentifier = "salesCell"
     
     var orderNumberArray = ["3259A", "3289B", "3250C"]
-    var companyNameArray = ["Shanghai Global Spares", "Southwest Global Spares", "India Steel Spares"]
+    var companyNameArray = ["Shanghai Global Spares \n Shanghai Global Spares", "Southwest Global Spares", "India Steel Spares"]
     var timeArray = ["2 Hr. Ago", "6 Hr. Ago", "2 Days Ago"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+//    MARK:- Action
+    
+    @IBAction func addSalesOrderPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "showAdminSelectCustomerFromAdminDashBoard", sender: nil)
     }
- 
+    
 }
 
 extension AdminSalesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -41,7 +43,8 @@ extension AdminSalesViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
+    
 }

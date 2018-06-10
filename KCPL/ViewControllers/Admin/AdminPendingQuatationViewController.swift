@@ -22,7 +22,7 @@ class AdminPendingQuatationViewController: UIViewController {
 
 extension AdminPendingQuatationViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in  : UITableView) -> Int {
         return 1
     }
     

@@ -1,14 +1,14 @@
 //
-//  AdminVendorTableViewCell.swift
+//  VendorCustomerCell.swift
 //  KCPL
 //
-//  Created by TechFlitter Solutions on 07/06/18.
+//  Created by TechFlitter Solutions on 09/06/18.
 //  Copyright © 2018 KCPL. All rights reserved.
 //
 
 import UIKit
 
-class AdminVendorTableViewCell: UITableViewCell {
+class VendorCustomerCell: UITableViewCell {
 
     @IBOutlet weak var contactNumberLabel: UILabel!
     
@@ -26,5 +26,5 @@ class AdminVendorTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

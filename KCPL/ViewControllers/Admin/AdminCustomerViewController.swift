@@ -1,16 +1,16 @@
 //
-//  AdminVendorViewController.swift
+//  AdminCustomerViewController.swift
 //  KCPL
 //
-//  Created by TechFlitter Solutions on 07/06/18.
+//  Created by TechFlitter Solutions on 09/06/18.
 //  Copyright © 2018 KCPL. All rights reserved.
 //
 
 import UIKit
 
-class AdminVendorViewController: UIViewController {
+class AdminCustomerViewController: UIViewController {
     
-    @IBOutlet weak var vendorTableView: UITableView!
+    @IBOutlet weak var customerTableView: UITableView!
     
     let cellIdentifier = "VendorCustomerCell"
     
@@ -20,7 +20,7 @@ class AdminVendorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        vendorTableView.register(UINib.init(nibName: "VendorCustomerCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        customerTableView.register(UINib.init(nibName: "VendorCustomerCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.view.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
     }
     
@@ -28,14 +28,9 @@ class AdminVendorViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    //MARK: Action
-    
-    @IBAction func addVendorPressed(_ sender: UIButton) {
-    }
-    
 }
 
-extension AdminVendorViewController: UITableViewDelegate, UITableViewDataSource {
+extension AdminCustomerViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.companyNameArray.count
     }
@@ -46,9 +41,5 @@ extension AdminVendorViewController: UITableViewDelegate, UITableViewDataSource 
         cell.companyNameLabel.text = self.companyNameArray[indexPath.row]
         cell.gradeLabel.text = self.gradeArray[indexPath.row]
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
     }
 }
