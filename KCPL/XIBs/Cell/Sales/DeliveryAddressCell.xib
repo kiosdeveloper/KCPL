@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeliveryAddressCell" rowHeight="359" id="KGk-i7-Jjw" customClass="DeliveryAddressCell" customModule="KCPL" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="416" height="359"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="416" height="358.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vn5-7G-fwd">
+                        <rect key="frame" x="10" y="10" width="396" height="338.5"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Karnavati Corpo." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EaC-Sm-UgB" customClass="AddressTextField" customModule="KCPL" customModuleProvider="target">
+                                <rect key="frame" x="14" y="12" width="368" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="HiI-rn-Wbv"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="inputText" value="Karnavati Corp."/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Mr. Sunil Chettri" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m5a-FY-s7R" customClass="AddressTextField" customModule="KCPL" customModuleProvider="target">
+                                <rect key="frame" x="14" y="165" width="368" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hrb-pE-myN"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9893912121" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DxD-p4-9Um" customClass="AddressTextField" customModule="KCPL" customModuleProvider="target">
+                                <rect key="frame" x="14" y="213" width="368" height="40"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="A/8 GIDC Mamtapura ,                         Ahmedabad                                          Gujarat - 3800115" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Orj-FJ-nZU" customClass="AddressTextView" customModule="KCPL" customModuleProvider="target">
+                                <rect key="frame" x="14" y="60" width="368" height="97"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="Pdn-7a-iIb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNF-9X-osy">
+                                <rect key="frame" x="14" y="267" width="160" height="58"/>
+                                <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="fbN-E2-R51"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Orj-FJ-nZU" firstAttribute="leading" secondItem="EaC-Sm-UgB" secondAttribute="leading" id="0LT-ZS-vPZ"/>
+                            <constraint firstItem="YNF-9X-osy" firstAttribute="leading" secondItem="DxD-p4-9Um" secondAttribute="leading" id="Awv-dT-h1g"/>
+                            <constraint firstItem="m5a-FY-s7R" firstAttribute="leading" secondItem="Orj-FJ-nZU" secondAttribute="leading" id="CNC-6F-vcm"/>
+                            <constraint firstItem="Orj-FJ-nZU" firstAttribute="trailing" secondItem="EaC-Sm-UgB" secondAttribute="trailing" id="EAv-vT-Rpn"/>
+                            <constraint firstItem="DxD-p4-9Um" firstAttribute="trailing" secondItem="m5a-FY-s7R" secondAttribute="trailing" id="NXU-Ex-1f5"/>
+                            <constraint firstItem="m5a-FY-s7R" firstAttribute="trailing" secondItem="Orj-FJ-nZU" secondAttribute="trailing" id="Pkn-cQ-mgb"/>
+                            <constraint firstItem="YNF-9X-osy" firstAttribute="top" secondItem="DxD-p4-9Um" secondAttribute="bottom" constant="14" id="S4S-Q8-5mV"/>
+                            <constraint firstItem="DxD-p4-9Um" firstAttribute="height" secondItem="m5a-FY-s7R" secondAttribute="height" id="Xk0-E1-XDl"/>
+                            <constraint firstItem="DxD-p4-9Um" firstAttribute="leading" secondItem="m5a-FY-s7R" secondAttribute="leading" id="bdz-sf-0oA"/>
+                            <constraint firstItem="m5a-FY-s7R" firstAttribute="top" secondItem="Orj-FJ-nZU" secondAttribute="bottom" constant="8" id="cUr-bf-3d5"/>
+                            <constraint firstItem="EaC-Sm-UgB" firstAttribute="leading" secondItem="Vn5-7G-fwd" secondAttribute="leading" constant="14" id="cuK-rs-eKj"/>
+                            <constraint firstAttribute="trailing" secondItem="EaC-Sm-UgB" secondAttribute="trailing" constant="14" id="eLj-ki-E3c"/>
+                            <constraint firstItem="Orj-FJ-nZU" firstAttribute="top" secondItem="EaC-Sm-UgB" secondAttribute="bottom" constant="8" id="ejY-X6-dX7"/>
+                            <constraint firstItem="EaC-Sm-UgB" firstAttribute="top" secondItem="Vn5-7G-fwd" secondAttribute="top" constant="12" id="jIn-Ai-ipg"/>
+                            <constraint firstItem="DxD-p4-9Um" firstAttribute="top" secondItem="m5a-FY-s7R" secondAttribute="bottom" constant="8" id="u3S-yb-ksi"/>
+                            <constraint firstAttribute="bottom" secondItem="YNF-9X-osy" secondAttribute="bottom" constant="13.5" id="vqj-ql-tR4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jc4-wY-RCS"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Vn5-7G-fwd" secondAttribute="trailing" constant="10" id="1rw-Ag-sFY"/>
+                    <constraint firstItem="Vn5-7G-fwd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Mqr-Mh-nbQ"/>
+                    <constraint firstAttribute="bottom" secondItem="Vn5-7G-fwd" secondAttribute="bottom" constant="10" id="hZf-2V-JYs"/>
+                    <constraint firstItem="Vn5-7G-fwd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="zm0-lP-KxJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="editButton" destination="YNF-9X-osy" id="m61-fM-Aoz"/>
+            </connections>
+            <point key="canvasLocation" x="85" y="-216.5"/>
+        </tableViewCell>
+    </objects>
+</document>

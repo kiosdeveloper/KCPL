@@ -1,21 +1,21 @@
 //
-//  DeliveryAddressVC.swift
+//  AdminDeliveryAddressViewController.swift
 //  KCPL
 //
-//  Created by Aayushi Panchal on 10/05/18.
+//  Created by Piyush Sanepara on 11/06/18.
 //  Copyright © 2018 KCPL. All rights reserved.
 //
 
 import UIKit
 
-class DeliveryAddressVC: AbstractVC {
+class AdminDeliveryAddressViewController: UIViewController {
     
     @IBOutlet weak var deliveryAddressTableView: UITableView!
     @IBOutlet var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.deliveryAddressTableView.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
         
         deliveryAddressTableView.register(UINib.init(nibName: "DeliveryAddressCell", bundle: nil), forCellReuseIdentifier: "DeliveryAddressCell")
@@ -29,13 +29,13 @@ class DeliveryAddressVC: AbstractVC {
         navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
-//    MARK:- Actions
+    //    MARK:- Actions
     @IBAction func nextClicked(_ sender: Any) {
         let alertController = UIAlertController.init(title: "Confirm", message: "Are you sure you want to place this order?", preferredStyle: .alert)
         alertController.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: { (alertAction) in
             for viewController in (self.navigationController?.viewControllers ?? []) {
-                if viewController is DashboardVC {
-                    UserDefault.removeCartProducts()
+                if viewController is AdminDashboardVC {
+                    
                     "Your order placed successfully.".configToast(isError: false)
                     _ = self.navigationController?.popToViewController(viewController, animated: true)
                     return
@@ -47,7 +47,7 @@ class DeliveryAddressVC: AbstractVC {
     }
 }
 
-extension DeliveryAddressVC: UITableViewDelegate, UITableViewDataSource {
+extension AdminDeliveryAddressViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -68,7 +68,7 @@ extension DeliveryAddressVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return titleLabel
     }
-
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }

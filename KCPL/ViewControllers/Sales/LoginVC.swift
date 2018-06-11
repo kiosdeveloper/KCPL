@@ -87,6 +87,12 @@ class LoginVC: UIViewController {
 //MARK:- Helper Method
 extension LoginVC {
     func Login() {
+        
+        if Util.isSalesApp() {
+            self.performSegue(withIdentifier: "showDashboardFromLogin", sender: nil)
+            return
+        }
+        
         let params: [String: Any] = [
             Constant.c_req_customer_email: usernameTextFeild.text!,
             Constant.c_req_customer_password: passwordTextFeild.text!

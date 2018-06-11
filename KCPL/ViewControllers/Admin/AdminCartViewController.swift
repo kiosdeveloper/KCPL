@@ -28,6 +28,12 @@ class AdminCartViewController: UIViewController {
         cartTableView.register(UINib.init(nibName: "CartCell", bundle: nil), forCellReuseIdentifier: "CartCell")
         cartTableView.register(UINib.init(nibName: "CartTotalCell", bundle: nil), forCellReuseIdentifier: "CartTotalCell")
     }
+    
+//    MARK:- Action
+    
+    @IBAction func NextPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "showAdminDeliveryAddressFromAdminCart", sender: nil)
+    }
 }
 
 extension AdminCartViewController: UITableViewDelegate, UITableViewDataSource {

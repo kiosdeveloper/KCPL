@@ -1,14 +1,14 @@
 //
-//  DeliveryAddressTableViewCell.swift
+//  DeliveryAddressCell.swift
 //  KCPL
 //
-//  Created by TechFlitter Solutions on 11/05/18.
+//  Created by Piyush Sanepara on 11/06/18.
 //  Copyright © 2018 KCPL. All rights reserved.
 //
 
 import UIKit
 
-class DeliveryAddressTableViewCell: UITableViewCell {
+class DeliveryAddressCell: UITableViewCell {
 
     @IBOutlet weak var editButton: UIButton!
     
@@ -21,11 +21,11 @@ class DeliveryAddressTableViewCell: UITableViewCell {
             button.clipsToBounds = true
         }
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

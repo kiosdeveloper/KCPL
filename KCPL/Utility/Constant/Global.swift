@@ -13,8 +13,12 @@ let REGEX_EMAIL = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-
 let C_UserDefault = UserDefaults.standard
 let SalesScreen = "SalesScreen"
 let PurchaseScreen = "PurchaseScreen"
+let AdminVendorScreen = "AdminVendorScreen"
+let AdminCustomerScreen = "AdminCustomerScreen"
 
 enum ScreenType {
     case SalesScreen
     case PurchaseScreen
+    case AdminVendorScreen
+    case AdminCustomerScreen
 }

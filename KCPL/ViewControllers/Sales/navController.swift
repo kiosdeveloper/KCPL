@@ -14,8 +14,11 @@ class navController: UINavigationController {
         super.viewDidLoad()
 
         self.navigationBar.barTintColor = ConstantsUI.C_Color_Theme
-        self.navigationBar.titleTextAttributes = [kCTForegroundColorAttributeName: ConstantsUI.C_Color_White]
-            as [NSAttributedStringKey : Any]
+//        self.navigationBar.titleTextAttributes = [kCTForegroundColorAttributeName: ConstantsUI.C_Color_White]
+//            as [NSAttributedStringKey : Any]
+        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
         self.navigationBar.tintColor = ConstantsUI.C_Color_White
         self.navigationBar.isTranslucent = false
         

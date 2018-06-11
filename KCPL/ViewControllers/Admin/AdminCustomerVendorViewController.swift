@@ -1,38 +1,37 @@
 //
-//  CustomerDetailVC.swift
+//  AdminCustomerVendorViewController.swift
 //  KCPL
 //
-//  Created by TechFlitter Solutions on 12/05/18.
+//  Created by Piyush Sanepara on 11/06/18.
 //  Copyright © 2018 KCPL. All rights reserved.
 //
 
 import UIKit
 
-class CustomerDetailVC: AbstractVC {
-
+class AdminCustomerVendorViewController: UIViewController {
+    
     @IBOutlet weak var customerDetailTableView: UITableView!
+    var fromScreenType: ScreenType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.customerDetailTableView.estimatedRowHeight = 500.0
         
+        if fromScreenType == ScreenType.AdminCustomerScreen {
+            self.title = "Customer Detail"
+        } else if fromScreenType == ScreenType.AdminVendorScreen {
+            self.title = "Vendor Detail"
+        }
+        
         customerDetailTableView.register(UINib.init(nibName: "CustomerVendorDetailCell", bundle: nil), forCellReuseIdentifier: "CustomerVendorDetailCell")
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 }
 
-extension CustomerDetailVC: SlideNavigationControllerDelegate {
-    
-    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool
-    {
-        return true
-    }
-}
-
-extension CustomerDetailVC: UITableViewDelegate, UITableViewDataSource {
+extension AdminCustomerVendorViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -55,3 +54,4 @@ extension CustomerDetailVC: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+

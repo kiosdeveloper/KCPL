@@ -31,6 +31,15 @@ class AdminVendorViewController: UIViewController {
     //MARK: Action
     
     @IBAction func addVendorPressed(_ sender: UIButton) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAdminCustomerVendorFromAdminVendor" {
+            if let toVC = segue.destination as? AdminCustomerVendorViewController, let indexPath = sender as? IndexPath {
+                toVC.fromScreenType = ScreenType.AdminVendorScreen
+            }
+        }
     }
     
 }
@@ -46,6 +55,10 @@ extension AdminVendorViewController: UITableViewDelegate, UITableViewDataSource 
         cell.companyNameLabel.text = self.companyNameArray[indexPath.row]
         cell.gradeLabel.text = self.gradeArray[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showAdminCustomerVendorFromAdminVendor", sender: indexPath)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

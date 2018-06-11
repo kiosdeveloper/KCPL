@@ -28,6 +28,13 @@ class AdminCustomerViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAdminCustomerVendorFromAdminCustomer" {
+            if let toVC = segue.destination as? AdminCustomerVendorViewController, let indexPath = sender as? IndexPath {
+                toVC.fromScreenType = ScreenType.AdminCustomerScreen
+            }
+        }
+    }
 }
 
 extension AdminCustomerViewController: UITableViewDelegate, UITableViewDataSource {
@@ -41,5 +48,8 @@ extension AdminCustomerViewController: UITableViewDelegate, UITableViewDataSourc
         cell.companyNameLabel.text = self.companyNameArray[indexPath.row]
         cell.gradeLabel.text = self.gradeArray[indexPath.row]
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showAdminCustomerVendorFromAdminCustomer", sender: indexPath)
     }
 }

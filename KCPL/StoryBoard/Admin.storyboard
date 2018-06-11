@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tjI-gU-vpj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tjI-gU-vpj">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,6 @@
         <!--Admin Login View Controller-->
         <scene sceneID="fWH-r3-F7L">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JXP-wR-RsU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="AdminLoginViewController" id="tjI-gU-vpj" customClass="AdminLoginViewController" customModule="KCPL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R0H-a9-6Bb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -124,6 +123,7 @@
                         <segue destination="Bdq-mq-hw4" kind="presentation" identifier="showAdminDashboardFromAdminLogin" id="RTU-Vf-Pqt"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXP-wR-RsU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="519" y="-291"/>
         </scene>
@@ -665,6 +665,9 @@
                                     <constraint firstAttribute="height" constant="50" id="vGu-97-Lsy"/>
                                 </constraints>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="NextPressed:" destination="KY8-AF-SM0" eventType="touchUpInside" id="YFC-ON-xrO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -681,11 +684,68 @@
                     </view>
                     <connections>
                         <outlet property="cartTableView" destination="LAQ-5A-zdJ" id="s5j-HD-VnP"/>
+                        <segue destination="bYP-kq-wdT" kind="show" identifier="showAdminDeliveryAddressFromAdminCart" id="STS-PT-cd4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eax-l6-971" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3879.375" y="-285.21126760563379"/>
+        </scene>
+        <!--Admin Delivery Address View Controller-->
+        <scene sceneID="gQ0-NY-80D">
+            <objects>
+                <viewController storyboardIdentifier="AdminDeliveryAddressViewController" id="bYP-kq-wdT" customClass="AdminDeliveryAddressViewController" customModule="KCPL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Rg-SS-TXo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zj6-Pl-NpN" customClass="ThemeTableView" customModule="KCPL" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bYP-kq-wdT" id="ETz-Hp-sih"/>
+                                    <outlet property="delegate" destination="bYP-kq-wdT" id="Qqs-89-uNH"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJG-d9-xxX" customClass="ThemeButton" customModule="KCPL" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Z8f-OA-TRh"/>
+                                </constraints>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextClicked:" destination="bYP-kq-wdT" eventType="touchUpInside" id="rRE-mJ-u8R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Zj6-Pl-NpN" firstAttribute="leading" secondItem="GE8-ld-xyS" secondAttribute="leading" id="BEb-hw-rjQ"/>
+                            <constraint firstItem="Zj6-Pl-NpN" firstAttribute="top" secondItem="GE8-ld-xyS" secondAttribute="top" id="DNS-Z2-1Rn"/>
+                            <constraint firstItem="UJG-d9-xxX" firstAttribute="top" secondItem="Zj6-Pl-NpN" secondAttribute="bottom" id="Mca-Du-NSA"/>
+                            <constraint firstItem="Zj6-Pl-NpN" firstAttribute="trailing" secondItem="GE8-ld-xyS" secondAttribute="trailing" id="ksx-JU-aNJ"/>
+                            <constraint firstItem="GE8-ld-xyS" firstAttribute="trailing" secondItem="UJG-d9-xxX" secondAttribute="trailing" id="lYi-4k-ocx"/>
+                            <constraint firstItem="GE8-ld-xyS" firstAttribute="bottom" secondItem="UJG-d9-xxX" secondAttribute="bottom" id="pdr-4W-kB3"/>
+                            <constraint firstItem="UJG-d9-xxX" firstAttribute="leading" secondItem="GE8-ld-xyS" secondAttribute="leading" id="y8L-QP-2DD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GE8-ld-xyS"/>
+                    </view>
+                    <connections>
+                        <outlet property="deliveryAddressTableView" destination="Zj6-Pl-NpN" id="7bY-KF-A6N"/>
+                        <outlet property="titleLabel" destination="oeB-QZ-eTt" id="FdD-tl-Ku3"/>
+                    </connections>
+                </viewController>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Delivery Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oeB-QZ-eTt">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JhP-tM-Bvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4687.5" y="-285.21126760563379"/>
         </scene>
         <!--Admin Vendor View Controller-->
         <scene sceneID="J6m-BK-aof">
@@ -756,11 +816,46 @@
                     </view>
                     <connections>
                         <outlet property="vendorTableView" destination="uLJ-xC-85m" id="f7X-C1-lYx"/>
+                        <segue destination="NwA-2m-DFn" kind="show" identifier="showAdminCustomerVendorFromAdminVendor" id="ju1-vl-bga"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QnN-XY-F6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3023" y="430"/>
+        </scene>
+        <!--Admin Customer Vendor View Controller-->
+        <scene sceneID="9hj-SC-8lt">
+            <objects>
+                <viewController storyboardIdentifier="AdminCustomerVendorViewController" id="NwA-2m-DFn" customClass="AdminCustomerVendorViewController" customModule="KCPL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rpJ-kT-03h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5u5-Iy-fdg" customClass="ThemeTableView" customModule="KCPL" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="NwA-2m-DFn" id="oeY-td-oXF"/>
+                                    <outlet property="delegate" destination="NwA-2m-DFn" id="4n0-yR-aV9"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5u5-Iy-fdg" firstAttribute="top" secondItem="Fgr-Du-1MS" secondAttribute="top" id="0ca-fA-Kye"/>
+                            <constraint firstItem="Fgr-Du-1MS" firstAttribute="bottom" secondItem="5u5-Iy-fdg" secondAttribute="bottom" id="QzY-fH-aay"/>
+                            <constraint firstItem="5u5-Iy-fdg" firstAttribute="leading" secondItem="Fgr-Du-1MS" secondAttribute="leading" id="e7J-iO-W83"/>
+                            <constraint firstItem="Fgr-Du-1MS" firstAttribute="trailing" secondItem="5u5-Iy-fdg" secondAttribute="trailing" id="u0Z-yN-wHz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fgr-Du-1MS"/>
+                    </view>
+                    <connections>
+                        <outlet property="customerDetailTableView" destination="5u5-Iy-fdg" id="QnJ-0o-W91"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JTw-sD-u7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3879" y="721"/>
         </scene>
         <!--Admin Select Vendor View Controller-->
         <scene sceneID="Zoy-gg-1We">
@@ -884,6 +979,7 @@
                     </view>
                     <connections>
                         <outlet property="customerTableView" destination="ek8-Dl-7et" id="YgX-1h-y5q"/>
+                        <segue destination="NwA-2m-DFn" kind="show" identifier="showAdminCustomerVendorFromAdminCustomer" id="Hb7-4T-zwT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mN8-yw-HJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1122,6 +1218,7 @@
         <image name="ic_username" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rJt-iD-FSh"/>
+        <segue reference="Hb7-4T-zwT"/>
+        <segue reference="VHA-L1-UDC"/>
     </inferredMetricsTieBreakers>
 </document>
