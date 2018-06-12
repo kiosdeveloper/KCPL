@@ -17,6 +17,7 @@ class AdminPendingQuatationViewController: UIViewController {
         
         self.view.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
         pendingQuatationTableView.register(UINib.init(nibName: "PendingQuatationCell", bundle: nil), forCellReuseIdentifier: "PendingQuatationCell")
+        
     }
 }
 

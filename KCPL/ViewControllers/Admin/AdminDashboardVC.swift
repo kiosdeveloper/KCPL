@@ -18,13 +18,49 @@ class AdminDashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        self.configNavigationBar()
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
         dashboardCollectionView.collectionViewLayout.invalidateLayout()
+    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.title = "Dashboard"
+//    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.title = " "
+//    }
+    
+    func configNavigationBar() {
+        
+        let logoimgView = UIImageView(image: #imageLiteral(resourceName: "logo"))
+        logoimgView.contentMode = .scaleAspectFit
+        
+        let logoBarButton = UIBarButtonItem(customView: logoimgView)
+        self.navigationItem.leftBarButtonItem = logoBarButton
+        
+        let navNotification = UIBarButtonItem(image: #imageLiteral(resourceName: "nav_notification"), style: .plain, target: self, action:
+            #selector(self.navNotificationPressed))
+        
+        let navLogout = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_signOut"), style: .plain, target: self, action:
+            #selector(self.navSignoutPressed))
+        
+        self.navigationItem.rightBarButtonItems = [navLogout, navNotification]
+        
+    }
+    
+//    MARK:- Actions
+    
+    @objc func navNotificationPressed() {
+        
+    }
+    
+    @objc func navSignoutPressed() {
+        AppRouter.sharedRouter().showAdminLogInScreen()
     }
    
 }

@@ -22,6 +22,14 @@ class AdminSelectVendorViewController: UIViewController {
         super.viewDidLoad()
         vendorTableView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.view.backgroundColor = ConstantsUI.C_Color_White
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Select Vendor"
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
     }
     
     override func didReceiveMemoryWarning() {

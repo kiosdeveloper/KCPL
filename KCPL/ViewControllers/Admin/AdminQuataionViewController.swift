@@ -14,7 +14,13 @@ class AdminQuataionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Quatation"
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
     }
     
 //    MARK:- Actions

@@ -41,6 +41,13 @@ class ProductListVC: AbstractVC {
         self.updateBadge()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = self.category?.name!
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
+    }
+    
     func getBrandNameArray() {
         self.brandNameArray.removeAll()
         self.brandNameArray.append("All brand")
@@ -67,9 +74,9 @@ class ProductListVC: AbstractVC {
     }
     
     func configNavigationBar() {
-        self.title = self.category?.name!
-        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+//        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
+//        navigationController?.navigationBar.titleTextAttributes = textAttributes
 
         let navProfile = UIBarButtonItem(image: UIImage(named: "nav_profile"), style: .plain, target: self, action: #selector(DashboardVC.navProfilePressed))
         

@@ -33,10 +33,17 @@ class CartVC: AbstractVC {
         self.configNavigationBar()
     }
     
-    func configNavigationBar() {
+    override func viewWillAppear(_ animated: Bool) {
         self.title = "Cart"
-        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
+    }
+    
+    func configNavigationBar() {
+        
+//        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
+//        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
     @IBAction func btnNextPressed(_ sender: Any) {

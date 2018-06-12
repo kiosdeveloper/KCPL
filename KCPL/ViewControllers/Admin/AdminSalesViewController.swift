@@ -20,8 +20,20 @@ class AdminSalesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configNavigationBar()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Sales"
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
+    }
+    
+    func configNavigationBar() {
+        let navPlus = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:  #selector(self.addSalesOrderPressed))
+        self.navigationItem.rightBarButtonItem = navPlus
+    }
 //    MARK:- Action
     
     @IBAction func addSalesOrderPressed(_ sender: Any) {

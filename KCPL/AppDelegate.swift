@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         appRouter.configSlideNavigation()
         
+        let BarButtonItemAppearance = UIBarButtonItem.appearance()
+    BarButtonItemAppearance.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.clear], for: .normal)
+        
         return true
     }
 

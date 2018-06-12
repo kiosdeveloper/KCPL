@@ -20,8 +20,19 @@ class AdminPurchaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        self.configNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Purchase"
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
+    }
+    
+    func configNavigationBar() {
+        let navPlus = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:  #selector(self.addPurchaseOrderPressed))
+        self.navigationItem.rightBarButtonItem = navPlus
     }
     
     override func didReceiveMemoryWarning() {

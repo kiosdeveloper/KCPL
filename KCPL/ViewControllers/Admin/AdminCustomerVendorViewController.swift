@@ -16,14 +16,19 @@ class AdminCustomerVendorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.customerDetailTableView.estimatedRowHeight = 500.0
-        
+ 
+        customerDetailTableView.register(UINib.init(nibName: "CustomerVendorDetailCell", bundle: nil), forCellReuseIdentifier: "CustomerVendorDetailCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         if fromScreenType == ScreenType.AdminCustomerScreen {
             self.title = "Customer Detail"
         } else if fromScreenType == ScreenType.AdminVendorScreen {
             self.title = "Vendor Detail"
         }
-        
-        customerDetailTableView.register(UINib.init(nibName: "CustomerVendorDetailCell", bundle: nil), forCellReuseIdentifier: "CustomerVendorDetailCell")
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
     }
     
     override func didReceiveMemoryWarning() {

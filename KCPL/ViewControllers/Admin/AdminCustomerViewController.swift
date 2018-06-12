@@ -22,6 +22,19 @@ class AdminCustomerViewController: UIViewController {
         super.viewDidLoad()
         customerTableView.register(UINib.init(nibName: "VendorCustomerCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.view.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
+        self.configNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Customers"
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
+    }
+    
+    func configNavigationBar() {
+        let navPlus = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:  nil)//#selector(self.addVendorPressed)
+        self.navigationItem.rightBarButtonItem = navPlus
     }
     
     override func didReceiveMemoryWarning() {

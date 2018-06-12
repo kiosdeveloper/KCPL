@@ -25,8 +25,8 @@ class ItemDetailVC: AbstractVC {
             addToCartButton.setTitle("Added", for: .normal)
         }
         
-        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
+//        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
+//        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
 //    MARK:- Action

@@ -35,18 +35,18 @@ class AppRouter: NSObject, Controller {
         return navigationController
     }
     
-//    func showLogInScreen() {
-//        let loginVC = self.getViewController("LogInVC") as? LogInVC
-//        loginVC!.controller = self
-//        view = loginVC
-//
-//        let navigationController: UINavigationController = getNavigationController()
-//        navigationController.viewControllers = [loginVC!]
-//        container = loginVC
-//
-//        let appDelegate: AppDelegate = (UIApplication.shared.delegate as? AppDelegate)!
-//        appDelegate.window?.rootViewController = navigationController
-//    }
+    func getAdminNavigationController() -> UINavigationController {
+        let storyBoard = UIStoryboard(name: "Admin", bundle: nil)
+        let navigationController = storyBoard.instantiateViewController(withIdentifier: "navController") as! navController
+        return navigationController
+    }
+    
+    func showAdminLogInScreen() {
+        let loginVC = UIStoryboard(name: "Admin", bundle: nil).instantiateViewController(withIdentifier: "AdminLoginViewController") as! AdminLoginViewController
+        
+        let appDelegate: AppDelegate = (UIApplication.shared.delegate as? AppDelegate)!
+        appDelegate.window?.rootViewController = loginVC
+    }
 //
 //    func showTaskScreen() {
 //        let taskVC = self.getViewController("TaskVC") as? TaskVC

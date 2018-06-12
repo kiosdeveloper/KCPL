@@ -18,12 +18,20 @@ class AdminQuatationDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.rejectButton.layer.borderColor = ConstantsUI.C_Color_Theme.cgColor
         self.rejectButton.layer.borderWidth = 1.0
         self.rejectButton.clipsToBounds = true
         self.nameLabel.text = "Karnavati Corp. Pvt. Ltd.\nMr. Paresh Patel"
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Quatation Detail"
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
      

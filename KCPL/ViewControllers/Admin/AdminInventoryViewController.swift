@@ -23,6 +23,13 @@ class AdminInventoryViewController: AbstractVC {
         inventoryTableview.register(UINib.init(nibName: "InventoryTableViewCell", bundle: nil), forCellReuseIdentifier: "InventoryTableViewCell")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Inventory"
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
+    }
+    
 //    MARK:- Action
     @IBAction func ActionPressed(_ sender: Any) {
         let actionSheet = UIAlertController(title: "Select Action", message: nil, preferredStyle: .actionSheet)

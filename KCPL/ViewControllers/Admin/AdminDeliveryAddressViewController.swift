@@ -23,10 +23,17 @@ class AdminDeliveryAddressViewController: UIViewController {
         self.configNavigationBar()
     }
     
-    func configNavigationBar() {
+    override func viewWillAppear(_ animated: Bool) {
         self.title = "Choose delivery address"
-        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
+    }
+    
+    func configNavigationBar() {
+        
+//        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
+//        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
     //    MARK:- Actions

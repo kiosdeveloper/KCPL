@@ -16,8 +16,8 @@ class WebViewVc: AbstractVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
+//        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
+//        navigationController?.navigationBar.titleTextAttributes = textAttributes
         
         self.webView.loadRequest(URLRequest(url: URL(string: url)!))
         

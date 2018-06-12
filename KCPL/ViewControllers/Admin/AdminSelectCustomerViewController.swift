@@ -23,10 +23,14 @@ class AdminSelectCustomerViewController: UIViewController {
         super.viewDidLoad()
         customerTableView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.view.backgroundColor = ConstantsUI.C_Color_White
+        
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Select Customer"
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
     }
     
 //    MARK:- ACTIONS

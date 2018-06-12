@@ -18,15 +18,20 @@ class AdminCartViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
-        
+
+        cartTableView.register(UINib.init(nibName: "CartCell", bundle: nil), forCellReuseIdentifier: "CartCell")
+        cartTableView.register(UINib.init(nibName: "CartTotalCell", bundle: nil), forCellReuseIdentifier: "CartTotalCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         if fromScreenType == ScreenType.SalesScreen {
             self.title = "Sales Order"
         } else if fromScreenType == ScreenType.PurchaseScreen {
             self.title = "Purchase Order"
         }
-        
-        cartTableView.register(UINib.init(nibName: "CartCell", bundle: nil), forCellReuseIdentifier: "CartCell")
-        cartTableView.register(UINib.init(nibName: "CartTotalCell", bundle: nil), forCellReuseIdentifier: "CartTotalCell")
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
     }
     
 //    MARK:- Action
