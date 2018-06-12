@@ -11,11 +11,13 @@ struct ComunicateService {
         case SignUp(Parameters)
         case GetCategories()
         case GetProductList(categoryId: Int)
+        case CreateOrder(Parameters)
         
         var method: Alamofire.HTTPMethod {
             switch self {
             case .Login( _),
-                 .SignUp(_):
+                 .SignUp(_),
+                 .CreateOrder(_):
                 return .post
 
             case .GetCategories(),
@@ -32,8 +34,10 @@ struct ComunicateService {
                     return "customers"
                 case .GetCategories():
                     return "categories"
-            case .GetProductList(let categoryId):
-                    return "categories/\(categoryId)/products"
+                case .GetProductList(let categoryId):
+                        return "categories/\(categoryId)/products"
+                case .CreateOrder(_):
+                    return "orders"
             }
         }
         
@@ -75,6 +79,9 @@ struct ComunicateService {
                 
             case .GetProductList(_):
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
+                
+            case .CreateOrder(let params):
+                return try Alamofire.URLEncoding.default.encode(urlRequest, with: params)
             default:
                 return urlRequest
             }

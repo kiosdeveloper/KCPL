@@ -44,6 +44,11 @@ struct Constant {
     static let c_req_address = "customer[address]"
     static let c_req_phone = "customer[phone]"
     
+    static let c_req_ship_by_address = "order[ship_by_address]"
+    static let c_req_bill_to_address = "order[bill_to_address]"
+    static let c_req_ship_to_address = "order[ship_to_address]"
+    static let c_req_sorder_products_attributes = "order[order_products_attributes]"
+    
 //    MARK: For Response
     static let c_res_type = "type"
     static let c_res_message = "message"
