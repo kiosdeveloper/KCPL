@@ -176,6 +176,12 @@
 		859701E820A4F54B008A08B4 /* DeliveryAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E720A4F54B008A08B4 /* DeliveryAddressVC.swift */; };
 		859701EA20A506A7008A08B4 /* ThemeShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701E920A506A7008A08B4 /* ThemeShadowView.swift */; };
 		859701EC20A50702008A08B4 /* OrderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701EB20A50702008A08B4 /* OrderHistoryTableViewCell.swift */; };
+		85A474FC20CF757C00B342FA /* AdminQuatationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A474FB20CF757C00B342FA /* AdminQuatationDetailViewController.swift */; };
+		85A474FD20CF757C00B342FA /* AdminQuatationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A474FB20CF757C00B342FA /* AdminQuatationDetailViewController.swift */; };
+		85A474FE20CF757C00B342FA /* AdminQuatationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A474FB20CF757C00B342FA /* AdminQuatationDetailViewController.swift */; };
+		85A4750020CF797A00B342FA /* QuatationDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A474FF20CF797A00B342FA /* QuatationDetailCell.swift */; };
+		85A4750120CF797A00B342FA /* QuatationDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A474FF20CF797A00B342FA /* QuatationDetailCell.swift */; };
+		85A4750220CF797A00B342FA /* QuatationDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A474FF20CF797A00B342FA /* QuatationDetailCell.swift */; };
 		85B3947F20AB9AC600E643DD /* AbstractVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5C4209C78EF009F6A68 /* AbstractVC.swift */; };
 		85B3948020AB9AC600E643DD /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D4D2099DE65006C00C9 /* LoginVC.swift */; };
 		85B3948120AB9AC600E643DD /* OrderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859701EB20A50702008A08B4 /* OrderHistoryTableViewCell.swift */; };
@@ -425,6 +431,8 @@
 		859701E720A4F54B008A08B4 /* DeliveryAddressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryAddressVC.swift; sourceTree = "<group>"; };
 		859701E920A506A7008A08B4 /* ThemeShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeShadowView.swift; sourceTree = "<group>"; };
 		859701EB20A50702008A08B4 /* OrderHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		85A474FB20CF757C00B342FA /* AdminQuatationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminQuatationDetailViewController.swift; sourceTree = "<group>"; };
+		85A474FF20CF797A00B342FA /* QuatationDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuatationDetailCell.swift; sourceTree = "<group>"; };
 		85B394B020AB9AC600E643DD /* KCPLSales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCPLSales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B394B620AB9F6300E643DD /* KCPLSalesInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KCPLSalesInfo.plist; sourceTree = "<group>"; };
 		85B394F220AE2ABB00E643DD /* KCPLAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCPLAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -592,6 +600,7 @@
 				8569BDBE20CB9B21006CE748 /* SalesPurchaseCell.xib */,
 				85BB3E1220CBACA900DD7DF1 /* SelectCustomerCell.swift */,
 				85BB3E1320CBACA900DD7DF1 /* SelectCustomerCell.xib */,
+				85A474FF20CF797A00B342FA /* QuatationDetailCell.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -728,8 +737,9 @@
 				11EFFC5A20C96067007686B9 /* AdminInventoryViewController.swift */,
 				110993B620CA9349001C9109 /* AdminQuataionViewController.swift */,
 				110993BB20CA9387001C9109 /* AdminPendingQuatationViewController.swift */,
-				85BB3E0A20CBA44C00DD7DF1 /* AdminCustomerViewController.swift */,
 				110993C320CA9413001C9109 /* AdminHistoryQuatationViewController.swift */,
+				85A474FB20CF757C00B342FA /* AdminQuatationDetailViewController.swift */,
+				85BB3E0A20CBA44C00DD7DF1 /* AdminCustomerViewController.swift */,
 				85BB3E1A20CBC0D000DD7DF1 /* AdminCartViewController.swift */,
 				11A74A3420CE7E2E00055AEE /* AdminDeliveryAddressViewController.swift */,
 				11A74A3820CE8E4000055AEE /* AdminCustomerVendorViewController.swift */,
@@ -1254,6 +1264,7 @@
 				85B3947F20AB9AC600E643DD /* AbstractVC.swift in Sources */,
 				85B3950120AE2E3800E643DD /* AdminLoginViewController.swift in Sources */,
 				85516BA120C8E21E00BD617C /* AdminPurchaseTableViewCell.swift in Sources */,
+				85A4750120CF797A00B342FA /* QuatationDetailCell.swift in Sources */,
 				11A74A3020CE73D800055AEE /* DeliveryAddressCell.swift in Sources */,
 				85516B9920C8D70C00BD617C /* AdminSalesViewController.swift in Sources */,
 				110993C920CA99C8001C9109 /* CartTotalCell.swift in Sources */,
@@ -1285,6 +1296,7 @@
 				85B3948A20AB9AC600E643DD /* ImagesListCollectionViewCell.swift in Sources */,
 				85B3948B20AB9AC600E643DD /* DashboardVC.swift in Sources */,
 				85B3948C20AB9AC600E643DD /* NavigationView.swift in Sources */,
+				85A474FD20CF757C00B342FA /* AdminQuatationDetailViewController.swift in Sources */,
 				85B3948D20AB9AC600E643DD /* DashboardItemCell.swift in Sources */,
 				85B3948E20AB9AC600E643DD /* CustomerDetailCell.swift in Sources */,
 				8513DBEA20BDEA4A001E25F0 /* User.swift in Sources */,
@@ -1340,6 +1352,7 @@
 				85B3950220AE2E3800E643DD /* AdminLoginViewController.swift in Sources */,
 				110993C620CA9413001C9109 /* AdminHistoryQuatationViewController.swift in Sources */,
 				111BE26920BD320C00190718 /* ServiceManager.swift in Sources */,
+				85A4750220CF797A00B342FA /* QuatationDetailCell.swift in Sources */,
 				85B394BF20AE2ABB00E643DD /* LoginVC.swift in Sources */,
 				85B394C020AE2ABB00E643DD /* OrderHistoryTableViewCell.swift in Sources */,
 				85B394C120AE2ABB00E643DD /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
@@ -1371,6 +1384,7 @@
 				854DEC0320C0F0980035F61D /* Product.swift in Sources */,
 				1188BD0920B430CA00F5ECFF /* AdminDashboardCollectionViewCell.swift in Sources */,
 				11EFFC5120C95318007686B9 /* NotificationTableViewCell.swift in Sources */,
+				85A474FE20CF757C00B342FA /* AdminQuatationDetailViewController.swift in Sources */,
 				85B394D220AE2ABB00E643DD /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				85B394D320AE2ABB00E643DD /* ItemDetailTableViewCell.swift in Sources */,
 				8513DBEB20BDEA4B001E25F0 /* User.swift in Sources */,
@@ -1426,6 +1440,7 @@
 				11DD9D4E2099DE65006C00C9 /* LoginVC.swift in Sources */,
 				85516BA020C8E21E00BD617C /* AdminPurchaseTableViewCell.swift in Sources */,
 				11A74A3C20CE8EAC00055AEE /* CustomerVendorDetailCell.swift in Sources */,
+				85A4750020CF797A00B342FA /* QuatationDetailCell.swift in Sources */,
 				85516B9820C8D70C00BD617C /* AdminSalesViewController.swift in Sources */,
 				11A74A2E20CE733C00055AEE /* DeliveryAddressCell.swift in Sources */,
 				11EFFC4B20C95273007686B9 /* NatificationVC.swift in Sources */,
@@ -1457,6 +1472,7 @@
 				8515F37B209C13B90039F801 /* ImagesListCollectionViewCell.swift in Sources */,
 				1129C351209AEC66005DC1B8 /* DashboardVC.swift in Sources */,
 				1129C34F209AE0B4005DC1B8 /* NavigationView.swift in Sources */,
+				85A474FC20CF757C00B342FA /* AdminQuatationDetailViewController.swift in Sources */,
 				1129C359209B2B29005DC1B8 /* DashboardItemCell.swift in Sources */,
 				853AC8D820A6677A002A3292 /* CustomerDetailCell.swift in Sources */,
 				11388F8D20BD855A00E54FB2 /* ProductListVC.swift in Sources */,

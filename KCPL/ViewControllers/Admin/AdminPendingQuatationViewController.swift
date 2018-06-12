@@ -39,4 +39,7 @@ extension AdminPendingQuatationViewController: UITableViewDelegate, UITableViewD
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showAdminQuatationDetailFromAdminPendingQuatation", sender: self)
+    }
 }
