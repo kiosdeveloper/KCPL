@@ -51,6 +51,10 @@ class DeliveryAddressVC: AbstractVC {
     
 //    MARK:- Actions
     @IBAction func nextClicked(_ sender: Any) {
+        if self.selectedIndex == -1 {
+            "Please select one address".configToast(isError: false)
+            return
+        }
         let alertController = UIAlertController.init(title: "Confirm", message: "Are you sure you want to place this order?", preferredStyle: .alert)
         alertController.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: { (alertAction) in
             
@@ -98,11 +102,21 @@ extension DeliveryAddressVC {
     }
     
     func createOrder() {
+        let address = self.addressDatasource[self.selectedIndex]
 
+        let line1 = "\(address.line1 ?? "")" + " "
+        let line2 = "\(address.line2 ?? "")" + ", " + "\n"
+        let city = "\(address.city ?? "")" + ", "
+        let state = "\(address.state ?? "")" + " - "
+        let zipcode = "\(address.zipcode ?? 0)" + "\n"
+        let country = "\(address.country ?? "")"
+        
+        let orderAddress =  line1 + line2 + city + state + zipcode + country
+        
         var params: [String: Any] = [
-            Constant.c_req_ship_by_address: "Gandhinagar",
-            Constant.c_req_bill_to_address: "Gandhinagar",
-            Constant.c_req_ship_to_address: "Gandhinagar"
+            Constant.c_req_ship_by_address: orderAddress,
+            Constant.c_req_bill_to_address: orderAddress,
+            Constant.c_req_ship_to_address: orderAddress
         ]
         
         if let cartArray = UserDefault.getCartProducts() {
@@ -170,6 +184,7 @@ extension DeliveryAddressVC: UITableViewDelegate, UITableViewDataSource {
         }
         cell.selectButtonWidthConstraint.constant = self.isFromMenu ? 0 : 30
         cell.selectButton.isHidden = self.isFromMenu
+        cell.selectButton.isSelected = self.selectedIndex == indexPath.row
         cell.delegate = self
         return cell
     }

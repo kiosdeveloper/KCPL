@@ -12,15 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeliveryAddressCell" rowHeight="174" id="KGk-i7-Jjw" customClass="DeliveryAddressCell" customModule="KCPL" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="416" height="174"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DeliveryAddressCell" rowHeight="148" id="KGk-i7-Jjw" customClass="DeliveryAddressCell" customModule="KCPL" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="416" height="148"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="416" height="173.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="416" height="147.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vn5-7G-fwd">
-                        <rect key="frame" x="10" y="10" width="396" height="153.5"/>
+                        <rect key="frame" x="10" y="10" width="396" height="127.5"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aoz-kO-M16">
                                 <rect key="frame" x="10" y="39" width="30" height="30"/>
@@ -35,7 +35,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNF-9X-osy">
-                                <rect key="frame" x="358" y="115.5" width="30" height="30"/>
+                                <rect key="frame" x="358" y="89.5" width="30" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="ZZR-Iz-7Om"/>
@@ -84,11 +84,11 @@
                             <constraint firstItem="tdk-An-D4W" firstAttribute="trailing" secondItem="bNk-Mk-xmu" secondAttribute="trailing" id="Y3b-o2-PU9"/>
                             <constraint firstItem="bNk-Mk-xmu" firstAttribute="top" secondItem="TiM-lT-gaC" secondAttribute="bottom" constant="8" id="dfr-SZ-VKS"/>
                             <constraint firstItem="TiM-lT-gaC" firstAttribute="leading" secondItem="Aoz-kO-M16" secondAttribute="trailing" constant="10" id="eMv-Xl-WR4"/>
-                            <constraint firstItem="YNF-9X-osy" firstAttribute="top" secondItem="AXh-3N-Uwm" secondAttribute="bottom" constant="8" id="kg7-xi-sIC"/>
+                            <constraint firstItem="YNF-9X-osy" firstAttribute="top" secondItem="AXh-3N-Uwm" secondAttribute="bottom" constant="-18.5" id="kg7-xi-sIC"/>
                             <constraint firstItem="TiM-lT-gaC" firstAttribute="top" secondItem="Jc4-wY-RCS" secondAttribute="top" constant="8" id="lTr-HF-dTC"/>
                             <constraint firstItem="AXh-3N-Uwm" firstAttribute="top" secondItem="tdk-An-D4W" secondAttribute="bottom" constant="8" id="lzV-0g-OSL"/>
                             <constraint firstItem="AXh-3N-Uwm" firstAttribute="leading" secondItem="tdk-An-D4W" secondAttribute="leading" id="ps7-5I-3Ad"/>
-                            <constraint firstItem="Aoz-kO-M16" firstAttribute="centerY" secondItem="Jc4-wY-RCS" secondAttribute="centerY" constant="-23" id="rqP-d0-w3g"/>
+                            <constraint firstItem="Aoz-kO-M16" firstAttribute="centerY" secondItem="Jc4-wY-RCS" secondAttribute="centerY" constant="-10" id="rqP-d0-w3g"/>
                             <constraint firstItem="YNF-9X-osy" firstAttribute="leading" secondItem="TiM-lT-gaC" secondAttribute="trailing" constant="10" id="rrW-ci-qZO"/>
                             <constraint firstItem="Jc4-wY-RCS" firstAttribute="bottom" secondItem="YNF-9X-osy" secondAttribute="bottom" constant="8" id="wKp-mc-WqU"/>
                             <constraint firstItem="tdk-An-D4W" firstAttribute="leading" secondItem="bNk-Mk-xmu" secondAttribute="leading" id="xPX-4k-wuE"/>
@@ -115,7 +115,7 @@
                 <outlet property="userNameLabel" destination="tdk-An-D4W" id="jr3-rr-lcK"/>
                 <outlet property="userNumberLabel" destination="AXh-3N-Uwm" id="igs-Tt-eDY"/>
             </connections>
-            <point key="canvasLocation" x="85" y="-309"/>
+            <point key="canvasLocation" x="85" y="-322"/>
         </tableViewCell>
     </objects>
     <resources>
