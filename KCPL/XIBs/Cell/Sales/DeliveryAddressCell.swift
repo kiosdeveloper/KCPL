@@ -8,24 +8,40 @@
 
 import UIKit
 
+protocol AddressListDelegate {
+    func editAddress(cell: DeliveryAddressCell)
+    func selectAddress(cell: DeliveryAddressCell)
+}
+
 class DeliveryAddressCell: UITableViewCell {
 
+    @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var companyNameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userNumberLabel: UILabel!
+    @IBOutlet weak var selectButtonWidthConstraint: NSLayoutConstraint!
     
+    var delegate: AddressListDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        if let button = self.editButton {
-            button.layer.borderWidth = 1.0
-            button.layer.borderColor = UIColor.lightGray.cgColor
-            button.layer.cornerRadius = 2.0
-            button.clipsToBounds = true
-        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
+    @IBAction func editClicked(_ sender: UIButton) {
+        if let _ = delegate {
+            delegate?.editAddress(cell: self)
+        }
+    }
+    
+    @IBAction func selectAddressClicked(_ sender: UIButton) {
+        if let _ = delegate {
+            delegate?.selectAddress(cell: self)
+        }
+    }
 }

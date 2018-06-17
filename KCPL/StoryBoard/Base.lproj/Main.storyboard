@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pdg-4e-Y3l">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pdg-4e-Y3l">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1694,6 +1694,7 @@
                     <connections>
                         <outlet property="deliveryAddressTableView" destination="HbB-gR-72D" id="Cwu-pM-kD2"/>
                         <outlet property="titleLabel" destination="xo3-hs-Km2" id="T7K-Ut-aAj"/>
+                        <segue destination="9lt-Kv-7CM" kind="show" identifier="showAddUpdateAddressFromAddressList" id="zh2-2B-jAQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nu7-op-jZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1707,6 +1708,192 @@
                 </label>
             </objects>
             <point key="canvasLocation" x="5253.75" y="391.90140845070425"/>
+        </scene>
+        <!--Add Update AddressVC-->
+        <scene sceneID="lqb-MB-D9S">
+            <objects>
+                <viewController storyboardIdentifier="AddUpdateAddressVC" id="9lt-Kv-7CM" customClass="AddUpdateAddressVC" customModule="KCPL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UaH-NY-8Qq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJa-JN-BWX">
+                                <rect key="frame" x="16" y="16" width="288" height="304"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Line 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3l8-t1-Ycm" customClass="AddressTextField" customModule="KCPL" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="10" width="272" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="MXF-fi-DVm"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="inputText" value="Karnavati Corp."/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Line 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5EN-94-cmA" customClass="AddressTextField" customModule="KCPL" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="58" width="272" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tii-cP-0oC" customClass="AddressTextField" customModule="KCPL" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="110" width="272" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="slT-eg-Tr9" customClass="AddressTextField" customModule="KCPL" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="158" width="272" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e1j-bg-viG" customClass="AddressTextField" customModule="KCPL" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="206" width="272" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ZipCode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hr8-4Q-9op" customClass="AddressTextField" customModule="KCPL" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="254" width="272" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="5EN-94-cmA" firstAttribute="height" secondItem="3l8-t1-Ycm" secondAttribute="height" id="2Ae-d3-k9Z"/>
+                                    <constraint firstItem="slT-eg-Tr9" firstAttribute="top" secondItem="Tii-cP-0oC" secondAttribute="bottom" constant="8" id="3gh-LU-klo"/>
+                                    <constraint firstAttribute="bottom" secondItem="hr8-4Q-9op" secondAttribute="bottom" constant="10" id="44B-QN-JDt"/>
+                                    <constraint firstItem="slT-eg-Tr9" firstAttribute="trailing" secondItem="Tii-cP-0oC" secondAttribute="trailing" id="5Be-Dx-j0U"/>
+                                    <constraint firstItem="Tii-cP-0oC" firstAttribute="top" secondItem="5EN-94-cmA" secondAttribute="bottom" constant="12" id="5uW-3E-aES"/>
+                                    <constraint firstItem="5EN-94-cmA" firstAttribute="top" secondItem="3l8-t1-Ycm" secondAttribute="bottom" constant="8" id="6Vz-X3-VxK"/>
+                                    <constraint firstItem="hr8-4Q-9op" firstAttribute="top" secondItem="e1j-bg-viG" secondAttribute="bottom" constant="8" id="6vo-Zs-l7V"/>
+                                    <constraint firstItem="Tii-cP-0oC" firstAttribute="trailing" secondItem="5EN-94-cmA" secondAttribute="trailing" id="7Ku-yY-kgB"/>
+                                    <constraint firstItem="e1j-bg-viG" firstAttribute="top" secondItem="slT-eg-Tr9" secondAttribute="bottom" constant="8" id="7Rm-I5-gsN"/>
+                                    <constraint firstItem="Tii-cP-0oC" firstAttribute="height" secondItem="5EN-94-cmA" secondAttribute="height" id="8Zm-7f-y3a"/>
+                                    <constraint firstItem="5EN-94-cmA" firstAttribute="trailing" secondItem="3l8-t1-Ycm" secondAttribute="trailing" id="E4J-7Z-jQY"/>
+                                    <constraint firstItem="hr8-4Q-9op" firstAttribute="trailing" secondItem="e1j-bg-viG" secondAttribute="trailing" id="E78-2J-f0l"/>
+                                    <constraint firstItem="slT-eg-Tr9" firstAttribute="leading" secondItem="Tii-cP-0oC" secondAttribute="leading" id="GDL-2s-v5d"/>
+                                    <constraint firstAttribute="trailing" secondItem="3l8-t1-Ycm" secondAttribute="trailing" constant="8" id="Jgu-nz-XOI"/>
+                                    <constraint firstItem="3l8-t1-Ycm" firstAttribute="top" secondItem="CJa-JN-BWX" secondAttribute="top" constant="10" id="Msg-Be-GcY"/>
+                                    <constraint firstItem="Tii-cP-0oC" firstAttribute="leading" secondItem="5EN-94-cmA" secondAttribute="leading" id="Ow7-ES-YfR"/>
+                                    <constraint firstItem="5EN-94-cmA" firstAttribute="leading" secondItem="3l8-t1-Ycm" secondAttribute="leading" id="XTb-oR-Djw"/>
+                                    <constraint firstItem="hr8-4Q-9op" firstAttribute="height" secondItem="e1j-bg-viG" secondAttribute="height" id="bvt-ca-uBm"/>
+                                    <constraint firstItem="e1j-bg-viG" firstAttribute="height" secondItem="slT-eg-Tr9" secondAttribute="height" id="kEw-FN-mbz"/>
+                                    <constraint firstItem="hr8-4Q-9op" firstAttribute="leading" secondItem="e1j-bg-viG" secondAttribute="leading" id="kLL-I7-ZMV"/>
+                                    <constraint firstItem="e1j-bg-viG" firstAttribute="leading" secondItem="slT-eg-Tr9" secondAttribute="leading" id="kYI-hV-B0R"/>
+                                    <constraint firstItem="slT-eg-Tr9" firstAttribute="height" secondItem="Tii-cP-0oC" secondAttribute="height" id="nwb-HJ-pAq"/>
+                                    <constraint firstItem="e1j-bg-viG" firstAttribute="trailing" secondItem="slT-eg-Tr9" secondAttribute="trailing" id="qjQ-zo-eZn"/>
+                                    <constraint firstItem="3l8-t1-Ycm" firstAttribute="leading" secondItem="CJa-JN-BWX" secondAttribute="leading" constant="8" id="ur2-7r-1u8"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OH-nG-9ld" customClass="ThemeButton" customModule="KCPL" customModuleProvider="target">
+                                <rect key="frame" x="40" y="348" width="240" height="50"/>
+                                <color key="backgroundColor" red="0.26274509800000001" green="0.61960784310000006" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7ct-WA-SMc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateClicked:" destination="9lt-Kv-7CM" eventType="touchUpInside" id="9uu-XD-gSV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CJa-JN-BWX" firstAttribute="leading" secondItem="IJL-wb-r5V" secondAttribute="leading" constant="16" id="4VL-LM-8r3"/>
+                            <constraint firstItem="IJL-wb-r5V" firstAttribute="trailing" secondItem="CJa-JN-BWX" secondAttribute="trailing" constant="16" id="5t7-zj-Xe6"/>
+                            <constraint firstItem="5OH-nG-9ld" firstAttribute="leading" secondItem="IJL-wb-r5V" secondAttribute="leading" constant="40" id="C35-hA-NnH"/>
+                            <constraint firstItem="CJa-JN-BWX" firstAttribute="top" secondItem="IJL-wb-r5V" secondAttribute="top" constant="16" id="GI7-QI-pxK"/>
+                            <constraint firstItem="5OH-nG-9ld" firstAttribute="top" secondItem="CJa-JN-BWX" secondAttribute="bottom" constant="28" id="Igk-Ab-Kq6"/>
+                            <constraint firstItem="IJL-wb-r5V" firstAttribute="trailing" secondItem="5OH-nG-9ld" secondAttribute="trailing" constant="40" id="YAt-AH-u79"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IJL-wb-r5V"/>
+                    </view>
+                    <connections>
+                        <outlet property="cityTextField" destination="Tii-cP-0oC" id="6lL-fc-y2r"/>
+                        <outlet property="countryTextField" destination="e1j-bg-viG" id="h9k-YQ-DHC"/>
+                        <outlet property="line1TextField" destination="3l8-t1-Ycm" id="bsI-LA-LZ6"/>
+                        <outlet property="line2TextField" destination="5EN-94-cmA" id="Mtr-cR-TKh"/>
+                        <outlet property="stateTextField" destination="slT-eg-Tr9" id="Gk7-FB-jxq"/>
+                        <outlet property="updateButton" destination="5OH-nG-9ld" id="Lud-8S-MBc"/>
+                        <outlet property="zipCodeTextField" destination="hr8-4Q-9op" id="GLT-br-ot5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="On6-Vb-wxv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6035.625" y="395.07042253521126"/>
         </scene>
         <!--Slide Navigation Controller-->
         <scene sceneID="cdO-XW-8zu">
@@ -1900,9 +2087,9 @@
         <image name="ic_password" width="24" height="24"/>
         <image name="ic_username" width="24" height="24"/>
         <image name="item_detail" width="320" height="226"/>
-        <image name="logo" width="1191" height="842"/>
+        <image name="logo" width="65" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="osT-mD-yWI"/>
+        <segue reference="Vib-uS-7Qo"/>
     </inferredMetricsTieBreakers>
 </document>

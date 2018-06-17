@@ -17,9 +17,9 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
     
     @IBOutlet var tblTrailConstraints: NSLayoutConstraint!
     
-    var dsTitle = [Constant.C_SideMenu_Home,Constant.C_SideMenu_MyCustomers,Constant.C_SideMenu_OrderHistory,Constant.C_SideMenu_About,Constant.C_SideMenu_ContactUs,Constant.C_SideMenu_VisitOurWebsite,Constant.C_SideMenu_SignOut]
+    var dsTitle = [Constant.C_SideMenu_Home,Constant.C_SideMenu_MyCustomers,Constant.C_SideMenu_OrderHistory,Constant.C_SideMenu_Address,Constant.C_SideMenu_About,Constant.C_SideMenu_ContactUs,Constant.C_SideMenu_VisitOurWebsite,Constant.C_SideMenu_SignOut]
     
-    var dsIcons = ["ic_home","ic_orderHistory","ic_orderHistory","ic_about","ic_contactUs", "ic_visitOurWebsite", "ic_signOut"]
+    var dsIcons = ["ic_home","ic_orderHistory","ic_orderHistory","ic_orderHistory","ic_about","ic_contactUs", "ic_visitOurWebsite", "ic_signOut"]
     
     override func viewDidLoad() {
         
@@ -92,7 +92,7 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
         cell.lblMenuTitle.text = dsTitle[indexPath.row]
         cell.imgMenuIcon.image = UIImage(named: dsIcons[indexPath.row])
         
-        if dsTitle[indexPath.row] == Constant.C_SideMenu_OrderHistory || dsTitle[indexPath.row] == Constant.C_SideMenu_VisitOurWebsite {
+        if dsTitle[indexPath.row] == Constant.C_SideMenu_Address || dsTitle[indexPath.row] == Constant.C_SideMenu_VisitOurWebsite {
             cell.lblLine.isHidden = false
         } else {
             cell.lblLine.isHidden = true
@@ -139,6 +139,11 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
         case Constant.C_SideMenu_OrderHistory:
             let vc = AppRouter.sharedRouter().getViewController("OrderHistoryVC") as! OrderHistoryVC
             
+            SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
+       
+        case Constant.C_SideMenu_Address:
+            let vc = AppRouter.sharedRouter().getViewController("DeliveryAddressVC") as! DeliveryAddressVC
+            vc.isFromMenu = true
             SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
             
         case Constant.C_SideMenu_About:

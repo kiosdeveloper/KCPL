@@ -14,6 +14,7 @@ struct Constant {
     static let C_SideMenu_Home = "Home"
     static let C_SideMenu_MyCustomers = "My Customers"
     static let C_SideMenu_OrderHistory = "Order History"
+    static let C_SideMenu_Address = "Address"
     static let C_SideMenu_About = "About"
     static let C_SideMenu_ContactUs = "Contact Us"
     static let C_SideMenu_VisitOurWebsite = "Visit Our Website"
@@ -49,6 +50,13 @@ struct Constant {
     static let c_req_ship_to_address = "order[ship_to_address]"
     static let c_req_sorder_products_attributes = "order[order_products_attributes]"
     
+    static let c_req_adddress_line1 = "user_address[line_1]"
+    static let c_req_adddress_line2 = "user_address[line_2]"
+    static let c_req_adddress_city = "user_address[city]"
+    static let c_req_adddress_state = "user_address[state]"
+    static let c_req_adddress_country = "user_address[country]"
+    static let c_req_adddress_zipcode = "user_address[zip]"
+    
 //    MARK: For Response
     static let c_res_type = "type"
     static let c_res_message = "message"
@@ -72,6 +80,14 @@ struct Constant {
     static let c_res_price = "price"
     static let c_res_quantity = "quantity"
     
+    static let c_res_line1 = "line_1"
+    static let c_res_line2 = "line_2"
+    static let c_res_city = "city"
+    static let c_res_state = "state"
+    static let c_res_country = "country"
+    static let c_res_zipcode = "zip"
+    static let c_res_user_id = "user_id"
+
     //    MARK:- Userdefault Keys
     static let c_ud_userData = "userData"
     static let c_ud_cartData = "cartData"

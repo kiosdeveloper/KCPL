@@ -135,6 +135,12 @@
 		295FF10E4C7A09125D3D473F /* Pods_KCPL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4541987AA803930A3633FA2C /* Pods_KCPL.framework */; };
 		33D7AC10DE9248621BA7E8A3 /* Pods_KCPLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D96F448F88D11C81EE2252 /* Pods_KCPLTests.framework */; };
 		7244C7DDA9DB34E89E626607 /* Pods_KCPLSales.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BAB7784D7E37D72CC2D729 /* Pods_KCPLSales.framework */; };
+		850BDE1220D52BC000B190F3 /* AddUpdateAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850BDE1120D52BC000B190F3 /* AddUpdateAddressVC.swift */; };
+		850BDE1320D537E000B190F3 /* AddUpdateAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850BDE1120D52BC000B190F3 /* AddUpdateAddressVC.swift */; };
+		850BDE1420D537E100B190F3 /* AddUpdateAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850BDE1120D52BC000B190F3 /* AddUpdateAddressVC.swift */; };
+		850BDE1620D674C900B190F3 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850BDE1520D674C900B190F3 /* Address.swift */; };
+		850BDE1720D6826E00B190F3 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850BDE1520D674C900B190F3 /* Address.swift */; };
+		850BDE1820D6826F00B190F3 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850BDE1520D674C900B190F3 /* Address.swift */; };
 		8513DBEA20BDEA4A001E25F0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE26F20BD594A00190718 /* User.swift */; };
 		8513DBEB20BDEA4B001E25F0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE26F20BD594A00190718 /* User.swift */; };
 		8515F372209ABAFB0039F801 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515F371209ABAFB0039F801 /* SignUpVC.swift */; };
@@ -412,6 +418,8 @@
 		793F0021F52AE52CC2A2D0DD /* Pods-KCPL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCPL/Pods-KCPL.debug.xcconfig"; sourceTree = "<group>"; };
 		8196E8941B194260AE1153D1 /* Pods-KCPLUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPLUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCPLUITests/Pods-KCPLUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		81BAB7784D7E37D72CC2D729 /* Pods_KCPLSales.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KCPLSales.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		850BDE1120D52BC000B190F3 /* AddUpdateAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUpdateAddressVC.swift; sourceTree = "<group>"; };
+		850BDE1520D674C900B190F3 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		8515F371209ABAFB0039F801 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		8515F378209C13A50039F801 /* ItemDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailTableViewCell.swift; sourceTree = "<group>"; };
 		8515F37A209C13B90039F801 /* ImagesListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -529,6 +537,7 @@
 				111BE26F20BD594A00190718 /* User.swift */,
 				111525DD20BEAC7800153E6C /* Category.swift */,
 				111525E320BEDC5500153E6C /* Product.swift */,
+				850BDE1520D674C900B190F3 /* Address.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -713,6 +722,7 @@
 				1129C350209AEC66005DC1B8 /* DashboardVC.swift */,
 				112DA5CD209C92AD009F6A68 /* ItemDetailVC.swift */,
 				859701E720A4F54B008A08B4 /* DeliveryAddressVC.swift */,
+				850BDE1120D52BC000B190F3 /* AddUpdateAddressVC.swift */,
 				112DA5C6209C8D46009F6A68 /* OrderHistoryVC.swift */,
 				854B3891209D899F008391BC /* CartVC.swift */,
 				853AC8D520A66691002A3292 /* CustomerDetailVC.swift */,
@@ -1268,6 +1278,7 @@
 				11A74A3020CE73D800055AEE /* DeliveryAddressCell.swift in Sources */,
 				85516B9920C8D70C00BD617C /* AdminSalesViewController.swift in Sources */,
 				110993C920CA99C8001C9109 /* CartTotalCell.swift in Sources */,
+				850BDE1320D537E000B190F3 /* AddUpdateAddressVC.swift in Sources */,
 				11EFFC4C20C95273007686B9 /* NatificationVC.swift in Sources */,
 				110993AC20CA85E0001C9109 /* CartCell.swift in Sources */,
 				85B3948020AB9AC600E643DD /* LoginVC.swift in Sources */,
@@ -1312,6 +1323,7 @@
 				85B3949520AB9AC600E643DD /* AppDelegate.swift in Sources */,
 				11388F9620BD89DF00E54FB2 /* ProductListTableViewCell.swift in Sources */,
 				11A74A3E20CE909B00055AEE /* CustomerVendorDetailCell.swift in Sources */,
+				850BDE1720D6826E00B190F3 /* Address.swift in Sources */,
 				85B3949620AB9AC600E643DD /* SignUpVC.swift in Sources */,
 				85B3949720AB9AC600E643DD /* ThemeLabel.swift in Sources */,
 				85B3949820AB9AC600E643DD /* ThemeTextfield.swift in Sources */,
@@ -1356,6 +1368,7 @@
 				85B394BF20AE2ABB00E643DD /* LoginVC.swift in Sources */,
 				85B394C020AE2ABB00E643DD /* OrderHistoryTableViewCell.swift in Sources */,
 				85B394C120AE2ABB00E643DD /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
+				850BDE1420D537E100B190F3 /* AddUpdateAddressVC.swift in Sources */,
 				85B394C220AE2ABB00E643DD /* UtilExtensions.swift in Sources */,
 				85E8A1EB20C29CE600349073 /* GradientView.swift in Sources */,
 				110993C720CA99C7001C9109 /* CartTotalCell.swift in Sources */,
@@ -1400,6 +1413,7 @@
 				85B394D920AE2ABB00E643DD /* Constant.swift in Sources */,
 				85B394DB20AE2ABB00E643DD /* ConstantUI.swift in Sources */,
 				85B394DC20AE2ABB00E643DD /* ThemeButton.swift in Sources */,
+				850BDE1820D6826F00B190F3 /* Address.swift in Sources */,
 				11EFFC5620C95D84007686B9 /* InventoryTableViewCell.swift in Sources */,
 				85BB3E2220CBDB0100DD7DF1 /* VendorCell.swift in Sources */,
 				85B394DD20AE2ABB00E643DD /* leftMenuViewController.swift in Sources */,
@@ -1444,6 +1458,7 @@
 				85516B9820C8D70C00BD617C /* AdminSalesViewController.swift in Sources */,
 				11A74A2E20CE733C00055AEE /* DeliveryAddressCell.swift in Sources */,
 				11EFFC4B20C95273007686B9 /* NatificationVC.swift in Sources */,
+				850BDE1220D52BC000B190F3 /* AddUpdateAddressVC.swift in Sources */,
 				859701EC20A50702008A08B4 /* OrderHistoryTableViewCell.swift in Sources */,
 				85E8A1E520C26E7200349073 /* WebViewVc.swift in Sources */,
 				110993B420CA8E0E001C9109 /* CartTotalCell.swift in Sources */,
@@ -1488,6 +1503,7 @@
 				112DA5BE209C6D87009F6A68 /* SlideNavigationController.m in Sources */,
 				85B5EE70209798A300807A4B /* AppDelegate.swift in Sources */,
 				8569BDC720CB9B3B006CE748 /* VendorCustomerCell.swift in Sources */,
+				850BDE1620D674C900B190F3 /* Address.swift in Sources */,
 				8515F372209ABAFB0039F801 /* SignUpVC.swift in Sources */,
 				11DD9D572099EBFD006C00C9 /* ThemeLabel.swift in Sources */,
 				110993AA20CA858B001C9109 /* CartCell.swift in Sources */,
