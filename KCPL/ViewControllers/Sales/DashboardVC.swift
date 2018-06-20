@@ -45,8 +45,6 @@ class DashboardVC: AbstractVC {
     }
     
     func configNavigationBar() {
-        let navProfile = UIBarButtonItem(image: UIImage(named: "nav_profile"), style: .plain, target: self, action: #selector(DashboardVC.navProfilePressed))
-        
         navCart = UIBarButtonItem(image: UIImage(named: "nav_cart"), style: .plain, target: self, action: #selector(DashboardVC.navCartPressed))
         
         let navCall = UIBarButtonItem(image: UIImage(named: "nav_call"), style: .plain, target: self, action:
@@ -55,14 +53,10 @@ class DashboardVC: AbstractVC {
         let navNotification = UIBarButtonItem(image: UIImage(named: "nav_notification"), style: .plain, target: self, action:
             #selector(DashboardVC.navNotificationPressed))
 //
-        self.navigationItem.rightBarButtonItems  = [navProfile, navCart, navCall, navNotification]
+        self.navigationItem.rightBarButtonItems  = [navCart, navCall, navNotification]
     }
     
     //    MARK:- Actions
-    
-    @objc func navProfilePressed() {
-        
-    }
     
     @objc func navCartPressed() {
         self.performSegue(withIdentifier: "showCartFromDashboard", sender: nil)

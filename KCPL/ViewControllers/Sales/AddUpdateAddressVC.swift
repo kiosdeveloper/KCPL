@@ -116,3 +116,22 @@ extension AddUpdateAddressVC {
         "Please fill all field.".configToast(isError: false)
     }
 }
+
+extension AddUpdateAddressVC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField == self.zipCodeTextField {
+            guard let text = textField.text else { return true }
+            let newLength = text.count + string.count - range.length
+            
+            if let newValue = Int(text+string) {
+                return (newValue < 1000000 && newLength <= 6)
+            } else {
+                return false
+            }
+            
+        } else {
+            return true
+        }
+    }
+}

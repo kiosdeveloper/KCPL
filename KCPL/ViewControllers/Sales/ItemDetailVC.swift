@@ -72,7 +72,7 @@ extension ItemDetailVC: UITableViewDataSource, UITableViewDelegate {
             cell.manufactureNumberLabel.text = "Manufacture Number: 11250"
             cell.portNumberLabel.text = "Part No: A123587"
             if let price = self.product.price {
-                cell.priceLabel.text = "Rs. \(price) + GST extra applicable"
+                cell.priceLabel.text = "₹ \(price) + GST extra applicable"
             }
             
             return cell

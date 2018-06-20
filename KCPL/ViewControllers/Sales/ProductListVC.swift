@@ -78,10 +78,8 @@ class ProductListVC: AbstractVC {
 //        let textAttributes = [NSAttributedStringKey.foregroundColor:ConstantsUI.C_Color_Title]
 //        navigationController?.navigationBar.titleTextAttributes = textAttributes
 
-        let navProfile = UIBarButtonItem(image: UIImage(named: "nav_profile"), style: .plain, target: self, action: #selector(DashboardVC.navProfilePressed))
-        
         navCart = UIBarButtonItem(image: UIImage(named: "nav_cart"), style: .plain, target: self, action: #selector(DashboardVC.navCartPressed))
-        self.navigationItem.rightBarButtonItems = [navProfile, navCart]
+        self.navigationItem.rightBarButtonItems = [navCart]
     }
     
     func configPicker() {
@@ -169,7 +167,7 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
         
         cell.productNameLabel.text = filteredProductsDatasource[indexPath.row].name
         if let price = filteredProductsDatasource[indexPath.row].price {
-            cell.productPriceLabel.text = "\(price) Rs."
+            cell.productPriceLabel.text = "₹ \(price)"
         }
         cell.delegate = self
         cell.quantityTextField.delegate = self

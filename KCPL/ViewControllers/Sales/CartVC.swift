@@ -82,7 +82,7 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
             cell.productNameLabel.text = cartProductsDatasource[indexPath.row].name
             
             if let price = cartProductsDatasource[indexPath.row].price {
-                cell.productPriceLabel.text = "\(price) Rs."
+                cell.productPriceLabel.text = "₹ \(price)"
             }
             if let qty = cartProductsDatasource[indexPath.row].quantity {
                 cell.productQuantityTextfeild.text = "\(qty)"
@@ -107,15 +107,15 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
                 }
             }
             
-            cell.subTotalLable.text = "Rs. \(subtotle)"
-            cell.gstLabel.text = "Rs. \(tax)"
-            cell.totalLabel.text = "Rs. \(Double(subtotle) + tax)"
+            cell.subTotalLable.text = "₹ \(subtotle)"
+            cell.gstLabel.text = "₹ \(tax)"
+            cell.totalLabel.text = "₹ \(Double(subtotle) + tax)"
             
             return cell
         }
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    /*func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         if section == 0 {
             return titleLabel
@@ -130,7 +130,7 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource, CartQuantityDelega
         } else {
             return 0
         }
-    }
+    }*/
     
     func btnPlusQuantity(cell: CartCell) {
         guard let indexPath = self.cartTableView.indexPath(for: cell) else { return }

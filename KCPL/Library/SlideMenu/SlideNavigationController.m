@@ -655,12 +655,14 @@ static SlideNavigationController *singletonInstance;
 					animated:(BOOL)animated
 {
     if ([self shouldDisplayMenu:MenuLeft forViewController:viewController]) {
-        UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
-//        logoImageView.frame = CGRectMake(0, 0, 44, 44);
-        logoImageView.contentMode = UIViewContentModeScaleAspectFit;
+////        UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
+////
+////        logoImageView.contentMode = UIViewContentModeScaleAspectFit;
+//
+//        UIBarButtonItem *logoBarButton = [[UIBarButtonItem alloc] initWithCustomView:logoImageView];
+//        viewController.navigationItem.leftBarButtonItems = @[[self barButtonItemForMenu:MenuLeft], logoBarButton];
         
-        UIBarButtonItem *logoBarButton = [[UIBarButtonItem alloc] initWithCustomView:logoImageView];
-        viewController.navigationItem.leftBarButtonItems = @[[self barButtonItemForMenu:MenuLeft], logoBarButton];
+        viewController.navigationItem.leftBarButtonItem = [self barButtonItemForMenu:MenuLeft];
     }
 	
 	if ([self shouldDisplayMenu:MenuRight forViewController:viewController])

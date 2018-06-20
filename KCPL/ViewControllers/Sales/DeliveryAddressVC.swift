@@ -189,13 +189,13 @@ extension DeliveryAddressVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    /*func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return titleLabel
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
-    }
+    }*/
 }
 
 extension DeliveryAddressVC: AddressListDelegate {
