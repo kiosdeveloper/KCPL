@@ -18,6 +18,7 @@ struct Constant {
     static let C_SideMenu_About = "About"
     static let C_SideMenu_ContactUs = "Contact Us"
     static let C_SideMenu_VisitOurWebsite = "Visit Our Website"
+    static let C_SideMenu_Profile = "Profile"
     static let C_SideMenu_SignOut = "Sign Out"
 
     //    MARK:- Error Messages
@@ -69,6 +70,7 @@ struct Constant {
     static let c_res_last_name = "last_name"
     static let c_res_phone = "phone"
     static let c_res_auth_token = "auth_token"
+    static let c_res_address = "address"
     
     static let c_res_name = "name"
     static let c_res_image = "image"

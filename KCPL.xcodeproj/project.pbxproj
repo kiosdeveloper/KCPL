@@ -58,6 +58,9 @@
 		111BE26C20BD590700190718 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE26A20BD58F400190718 /* UserDefault.swift */; };
 		111BE26D20BD590700190718 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE26A20BD58F400190718 /* UserDefault.swift */; };
 		111BE27020BD594A00190718 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BE26F20BD594A00190718 /* User.swift */; };
+		111F6EA320DCF7F10032D81D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F6EA220DCF7F10032D81D /* ProfileVC.swift */; };
+		111F6EA420DCF7FA0032D81D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F6EA220DCF7F10032D81D /* ProfileVC.swift */; };
+		111F6EA520DCF7FB0032D81D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F6EA220DCF7F10032D81D /* ProfileVC.swift */; };
 		1129C34E209AE0B4005DC1B8 /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1129C34C209AE0AF005DC1B8 /* NavigationView.xib */; };
 		1129C34F209AE0B4005DC1B8 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C34D209AE0B1005DC1B8 /* NavigationView.swift */; };
 		1129C351209AEC66005DC1B8 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129C350209AEC66005DC1B8 /* DashboardVC.swift */; };
@@ -357,6 +360,7 @@
 		111BE26320BD320B00190718 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		111BE26A20BD58F400190718 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		111BE26F20BD594A00190718 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		111F6EA220DCF7F10032D81D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		1129C34C209AE0AF005DC1B8 /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
 		1129C34D209AE0B1005DC1B8 /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		1129C350209AEC66005DC1B8 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
@@ -730,6 +734,7 @@
 				11388F8C20BD855A00E54FB2 /* ProductListVC.swift */,
 				85E8A1E420C26E7200349073 /* WebViewVc.swift */,
 				11EFFC4A20C95273007686B9 /* NatificationVC.swift */,
+				111F6EA220DCF7F10032D81D /* ProfileVC.swift */,
 			);
 			path = Sales;
 			sourceTree = "<group>";
@@ -1338,6 +1343,7 @@
 				85B3949C20AB9AC600E643DD /* leftMenuViewController.swift in Sources */,
 				11EFFC5520C95D84007686B9 /* InventoryTableViewCell.swift in Sources */,
 				85B3949D20AB9AC600E643DD /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
+				111F6EA420DCF7FA0032D81D /* ProfileVC.swift in Sources */,
 				85B3949E20AB9AC600E643DD /* CustomerListVC.swift in Sources */,
 				85B3949F20AB9AC600E643DD /* DeliveryAddressVC.swift in Sources */,
 				85B394A020AB9AC600E643DD /* ItemDetailVC.swift in Sources */,
@@ -1428,6 +1434,7 @@
 				85516BA220C8E21E00BD617C /* AdminPurchaseTableViewCell.swift in Sources */,
 				85516B9A20C8D70C00BD617C /* AdminSalesViewController.swift in Sources */,
 				85B394E220AE2ABB00E643DD /* CustomerDetailVC.swift in Sources */,
+				111F6EA520DCF7FB0032D81D /* ProfileVC.swift in Sources */,
 				85B394E320AE2ABB00E643DD /* ThemeTableView.swift in Sources */,
 				85BB3E1D20CBC0D000DD7DF1 /* AdminCartViewController.swift in Sources */,
 				11EFFC4D20C95273007686B9 /* NatificationVC.swift in Sources */,
@@ -1518,6 +1525,7 @@
 				11DD9D522099EB8C006C00C9 /* ConstantUI.swift in Sources */,
 				11DD9D582099EBFD006C00C9 /* ThemeButton.swift in Sources */,
 				112DA5BD209C6D87009F6A68 /* leftMenuViewController.swift in Sources */,
+				111F6EA320DCF7F10032D81D /* ProfileVC.swift in Sources */,
 				112DA5BC209C6D87009F6A68 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				11EFFC5420C95D84007686B9 /* InventoryTableViewCell.swift in Sources */,
 				11470FD120AAF3A2009ECB0B /* CustomerListVC.swift in Sources */,

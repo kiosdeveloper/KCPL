@@ -10,6 +10,7 @@ struct ComunicateService {
 //        static var OAuthToken: String?
         case Login(Parameters)
         case SignUp(Parameters)
+        case UpdateUser(Parameters)
         case GetCategories()
         case GetProductList(categoryId: Int)
         case CreateOrder(Parameters)
@@ -30,7 +31,8 @@ struct ComunicateService {
                  .GetAddressList():
                 return .get
                 
-            case .UpdateAddress(_, _):
+            case .UpdateAddress(_, _),
+                 .UpdateUser(_):
                 return .put
             }
         }
@@ -41,6 +43,8 @@ struct ComunicateService {
                 return "customers/sign_in"
             case .SignUp(_):
                 return "customers"
+            case .UpdateUser(_):
+                return "customers/10"
             case .GetCategories():
                 return "categories"
             case .GetProductList(let categoryId):
@@ -86,7 +90,8 @@ struct ComunicateService {
                  .SignUp(let params),
                  .CreateOrder(let params),
                  .AddAddress(let params),
-                 .UpdateAddress(let params, _):
+                 .UpdateAddress(let params, _),
+                 .UpdateUser(let params):
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: params)///JSONEncoding if request Parameter in JSON Format
                 
             case .GetCategories(),

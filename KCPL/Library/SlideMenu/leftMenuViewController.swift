@@ -17,9 +17,9 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
     
     @IBOutlet var tblTrailConstraints: NSLayoutConstraint!
     
-    var dsTitle = [Constant.C_SideMenu_Home,Constant.C_SideMenu_MyCustomers,Constant.C_SideMenu_OrderHistory,Constant.C_SideMenu_Address,Constant.C_SideMenu_About,Constant.C_SideMenu_ContactUs,Constant.C_SideMenu_VisitOurWebsite,Constant.C_SideMenu_SignOut]
+    var dsTitle = [Constant.C_SideMenu_Home,Constant.C_SideMenu_MyCustomers,Constant.C_SideMenu_OrderHistory,Constant.C_SideMenu_Address,Constant.C_SideMenu_About,Constant.C_SideMenu_ContactUs,Constant.C_SideMenu_VisitOurWebsite,Constant.C_SideMenu_Profile,Constant.C_SideMenu_SignOut]
     
-    var dsIcons = ["ic_home","ic_orderHistory","ic_orderHistory","ic_orderHistory","ic_about","ic_contactUs", "ic_visitOurWebsite", "ic_signOut"]
+    var dsIcons = ["ic_home","ic_orderHistory","ic_orderHistory","ic_orderHistory","ic_about","ic_contactUs", "ic_visitOurWebsite","ic_username", "ic_signOut"]
     
     override func viewDidLoad() {
         
@@ -165,6 +165,10 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
             vc.url = "http://karnavatiautomall.com/"
             vc.title = Constant.C_SideMenu_VisitOurWebsite
             
+            SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
+            
+        case Constant.C_SideMenu_Profile:
+            let vc = AppRouter.sharedRouter().getViewController("ProfileVC") as! ProfileVC
             SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
             
         case Constant.C_SideMenu_SignOut:

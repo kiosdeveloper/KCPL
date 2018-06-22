@@ -13,6 +13,10 @@ class DeliveryAddressVC: AbstractVC {
     @IBOutlet weak var deliveryAddressTableView: UITableView!
     @IBOutlet var titleLabel: UILabel!
     
+    @IBOutlet var nextButton: UIButton!
+    
+    @IBOutlet var TableviewBottomConstraints: NSLayoutConstraint!
+    
     var isFromMenu = false
     var addressDatasource = [Address]()
     var selectedIndex = -1
@@ -27,6 +31,11 @@ class DeliveryAddressVC: AbstractVC {
         deliveryAddressTableView.register(UINib.init(nibName: "DeliveryAddressCell", bundle: nil), forCellReuseIdentifier: "DeliveryAddressCell")
         
         self.configNavigationBar()
+        nextButton.isHidden = isFromMenu
+        
+        if isFromMenu {
+            TableviewBottomConstraints.constant = -(nextButton.frame.size.height)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

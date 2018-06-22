@@ -17,6 +17,7 @@ class User: NSObject, NSCoding {
     var last_name : String?
     var phone: String?
     var auth_token: String?
+    var address: String?
     
     override init () {
         // uncomment this line if your class has been inherited from any other class
@@ -42,6 +43,9 @@ class User: NSObject, NSCoding {
         if json[Constant.c_res_auth_token].type != .null {
             auth_token = json.dictionaryObject![Constant.c_res_auth_token] as! String?
         }
+        if json[Constant.c_res_address].type != .null {
+            address = json.dictionaryObject![Constant.c_res_address] as! String?
+        }
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -51,6 +55,7 @@ class User: NSObject, NSCoding {
         last_name = aDecoder.decodeObject(forKey: Constant.c_res_last_name) as? String
         phone = aDecoder.decodeObject(forKey: Constant.c_res_phone) as? String
         auth_token = aDecoder.decodeObject(forKey: Constant.c_res_auth_token) as? String
+        address = aDecoder.decodeObject(forKey: Constant.c_res_address) as? String
     }
     
     public func encode(with aCoder: NSCoder) {
@@ -60,6 +65,7 @@ class User: NSObject, NSCoding {
         aCoder.encode(last_name, forKey: Constant.c_res_last_name)
         aCoder.encode(phone, forKey: Constant.c_res_phone)
         aCoder.encode(auth_token, forKey: Constant.c_res_auth_token)
+        aCoder.encode(address, forKey: Constant.c_res_address)
     }
 }
 

@@ -37,15 +37,15 @@ class ServiceManager {
                         }
                     }
                 case .failure(let error):
-//                    print(error)
+                    print(error)
                     Util.dissmissProgress()
-                    completion(false, error.localizedDescription, nil)
+                    completion(false, nil, nil)
                 }
             }
         } catch let error{
             print(error)
             Util.dissmissProgress()
-            completion(false, error.localizedDescription, nil)
+            completion(false, nil, nil)
         }
     }
     
@@ -60,16 +60,7 @@ class ServiceManagerModel {
         }
         completion(false)
     }
-    
-//    //    MARK:- UserUpdate
-//    func processUserUpdate(json: JSON?, completion: @escaping (_ isComplete: Bool)-> Void) {
-//        if let response_json = json {
-//            UserDefault.saveUser(user: User(json: response_json))
-//            completion(true)
-//        }
-//        completion(false)
-//    }
-//
+
     //    MARK:- Categories
     func processCategories(json: JSON?, completion: @escaping (_ isComplete: Bool, _ categories: [Category]? )-> Void) {
         if let response_json = json {
