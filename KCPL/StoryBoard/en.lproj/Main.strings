@@ -8,8 +8,8 @@
 /* Class = "UIButton"; normalTitle = "Add To Cart"; ObjectID = "2NL-c8-vve"; */
 "2NL-c8-vve.normalTitle" = "Add To Cart";
 
-/* Class = "UILabel"; text = "Rs. 0"; ObjectID = "31B-Kh-KXF"; */
-"31B-Kh-KXF.text" = "Rs. 0";
+/* Class = "UILabel"; text = "₹ 0"; ObjectID = "31B-Kh-KXF"; */
+"31B-Kh-KXF.text" = "₹ 0";
 
 /* Class = "UIButton"; normalTitle = "Confirmed"; ObjectID = "3CG-5J-XO8"; */
 "3CG-5J-XO8.normalTitle" = "Confirmed";
@@ -107,8 +107,8 @@
 /* Class = "UILabel"; text = "gsd hdgs fghsdgh dgh gdsh sdhgg hsgh ghghfh sdgh fgf hsg"; ObjectID = "XYX-bw-muI"; */
 "XYX-bw-muI.text" = "gsd hdgs fghsdgh dgh gdsh sdhgg hsgh ghghfh sdgh fgf hsg";
 
-/* Class = "UILabel"; text = "Rs. 2750"; ObjectID = "Xvc-88-LQh"; */
-"Xvc-88-LQh.text" = "Rs. 2750";
+/* Class = "UILabel"; text = "₹ 2750"; ObjectID = "Xvc-88-LQh"; */
+"Xvc-88-LQh.text" = "₹ 2750";
 
 /* Class = "UILabel"; text = "Personal Information"; ObjectID = "YZv-VV-K34"; */
 "YZv-VV-K34.text" = "Personal Information";
@@ -137,8 +137,8 @@
 /* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "bjB-lh-9Ij"; */
 "bjB-lh-9Ij.normalTitle" = "Edit";
 
-/* Class = "UILabel"; text = "Rs. 0"; ObjectID = "cKr-ZK-55R"; */
-"cKr-ZK-55R.text" = "Rs. 0";
+/* Class = "UILabel"; text = "₹ 0"; ObjectID = "cKr-ZK-55R"; */
+"cKr-ZK-55R.text" = "₹ 0";
 
 /* Class = "UITextField"; placeholder = "GSTin Number"; ObjectID = "cyi-mD-AVO"; */
 "cyi-mD-AVO.placeholder" = "GSTin Number";
@@ -176,8 +176,8 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "gas-jw-Sdp"; */
 "gas-jw-Sdp.text" = "Label";
 
-/* Class = "UILabel"; text = "Rs. 0"; ObjectID = "goo-TA-o6V"; */
-"goo-TA-o6V.text" = "Rs. 0";
+/* Class = "UILabel"; text = "₹ 0"; ObjectID = "goo-TA-o6V"; */
+"goo-TA-o6V.text" = "₹ 0";
 
 /* Class = "UIButton"; normalTitle = "LOG IN"; ObjectID = "h2d-Vr-cv6"; */
 "h2d-Vr-cv6.normalTitle" = "LOG IN";
@@ -185,8 +185,8 @@
 /* Class = "UILabel"; text = "Subtotal"; ObjectID = "h84-lW-chG"; */
 "h84-lW-chG.text" = "Subtotal";
 
-/* Class = "UILabel"; text = "Rs.0"; ObjectID = "ip7-o3-Xj8"; */
-"ip7-o3-Xj8.text" = "Rs.0";
+/* Class = "UILabel"; text = "₹0"; ObjectID = "ip7-o3-Xj8"; */
+"ip7-o3-Xj8.text" = "₹0";
 
 /* Class = "UILabel"; text = "Order #ASD2347"; ObjectID = "kqY-rh-eFy"; */
 "kqY-rh-eFy.text" = "Order #ASD2347";

@@ -30,6 +30,7 @@ class CartVC: AbstractVC {
         cartTableView.register(UINib.init(nibName: "CartCell", bundle: nil), forCellReuseIdentifier: "CartCell")
         cartTableView.register(UINib.init(nibName: "CartTotalCell", bundle: nil), forCellReuseIdentifier: "CartTotalCell")
         
+        self.view.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
         self.configNavigationBar()
     }
     

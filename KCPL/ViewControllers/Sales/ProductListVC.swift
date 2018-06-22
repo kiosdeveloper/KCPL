@@ -28,6 +28,7 @@ class ProductListVC: AbstractVC {
         super.viewDidLoad()
         
         self.configPicker()
+        self.view.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
         
 //        self.getProductList()
         self.configNavigationBar()
@@ -173,20 +174,19 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
         cell.quantityTextField.delegate = self
         cell.quantityTextField.tag = indexPath.row
         
-//        if let cartArray_temp = UserDefault.getCartProducts(), let i = cartArray_temp.index(where: { $0.id == productsDatasource[indexPath.row].id }) {
-//
-//            if let qty = cartArray_temp[i].quantity {
-//                cell.quantityTextField.text = "\(qty)"
-//                cell.addToCartButton.isHidden = qty > 0
-//            }
-//        } else {
-//            cell.quantityTextField.text = "0"
-//            cell.addToCartButton.isHidden = false
-//        }
-        
         if let qty = filteredProductsDatasource[indexPath.row].quantity {
             cell.quantityTextField.text = "\(qty)"
-            cell.addToCartButton.isHidden = qty > 0
+//            cell.addToCartButton.isHidden = qty > 0
+//            cell.addToCartButton.setTitle((qty > 0) ? "Added" : "Add to Cart", for: .normal)
+            
+            if qty > 0 {
+                cell.addToCartButton.isDisableConfig()
+                cell.addToCartButton.setTitle("Added", for: .normal)
+            } else {
+                cell.addToCartButton.isEnableConfig()
+                cell.addToCartButton.setTitle("Add to Cart", for: .normal)
+            }
+            
         }
         
         cell.productImageView.sd_setImage(with: URL.init(string: self.filteredProductsDatasource[indexPath.row].imageUrl!), placeholderImage: UIImage(named: "item_detail"), options: .fromCacheOnly, completed: nil)
@@ -369,6 +369,9 @@ extension ProductListVC: UITextFieldDelegate {
         } else {
             if let qtyString = textField.text, let qty = Int(qtyString) {
                 self.filteredProductsDatasource[textField.tag] = Util().plusQuantity(product: self.filteredProductsDatasource[textField.tag], quantity: qty)
+                
+                self.productlistTableView.reloadData()
+                self.updateBadge()
             }
         }
     }
