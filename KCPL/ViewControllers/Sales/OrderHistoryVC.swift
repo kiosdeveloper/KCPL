@@ -12,12 +12,39 @@ class OrderHistoryVC: AbstractVC {
 
     @IBOutlet weak var orderHistoryTableView: UITableView!
     
+    var orderHistory : [Order]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.orderHistoryTableView.reloadData()
         self.orderHistoryTableView.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getOrderHistory()
+    }
 
+}
+
+extension OrderHistoryVC {
+    func getOrderHistory() {
+        ServiceManager().processService(urlRequest: ComunicateService.Router.GetOrderHistory()) { (isSuccess, error , responseData) in
+            if isSuccess {
+                ServiceManagerModel().processOrderList(json: responseData, completion: { (isComplete, order) in
+                    if isComplete {
+                        self.orderHistory = order!
+                        self.orderHistoryTableView.reloadData()
+                    }
+                    else {
+                        
+                    }
+                })
+            } else {
+                error?.configToast(isError: true)
+            }
+        }
+    }
 }
 
 //MARK:- SideMenu
@@ -31,7 +58,10 @@ extension OrderHistoryVC: SlideNavigationControllerDelegate {
 
 extension OrderHistoryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if let orders = self.orderHistory {
+            return orders.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,6 +81,16 @@ extension OrderHistoryVC: UITableViewDelegate, UITableViewDataSource {
         }
         cell.confirmButton.layer.borderWidth = 1.0
 
+        let order = self.orderHistory?[indexPath.row]
+        cell.orderIdLabel.text = "Order# \(String(describing: order?.orderId!))"
+//        if let date = order?.createdAt {
+//            cell.processingLabel.text = "Processing:\(self.convertProcessingDate(date: date))"
+//            
+//        }
+//        if let date = order?.confirmationDate {
+//            cell.submittedDateLabel.text = self.convertProcessingDate(date: date)
+//        }
+        cell.shippingToLabel.text = order?.shipToAddress ?? ""
         return cell
     }
     
@@ -58,4 +98,11 @@ extension OrderHistoryVC: UITableViewDelegate, UITableViewDataSource {
         return UITableViewAutomaticDimension
     }
     
+    func convertProcessingDate(date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-ddTHH:mm:ss.fffz"
+        let date = dateFormatter.date(from: date)
+        dateFormatter.dateFormat = "dd-MMM-yyyy"
+        return  dateFormatter.string(from: date!)
+    }
 }

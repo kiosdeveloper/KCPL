@@ -17,6 +17,7 @@ struct ComunicateService {
         case GetAddressList()
         case AddAddress(Parameters)
         case UpdateAddress(Parameters, addressId: Int)
+        case GetOrderHistory()
         
         var method: Alamofire.HTTPMethod {
             switch self {
@@ -28,7 +29,8 @@ struct ComunicateService {
 
             case .GetCategories(),
                  .GetProductList(_),
-                 .GetAddressList():
+                 .GetAddressList(),
+                 .GetOrderHistory():
                 return .get
                 
             case .UpdateAddress(_, _),
@@ -49,7 +51,8 @@ struct ComunicateService {
                 return "categories"
             case .GetProductList(let categoryId):
                 return "categories/\(categoryId)/products"
-            case .CreateOrder(_):
+            case .CreateOrder(_),
+                 .GetOrderHistory():
                 return "orders"
             case .GetAddressList():
                 return "user_addresses"
@@ -96,7 +99,8 @@ struct ComunicateService {
                 
             case .GetCategories(),
                  .GetProductList(_),
-                 .GetAddressList():
+                 .GetAddressList(),
+                 .GetOrderHistory():
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
             }
         }

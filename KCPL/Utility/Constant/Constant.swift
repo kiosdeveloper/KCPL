@@ -89,6 +89,25 @@ struct Constant {
     static let c_res_country = "country"
     static let c_res_zipcode = "zip"
     static let c_res_user_id = "user_id"
+    
+    static let c_res_confirmation_date = "confirmation_date"
+    static let c_res_expected_delivery_date = "expected_delivery_date"
+    static let c_res_invoice_no = "invoice_no"
+    static let c_res_ship_by_address = "ship_by_address"
+    static let c_res_ship_date = "ship_date"
+    
+    static let c_res_tracking_id = "tracking_id"
+    static let c_res_created_at = "created_at"
+    static let c_res_sale_by_id = "sale_by_id"
+    static let c_res_bill_to_address = "bill_to_address"
+    static let c_res_carrier_id = "carrier_id"
+    static let c_res_ship_to_address = "ship_to_address"
+    static let c_res_order_id = "order_id"
+    static let c_res_qty = "qty"
+    static let c_res_product_id = "product_id"
+    static let c_res_product = "products"
+
+    
 
     //    MARK:- Userdefault Keys
     static let c_ud_userData = "userData"
