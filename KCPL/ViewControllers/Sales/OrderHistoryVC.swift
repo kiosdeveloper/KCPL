@@ -12,7 +12,7 @@ class OrderHistoryVC: AbstractVC {
 
     @IBOutlet weak var orderHistoryTableView: UITableView!
     
-    var orderHistory : [Order]?
+    var orderHistory: [Order]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +21,22 @@ class OrderHistoryVC: AbstractVC {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        self.title = "Order History"
         self.getOrderHistory()
     }
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
+    }
+    
+    //    MARK:- Prepare for Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showOrderHistoryDetailFromOrderHistory" {
+            if let toVC = segue.destination as? OrderHistoryDetailVC, let indexPath = sender as? IndexPath {
+                toVC.orderDetail = orderHistory?[indexPath.row]
+            }
+        }
+    }
 }
 
 extension OrderHistoryVC {
@@ -82,7 +94,11 @@ extension OrderHistoryVC: UITableViewDelegate, UITableViewDataSource {
         cell.confirmButton.layer.borderWidth = 1.0
 
         let order = self.orderHistory?[indexPath.row]
-        cell.orderIdLabel.text = "Order# \(String(describing: order?.orderId!))"
+        
+        if let id = order?.orderId {
+            cell.orderIdLabel.text = "Order# \(String(describing: id))"
+        }
+        
 //        if let date = order?.createdAt {
 //            cell.processingLabel.text = "Processing:\(self.convertProcessingDate(date: date))"
 //            
@@ -94,9 +110,15 @@ extension OrderHistoryVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showOrderHistoryDetailFromOrderHistory", sender: indexPath)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
+    
+    
     
     func convertProcessingDate(date: String) -> String {
         let dateFormatter = DateFormatter()

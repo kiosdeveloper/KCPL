@@ -967,6 +967,7 @@
                     </view>
                     <connections>
                         <outlet property="orderHistoryTableView" destination="wOQ-OT-yTa" id="aNV-mI-nzC"/>
+                        <segue destination="Hk1-6O-4Rv" kind="show" identifier="showOrderHistoryDetailFromOrderHistory" id="SRw-bU-WoR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Py9-E3-tgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -985,7 +986,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="150" id="YO9-0D-dy2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderHistoryDetailHeaderCell" rowHeight="150" id="YO9-0D-dy2" customClass="OrderHistoryDetailHeaderCell" customModule="KCPL" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YO9-0D-dy2" id="bdo-TS-x2v">
@@ -1181,8 +1182,82 @@
                                                 <constraint firstItem="ZAt-jb-ZLr" firstAttribute="leading" secondItem="bdo-TS-x2v" secondAttribute="leading" id="qWo-ET-ho9"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderHistoryDetailItemCell" rowHeight="111" id="ZcW-4i-LQu" customClass="OrderHistoryDetailItemCell" customModule="KCPL" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="178" width="320" height="111"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZcW-4i-LQu" id="Ur7-JF-Y1N">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hje-so-uIe">
+                                                    <rect key="frame" x="0.0" y="2" width="320" height="107"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Carbetor/ coolent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMo-Fk-cuI" customClass="ThemeLabelTitle" customModule="KCPL" customModuleProvider="target">
+                                                            <rect key="frame" x="74" y="8" width="230" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="₹ 360" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNS-vR-Ukt" customClass="ThemeLabelPrice" customModule="KCPL" customModuleProvider="target">
+                                                            <rect key="frame" x="74" y="33" width="230" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qty. 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIt-iz-A7L" customClass="ThemeLabelTitle" customModule="KCPL" customModuleProvider="target">
+                                                            <rect key="frame" x="74" y="58" width="230" height="41"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="7KJ-Gu-QMb">
+                                                            <rect key="frame" x="8" y="28.5" width="50" height="50"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.62352941179999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="Ye8-d7-JLq"/>
+                                                                <constraint firstAttribute="height" constant="50" id="m5m-Wy-qGe"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="UMo-Fk-cuI" secondAttribute="trailing" constant="16" id="0fg-tf-utU"/>
+                                                        <constraint firstItem="rIt-iz-A7L" firstAttribute="leading" secondItem="UMo-Fk-cuI" secondAttribute="leading" id="1Vu-JF-Rqk"/>
+                                                        <constraint firstItem="7KJ-Gu-QMb" firstAttribute="centerY" secondItem="hje-so-uIe" secondAttribute="centerY" id="3MP-3z-OF3"/>
+                                                        <constraint firstItem="UMo-Fk-cuI" firstAttribute="top" secondItem="hje-so-uIe" secondAttribute="top" constant="8" id="5Pg-SB-bqH"/>
+                                                        <constraint firstItem="rIt-iz-A7L" firstAttribute="trailing" secondItem="UMo-Fk-cuI" secondAttribute="trailing" id="Ahg-Md-X4E"/>
+                                                        <constraint firstAttribute="bottom" secondItem="rIt-iz-A7L" secondAttribute="bottom" constant="8" id="dgI-II-Bni"/>
+                                                        <constraint firstItem="rIt-iz-A7L" firstAttribute="top" secondItem="XNS-vR-Ukt" secondAttribute="bottom" constant="4" id="jdR-zG-OzY"/>
+                                                        <constraint firstItem="UMo-Fk-cuI" firstAttribute="leading" secondItem="7KJ-Gu-QMb" secondAttribute="trailing" constant="16" id="jiX-L4-tc7"/>
+                                                        <constraint firstItem="XNS-vR-Ukt" firstAttribute="trailing" secondItem="UMo-Fk-cuI" secondAttribute="trailing" id="oRB-M6-Ok0"/>
+                                                        <constraint firstItem="XNS-vR-Ukt" firstAttribute="top" secondItem="UMo-Fk-cuI" secondAttribute="bottom" constant="4" id="xyh-Sg-g6f"/>
+                                                        <constraint firstItem="7KJ-Gu-QMb" firstAttribute="leading" secondItem="hje-so-uIe" secondAttribute="leading" constant="8" id="zAl-g1-ylt"/>
+                                                        <constraint firstItem="XNS-vR-Ukt" firstAttribute="leading" secondItem="UMo-Fk-cuI" secondAttribute="leading" id="zEW-nd-xKQ"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="hje-so-uIe" secondAttribute="bottom" constant="2" id="Blk-nA-hpr"/>
+                                                <constraint firstItem="hje-so-uIe" firstAttribute="leading" secondItem="Ur7-JF-Y1N" secondAttribute="leading" id="gnE-SD-iW2"/>
+                                                <constraint firstAttribute="trailing" secondItem="hje-so-uIe" secondAttribute="trailing" id="hgI-N6-QVO"/>
+                                                <constraint firstItem="hje-so-uIe" firstAttribute="top" secondItem="Ur7-JF-Y1N" secondAttribute="top" constant="2" id="sC0-Gg-7cX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="productImageView" destination="7KJ-Gu-QMb" id="Ku2-Es-zUJ"/>
+                                            <outlet property="productNameLabel" destination="UMo-Fk-cuI" id="KzO-2Q-Mkt"/>
+                                            <outlet property="productPriceLabel" destination="XNS-vR-Ukt" id="3Hi-2C-CfD"/>
+                                            <outlet property="productQtyLabel" destination="rIt-iz-A7L" id="24e-QA-Ger"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Hk1-6O-4Rv" id="peZ-Xz-OdE"/>
+                                    <outlet property="delegate" destination="Hk1-6O-4Rv" id="zcH-TQ-Dz1"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1194,6 +1269,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2FD-5a-EaH"/>
                     </view>
+                    <connections>
+                        <outlet property="orderHistoryDetailTableview" destination="rUc-ji-6OW" id="EyT-ZC-GMV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLe-6c-bAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1781,17 +1859,17 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNd-Hb-1Xe">
-                                                            <rect key="frame" x="192" y="16" width="120" height="40"/>
+                                                            <rect key="frame" x="192" y="26" width="120" height="30"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ba2-At-Gai" customClass="ThemeButton" customModule="KCPL" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
                                                                     <state key="normal" title="-"/>
                                                                     <connections>
                                                                         <action selector="btnMinusQuantityPressed:" destination="Ae5-d6-Ziy" eventType="touchUpInside" id="R5b-GS-UZ7"/>
                                                                     </connections>
                                                                 </button>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DmM-T6-Pcm">
-                                                                    <rect key="frame" x="40" y="1" width="40" height="38"/>
+                                                                    <rect key="frame" x="40" y="1" width="40" height="28"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
@@ -1801,7 +1879,7 @@
                                                                     </connections>
                                                                 </textField>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ako-9Q-yZ4" customClass="ThemeButton" customModule="KCPL" customModuleProvider="target">
-                                                                    <rect key="frame" x="80" y="0.0" width="40" height="40"/>
+                                                                    <rect key="frame" x="80" y="0.0" width="40" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="40" id="w0s-wZ-LYk"/>
                                                                     </constraints>
@@ -1824,12 +1902,12 @@
                                                                 <constraint firstItem="Ba2-At-Gai" firstAttribute="top" secondItem="qNd-Hb-1Xe" secondAttribute="top" id="e7E-BV-8EK"/>
                                                                 <constraint firstItem="ako-9Q-yZ4" firstAttribute="top" secondItem="qNd-Hb-1Xe" secondAttribute="top" id="ez9-ZY-vLp"/>
                                                                 <constraint firstItem="DmM-T6-Pcm" firstAttribute="leading" secondItem="Ba2-At-Gai" secondAttribute="trailing" id="lQN-hH-1yo"/>
-                                                                <constraint firstAttribute="height" constant="40" id="pdQ-DB-F5y"/>
+                                                                <constraint firstAttribute="height" constant="30" id="pdQ-DB-F5y"/>
                                                                 <constraint firstAttribute="bottom" secondItem="Ba2-At-Gai" secondAttribute="bottom" id="zME-nG-zuU"/>
                                                             </constraints>
                                                         </view>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avz-2p-pxP" customClass="ThemeButton" customModule="KCPL" customModuleProvider="target">
-                                                            <rect key="frame" x="192" y="64" width="120" height="40"/>
+                                                            <rect key="frame" x="192" y="64" width="120" height="30"/>
                                                             <state key="normal" title="Add to Cart"/>
                                                             <connections>
                                                                 <action selector="btnAddToCartPressed:" destination="Ae5-d6-Ziy" eventType="touchUpInside" id="SFj-9p-KPF"/>
@@ -1852,7 +1930,7 @@
                                                         <constraint firstItem="qNd-Hb-1Xe" firstAttribute="trailing" secondItem="Avz-2p-pxP" secondAttribute="trailing" id="aO4-ed-VWx"/>
                                                         <constraint firstItem="36I-k9-kJ3" firstAttribute="width" secondItem="Klf-dv-WIc" secondAttribute="width" multiplier="0.16" id="aP8-GJ-J3z"/>
                                                         <constraint firstItem="qNd-Hb-1Xe" firstAttribute="leading" secondItem="fDp-vf-p5i" secondAttribute="trailing" constant="8" id="dK1-um-Pgs"/>
-                                                        <constraint firstItem="qNd-Hb-1Xe" firstAttribute="top" secondItem="Klf-dv-WIc" secondAttribute="top" constant="16" id="jLU-5z-82j"/>
+                                                        <constraint firstItem="qNd-Hb-1Xe" firstAttribute="top" secondItem="Klf-dv-WIc" secondAttribute="top" constant="26" id="jLU-5z-82j"/>
                                                         <constraint firstAttribute="bottom" secondItem="zgG-Vt-g3z" secondAttribute="bottom" constant="16" id="u0g-ZH-Riw"/>
                                                         <constraint firstItem="Avz-2p-pxP" firstAttribute="height" secondItem="qNd-Hb-1Xe" secondAttribute="height" id="waC-nH-4IR"/>
                                                     </constraints>
@@ -2652,6 +2730,6 @@
         <image name="logo" width="65" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Vib-uS-7Qo"/>
+        <segue reference="osT-mD-yWI"/>
     </inferredMetricsTieBreakers>
 </document>

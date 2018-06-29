@@ -30,13 +30,13 @@
                                     <constraint firstAttribute="width" secondItem="pCs-bi-z6i" secondAttribute="height" id="Yj6-us-fTe"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gsd hdgs fghsdgh dgh gdsh sdhgg hsgh ghghfh sdgh fgf hsg" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdz-5n-ARU" customClass="ThemeLabelTitle" customModule="KCPL" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="gsd hdgs fghsdgh dgh gdsh sdhgg hsgh ghghfh sdgh fgf hsg" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdz-5n-ARU" customClass="ThemeLabelTitle" customModule="KCPL" customModuleProvider="target">
                                 <rect key="frame" x="73" y="16" width="253" height="39.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9So-pk-u3e" customClass="ThemeLabelDetail" customModule="KCPL" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9So-pk-u3e" customClass="ThemeLabelDetail" customModule="KCPL" customModuleProvider="target">
                                 <rect key="frame" x="73" y="59.5" width="253" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="iUY-dg-PT4"/>
@@ -51,30 +51,30 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹ 2750" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPm-2Z-71r" customClass="ThemeLabelPrice" customModule="KCPL" customModuleProvider="target">
-                                <rect key="frame" x="73" y="71.5" width="54.5" height="21"/>
+                                <rect key="frame" x="73" y="76.5" width="54.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rt3-UY-jze">
-                                <rect key="frame" x="206" y="62" width="120" height="40"/>
+                                <rect key="frame" x="206" y="72" width="120" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIA-Tg-k3W" customClass="ThemeButton" customModule="KCPL" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
                                         <state key="normal" title="-"/>
                                         <connections>
                                             <action selector="btnMinusQuantityPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aVU-0B-Vmv"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="utx-W4-vt9">
-                                        <rect key="frame" x="40" y="1" width="40" height="38"/>
+                                        <rect key="frame" x="40" y="1" width="40" height="28"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnh-E5-XBu" customClass="ThemeButton" customModule="KCPL" customModuleProvider="target">
-                                        <rect key="frame" x="80" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="80" y="0.0" width="40" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="dkT-iN-c1D"/>
                                         </constraints>
@@ -89,7 +89,7 @@
                                     <constraint firstItem="fnh-E5-XBu" firstAttribute="top" secondItem="Rt3-UY-jze" secondAttribute="top" id="3VC-no-Re6"/>
                                     <constraint firstItem="kIA-Tg-k3W" firstAttribute="leading" secondItem="Rt3-UY-jze" secondAttribute="leading" id="4BK-BC-2DD"/>
                                     <constraint firstAttribute="bottom" secondItem="fnh-E5-XBu" secondAttribute="bottom" id="6LG-VN-p7z"/>
-                                    <constraint firstAttribute="height" constant="40" id="A5m-Mg-o6s"/>
+                                    <constraint firstAttribute="height" constant="30" id="A5m-Mg-o6s"/>
                                     <constraint firstItem="fnh-E5-XBu" firstAttribute="leading" secondItem="utx-W4-vt9" secondAttribute="trailing" id="CAR-T3-3qj"/>
                                     <constraint firstItem="utx-W4-vt9" firstAttribute="leading" secondItem="kIA-Tg-k3W" secondAttribute="trailing" id="GQv-bq-usw"/>
                                     <constraint firstAttribute="bottom" secondItem="kIA-Tg-k3W" secondAttribute="bottom" id="Uwa-Jd-vUe"/>
