@@ -128,4 +128,21 @@ class ServiceManagerModel {
         }
         completion(false, nil)
     }
+    
+    //    MARK:- Address
+    func processCustomers(json: JSON?, completion: @escaping (_ isComplete: Bool, _ customers: [Customers]? )-> Void) {
+        if let response_json = json {
+            
+            var order_arr = [Customers]()
+            
+            for i in 0 ..< response_json.count {
+                let jsonValue = response_json.arrayValue[i]
+                let aData = Customers(json: jsonValue)
+                order_arr.append(aData)
+            }
+            
+            completion(true, order_arr)
+        }
+        completion(false, nil)
+    }
 }

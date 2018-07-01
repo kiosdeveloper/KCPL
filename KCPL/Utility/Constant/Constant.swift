@@ -30,10 +30,15 @@ struct Constant {
     static let c_error_companyname = "Please Enter Company Name"
     static let c_error_company_address = "Please Enter Company Address"
     static let c_error_mobile = "Please Enter Mobile Number"
+    static let c_error_valid_mobile = "Please Enter Valid Mobile Number"
     static let c_error_confirm_password = "Please Enter Confirm Password"
     static let c_not_match_confirm_password = "Your password and confirmation password do not match"
     static let c_error_gst_number = "Please Enter GST Number"
     static let c_error_delivery_address = "Please Enter Delivery Address"
+    static let c_error_customer_address = "Please Enter Customer Address"
+    
+    //MARK:- Success Messages
+    static let c_update_profile = "Your Profile Successfully Updated"
 
 //    MARK: For Request
     static let c_req_customer_email = "customer[email]"
@@ -52,6 +57,7 @@ struct Constant {
     static let c_req_bill_to_address = "order[bill_to_address]"
     static let c_req_ship_to_address = "order[ship_to_address]"
     static let c_req_sorder_products_attributes = "order[order_products_attributes]"
+    static let c_req_customer_id = "order[user_id]"
     
     static let c_req_adddress_line1 = "user_address[line_1]"
     static let c_req_adddress_line2 = "user_address[line_2]"

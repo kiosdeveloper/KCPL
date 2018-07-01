@@ -5,7 +5,7 @@ struct ComunicateService {
   
     enum Router: URLRequestConvertible {
         
-        static let baseURLString = C_ServerName + "/api/v1/"
+        static let baseURLString = !Util.isSalesApp() ? C_ServerName + "/api/v1/" : C_ServerName + "/api/sale/v1/"
         static let APP_ID = "q1pros2iytAbQ62s1pkJGAbqR"
 //        static var OAuthToken: String?
         case Login(Parameters)
@@ -18,19 +18,23 @@ struct ComunicateService {
         case AddAddress(Parameters)
         case UpdateAddress(Parameters, addressId: Int)
         case GetOrderHistory()
+        case GetCustomerList()
+        case AddCustomer(Parameters)
         
         var method: Alamofire.HTTPMethod {
             switch self {
             case .Login( _),
                  .SignUp(_),
                  .CreateOrder(_),
-                 .AddAddress(_):
+                 .AddAddress(_),
+                 .AddCustomer(_):
                 return .post
 
             case .GetCategories(),
                  .GetProductList(_),
                  .GetAddressList(),
-                 .GetOrderHistory():
+                 .GetOrderHistory(),
+                 .GetCustomerList():
                 return .get
                 
             case .UpdateAddress(_, _),
@@ -43,13 +47,21 @@ struct ComunicateService {
             switch self {
             case .Login( _):
                 if Util.isSalesApp() {
-                    return "sales/sign_in"
+                    return "users/sign_in"
                 }
                 return "customers/sign_in"
             case .SignUp(_):
                 return "customers"
             case .UpdateUser(_):
-                return "customers/10"
+                if Util.isSalesApp(), let user = UserDefault.getUser(), let id = user.id {
+                    return "users/\(id)"
+                }
+                else {
+                    if let user = UserDefault.getUser(), let id = user.id {
+                        return "customers/\(id)"
+                    }
+                    return "customers/\(10)"
+                }
             case .GetCategories():
                 return "categories"
             case .GetProductList(let categoryId):
@@ -58,11 +70,19 @@ struct ComunicateService {
                  .GetOrderHistory():
                 return "orders"
             case .GetAddressList():
+                if Util.isSalesApp() {
+                    if let user = UserDefault.getUser(), let id = user.id {
+                        return "user_addresses/\(id)"
+                    }
+                }
                 return "user_addresses"
             case .AddAddress(_):
                 return "user_addresses"
             case .UpdateAddress(_, let addressId):
                 return "user_addresses/\(addressId)"
+            case .GetCustomerList(),
+                 .AddCustomer(_):
+                return "customers"
             }
         }
         
@@ -97,13 +117,15 @@ struct ComunicateService {
                  .CreateOrder(let params),
                  .AddAddress(let params),
                  .UpdateAddress(let params, _),
-                 .UpdateUser(let params):
+                 .UpdateUser(let params),
+                 .AddCustomer(let params):
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: params)///JSONEncoding if request Parameter in JSON Format
                 
             case .GetCategories(),
                  .GetProductList(_),
                  .GetAddressList(),
-                 .GetOrderHistory():
+                 .GetOrderHistory(),
+                 .GetCustomerList():
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
             }
         }

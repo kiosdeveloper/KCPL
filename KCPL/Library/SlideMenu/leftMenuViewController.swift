@@ -133,7 +133,7 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
             
         case Constant.C_SideMenu_MyCustomers:
             let vc = AppRouter.sharedRouter().getViewController("CustomerListVC") as! CustomerListVC
-            
+            vc.isFromMenu = true
             SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
             
         case Constant.C_SideMenu_OrderHistory:

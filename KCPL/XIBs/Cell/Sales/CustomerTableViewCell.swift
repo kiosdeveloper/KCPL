@@ -10,6 +10,18 @@ import UIKit
 
 class CustomerTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var customerNameLabel: UILabel!
+    
+    @IBOutlet weak var customerAddressLabel: UILabel!
+    
+    @IBOutlet weak var customerNumberLabel: UILabel!
+
+    @IBOutlet weak var customerEmailLabel: UILabel!
+
+    @IBOutlet weak var selectCustomerButton: UIButton!
+
+    @IBOutlet weak var selectButtonWidthConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

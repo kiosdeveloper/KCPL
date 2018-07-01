@@ -48,8 +48,12 @@ class CartVC: AbstractVC {
     }
     
     @IBAction func btnNextPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "showDeliveryAddressFromCart", sender: nil)
+        if !Util.isSalesApp() {
+            self.performSegue(withIdentifier: "showDeliveryAddressFromCart", sender: nil)
+        }
+        else {
+            self.performSegue(withIdentifier: "showCustomerListFromCart", sender: nil)
+        }
     }
     
 }

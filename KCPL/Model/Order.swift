@@ -17,7 +17,7 @@ class Order: NSObject, NSCoding {
     var shipByAddress : String?
     var status: Int?
     var orderId: Int?
-    var trackingId: Int?
+    var trackingId : Any?
     var createdAt: String?
     var saleById: Int?
     var billToAddress: String?
@@ -69,7 +69,12 @@ class Order: NSObject, NSCoding {
             orderId = json.dictionaryObject![Constant.c_res_id] as! Int?
         }
         if json[Constant.c_res_tracking_id].type != .null {
-            trackingId = json.dictionaryObject![Constant.c_res_tracking_id] as! Int?
+            if !Util.isSalesApp() {
+                trackingId = json.dictionaryObject![Constant.c_res_tracking_id] as! Int?
+            }
+            else {
+                trackingId = json.dictionaryObject![Constant.c_res_tracking_id] as! String?
+            }
         }
         if json[Constant.c_res_created_at].type != .null {
             createdAt = json.dictionaryObject![Constant.c_res_created_at] as! String?
@@ -102,7 +107,12 @@ class Order: NSObject, NSCoding {
         shipByAddress = aDecoder.decodeObject(forKey: Constant.c_res_ship_by_address) as? String
         status = aDecoder.decodeObject(forKey: Constant.c_res_status) as? Int
         orderId = aDecoder.decodeObject(forKey: Constant.c_res_id) as? Int
-        trackingId = aDecoder.decodeObject(forKey: Constant.c_res_tracking_id) as? Int
+        if !Util.isSalesApp() {
+            trackingId = aDecoder.decodeObject(forKey: Constant.c_res_tracking_id) as? Int
+        }
+        else {
+            trackingId = aDecoder.decodeObject(forKey: Constant.c_res_tracking_id) as? String
+        }
         createdAt = aDecoder.decodeObject(forKey: Constant.c_res_created_at) as? String
         
         saleById = aDecoder.decodeObject(forKey: Constant.c_res_created_at) as? Int

@@ -96,8 +96,13 @@ extension LoginVC {
                       Constant.c_req_customer_password: passwordTextField.text!]
         }
         else {
-            params = [Constant.c_req_sales_email: usernameTextField.text!,
-                      Constant.c_req_sales_password: passwordTextField.text!]
+            let uuid = NSUUID().uuidString.lowercased()
+            let deviceGUID = UIDevice.current.identifierForVendor!.uuidString + uuid
+            
+            params = [Constant.c_req_customer_email: usernameTextField.text!,
+                      Constant.c_req_customer_password: passwordTextField.text!,
+                      Constant.c_req_device_token: deviceGUID,
+                      Constant.c_req_device_type: "1"]
         }
         
         ServiceManager().processService(urlRequest: ComunicateService.Router.Login(params)) { (isSuccess, error , responseData) in

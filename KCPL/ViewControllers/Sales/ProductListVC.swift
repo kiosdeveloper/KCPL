@@ -201,7 +201,7 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
     //    MARK:- Action
     
     @IBAction func NextPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "showCartFromProductList", sender: nil)
+//        self.performSegue(withIdentifier: "showCartFromProductList", sender: nil)
     }
     
     func btnPlusQuantity(cell: ProductListTableViewCell) {

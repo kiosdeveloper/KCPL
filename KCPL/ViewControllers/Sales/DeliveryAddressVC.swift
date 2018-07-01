@@ -22,6 +22,7 @@ class DeliveryAddressVC: AbstractVC {
     var selectedIndex = -1
     var isEditAddress = false
     var isAddAddress = false
+    var userId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,6 +129,10 @@ extension DeliveryAddressVC {
             Constant.c_req_ship_to_address: orderAddress
         ]
         
+        if let userId = self.userId {
+            params[Constant.c_req_customer_id] = userId
+        }
+        
         if let cartArray = UserDefault.getCartProducts() {
             for (index,item) in cartArray.enumerated() {
                 params["\(Constant.c_req_sorder_products_attributes)[\(index+1)][product_id]"] = item.id
@@ -195,6 +200,7 @@ extension DeliveryAddressVC: UITableViewDelegate, UITableViewDataSource {
         cell.selectButton.isHidden = self.isFromMenu
         cell.selectButton.isSelected = self.selectedIndex == indexPath.row
         cell.delegate = self
+        cell.editButton.isHidden = Util.isSalesApp()
         return cell
     }
     

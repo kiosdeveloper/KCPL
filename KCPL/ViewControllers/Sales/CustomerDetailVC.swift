@@ -28,7 +28,7 @@ extension CustomerDetailVC: SlideNavigationControllerDelegate {
     
     func slideNavigationControllerShouldDisplayLeftMenu() -> Bool
     {
-        return true
+        return false
     }
 }
 

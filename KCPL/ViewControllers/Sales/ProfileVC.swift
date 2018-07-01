@@ -143,7 +143,7 @@ extension ProfileVC {
                 
                 ServiceManagerModel().processLogin(json: responseData, completion: { (isComplete) in
                     if isComplete {
-                        self.dismiss(animated: true, completion: nil)
+                        Constant.c_update_profile.configToast(isError: false)
                     }
                 })
             } else {
