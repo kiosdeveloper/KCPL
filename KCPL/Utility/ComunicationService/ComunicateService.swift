@@ -42,6 +42,9 @@ struct ComunicateService {
         var path: String {
             switch self {
             case .Login( _):
+                if Util.isSalesApp() {
+                    return "sales/sign_in"
+                }
                 return "customers/sign_in"
             case .SignUp(_):
                 return "customers"

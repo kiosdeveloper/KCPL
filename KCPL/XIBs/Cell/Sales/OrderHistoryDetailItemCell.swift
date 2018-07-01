@@ -20,6 +20,9 @@ class OrderHistoryDetailItemCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        if let imageview = self.productImageView {
+            imageview.layer.cornerRadius = imageview.frame.size.width / 2
+        }
         // Initialization code
     }
 

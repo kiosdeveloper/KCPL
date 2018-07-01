@@ -10,6 +10,18 @@ import UIKit
 
 class OrderHistoryDetailHeaderCell: UITableViewCell {
 
+    @IBOutlet weak var orderIdLabel: UILabel!
+    
+    @IBOutlet weak var submittedDateLabel: UILabel!
+    
+    @IBOutlet weak var totalAmountLabel: UILabel!
+    
+    @IBOutlet weak var orderStatusLabel: UILabel!
+    
+    @IBOutlet weak var shippingAddressLabel: UILabel!
+    
+    @IBOutlet weak var billingAddressLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

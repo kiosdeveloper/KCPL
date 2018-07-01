@@ -99,13 +99,16 @@ extension OrderHistoryVC: UITableViewDelegate, UITableViewDataSource {
             cell.orderIdLabel.text = "Order# \(String(describing: id))"
         }
         
-//        if let date = order?.createdAt {
-//            cell.processingLabel.text = "Processing:\(self.convertProcessingDate(date: date))"
-//            
-//        }
-//        if let date = order?.confirmationDate {
-//            cell.submittedDateLabel.text = self.convertProcessingDate(date: date)
-//        }
+        if let date = order?.createdAt {
+            cell.processingLabel.text = "Processing:\(self.convertProcessingDate(date: date))"
+            
+        }
+        if let date = order?.confirmationDate {
+            cell.submittedDateLabel.text = self.convertProcessingDate(date: date)
+        }
+        else {
+            cell.submittedDateLabel.text = self.convertProcessingDate(date: (order?.createdAt)!)
+        }
         cell.shippingToLabel.text = order?.shipToAddress ?? ""
         return cell
     }
@@ -118,13 +121,11 @@ extension OrderHistoryVC: UITableViewDelegate, UITableViewDataSource {
         return UITableViewAutomaticDimension
     }
     
-    
-    
     func convertProcessingDate(date: String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-ddTHH:mm:ss.fffz"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSz"
         let date = dateFormatter.date(from: date)
         dateFormatter.dateFormat = "dd-MMM-yyyy"
-        return  dateFormatter.string(from: date!)
+        return dateFormatter.string(from: date!)
     }
 }

@@ -10,8 +10,8 @@ import UIKit
 
 class LoginVC: UIViewController {
 
-    @IBOutlet weak var usernameTextFeild: UITextField!
-    @IBOutlet weak var passwordTextFeild: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var signUpButton: UIButton!
     
@@ -22,6 +22,8 @@ class LoginVC: UIViewController {
         
         if Util.isSalesApp() {
             self.signUpButton.isHidden = true
+            self.usernameTextField.text = "admin@godfather.com"
+            self.passwordTextField.text = "12345678"
         } else {
             self.configSignUpButton() 
         }
@@ -58,17 +60,17 @@ class LoginVC: UIViewController {
     
     func isValidateLogin() -> Bool {
         
-        if usernameTextFeild.text == "" {
+        if usernameTextField.text == "" {
             Constant.c_error_email.configToast(isError: true)
             return false
         }
         
-        if !(usernameTextFeild.text!.isValidEmail()) {
+        if !(usernameTextField.text!.isValidEmail()) {
             Constant.c_error_valid_email.configToast(isError: true)
             return false
         }
         
-        if passwordTextFeild.text == "" {
+        if passwordTextField.text == "" {
             Constant.c_error_password.configToast(isError: true)
             return false
         }
@@ -88,10 +90,15 @@ class LoginVC: UIViewController {
 extension LoginVC {
     func Login() {
         
-        let params: [String: Any] = [
-            Constant.c_req_customer_email: usernameTextFeild.text!,
-            Constant.c_req_customer_password: passwordTextFeild.text!
-        ]
+        var params: [String: Any] = [:]
+        if !Util.isSalesApp() {
+            params = [Constant.c_req_customer_email: usernameTextField.text!,
+                      Constant.c_req_customer_password: passwordTextField.text!]
+        }
+        else {
+            params = [Constant.c_req_sales_email: usernameTextField.text!,
+                      Constant.c_req_sales_password: passwordTextField.text!]
+        }
         
         ServiceManager().processService(urlRequest: ComunicateService.Router.Login(params)) { (isSuccess, error , responseData) in
             if isSuccess {

@@ -38,6 +38,8 @@ struct Constant {
 //    MARK: For Request
     static let c_req_customer_email = "customer[email]"
     static let c_req_customer_password = "customer[password]"
+    static let c_req_sales_email = "sales[email]"
+    static let c_req_sales_password = "sales[password]"
     static let c_req_first_name = "customer[first_name]"
     static let c_req_last_name = "customer[last_name]"
     static let c_req_confirm_password = "customer[confirm_password]"
