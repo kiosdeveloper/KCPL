@@ -24,6 +24,7 @@ class AddUpdateAddressVC: AbstractVC {
     
     @IBOutlet weak var updateButton: ThemeButton!
     
+    var userId: Int = 0
     var isAddAddress = false
     var address : Address?
     let textFieldDelegate = CommonTextFieldDelegate()
@@ -81,7 +82,7 @@ extension AddUpdateAddressVC {
     }
     
     func addAddress() {
-        ServiceManager().processService(urlRequest: ComunicateService.Router.AddAddress(self.getParams())) { (isSuccess, error , responseData) in
+        ServiceManager().processService(urlRequest: ComunicateService.Router.AddAddress(self.getParams(), userId: userId)) { (isSuccess, error , responseData) in
             if isSuccess {
                 print(responseData!)
                 "Your Address added successfully.".configToast(isError: false)

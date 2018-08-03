@@ -91,8 +91,9 @@ class AdminInventoryViewController: AbstractVC {
 //    MARK:- Action
     @IBAction func ActionPressed(_ sender: Any) {
         
-        if (self.fromScreenType != nil) {//Not From Inventory
-            self.makeOrder()
+        if let screenType = self.fromScreenType {//Not From Inventory
+            
+            self.makeOrder(from: screenType)
             return
         }
         
@@ -100,12 +101,15 @@ class AdminInventoryViewController: AbstractVC {
         
         actionSheet.addAction(UIAlertAction(title: "Make Sales Order", style: .default, handler: { (action) in
 
-            self.makeOrder()
+            self.makeOrder(from: ScreenType.AdminSelectCustomerScreen)
             
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Make Purchase Order", style: .default, handler: { (action) in
-            self.performSegue(withIdentifier: "showAdminCartFromAdminInventory", sender: ScreenType.PurchaseScreen)
+            
+            self.makeOrder(from: ScreenType.AdminSelectVendorScreen)
+            
+//            self.performSegue(withIdentifier: "showAdminCartFromAdminInventory", sender: ScreenType.PurchaseScreen)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -113,7 +117,7 @@ class AdminInventoryViewController: AbstractVC {
         self.present(actionSheet, animated: true, completion: nil)
     }
     
-    func makeOrder() {
+    func makeOrder(from screenType: ScreenType) {
         
         self.selectedProducts.removeAll()
         
@@ -132,7 +136,7 @@ class AdminInventoryViewController: AbstractVC {
         
         if self.selectedProducts.count > 0 {
             
-            self.performSegue(withIdentifier: "showAdminCartFromAdminInventory", sender: ScreenType.SalesScreen)
+            self.performSegue(withIdentifier: "showAdminCartFromAdminInventory", sender: screenType)
         } else {
             "Please select any product".configToast(isError: true)
         }

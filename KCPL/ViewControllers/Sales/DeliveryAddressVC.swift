@@ -85,6 +85,7 @@ class DeliveryAddressVC: AbstractVC {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showAddUpdateAddressFromAddressList" {
             if let toVC = segue.destination as? AddUpdateAddressVC {
+               toVC.userId = self.userId
                toVC.isAddAddress = self.isAddAddress
                 toVC.address = self.isEditAddress ? self.addressDatasource[self.selectedIndex] : nil
             }
@@ -131,7 +132,7 @@ extension DeliveryAddressVC {
         let orderAddress =  line1 + line2 + city + state + zipcode + country
         
         var params: [String: Any] = [:]
-        if self.fromScreenType == .AdminSelectVendorScreen  {
+        if self.fromScreenType == .AdminSelectVendorScreen  { // Purchase order
             params = [
                 Constant.c_req_purchase_ship_by_address: orderAddress,
                 Constant.c_req_purchase_vendor_id: self.userId 
@@ -143,8 +144,9 @@ extension DeliveryAddressVC {
                     params["\(Constant.c_req_purchase_products_attributes)[\(index+1)][qty]"] = item.quantity
                 }
             }
-        }
-        else {
+            
+            self.createOrderPurchase(params: params)
+        } else { //Sales order
             params = [
                 Constant.c_req_ship_by_address: orderAddress,
                 Constant.c_req_bill_to_address: orderAddress,
@@ -158,11 +160,17 @@ extension DeliveryAddressVC {
                     params["\(Constant.c_req_sorder_products_attributes)[\(index+1)][qty]"] = item.quantity
                 }
             }
+            
+            self.createOrderSales(params: params)
         }
         
         
 //        print(params)
         
+        
+    }
+    
+    func createOrderSales(params: [String: Any]) {
         ServiceManager().processService(urlRequest: ComunicateService.Router.CreateOrder(params)) { (isSuccess, error , responseData) in
             if isSuccess {
                 print(responseData!)
@@ -173,7 +181,7 @@ extension DeliveryAddressVC {
                         "Your order placed successfully.".configToast(isError: false)
                         
                         _ = self.navigationController?.popToViewController(viewController, animated: true)
-
+                        
                         return
                     }
                     
@@ -188,7 +196,41 @@ extension DeliveryAddressVC {
                         return
                     }
                     
-                    if viewController is AdminPurchaseViewController {
+                    /*if Util.isAdminApp(), viewController is AdminPurchaseViewController {
+                        UserDefault.removeCartProducts()
+                        "Your order placed successfully.".configToast(isError: false)
+                        
+                        _ = self.navigationController?.popToViewController(viewController, animated: true)
+                        
+                        return
+                    }*/
+                }
+            } else {
+                error?.configToast(isError: true)
+            }
+        }
+    }
+    
+    func createOrderPurchase(params: [String: Any]) {
+        ServiceManager().processService(urlRequest: ComunicateService.Router.CreatePurchaseOrder(params)) { (isSuccess, error , responseData) in
+            if isSuccess {
+                print(responseData!)
+                
+                for viewController in (self.navigationController?.viewControllers ?? []) {
+                    if viewController is DashboardVC {
+                        UserDefault.removeCartProducts()
+                        "Your order placed successfully.".configToast(isError: false)
+                        
+                        _ = self.navigationController?.popToViewController(viewController, animated: true)
+                        
+                        return
+                    }
+                    
+                    if Util.isAdminApp(), viewController is AdminPurchaseViewController {
+                        
+                        self.delegate = viewController as? DeliveryAddressDelegate
+                        
+                        self.delegate?.needToReload()
                         UserDefault.removeCartProducts()
                         "Your order placed successfully.".configToast(isError: false)
                         

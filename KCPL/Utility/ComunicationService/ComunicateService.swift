@@ -26,9 +26,11 @@ struct ComunicateService {
         case GetInventorySales()
         case CreateOrder(Parameters)
         case GetAddressList(userId: Int)
-        case AddAddress(Parameters)
+        case AddAddress(Parameters, userId: Int)
         case UpdateAddress(Parameters, addressId: Int)
         case GetOrderHistory()
+        case CreatePurchaseOrder(Parameters)
+        case GetPurchaseHistory()
         case GetCustomerList()
         case GetVendorList()
         case AddCustomer(Parameters)
@@ -44,7 +46,8 @@ struct ComunicateService {
             case .Login( _),
                  .SignUp(_),
                  .CreateOrder(_),
-                 .AddAddress(_),
+                 .CreatePurchaseOrder(_),
+                 .AddAddress(_, _),
                  .AddCustomer(_),
                  .AddVendor(_),
                  .AcceptQuatation(_),
@@ -56,6 +59,7 @@ struct ComunicateService {
                  .GetInventorySales(),
                  .GetAddressList,
                  .GetOrderHistory(),
+                 .GetPurchaseHistory(),
                  .GetCustomerList(),
                  .GetVendorList(),
                  .GetProductList_Admin(),
@@ -97,16 +101,19 @@ struct ComunicateService {
             case .CreateOrder(_),
                  .GetOrderHistory():
                 return "orders"
+            case .CreatePurchaseOrder(_),
+                 .GetPurchaseHistory():
+                return "purchases"
             case .GetAddressList(let userId):
                 if Util.isSalesApp() || Util.isAdminApp() {
                     return "user_addresses/\(userId)"
                 }
                 return "user_addresses"
-            case .AddAddress(_):
+            case .AddAddress(_, let userId):
                 if Util.isSalesApp() || Util.isAdminApp() {
-                    if let user = UserDefault.getUser(), let id = user.id {
-                        return "user_addresses/\(id)"
-                    }
+//                    if let user = UserDefault.getUser(), let id = user.id {
+                        return "user_addresses/\(userId)"
+//                    }
                 }
                 return "user_addresses"
             case .UpdateAddress(_, let addressId):
@@ -157,7 +164,8 @@ struct ComunicateService {
             case .Login(let params),
                  .SignUp(let params),
                  .CreateOrder(let params),
-                 .AddAddress(let params),
+                 .CreatePurchaseOrder(let params),
+                 .AddAddress(let params, _),
                  .UpdateAddress(let params, _),
                  .UpdateUser(let params),
                  .AddCustomer(let params),
@@ -171,6 +179,7 @@ struct ComunicateService {
                  .GetInventorySales(),
                  .GetAddressList,
                  .GetOrderHistory(),
+                 .GetPurchaseHistory(),
                  .GetCustomerList(),
                  .GetVendorList(),
                  .GetProductList_Admin(),

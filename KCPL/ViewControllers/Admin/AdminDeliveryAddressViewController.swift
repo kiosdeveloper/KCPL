@@ -8,6 +8,7 @@
 
 import UIKit
 
+// This class is not used for deliveryAddress
 class AdminDeliveryAddressViewController: UIViewController {
     
     @IBOutlet weak var deliveryAddressTableView: UITableView!

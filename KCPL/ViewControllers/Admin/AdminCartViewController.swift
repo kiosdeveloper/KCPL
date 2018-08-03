@@ -36,9 +36,9 @@ class AdminCartViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if fromScreenType == ScreenType.SalesScreen {
+        if fromScreenType == ScreenType.AdminSelectCustomerScreen {
             self.title = "Sales Order"
-        } else if fromScreenType == ScreenType.PurchaseScreen {
+        } else if fromScreenType == ScreenType.AdminSelectVendorScreen {
             self.title = "Purchase Order"
         }
     }

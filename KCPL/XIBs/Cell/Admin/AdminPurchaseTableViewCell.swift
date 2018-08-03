@@ -23,5 +23,21 @@ class AdminPurchaseTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+    
+    func setDataSource(order: Order) {
+            
+        if let orderId = order.orderId {
+            self.orderNumberLabel.text = "Purchase Order- #" + "\(orderId)"
+        } else {
+            self.orderNumberLabel.text = "Purchase Order- #"
+        }
+        if let firstName = order.user?.first_name, let lastName = order.user?.last_name {
+            self.companyNameLabel.text = firstName + " " + lastName
+        }
+        else {
+            self.companyNameLabel.text = ""
+        }
+        self.timeLabel.text = order.createdAt!.convertOrderCreatedDate().getElapsedInterval() // self.convertOrderCreateDate(createdDate: order.createdAt!).getElapsedInterval()
+    }
+    
 }
