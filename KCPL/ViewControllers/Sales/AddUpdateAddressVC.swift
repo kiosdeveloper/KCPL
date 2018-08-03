@@ -26,7 +26,8 @@ class AddUpdateAddressVC: AbstractVC {
     
     var isAddAddress = false
     var address : Address?
-    
+    let textFieldDelegate = CommonTextFieldDelegate()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateButton.setTitle(isAddAddress ? "Add" : "Update", for: .normal)
@@ -38,6 +39,12 @@ class AddUpdateAddressVC: AbstractVC {
             self.countryTextField.text = address.country ?? ""
             self.zipCodeTextField.text = "\(address.zipcode ?? 0)"
         }
+        
+        self.line1TextField.delegate = textFieldDelegate
+        self.line2TextField.delegate = textFieldDelegate
+        self.cityTextField.delegate = textFieldDelegate
+        self.stateTextField.delegate = textFieldDelegate
+        self.countryTextField.delegate = textFieldDelegate
     }
 
     override func didReceiveMemoryWarning() {

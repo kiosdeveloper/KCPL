@@ -81,6 +81,9 @@
 		112DA5C5209C78F0009F6A68 /* AbstractVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5C4209C78EF009F6A68 /* AbstractVC.swift */; };
 		112DA5C7209C8D46009F6A68 /* OrderHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5C6209C8D46009F6A68 /* OrderHistoryVC.swift */; };
 		112DA5CE209C92AD009F6A68 /* ItemDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DA5CD209C92AD009F6A68 /* ItemDetailVC.swift */; };
+		1130FC0620F5C9AF0082BC32 /* AdminAddVendorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130FC0520F5C9AF0082BC32 /* AdminAddVendorViewController.swift */; };
+		1130FC0720F5C9AF0082BC32 /* AdminAddVendorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130FC0520F5C9AF0082BC32 /* AdminAddVendorViewController.swift */; };
+		1130FC0820F5C9AF0082BC32 /* AdminAddVendorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130FC0520F5C9AF0082BC32 /* AdminAddVendorViewController.swift */; };
 		11388F8D20BD855A00E54FB2 /* ProductListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11388F8C20BD855A00E54FB2 /* ProductListVC.swift */; };
 		11388F8E20BD856100E54FB2 /* ProductListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11388F8C20BD855A00E54FB2 /* ProductListVC.swift */; };
 		11388F8F20BD856200E54FB2 /* ProductListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11388F8C20BD855A00E54FB2 /* ProductListVC.swift */; };
@@ -107,7 +110,7 @@
 		11A74A3520CE7E2E00055AEE /* AdminDeliveryAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A74A3420CE7E2E00055AEE /* AdminDeliveryAddressViewController.swift */; };
 		11A74A3620CE7E2E00055AEE /* AdminDeliveryAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A74A3420CE7E2E00055AEE /* AdminDeliveryAddressViewController.swift */; };
 		11A74A3720CE7E2E00055AEE /* AdminDeliveryAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A74A3420CE7E2E00055AEE /* AdminDeliveryAddressViewController.swift */; };
-		11A74A3920CE8E4000055AEE /* AdminCustomerVendorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A74A3820CE8E4000055AEE /* AdminCustomerVendorViewController.swift */; };
+		11A74A3920CE8E4000055AEE /* AdminCustomerVendorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A74A3820CE8E4000055AEE /* AdminCustomerVendorDetailViewController.swift */; };
 		11A74A3C20CE8EAC00055AEE /* CustomerVendorDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A74A3A20CE8EAC00055AEE /* CustomerVendorDetailCell.swift */; };
 		11A74A3D20CE8EAC00055AEE /* CustomerVendorDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A74A3B20CE8EAC00055AEE /* CustomerVendorDetailCell.xib */; };
 		11A74A3E20CE909B00055AEE /* CustomerVendorDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A74A3A20CE8EAC00055AEE /* CustomerVendorDetailCell.swift */; };
@@ -118,14 +121,17 @@
 		11A74A4320CE92C600055AEE /* AdminDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188BD0520B4269000F5ECFF /* AdminDashboardVC.swift */; };
 		11A74A4420CE92E100055AEE /* AdminDashboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188BD0820B430C900F5ECFF /* AdminDashboardCollectionViewCell.swift */; };
 		11A74A4520CE92E100055AEE /* AdminDashboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188BD0820B430C900F5ECFF /* AdminDashboardCollectionViewCell.swift */; };
-		11A74A4620CE96E200055AEE /* AdminCustomerVendorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A74A3820CE8E4000055AEE /* AdminCustomerVendorViewController.swift */; };
-		11A74A4720CE96E300055AEE /* AdminCustomerVendorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A74A3820CE8E4000055AEE /* AdminCustomerVendorViewController.swift */; };
+		11A74A4620CE96E200055AEE /* AdminCustomerVendorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A74A3820CE8E4000055AEE /* AdminCustomerVendorDetailViewController.swift */; };
+		11A74A4720CE96E300055AEE /* AdminCustomerVendorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A74A3820CE8E4000055AEE /* AdminCustomerVendorDetailViewController.swift */; };
 		11DD9D4E2099DE65006C00C9 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D4D2099DE65006C00C9 /* LoginVC.swift */; };
 		11DD9D522099EB8C006C00C9 /* ConstantUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D512099EB8B006C00C9 /* ConstantUI.swift */; };
 		11DD9D572099EBFD006C00C9 /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D542099EBFD006C00C9 /* ThemeLabel.swift */; };
 		11DD9D582099EBFD006C00C9 /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D552099EBFD006C00C9 /* ThemeButton.swift */; };
 		11DD9D592099EBFD006C00C9 /* ThemeTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D562099EBFD006C00C9 /* ThemeTextfield.swift */; };
 		11DD9D5B2099EDB3006C00C9 /* navController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DD9D5A2099EDB3006C00C9 /* navController.swift */; };
+		11E6EF9120F4C3F70048DA3C /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6EF9020F4C3F70048DA3C /* Vendor.swift */; };
+		11E6EF9220F4C3FD0048DA3C /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6EF9020F4C3F70048DA3C /* Vendor.swift */; };
+		11E6EF9320F4C3FE0048DA3C /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6EF9020F4C3F70048DA3C /* Vendor.swift */; };
 		11EFFC4B20C95273007686B9 /* NatificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EFFC4A20C95273007686B9 /* NatificationVC.swift */; };
 		11EFFC4C20C95273007686B9 /* NatificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EFFC4A20C95273007686B9 /* NatificationVC.swift */; };
 		11EFFC4D20C95273007686B9 /* NatificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EFFC4A20C95273007686B9 /* NatificationVC.swift */; };
@@ -143,6 +149,9 @@
 		11EFFC5D20C96067007686B9 /* AdminInventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EFFC5A20C96067007686B9 /* AdminInventoryViewController.swift */; };
 		295FF10E4C7A09125D3D473F /* Pods_KCPL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4541987AA803930A3633FA2C /* Pods_KCPL.framework */; };
 		33D7AC10DE9248621BA7E8A3 /* Pods_KCPLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D96F448F88D11C81EE2252 /* Pods_KCPLTests.framework */; };
+		520EE30C20F24C4300362BC8 /* Quatations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EE30B20F24C4300362BC8 /* Quatations.swift */; };
+		520EE30D20F24C4300362BC8 /* Quatations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EE30B20F24C4300362BC8 /* Quatations.swift */; };
+		520EE30E20F24C4300362BC8 /* Quatations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EE30B20F24C4300362BC8 /* Quatations.swift */; };
 		5211F59E20E902BD001F6E6C /* Customers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F59D20E902BD001F6E6C /* Customers.swift */; };
 		5211F59F20E902BD001F6E6C /* Customers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F59D20E902BD001F6E6C /* Customers.swift */; };
 		5211F5A020E902BD001F6E6C /* Customers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F59D20E902BD001F6E6C /* Customers.swift */; };
@@ -408,6 +417,7 @@
 		112DA5C4209C78EF009F6A68 /* AbstractVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractVC.swift; sourceTree = "<group>"; };
 		112DA5C6209C8D46009F6A68 /* OrderHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryVC.swift; sourceTree = "<group>"; };
 		112DA5CD209C92AD009F6A68 /* ItemDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailVC.swift; sourceTree = "<group>"; };
+		1130FC0520F5C9AF0082BC32 /* AdminAddVendorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAddVendorViewController.swift; sourceTree = "<group>"; };
 		11388F8C20BD855A00E54FB2 /* ProductListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListVC.swift; sourceTree = "<group>"; };
 		11388F9420BD89DB00E54FB2 /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
 		11470FD020AAF3A2009ECB0B /* CustomerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListVC.swift; sourceTree = "<group>"; };
@@ -420,7 +430,7 @@
 		11A74A2C20CE733C00055AEE /* DeliveryAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAddressCell.swift; sourceTree = "<group>"; };
 		11A74A2D20CE733C00055AEE /* DeliveryAddressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliveryAddressCell.xib; sourceTree = "<group>"; };
 		11A74A3420CE7E2E00055AEE /* AdminDeliveryAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDeliveryAddressViewController.swift; sourceTree = "<group>"; };
-		11A74A3820CE8E4000055AEE /* AdminCustomerVendorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCustomerVendorViewController.swift; sourceTree = "<group>"; };
+		11A74A3820CE8E4000055AEE /* AdminCustomerVendorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCustomerVendorDetailViewController.swift; sourceTree = "<group>"; };
 		11A74A3A20CE8EAC00055AEE /* CustomerVendorDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerVendorDetailCell.swift; sourceTree = "<group>"; };
 		11A74A3B20CE8EAC00055AEE /* CustomerVendorDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerVendorDetailCell.xib; sourceTree = "<group>"; };
 		11DD9D4D2099DE65006C00C9 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -429,6 +439,7 @@
 		11DD9D552099EBFD006C00C9 /* ThemeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
 		11DD9D562099EBFD006C00C9 /* ThemeTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextfield.swift; sourceTree = "<group>"; };
 		11DD9D5A2099EDB3006C00C9 /* navController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navController.swift; sourceTree = "<group>"; };
+		11E6EF9020F4C3F70048DA3C /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
 		11EFFC4920C8FCF1007686B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		11EFFC4A20C95273007686B9 /* NatificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatificationVC.swift; sourceTree = "<group>"; };
 		11EFFC4E20C95318007686B9 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
@@ -441,6 +452,7 @@
 		3F6681FEE6865CBCD7C3E7DC /* Pods_KCPLAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KCPLAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4541987AA803930A3633FA2C /* Pods_KCPL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KCPL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		466BF5D00BFB4747331B62B4 /* Pods-KCPLSales.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCPLSales.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCPLSales/Pods-KCPLSales.release.xcconfig"; sourceTree = "<group>"; };
+		520EE30B20F24C4300362BC8 /* Quatations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quatations.swift; sourceTree = "<group>"; };
 		5211F59D20E902BD001F6E6C /* Customers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customers.swift; sourceTree = "<group>"; };
 		5211F5A120E92715001F6E6C /* AddCustomerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerVC.swift; sourceTree = "<group>"; };
 		5279AA3320E565010092BF61 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -573,6 +585,8 @@
 				5279AA3320E565010092BF61 /* Order.swift */,
 				5279AA3720E57C7C0092BF61 /* OrderProduct.swift */,
 				5211F59D20E902BD001F6E6C /* Customers.swift */,
+				520EE30B20F24C4300362BC8 /* Quatations.swift */,
+				11E6EF9020F4C3F70048DA3C /* Vendor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -784,6 +798,7 @@
 				85516B9B20C8E04500BD617C /* AdminPurchaseViewController.swift */,
 				85BB3E2620CBE17300DD7DF1 /* AdminSelectVendorViewController.swift */,
 				85516BA420C8E80400BD617C /* AdminVendorViewController.swift */,
+				1130FC0520F5C9AF0082BC32 /* AdminAddVendorViewController.swift */,
 				11EFFC5A20C96067007686B9 /* AdminInventoryViewController.swift */,
 				110993B620CA9349001C9109 /* AdminQuataionViewController.swift */,
 				110993BB20CA9387001C9109 /* AdminPendingQuatationViewController.swift */,
@@ -792,7 +807,7 @@
 				85BB3E0A20CBA44C00DD7DF1 /* AdminCustomerViewController.swift */,
 				85BB3E1A20CBC0D000DD7DF1 /* AdminCartViewController.swift */,
 				11A74A3420CE7E2E00055AEE /* AdminDeliveryAddressViewController.swift */,
-				11A74A3820CE8E4000055AEE /* AdminCustomerVendorViewController.swift */,
+				11A74A3820CE8E4000055AEE /* AdminCustomerVendorDetailViewController.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -988,7 +1003,7 @@
 				ORGANIZATIONNAME = KCPL;
 				TargetAttributes = {
 					85B3947C20AB9AC600E643DD = {
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					85B394BB20AE2ABB00E643DD = {
 						ProvisioningStyle = Automatic;
@@ -1322,6 +1337,7 @@
 				5211F59F20E902BD001F6E6C /* Customers.swift in Sources */,
 				850BDE1320D537E000B190F3 /* AddUpdateAddressVC.swift in Sources */,
 				11EFFC4C20C95273007686B9 /* NatificationVC.swift in Sources */,
+				520EE30D20F24C4300362BC8 /* Quatations.swift in Sources */,
 				110993AC20CA85E0001C9109 /* CartCell.swift in Sources */,
 				85B3948020AB9AC600E643DD /* LoginVC.swift in Sources */,
 				85E8A1E620C26E7200349073 /* WebViewVc.swift in Sources */,
@@ -1350,6 +1366,7 @@
 				11EFFC5C20C96067007686B9 /* AdminInventoryViewController.swift in Sources */,
 				85B3948920AB9AC600E643DD /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				85B3948A20AB9AC600E643DD /* ImagesListCollectionViewCell.swift in Sources */,
+				11E6EF9220F4C3FD0048DA3C /* Vendor.swift in Sources */,
 				85B3948B20AB9AC600E643DD /* DashboardVC.swift in Sources */,
 				85B3948C20AB9AC600E643DD /* NavigationView.swift in Sources */,
 				85A474FD20CF757C00B342FA /* AdminQuatationDetailViewController.swift in Sources */,
@@ -1378,6 +1395,7 @@
 				110993CE20CA9E8E001C9109 /* PendingQuatationCell.swift in Sources */,
 				85BB3E1520CBACA900DD7DF1 /* SelectCustomerCell.swift in Sources */,
 				111BE26C20BD590700190718 /* UserDefault.swift in Sources */,
+				1130FC0720F5C9AF0082BC32 /* AdminAddVendorViewController.swift in Sources */,
 				11A74A3620CE7E2E00055AEE /* AdminDeliveryAddressViewController.swift in Sources */,
 				5279AA3D20E593280092BF61 /* OrderHistoryDetailVC.swift in Sources */,
 				85B3949A20AB9AC600E643DD /* ConstantUI.swift in Sources */,
@@ -1393,7 +1411,7 @@
 				85B394A120AB9AC600E643DD /* CustomerDetailVC.swift in Sources */,
 				85B394A220AB9AC600E643DD /* ThemeTableView.swift in Sources */,
 				85BB3E2120CBDB0100DD7DF1 /* VendorCell.swift in Sources */,
-				11A74A4620CE96E200055AEE /* AdminCustomerVendorViewController.swift in Sources */,
+				11A74A4620CE96E200055AEE /* AdminCustomerVendorDetailViewController.swift in Sources */,
 				11A74A4220CE92C500055AEE /* AdminDashboardVC.swift in Sources */,
 				111BE26520BD320C00190718 /* ComunicateService.swift in Sources */,
 				85B394A420AB9AC600E643DD /* navController.swift in Sources */,
@@ -1420,6 +1438,7 @@
 				5211F5A020E902BD001F6E6C /* Customers.swift in Sources */,
 				850BDE1420D537E100B190F3 /* AddUpdateAddressVC.swift in Sources */,
 				85B394C220AE2ABB00E643DD /* UtilExtensions.swift in Sources */,
+				520EE30E20F24C4300362BC8 /* Quatations.swift in Sources */,
 				85E8A1EB20C29CE600349073 /* GradientView.swift in Sources */,
 				110993C720CA99C7001C9109 /* CartTotalCell.swift in Sources */,
 				11388F9720BD89E100E54FB2 /* ProductListTableViewCell.swift in Sources */,
@@ -1448,6 +1467,7 @@
 				85B394D020AE2ABB00E643DD /* AppRouter.swift in Sources */,
 				85516B9E20C8E04500BD617C /* AdminPurchaseViewController.swift in Sources */,
 				854DEC0320C0F0980035F61D /* Product.swift in Sources */,
+				11E6EF9320F4C3FE0048DA3C /* Vendor.swift in Sources */,
 				1188BD0920B430CA00F5ECFF /* AdminDashboardCollectionViewCell.swift in Sources */,
 				11EFFC5120C95318007686B9 /* NotificationTableViewCell.swift in Sources */,
 				85A474FE20CF757C00B342FA /* AdminQuatationDetailViewController.swift in Sources */,
@@ -1476,6 +1496,7 @@
 				85B394DF20AE2ABB00E643DD /* CustomerListVC.swift in Sources */,
 				85B394E020AE2ABB00E643DD /* DeliveryAddressVC.swift in Sources */,
 				110993B920CA9349001C9109 /* AdminQuataionViewController.swift in Sources */,
+				1130FC0820F5C9AF0082BC32 /* AdminAddVendorViewController.swift in Sources */,
 				110993AE20CA85E1001C9109 /* CartCell.swift in Sources */,
 				5279AA3E20E593290092BF61 /* OrderHistoryDetailVC.swift in Sources */,
 				111BE26D20BD590700190718 /* UserDefault.swift in Sources */,
@@ -1491,7 +1512,7 @@
 				1188BD0620B4269000F5ECFF /* AdminDashboardVC.swift in Sources */,
 				8569BDC120CB9B21006CE748 /* SalesPurchaseCell.swift in Sources */,
 				85BB3E1120CBAAC100DD7DF1 /* AdminSelectCustomerViewController.swift in Sources */,
-				11A74A4720CE96E300055AEE /* AdminCustomerVendorViewController.swift in Sources */,
+				11A74A4720CE96E300055AEE /* AdminCustomerVendorDetailViewController.swift in Sources */,
 				85B394E520AE2ABB00E643DD /* navController.swift in Sources */,
 				11EFFC5D20C96067007686B9 /* AdminInventoryViewController.swift in Sources */,
 				110993D720CA9EBB001C9109 /* HistoryQuatationCell.swift in Sources */,
@@ -1518,6 +1539,7 @@
 				5211F59E20E902BD001F6E6C /* Customers.swift in Sources */,
 				850BDE1220D52BC000B190F3 /* AddUpdateAddressVC.swift in Sources */,
 				859701EC20A50702008A08B4 /* OrderHistoryTableViewCell.swift in Sources */,
+				520EE30C20F24C4300362BC8 /* Quatations.swift in Sources */,
 				85E8A1E520C26E7200349073 /* WebViewVc.swift in Sources */,
 				110993B420CA8E0E001C9109 /* CartTotalCell.swift in Sources */,
 				112DA5BA209C6D87009F6A68 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
@@ -1542,10 +1564,11 @@
 				112DA5B8209C6D87009F6A68 /* SlideNavigationContorllerAnimatorFade.m in Sources */,
 				111BE26720BD320C00190718 /* ServiceManager.swift in Sources */,
 				112DA5C7209C8D46009F6A68 /* OrderHistoryVC.swift in Sources */,
-				11A74A3920CE8E4000055AEE /* AdminCustomerVendorViewController.swift in Sources */,
+				11A74A3920CE8E4000055AEE /* AdminCustomerVendorDetailViewController.swift in Sources */,
 				112DA5BB209C6D87009F6A68 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				11EFFC5B20C96067007686B9 /* AdminInventoryViewController.swift in Sources */,
 				8515F37B209C13B90039F801 /* ImagesListCollectionViewCell.swift in Sources */,
+				11E6EF9120F4C3F70048DA3C /* Vendor.swift in Sources */,
 				1129C351209AEC66005DC1B8 /* DashboardVC.swift in Sources */,
 				1129C34F209AE0B4005DC1B8 /* NavigationView.swift in Sources */,
 				85A474FC20CF757C00B342FA /* AdminQuatationDetailViewController.swift in Sources */,
@@ -1574,6 +1597,7 @@
 				112CEAFA20AC0D6B004BCF37 /* Constant.swift in Sources */,
 				85516B9420C8D6A500BD617C /* AdminSalesTableViewCell.swift in Sources */,
 				110993CD20CA9E8E001C9109 /* PendingQuatationCell.swift in Sources */,
+				1130FC0620F5C9AF0082BC32 /* AdminAddVendorViewController.swift in Sources */,
 				85BB3E1420CBACA900DD7DF1 /* SelectCustomerCell.swift in Sources */,
 				5279AA3C20E593220092BF61 /* OrderHistoryDetailVC.swift in Sources */,
 				111BE26B20BD58F400190718 /* UserDefault.swift in Sources */,
@@ -1654,14 +1678,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53AEW9QR5D;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = SMUUU63KR2;
 				INFOPLIST_FILE = KCPL/KCPLSalesInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DSALES";
-				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL.sales;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kcpl.sales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a8bb1366-037e-43f8-abcf-1992f673b98c";
+				PROVISIONING_PROFILE_SPECIFIER = kcplSalesDev;
 				SWIFT_OBJC_BRIDGING_HEADER = "KCPL/KCPL-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1674,14 +1701,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53AEW9QR5D;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = SMUUU63KR2;
 				INFOPLIST_FILE = KCPL/KCPLSalesInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DSALES";
-				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL.sales;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kcpl.sales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a8bb1366-037e-43f8-abcf-1992f673b98c";
+				PROVISIONING_PROFILE_SPECIFIER = kcplSalesDev;
 				SWIFT_OBJC_BRIDGING_HEADER = "KCPL/KCPL-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1694,14 +1724,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53AEW9QR5D;
 				INFOPLIST_FILE = KCPL/KCPLAdminInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DADMIN";
-				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL.admin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kcpl.admin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KCPL/KCPL-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1714,14 +1747,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53AEW9QR5D;
 				INFOPLIST_FILE = KCPL/KCPLAdminInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DADMIN";
-				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL.admin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kcpl.admin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KCPL/KCPL-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1846,14 +1882,17 @@
 			baseConfigurationReference = 793F0021F52AE52CC2A2D0DD /* Pods-KCPL.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53AEW9QR5D;
 				INFOPLIST_FILE = KCPL/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DCUSTOMER";
-				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kcpl.customer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KCPL/KCPL-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1865,14 +1904,17 @@
 			baseConfigurationReference = 2FEDFEE83DBE391035174C62 /* Pods-KCPL.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53AEW9QR5D;
 				INFOPLIST_FILE = KCPL/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DCUSTOMER";
-				PRODUCT_BUNDLE_IDENTIFIER = com.admin.KCPL;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kcpl.customer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KCPL/KCPL-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

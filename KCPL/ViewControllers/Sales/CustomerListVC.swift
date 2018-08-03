@@ -18,7 +18,10 @@ class CustomerListVC: AbstractVC {
     
     @IBOutlet weak var nextButtonHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var searchBar: ThemeSearchBar!
+    
     var customerArray = [Customers]()
+    var filteredCustomerArray = [Customers]()
     var selectedIndex = 0
     var isFromMenu = false
     
@@ -28,6 +31,7 @@ class CustomerListVC: AbstractVC {
         self.customerTableView.backgroundColor = ConstantsUI.C_Color_ThemeLightGray
         self.nextButton.isHidden = self.isFromMenu ? true : false
         self.nextButtonHeightConstraint.constant = self.isFromMenu ? 0 : 50
+        self.configNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +42,11 @@ class CustomerListVC: AbstractVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.title = " "
+    }
+    
+    func configNavigationBar() {
+        let navPlus = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:  #selector(self.addCustomerClicked))
+        self.navigationItem.rightBarButtonItem = navPlus
     }
     
     @IBAction func selectCutomerClicked(_ sender: UIButton) {
@@ -68,7 +77,7 @@ extension CustomerListVC {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showAddressListFromCustomerList" {
             if let toVC = segue.destination as? DeliveryAddressVC {
-                toVC.userId = self.customerArray[self.selectedIndex].customerId
+                toVC.userId = self.filteredCustomerArray[self.selectedIndex].customerId ?? 0
             }
         }
     }
@@ -79,6 +88,7 @@ extension CustomerListVC {
                 ServiceManagerModel().processCustomers(json: responseData, completion: { (isComplete, customers) in
                     if isComplete {
                         self.customerArray = customers!
+                        self.filteredCustomerArray = self.customerArray
                         self.customerTableView.reloadData()
                     } else {
 
@@ -100,14 +110,14 @@ extension CustomerListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.customerArray.count
+        return self.filteredCustomerArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = customerTableView.dequeueReusableCell(withIdentifier: "CustomerTableViewCell") as! CustomerTableViewCell
         
-        let customer = self.customerArray[indexPath.row]
+        let customer = self.filteredCustomerArray[indexPath.row]
         cell.customerNameLabel.text = "\(customer.firstName ?? "")  \(customer.lastName ?? "")"
         cell.customerAddressLabel.text = customer.address ?? ""
         cell.customerNumberLabel.text = customer.phone ?? ""
@@ -123,11 +133,47 @@ extension CustomerListVC: UITableViewDelegate, UITableViewDataSource {
         return UITableViewAutomaticDimension
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return titleView
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        return titleView
+//    }
+//    
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 40
+//    }
+}
+
+extension CustomerListVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filteredCustomerArray.removeAll()
+        
+        if searchText.count > 0 {
+            self.filteredCustomerArray = self.customerArray.filter { (user) -> Bool in
+                return "\(user.firstName ?? "")  \(user.lastName ?? "")".lowercased().contains(searchText.lowercased()) || "\(user.email ?? "")".contains(searchText)
+            }
+            self.customerTableView.reloadData()
+        }
+        else {
+            self.filteredCustomerArray = self.customerArray
+            self.customerTableView.reloadData()
+        }
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        Util().configBarButtonColor(color: UIColor.white)
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.filteredCustomerArray = self.customerArray
+        self.customerTableView.reloadData()
+
+        searchBar.text = nil
+        Util().configBarButtonColor(color: UIColor.clear)
+        searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
     }
 }

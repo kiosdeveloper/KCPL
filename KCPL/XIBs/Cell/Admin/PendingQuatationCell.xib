@@ -22,8 +22,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBk-Bc-n67" customClass="ThemeShadowView" customModule="KCPL" customModuleProvider="target">
                         <rect key="frame" x="8" y="4" width="335" height="195.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Order #ASD2347" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxf-l4-pVW">
-                                <rect key="frame" x="16" y="16" width="137.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Order #ASD2347" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxf-l4-pVW">
+                                <rect key="frame" x="16" y="16" width="243" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4k-wB-b72" customClass="ThemeLabelLineLight" customModule="KCPL" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="52" width="335" height="1"/>
+                                <rect key="frame" x="0.0" y="52.5" width="335" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="c47-gb-ltd"/>
                                 </constraints>
@@ -43,19 +43,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Submitted By," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weE-BN-dXW">
-                                <rect key="frame" x="16" y="69" width="303" height="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Submitted By," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weE-BN-dXW">
+                                <rect key="frame" x="16" y="69.5" width="303" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mr. Paresh Patel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnP-yb-rCP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mr. Paresh Patel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnP-yb-rCP">
                                 <rect key="frame" x="16" y="92" width="303" height="13.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Karnavati corp. pvt. ltd." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvL-IL-GbR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Karnavati corp. pvt. ltd." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvL-IL-GbR">
                                 <rect key="frame" x="16" y="109.5" width="303" height="13.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
@@ -77,6 +77,9 @@
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="acceptButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="s6L-vU-r4n"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63A-qf-3wa" customClass="ThemeButtonBorder" customModule="KCPL" customModuleProvider="target">
                                         <rect key="frame" x="112" y="0.0" width="80" height="40"/>
@@ -85,6 +88,9 @@
                                         </constraints>
                                         <color key="tintColor" red="0.0" green="0.62352941179999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Reject"/>
+                                        <connections>
+                                            <action selector="rejectButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="t8v-8a-vPj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -98,6 +104,7 @@
                             <constraint firstItem="Mxf-l4-pVW" firstAttribute="leading" secondItem="tBk-Bc-n67" secondAttribute="leading" constant="16" id="9ej-lN-0vO"/>
                             <constraint firstItem="NnP-yb-rCP" firstAttribute="top" secondItem="weE-BN-dXW" secondAttribute="bottom" constant="4" id="A6p-Ob-qWZ"/>
                             <constraint firstAttribute="trailing" secondItem="Zpf-XQ-K3T" secondAttribute="trailing" constant="16" id="Aen-FL-Zx1"/>
+                            <constraint firstItem="Zpf-XQ-K3T" firstAttribute="leading" secondItem="Mxf-l4-pVW" secondAttribute="trailing" constant="7.5" id="AtS-Ea-n0Y"/>
                             <constraint firstItem="w4k-wB-b72" firstAttribute="leading" secondItem="tBk-Bc-n67" secondAttribute="leading" id="BcZ-Yr-OrT"/>
                             <constraint firstAttribute="trailing" secondItem="w4k-wB-b72" secondAttribute="trailing" id="HDR-md-rP7"/>
                             <constraint firstItem="xvL-IL-GbR" firstAttribute="leading" secondItem="Mxf-l4-pVW" secondAttribute="leading" id="J35-bN-cWR"/>
@@ -126,6 +133,12 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addressLabel" destination="xvL-IL-GbR" id="agf-Ib-3cK"/>
+                <outlet property="orderIdLabel" destination="Mxf-l4-pVW" id="lYs-RS-el0"/>
+                <outlet property="timeLabel" destination="Zpf-XQ-K3T" id="1sX-VI-6Jt"/>
+                <outlet property="userNameLabel" destination="NnP-yb-rCP" id="iab-66-wAA"/>
+            </connections>
             <point key="canvasLocation" x="40.5" y="132"/>
         </tableViewCell>
     </objects>

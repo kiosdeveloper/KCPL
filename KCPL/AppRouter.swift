@@ -29,6 +29,12 @@ class AppRouter: NSObject, Controller {
         return viewController
     }
     
+    func getAdminViewController(_ screenName: String) -> AbstractVC {
+        let storyBoard = UIStoryboard(name: "Admin", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: screenName) as! AbstractVC
+        return viewController
+    }
+    
     func getNavigationController() -> UINavigationController {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let navigationController = storyBoard.instantiateViewController(withIdentifier: "SlideNavigationController") as! UINavigationController
@@ -44,8 +50,12 @@ class AppRouter: NSObject, Controller {
     func showAdminLogInScreen() {
         let loginVC = UIStoryboard(name: "Admin", bundle: nil).instantiateViewController(withIdentifier: "AdminLoginViewController") as! AdminLoginViewController
         
+        let navigationController: UINavigationController = getAdminNavigationController()
+        navigationController.viewControllers = [loginVC]
+        container = loginVC
+        
         let appDelegate: AppDelegate = (UIApplication.shared.delegate as? AppDelegate)!
-        appDelegate.window?.rootViewController = loginVC
+        appDelegate.window?.rootViewController = navigationController
     }
 //
 //    func showTaskScreen() {

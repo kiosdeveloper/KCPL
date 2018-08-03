@@ -25,10 +25,20 @@ class ProfileVC: AbstractVC {
     @IBOutlet var passwordTextField: UITextField!
     
     var navCart = UIBarButtonItem()
+    let textFieldDelegate = CommonTextFieldDelegate()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        self.configNavigationBar()
+        self.firstNameTextField.delegate = textFieldDelegate
+        self.lastNameTextField.delegate = textFieldDelegate
+        self.companyNameTextField.delegate = textFieldDelegate
+        self.addressTextField.delegate = textFieldDelegate
+        self.mobileNoTextField.delegate = textFieldDelegate
+        self.emailTextField.delegate = textFieldDelegate
+        self.passwordTextField.delegate = textFieldDelegate
+
         self.setUserData()
     }
     

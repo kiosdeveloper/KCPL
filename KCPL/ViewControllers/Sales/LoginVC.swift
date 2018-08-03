@@ -17,17 +17,21 @@ class LoginVC: UIViewController {
     
     @IBOutlet weak var navigationViewHeight: NSLayoutConstraint!
     
+    let textFieldDelegate = CommonTextFieldDelegate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if Util.isSalesApp() {
             self.signUpButton.isHidden = true
             self.usernameTextField.text = "admin@godfather.com"
-            self.passwordTextField.text = "12345678"
+            self.passwordTextField.text = "password"
         } else {
             self.configSignUpButton() 
         }
         
+        self.usernameTextField.delegate = textFieldDelegate
+        self.passwordTextField.delegate = textFieldDelegate
     }
     
     func configSignUpButton() {
@@ -85,6 +89,16 @@ class LoginVC: UIViewController {
         }
     }
 }
+
+//extension LoginVC: UITextFieldDelegate {
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        guard range.location == 0 else {
+//            return true
+//        }
+//        let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string) as NSString
+//        return newString.rangeOfCharacter(from: NSCharacterSet.whitespacesAndNewlines).location != 0
+//    }
+//}
 
 //MARK:- Helper Method
 extension LoginVC {

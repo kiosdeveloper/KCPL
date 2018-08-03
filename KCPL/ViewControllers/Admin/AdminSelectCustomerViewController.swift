@@ -14,9 +14,9 @@ class AdminSelectCustomerViewController: UIViewController {
     
     let cellIdentifier = "SelectCustomerCell"
     
-    var contactNumberArray = ["9867122355", "8972376232", "8986123222", "8712638112", "8726378622"]
-    var companyNameArray = ["Shanghai Global Spares", "Southwest Global Spares", "India Steel Spares", "Shanghai Global Spares", "Southwest Global Spares"]
-    var gradeArray = ["A", "B", "C", "B", "A"]
+    var customerArray = [Customers]()
+    var filterCustomerArray = [Customers]()
+    
     var selectedIndex = 0
 
     override func viewDidLoad() {
@@ -28,28 +28,111 @@ class AdminSelectCustomerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Select Customer"
+        self.getCustomerList()
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.title = " "
     }
     
-//    MARK:- ACTIONS
+    //    MARK:- Prepare For Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAdminInventoryFromAdminSelectCustomer" {
+            if let toVC = segue.destination as? AdminInventoryViewController {
+                toVC.selectedCustomerId = self.filterCustomerArray[self.selectedIndex].customerId
+                toVC.fromScreenType = ScreenType.AdminSelectCustomerScreen
+            }
+        }
+    }
     
+//    MARK:- ACTIONS
     @IBAction func NextPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "showAdminInventoryFromAdminSelectCustomer", sender: nil)
     }
 }
 
+//MARK:- Helper Method
+extension AdminSelectCustomerViewController {
+    func getCustomerList() {
+        ServiceManager().processService(urlRequest: ComunicateService.Router.GetCustomerList()) { (isSuccess, error , responseData) in
+            if isSuccess {
+                ServiceManagerModel().processCustomers(json: responseData, completion: { (isComplete, customers) in
+                    if isComplete {
+                        self.customerArray = customers!
+                        self.filterCustomerArray = self.customerArray
+                        
+                        self.customerTableView.reloadData()
+                    } else {
+                        
+                    }
+                })
+            } else {
+                error?.configToast(isError: true)
+            }
+        }
+    }
+}
+
+extension AdminSelectCustomerViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filterCustomerArray.removeAll()
+        
+        if searchText.count > 0 {
+            self.filterCustomerArray = self.customerArray.filter { (customer) -> Bool in
+                if customer.firstName == nil, customer.lastName == nil {
+                    return "\(customer.name ?? "")".lowercased().contains(searchText.lowercased())
+                } else {
+                    return "\(customer.firstName ?? "")  \(customer.lastName ?? "")".lowercased().contains(searchText.lowercased())
+                }
+            }
+            
+            self.customerTableView.reloadData()
+        }
+        else {
+            self.filterCustomerArray = self.customerArray
+            self.customerTableView.reloadData()
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        Util().configBarButtonColor(color: UIColor.white)
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.filterCustomerArray = self.customerArray
+        self.customerTableView.reloadData()
+        
+        searchBar.text = nil
+        Util().configBarButtonColor(color: UIColor.clear)
+        searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
+    }
+}
+
 extension AdminSelectCustomerViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.companyNameArray.count
+        return self.filterCustomerArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! SelectCustomerCell
-        cell.contactNumberLabel.text = self.contactNumberArray[indexPath.row]
-        cell.companyNameLabel.text = self.companyNameArray[indexPath.row]
-        cell.gradeLabel.text = self.gradeArray[indexPath.row]
+        
+        let customer = self.filterCustomerArray[indexPath.row]
+        
+        cell.contactNumberLabel.text = customer.phone ?? ""
+        
+        if customer.firstName == nil, customer.lastName == nil {
+            cell.companyNameLabel.text = customer.name ?? ""
+        } else {
+            cell.companyNameLabel.text = "\(customer.firstName ?? "")  \(customer.lastName ?? "")"
+        }
+        
+//        cell.gradeLabel.text = "A"
+        
         if selectedIndex == indexPath.row {
             cell.selectCustomerImageView.image = #imageLiteral(resourceName: "radioOn")
         }

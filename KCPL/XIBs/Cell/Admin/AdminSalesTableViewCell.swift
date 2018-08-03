@@ -26,5 +26,20 @@ class AdminSalesTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    func setDataSource(order: Order) {
+        if let orderId = order.orderId {
+            self.orderNumberLabel.text = "Sales Order- #" + "\(orderId)"
+        } else {
+            self.orderNumberLabel.text = "Sales Order- #"
+        }
+        if let firstName = order.user?.first_name, let lastName = order.user?.last_name {
+            self.companyNameLabel.text = firstName + " " + lastName
+        }
+        else {
+            self.companyNameLabel.text = ""
+        }
+        self.timeLabel.text = order.createdAt!.convertOrderCreatedDate().getElapsedInterval() // self.convertOrderCreateDate(createdDate: order.createdAt!).getElapsedInterval()
+    }
+    
 }

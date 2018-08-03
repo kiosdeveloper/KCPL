@@ -32,7 +32,13 @@ class ItemDetailVC: AbstractVC {
 //    MARK:- Action
     @IBAction func addToCartClicked(_ sender: Any) {
         
-        self.product = Util().plusQuantity(product: self.product, quantity: nil)
+        if self.product.available_quantity ?? 0 > 0 {
+            self.product = Util().plusQuantity(product: self.product, quantity: nil)
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            "Out Of Stock".configToast(isError: true)
+        }
+        
         /*
         if let qty = self.product.quantity {
             self.product.quantity = qty + 1
@@ -42,9 +48,6 @@ class ItemDetailVC: AbstractVC {
             cartArray_temp.append(self.product)
             UserDefault.saveCartProducts(products: cartArray_temp)
         }*/
-        
-        
-        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func previousClicked(_ sender: UIButton) {
@@ -71,9 +74,11 @@ extension ItemDetailVC: UITableViewDataSource, UITableViewDelegate {
             cell.itemNameLabel.text = self.product.name //"Carburetor-Innova Crysta-\n2.8 Z,Direct Fit"
             cell.manufactureNumberLabel.text = "Manufacture Number: 11250"
             cell.portNumberLabel.text = "Part No: A123587"
-            if let price = self.product.price {
-                cell.priceLabel.text = "₹ \(price) + GST extra applicable"
+            if let price = self.product.price, let tax = self.product.percentageTax {
+                cell.priceLabel.text = "\(Double(price).convertCurrencyFormatter()) + \(tax)% GST extra applicable"
             }
+            
+            cell.availableQuantityLabel.text = "Qty " + "\(self.product.available_quantity ?? 0)"
             
             return cell
         }

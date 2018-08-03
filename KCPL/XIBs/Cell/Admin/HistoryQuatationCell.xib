@@ -22,8 +22,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9h-0r-asg" customClass="ThemeShadowView" customModule="KCPL" customModuleProvider="target">
                         <rect key="frame" x="8" y="4" width="307" height="200.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Order #ASD2347" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNB-C9-fnt">
-                                <rect key="frame" x="16" y="16" width="138" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Order #ASD2347" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNB-C9-fnt">
+                                <rect key="frame" x="16" y="16" width="215" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -75,6 +75,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="reAcceptClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="EJP-ig-dok"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REJECTED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rrn-yA-Hsc" customClass="ThemeLabelDetail" customModule="KCPL" customModuleProvider="target">
                                 <rect key="frame" x="16" y="144.5" width="83" height="40"/>
@@ -104,6 +107,7 @@
                             <constraint firstItem="CNB-C9-fnt" firstAttribute="top" secondItem="T9h-0r-asg" secondAttribute="top" constant="16" id="V8G-T3-Vrc"/>
                             <constraint firstItem="rpR-fK-JH1" firstAttribute="top" secondItem="CNB-C9-fnt" secondAttribute="bottom" constant="16" id="VRJ-dl-QVl"/>
                             <constraint firstItem="CNB-C9-fnt" firstAttribute="leading" secondItem="T9h-0r-asg" secondAttribute="leading" constant="16" id="fIM-dr-pvg"/>
+                            <constraint firstItem="tNv-bl-Ufw" firstAttribute="leading" secondItem="CNB-C9-fnt" secondAttribute="trailing" constant="7.5" id="j2r-bG-8h8"/>
                             <constraint firstItem="ikT-hp-7Ss" firstAttribute="leading" secondItem="CNB-C9-fnt" secondAttribute="leading" id="mf2-r5-bTZ"/>
                             <constraint firstItem="lfF-Ig-88E" firstAttribute="bottom" secondItem="kfa-fY-DNg" secondAttribute="bottom" constant="16" id="pcU-5j-Gof"/>
                             <constraint firstItem="tZL-ya-0fk" firstAttribute="leading" secondItem="CNB-C9-fnt" secondAttribute="leading" id="uph-5S-Lkm"/>
@@ -121,6 +125,14 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addressLabel" destination="ikT-hp-7Ss" id="BdJ-3P-VUu"/>
+                <outlet property="quatationIdLabel" destination="CNB-C9-fnt" id="7yb-rh-Cfl"/>
+                <outlet property="reacceptButton" destination="kfa-fY-DNg" id="S8G-Wc-9NC"/>
+                <outlet property="rejectedLabel" destination="Rrn-yA-Hsc" id="Rxu-1m-tao"/>
+                <outlet property="timeLabel" destination="tNv-bl-Ufw" id="EDB-Ke-bQi"/>
+                <outlet property="userNameLabel" destination="Tzd-Dn-zy6" id="dA1-d4-Rww"/>
+            </connections>
             <point key="canvasLocation" x="26.5" y="51.5"/>
         </tableViewCell>
     </objects>

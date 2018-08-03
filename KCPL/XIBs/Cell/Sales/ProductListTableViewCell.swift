@@ -30,7 +30,10 @@ class ProductListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var addToCartButton: ThemeButton!
     
+    @IBOutlet weak var availableQuantityLabel: UILabel!
+    
     var delegate: ProductListDelegate?
+    let textFieldDelegate = CommonTextFieldDelegate()
 
     override func awakeFromNib() {
         super.awakeFromNib()

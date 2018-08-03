@@ -66,7 +66,7 @@ class Util {
                 
                 return product_temp
             } else {// if existing product not available in cart
-                let product_temp = Product(product: product, quantity: 1)
+                let product_temp = Product(product: product, quantity: quantity ?? 1)
                 cartArray_temp.append(product_temp)
                 UserDefault.saveCartProducts(products: cartArray_temp)
                 return product_temp
@@ -94,5 +94,10 @@ class Util {
             }
         }
         return nil
+    }
+    
+    func configBarButtonColor(color: UIColor) {
+        let BarButtonItemAppearance = UIBarButtonItem.appearance()
+        BarButtonItemAppearance.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: color], for: .normal)
     }
 }

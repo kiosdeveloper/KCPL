@@ -27,7 +27,18 @@ class DashboardVC: AbstractVC {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.updateBadge()
+        
+        if Util.isSalesApp() {
+            self.title = "KCPL Sales"
+        } else {
+            self.title = "KCPL Customer"
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
     }
     
     func updateBadge() {
@@ -109,6 +120,17 @@ extension DashboardVC: UISearchBarDelegate {
         self.filterCategories.removeAll()
         if searchText.count > 0 {
             self.filterCategories = self.categoriesDatasource.filter({($0.name?.lowercased().contains(searchText.lowercased()))!})
+            
+//            self.filterCategories = self.categoriesDatasource.filter({ (category) -> Bool in
+//
+//                return "\(category.name ?? "")  \(user.last_name ?? "")".lowercased().contains(searchText.lowercased()) || "\(order.orderId ?? 0)".contains(searchText)
+//
+//                if let user = order.user {
+//                    return "\(user.first_name ?? "")  \(user.last_name ?? "")".lowercased().contains(searchText.lowercased()) || "\(order.orderId ?? 0)".contains(searchText)
+//                }
+//                return "\(order.orderId ?? 0)".contains(searchText)
+//            })
+            
             self.itemsCollectionView.reloadData()
         }
         else {
@@ -118,6 +140,21 @@ extension DashboardVC: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        Util().configBarButtonColor(color: UIColor.white)
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.filterCategories = self.categoriesDatasource
+        self.itemsCollectionView.reloadData()
+        
+        searchBar.text = nil
+        Util().configBarButtonColor(color: UIColor.clear)
+        searchBar.showsCancelButton = false
         searchBar.resignFirstResponder()
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -112,11 +112,19 @@
                                     <action selector="btnRemoveFromCartPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="34m-FT-XHw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoQ-wB-Uhn">
+                                <rect key="frame" x="73" y="112" width="133" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HN6-ru-7ZH" firstAttribute="top" secondItem="Rt3-UY-jze" secondAttribute="bottom" constant="4.5" id="14y-qj-guf"/>
                             <constraint firstItem="cdz-5n-ARU" firstAttribute="top" secondItem="3i3-vR-IpZ" secondAttribute="top" constant="16" id="1qH-6b-vs9"/>
+                            <constraint firstItem="eoQ-wB-Uhn" firstAttribute="leading" secondItem="kPm-2Z-71r" secondAttribute="leading" id="4ME-yO-cFd"/>
+                            <constraint firstItem="94H-KB-wfG" firstAttribute="bottom" secondItem="eoQ-wB-Uhn" secondAttribute="bottom" constant="17.5" id="4dv-4e-yh7"/>
                             <constraint firstItem="pCs-bi-z6i" firstAttribute="centerY" secondItem="3i3-vR-IpZ" secondAttribute="centerY" id="4ls-Mc-7fX"/>
                             <constraint firstItem="pCs-bi-z6i" firstAttribute="leading" secondItem="3i3-vR-IpZ" secondAttribute="leading" constant="8" id="6lt-n5-Gl9"/>
                             <constraint firstItem="kPm-2Z-71r" firstAttribute="leading" secondItem="cdz-5n-ARU" secondAttribute="leading" id="7i2-G6-ySs"/>
@@ -127,9 +135,11 @@
                             <constraint firstAttribute="bottom" secondItem="HN6-ru-7ZH" secondAttribute="bottom" constant="4" id="dmR-kY-QR5"/>
                             <constraint firstItem="9So-pk-u3e" firstAttribute="trailing" secondItem="cdz-5n-ARU" secondAttribute="trailing" id="hN5-kf-lJa"/>
                             <constraint firstAttribute="trailing" secondItem="cdz-5n-ARU" secondAttribute="trailing" constant="8" id="icL-Po-Pyz"/>
+                            <constraint firstItem="eoQ-wB-Uhn" firstAttribute="trailing" secondItem="Rt3-UY-jze" secondAttribute="leading" id="lTA-v7-a9f"/>
                             <constraint firstItem="pCs-bi-z6i" firstAttribute="width" secondItem="3i3-vR-IpZ" secondAttribute="width" multiplier="0.17" id="lYc-IH-YkU"/>
                             <constraint firstItem="9So-pk-u3e" firstAttribute="leading" secondItem="cdz-5n-ARU" secondAttribute="leading" id="msD-5S-fkL"/>
                             <constraint firstItem="kPm-2Z-71r" firstAttribute="top" secondItem="9So-pk-u3e" secondAttribute="bottom" constant="12" id="oxu-ve-7Jh"/>
+                            <constraint firstItem="eoQ-wB-Uhn" firstAttribute="top" secondItem="kPm-2Z-71r" secondAttribute="bottom" constant="14.5" id="rxF-Lk-aoy"/>
                             <constraint firstItem="9So-pk-u3e" firstAttribute="top" secondItem="cdz-5n-ARU" secondAttribute="bottom" constant="4" id="uaa-1f-LrQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="94H-KB-wfG"/>
@@ -146,6 +156,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="availableQuantityLabel" destination="eoQ-wB-Uhn" id="ftT-gJ-gj5"/>
                 <outlet property="itemContentView" destination="3i3-vR-IpZ" id="EJJ-qE-Cmc"/>
                 <outlet property="productImageView" destination="pCs-bi-z6i" id="ANG-y7-b2t"/>
                 <outlet property="productNameLabel" destination="cdz-5n-ARU" id="CT1-u9-ZQx"/>

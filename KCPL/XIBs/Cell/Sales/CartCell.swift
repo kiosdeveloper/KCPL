@@ -26,6 +26,9 @@ class CartCell: UITableViewCell {
     
     @IBOutlet weak var productQuantityTextfeild: UITextField!
     
+    @IBOutlet weak var availableQuantityLabel: UILabel!
+    
+    
     var delegate: CartQuantityDelegate?
     
     override func awakeFromNib() {
@@ -43,6 +46,27 @@ class CartCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setDataSource(product: Product) {
+        
+        self.productNameLabel.text = product.name
+        
+        if let price = product.price {
+            self.productPriceLabel.text = Double(price).convertCurrencyFormatter()
+        }
+        
+        if let qty = product.quantity, let avaiQty = product.available_quantity {
+            if avaiQty > 0 {
+                self.productQuantityTextfeild.text = "\(qty)"
+            } else {
+                self.productQuantityTextfeild.text = nil
+            }
+            
+        }
+        
+        self.availableQuantityLabel.text = "Qty " + "\(product.available_quantity ?? 0)"
+    }
+    
     //    MARK:- Actions
     @IBAction func btnPlusQuantityPressed(_ sender: Any) {
         if let _ = delegate {

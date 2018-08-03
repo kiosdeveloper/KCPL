@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,13 +23,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Hill Top Technologies" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jq-iL-gYZ">
-                                <rect key="frame" x="15" y="8" width="139" height="33.5"/>
+                                <rect key="frame" x="15" y="8" width="154" height="33.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.23921568630000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9796223333" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXQ-QR-67k">
-                                <rect key="frame" x="162" y="15" width="127" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9796223333" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="zXQ-QR-67k">
+                                <rect key="frame" x="177" y="15" width="127" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="127" id="gUU-zf-Ylg"/>
                                 </constraints>
@@ -37,10 +37,10 @@
                                 <color key="textColor" red="0.23921568630000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0V-NQ-Pfa">
-                                <rect key="frame" x="297" y="15.5" width="15" height="18.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0V-NQ-Pfa">
+                                <rect key="frame" x="312" y="15.5" width="0.0" height="18.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="15" id="tls-g6-wg5"/>
+                                    <constraint firstAttribute="width" id="tls-g6-wg5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.23921568630000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -55,7 +55,7 @@
                             <constraint firstItem="2jq-iL-gYZ" firstAttribute="leading" secondItem="BA3-ch-aE0" secondAttribute="leading" constant="15" id="RPd-KG-gaP"/>
                             <constraint firstAttribute="bottom" secondItem="2jq-iL-gYZ" secondAttribute="bottom" constant="8" id="Tqh-2k-PM5"/>
                             <constraint firstItem="2jq-iL-gYZ" firstAttribute="top" secondItem="BA3-ch-aE0" secondAttribute="top" constant="8" id="WA3-nS-DJG"/>
-                            <constraint firstItem="zXQ-QR-67k" firstAttribute="top" secondItem="2jq-iL-gYZ" secondAttribute="top" constant="7" id="cMh-cB-ENy"/>
+                            <constraint firstItem="zXQ-QR-67k" firstAttribute="centerY" secondItem="2jq-iL-gYZ" secondAttribute="centerY" id="Wz6-wH-eXo"/>
                             <constraint firstAttribute="bottom" secondItem="f0V-NQ-Pfa" secondAttribute="bottom" constant="15.5" id="slB-kF-QQD"/>
                             <constraint firstAttribute="trailing" secondItem="f0V-NQ-Pfa" secondAttribute="trailing" constant="8" id="yhf-m6-TSW"/>
                         </constraints>

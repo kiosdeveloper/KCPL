@@ -29,4 +29,27 @@ class CartTotalCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setDataSource(products: [Product]) {
+        
+        var subtotle = 0
+        var tax = 0.0
+        
+        for cartProduct in products {
+            if let qty = cartProduct.quantity {
+                if let productPrice = cartProduct.price {
+                    subtotle += (productPrice * qty)
+                }
+                
+                if let productGST = cartProduct.tax {
+                    tax += (productGST * Double(qty))
+                }
+            }
+        }
+//        ₹
+        self.shippingLable.text = 0.0.convertCurrencyFormatter()
+        self.subTotalLable.text = Double(subtotle).convertCurrencyFormatter()
+        self.gstLabel.text = tax.convertCurrencyFormatter()
+        self.totalLabel.text = (Double(subtotle) + tax).convertCurrencyFormatter()
+    }
+    
 }

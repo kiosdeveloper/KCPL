@@ -57,7 +57,8 @@ extension OrderHistoryDetailVC: UITableViewDelegate, UITableViewDataSource {
             else {
                 cell.submittedDateLabel.text = self.convertProcessingDate(date: (self.orderDetail?.createdAt)!)
             }
-            cell.totalAmountLabel.text = "₹ " + self.calculateTotalAmount()
+            cell.totalAmountLabel.text = self.calculateTotalAmount().convertCurrencyFormatter()
+            
             switch self.orderDetail?.status {
             case 0:
                 cell.orderStatusLabel.text = "Pending"
@@ -78,16 +79,16 @@ extension OrderHistoryDetailVC: UITableViewDelegate, UITableViewDataSource {
             let product = self.orderDetail?.products[indexPath.row]
             cell.productImageView.sd_setImage(with: URL(string: product?.image_url ?? ""), placeholderImage: #imageLiteral(resourceName: "logo"), completed: nil)
             cell.productNameLabel.text = product?.name ?? ""
-            cell.productPriceLabel.text = "₹ \(product?.price ?? 0)"
+            cell.productPriceLabel.text = (product?.price ?? 0).convertCurrencyFormatter()
             cell.productQtyLabel.text = "Qty. \(product?.qty ?? 0)"
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CartTotalCell") as! CartTotalCell
             
-            cell.subTotalLable.text = "₹ " + self.countSubTotal()
-            cell.shippingLable.text = "₹ 0"
-            cell.gstLabel.text = "₹ " + self.countTax()
-            cell.totalLabel.text = "₹ " + self.calculateTotalAmount()
+            cell.subTotalLable.text = self.countSubTotal().convertCurrencyFormatter()
+            cell.shippingLable.text = 0.0.convertCurrencyFormatter()
+            cell.gstLabel.text = self.countTax().convertCurrencyFormatter()
+            cell.totalLabel.text = self.calculateTotalAmount().convertCurrencyFormatter()
 
             return cell
         }
@@ -97,28 +98,29 @@ extension OrderHistoryDetailVC: UITableViewDelegate, UITableViewDataSource {
         return UITableViewAutomaticDimension
     }
     
-    func countSubTotal() -> String {
-        var total = 0
+    func countSubTotal() -> Double {
+        var total = 0.0
         for product in (self.orderDetail?.products)! {
-            total = ((product.price ?? 0) * (product.qty ?? 0)) + total
+            total = ((product.price ?? 0) * Double(product.qty ?? 0)) + total
         }
-        return String(total)
+        return total
     }
     
-    func countTax() -> String {
+    func countTax() -> Double {
         var tax = 0.0
         for product in (self.orderDetail?.products)! {
             tax = product.tax ?? 0.0 + tax
         }
-        return String(tax)
+        return tax
     }
     
-    func calculateTotalAmount() -> String {
+    func calculateTotalAmount() -> Double {
         var productPrice = 0.0
         for product in (self.orderDetail?.products)! {
-            productPrice = Double(product.price! * product.qty!) + product.tax! + productPrice
+//            productPrice = Double(product.price! * product.qty!) + product.tax! + productPrice
+            productPrice = (product.price ?? 0 * Double(product.qty ?? 0)) + (product.tax ?? 0.0) + productPrice
         }
-        return String(productPrice)
+        return productPrice
     }
     
     func convertProcessingDate(date: String) -> String {

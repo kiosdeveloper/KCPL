@@ -167,12 +167,14 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
         let cell = productlistTableView.dequeueReusableCell(withIdentifier: "ProductListTableViewCell") as! ProductListTableViewCell
         
         cell.productNameLabel.text = filteredProductsDatasource[indexPath.row].name
-        if let price = filteredProductsDatasource[indexPath.row].price {
-            cell.productPriceLabel.text = "₹ \(price)"
+        if let price = filteredProductsDatasource[indexPath.row].price, let tax = filteredProductsDatasource[indexPath.row].percentageTax {
+            cell.productPriceLabel.text = Double(price).convertCurrencyFormatter() + "+ \(tax)% GST applicable"
         }
         cell.delegate = self
         cell.quantityTextField.delegate = self
         cell.quantityTextField.tag = indexPath.row
+        
+        cell.availableQuantityLabel.text = "Qty " + ("\(filteredProductsDatasource[indexPath.row].available_quantity ?? 0)")
         
         if let qty = filteredProductsDatasource[indexPath.row].quantity {
             cell.quantityTextField.text = "\(qty)"
@@ -198,16 +200,30 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
         self.performSegue(withIdentifier: "showItemDetailFromProductList", sender: indexPath)
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func reloadTableview(at indexPath: IndexPath) {
+        UIView.setAnimationsEnabled(false)
+        self.productlistTableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
     //    MARK:- Action
     
     @IBAction func NextPressed(_ sender: Any) {
-//        self.performSegue(withIdentifier: "showCartFromProductList", sender: nil)
+        self.performSegue(withIdentifier: "showCartFromProductList", sender: nil)
     }
     
     func btnPlusQuantity(cell: ProductListTableViewCell) {
          guard let indexPath = self.productlistTableView.indexPath(for: cell) else { return }
         
-        self.filteredProductsDatasource[indexPath.row] = Util().plusQuantity(product: self.filteredProductsDatasource[indexPath.row], quantity: nil)
+        
+        if self.filteredProductsDatasource[indexPath.row].quantity! < self.filteredProductsDatasource[indexPath.row].available_quantity! {
+            self.filteredProductsDatasource[indexPath.row] = Util().plusQuantity(product: self.filteredProductsDatasource[indexPath.row], quantity: nil)
+        } else {
+            "Out Of Stock".configToast(isError: true)
+        }
         
         self.refreshMainDatasource(index: indexPath.row)
         
@@ -223,13 +239,28 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
         }*/
         
         self.updateBadge()
-        self.productlistTableView.reloadData()
-
+        self.reloadTableview(at: indexPath)
         
+//        self.productlistTableView.reloadData()
     }
     
     func btnMinusQuantity(cell: ProductListTableViewCell) {
         guard let indexPath = self.productlistTableView.indexPath(for: cell) else { return }
+        
+        if self.filteredProductsDatasource[indexPath.row].quantity == 0 {
+            if var cartArray_temp = UserDefault.getCartProducts() {
+                
+                if let i = cartArray_temp.index(where: { $0.id == self.filteredProductsDatasource[indexPath.row].id }) {
+                    cartArray_temp.remove(at: i)
+                }
+                
+                UserDefault.saveCartProducts(products: cartArray_temp)
+            }
+            self.updateBadge()
+//            self.productlistTableView.reloadData()
+            self.reloadTableview(at: indexPath)
+            return
+        }
         
         if let product = Util().minusQuantity(product: self.filteredProductsDatasource[indexPath.row]) {
             self.filteredProductsDatasource[indexPath.row] = product
@@ -272,13 +303,18 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
             }
         }*/
         self.updateBadge()
-        self.productlistTableView.reloadData()
+        self.reloadTableview(at: indexPath)
+//        self.productlistTableView.reloadData()
     }
     
     func btnAddToCart(cell: ProductListTableViewCell) {
         guard let indexPath = self.productlistTableView.indexPath(for: cell) else { return }
         
-        self.filteredProductsDatasource[indexPath.row] = Util().plusQuantity(product: self.filteredProductsDatasource[indexPath.row], quantity: nil)
+        if self.filteredProductsDatasource[indexPath.row].quantity! < self.filteredProductsDatasource[indexPath.row].available_quantity! {
+            self.filteredProductsDatasource[indexPath.row] = Util().plusQuantity(product: self.filteredProductsDatasource[indexPath.row], quantity: nil)
+        } else {
+            "Out Of Stock".configToast(isError: true)
+        }
         
         self.refreshMainDatasource(index: indexPath.row)
         
@@ -300,8 +336,9 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource, ProductList
             UserDefault.saveCartProducts(products: cartArray_temp)
         }*/
         
-        self.productlistTableView.reloadData()
+//        self.productlistTableView.reloadData()
         self.updateBadge()
+        self.reloadTableview(at: indexPath)
     }
 }
 
@@ -363,14 +400,28 @@ extension ProductListVC: UITextFieldDelegate {
                 self.filteredProductsDatasource = self.productsDatasource.filter({($0.brand_name!.lowercased().contains(selectedBrandName.lowercased()))})
                 self.productlistTableView.reloadData()
             }
-            
-            
-            
         } else {
+            if textField.text! == "" || textField.text! == "0" {
+                if var cartArray_temp = UserDefault.getCartProducts() {
+                    if let i = cartArray_temp.index(where: { $0.id == self.filteredProductsDatasource[textField.tag].id }) {
+                        self.filteredProductsDatasource[textField.tag].quantity = 0
+                        cartArray_temp.remove(at: i)
+                    }
+                    UserDefault.saveCartProducts(products: cartArray_temp)
+                    if cartArray_temp.count == 0 {
+                        UserDefault.removeCartProducts()
+                    }
+                    self.updateBadge()
+//                    self.productlistTableView.reloadData()
+                    self.reloadTableview(at: IndexPath(row: textField.tag, section: 0))
+                }
+                return
+            }
             if let qtyString = textField.text, let qty = Int(qtyString) {
                 self.filteredProductsDatasource[textField.tag] = Util().plusQuantity(product: self.filteredProductsDatasource[textField.tag], quantity: qty)
                 
-                self.productlistTableView.reloadData()
+//                self.productlistTableView.reloadData()
+                self.reloadTableview(at: IndexPath(row: textField.tag, section: 0))
                 self.updateBadge()
             }
         }
@@ -382,10 +433,12 @@ extension ProductListVC: UITextFieldDelegate {
         } else {
             // For Length //
             guard let text = textField.text else { return true }
-            let newLength = text.count + string.count - range.length
             
-            if let newValue = Int(text+string) {
-                return (newValue < 1000 && newLength <= 3)
+            if let newValue = Int(text+string), let availableProduct = self.filteredProductsDatasource[textField.tag].available_quantity {
+                if newValue == 0 {
+                    return false
+                }
+                return (newValue <= availableProduct)
             } else {
                 return false
             }

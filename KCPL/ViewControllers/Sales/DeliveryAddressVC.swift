@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol DeliveryAddressDelegate: class {
+    func needToReload()
+}
+
 class DeliveryAddressVC: AbstractVC {
     
     @IBOutlet weak var deliveryAddressTableView: UITableView!
@@ -17,13 +21,16 @@ class DeliveryAddressVC: AbstractVC {
     
     @IBOutlet var TableviewBottomConstraints: NSLayoutConstraint!
     
+    var delegate: DeliveryAddressDelegate?
+    
     var isFromMenu = false
     var addressDatasource = [Address]()
     var selectedIndex = -1
     var isEditAddress = false
     var isAddAddress = false
-    var userId: Int?
-    
+    var userId: Int = 0
+    var fromScreenType: ScreenType?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,7 +47,7 @@ class DeliveryAddressVC: AbstractVC {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "Choose delivery address"
+        self.title = isFromMenu ? "My Address" : "Choose delivery address"
         self.getAddressList()
     }
     
@@ -94,7 +101,7 @@ extension DeliveryAddressVC: SlideNavigationControllerDelegate {
 //MARK:- Helper Method
 extension DeliveryAddressVC {
     func getAddressList() {
-        ServiceManager().processService(urlRequest: ComunicateService.Router.GetAddressList()) { (isSuccess, error , responseData) in
+        ServiceManager().processService(urlRequest: ComunicateService.Router.GetAddressList(userId: self.userId)) { (isSuccess, error , responseData) in
             if isSuccess {
                 ServiceManagerModel().processAddressList(json: responseData, completion: { (isComplete, address) in
                     if isComplete {
@@ -123,24 +130,38 @@ extension DeliveryAddressVC {
         
         let orderAddress =  line1 + line2 + city + state + zipcode + country
         
-        var params: [String: Any] = [
-            Constant.c_req_ship_by_address: orderAddress,
-            Constant.c_req_bill_to_address: orderAddress,
-            Constant.c_req_ship_to_address: orderAddress
-        ]
-        
-        if let userId = self.userId {
-            params[Constant.c_req_customer_id] = userId
+        var params: [String: Any] = [:]
+        if self.fromScreenType == .AdminSelectVendorScreen  {
+            params = [
+                Constant.c_req_purchase_ship_by_address: orderAddress,
+                Constant.c_req_purchase_vendor_id: self.userId 
+            ]
+            
+            if let cartArray = UserDefault.getCartProducts() {
+                for (index,item) in cartArray.enumerated() {
+                    params["\(Constant.c_req_purchase_products_attributes)[\(index+1)][product_id]"] = item.id
+                    params["\(Constant.c_req_purchase_products_attributes)[\(index+1)][qty]"] = item.quantity
+                }
+            }
         }
-        
-        if let cartArray = UserDefault.getCartProducts() {
-            for (index,item) in cartArray.enumerated() {
-                params["\(Constant.c_req_sorder_products_attributes)[\(index+1)][product_id]"] = item.id
-                params["\(Constant.c_req_sorder_products_attributes)[\(index+1)][qty]"] = item.quantity
+        else {
+            params = [
+                Constant.c_req_ship_by_address: orderAddress,
+                Constant.c_req_bill_to_address: orderAddress,
+                Constant.c_req_ship_to_address: orderAddress,
+                Constant.c_req_customer_id: address.user_id ?? ""
+            ]
+            
+            if let cartArray = UserDefault.getCartProducts() {
+                for (index,item) in cartArray.enumerated() {
+                    params["\(Constant.c_req_sorder_products_attributes)[\(index+1)][product_id]"] = item.id
+                    params["\(Constant.c_req_sorder_products_attributes)[\(index+1)][qty]"] = item.quantity
+                }
             }
         }
         
-        print(params)
+        
+//        print(params)
         
         ServiceManager().processService(urlRequest: ComunicateService.Router.CreateOrder(params)) { (isSuccess, error , responseData) in
             if isSuccess {
@@ -150,7 +171,29 @@ extension DeliveryAddressVC {
                     if viewController is DashboardVC {
                         UserDefault.removeCartProducts()
                         "Your order placed successfully.".configToast(isError: false)
+                        
                         _ = self.navigationController?.popToViewController(viewController, animated: true)
+
+                        return
+                    }
+                    
+                    if Util.isAdminApp(), viewController is AdminSalesViewController {
+                        
+                        self.delegate = viewController as? DeliveryAddressDelegate
+                        
+                        self.delegate?.needToReload()
+                        UserDefault.removeCartProducts()
+                        "Your order placed successfully.".configToast(isError: false)
+                        _ = self.navigationController?.popToViewController(viewController, animated: true)
+                        return
+                    }
+                    
+                    if viewController is AdminPurchaseViewController {
+                        UserDefault.removeCartProducts()
+                        "Your order placed successfully.".configToast(isError: false)
+                        
+                        _ = self.navigationController?.popToViewController(viewController, animated: true)
+                        
                         return
                     }
                 }
@@ -178,7 +221,7 @@ extension DeliveryAddressVC: UITableViewDelegate, UITableViewDataSource {
         let cell = deliveryAddressTableView.dequeueReusableCell(withIdentifier: "DeliveryAddressCell") as! DeliveryAddressCell
         let address = self.addressDatasource[indexPath.row]
         
-        cell.companyNameLabel.text = "Karnavati pvt. Ltd."
+        cell.companyNameLabel.text = ""
         
         let line1 = "\(address.line1 ?? "")" + " "
         let line2 = "\(address.line2 ?? "")" + ", " + "\n"
@@ -201,6 +244,7 @@ extension DeliveryAddressVC: UITableViewDelegate, UITableViewDataSource {
         cell.selectButton.isSelected = self.selectedIndex == indexPath.row
         cell.delegate = self
         cell.editButton.isHidden = Util.isSalesApp()
+        cell.edtiButtonWidthConstraint.constant = Util.isSalesApp() ?  0 : 30
         return cell
     }
     

@@ -14,7 +14,8 @@ struct Constant {
     static let C_SideMenu_Home = "Home"
     static let C_SideMenu_MyCustomers = "My Customers"
     static let C_SideMenu_OrderHistory = "Order History"
-    static let C_SideMenu_Address = "Address"
+    static let C_SideMenu_Inventory = "Inventory"
+    static let C_SideMenu_Address = "My Address"
     static let C_SideMenu_About = "About"
     static let C_SideMenu_ContactUs = "Contact Us"
     static let C_SideMenu_VisitOurWebsite = "Visit Our Website"
@@ -36,6 +37,12 @@ struct Constant {
     static let c_error_gst_number = "Please Enter GST Number"
     static let c_error_delivery_address = "Please Enter Delivery Address"
     static let c_error_customer_address = "Please Enter Customer Address"
+    static let c_error_address_line1 = "Please Enter Address Line 1"
+    static let c_error_address_line2 = "Please Enter Address Line 2"
+    static let c_error_city = "Please Enter City"
+    static let c_error_state = "Please Enter State"
+    static let c_error_zip = "Please Enter ZIP Code"
+    static let c_error_country = "Please Enter Country"
     
     //MARK:- Success Messages
     static let c_update_profile = "Your Profile Successfully Updated"
@@ -53,11 +60,25 @@ struct Constant {
     static let c_req_address = "customer[address]"
     static let c_req_phone = "customer[phone]"
     
+    static let c_req_vendor_name = "vendor[name]"
+    static let c_req_vendor_email = "vendor[email]"
+    static let c_req_vendor_address_line_1 = "vendor[address_line_1]"
+    static let c_req_vendor_address_line_2 = "vendor[address_line_2]"
+    static let c_req_vendor_city = "vendor[city]"
+    static let c_req_vendor_state = "vendor[state]"
+    static let c_req_vendor_zip = "vendor[zip]"
+    static let c_req_vendor_country = "vendor[country]"
+    static let c_req_vendor_phone_no = "vendor[phone_no]"
+    
     static let c_req_ship_by_address = "order[ship_by_address]"
     static let c_req_bill_to_address = "order[bill_to_address]"
     static let c_req_ship_to_address = "order[ship_to_address]"
     static let c_req_sorder_products_attributes = "order[order_products_attributes]"
     static let c_req_customer_id = "order[user_id]"
+    
+    static let c_req_purchase_ship_by_address = "purchase_order[ship_from]"
+    static let c_req_purchase_vendor_id = "purchase_order[vendor_id]"
+    static let c_req_purchase_products_attributes = "purchase_order[purchase_order_products_attributes]"
     
     static let c_req_adddress_line1 = "user_address[line_1]"
     static let c_req_adddress_line2 = "user_address[line_2]"
@@ -65,6 +86,9 @@ struct Constant {
     static let c_req_adddress_state = "user_address[state]"
     static let c_req_adddress_country = "user_address[country]"
     static let c_req_adddress_zipcode = "user_address[zip]"
+    
+    static let c_req_quotation_id = "quotation_id"
+    
     
 //    MARK: For Response
     static let c_res_type = "type"
@@ -77,8 +101,11 @@ struct Constant {
     static let c_res_first_name = "first_name"
     static let c_res_last_name = "last_name"
     static let c_res_phone = "phone"
+    static let c_res_phone_no = "phone_no"
     static let c_res_auth_token = "auth_token"
     static let c_res_address = "address"
+    static let c_res_address_line_1 = "address_line_1"
+    static let c_res_address_line_2 = "address_line_2"
     
     static let c_res_name = "name"
     static let c_res_image = "image"
@@ -89,6 +116,10 @@ struct Constant {
     static let c_res_tax = "tax"
     static let c_res_price = "price"
     static let c_res_quantity = "quantity"
+    static let c_res_category_name = "category_name"
+    static let c_res_commited_quantity = "commited_quantity"
+    static let c_res_awaiting_quantity = "awaiting_quantity"
+    static let c_res_available_quantity = "available_quantity"
     
     static let c_res_line1 = "line_1"
     static let c_res_line2 = "line_2"
@@ -98,6 +129,7 @@ struct Constant {
     static let c_res_zipcode = "zip"
     static let c_res_user_id = "user_id"
     
+    static let c_res_user = "user"
     static let c_res_confirmation_date = "confirmation_date"
     static let c_res_expected_delivery_date = "expected_delivery_date"
     static let c_res_invoice_no = "invoice_no"

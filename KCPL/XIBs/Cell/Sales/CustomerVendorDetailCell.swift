@@ -31,4 +31,44 @@ class CustomerVendorDetailCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setDataSource(customer: Customers?) {
+        self.companyNameLabel.text = " "
+        
+        self.companyAddressLabel.text = customer?.address ?? ""
+        
+        self.contactLabel.text = customer?.phone ?? ""
+        
+        self.emailLabel.text = customer?.email ?? ""
+        
+        if customer?.firstName == nil, customer?.lastName == nil {
+            self.personNameLabel.text = "Mr. \(customer?.name ?? "")"
+        } else {
+            self.personNameLabel.text = "Mr. \(customer?.firstName ?? "")  \(customer?.lastName ?? "")"
+        }
+    }
+    
+    func setDataSource(vendor: Vendor?) {
+        self.companyNameLabel.text = " "
+        
+        var address = String()
+        if let add1 = vendor?.address_line_1 {
+            address.append(add1)
+        }
+        
+        if let add2 = vendor?.address_line_2 {
+            address.append("\n\(add2)")
+        }
+        
+        self.companyAddressLabel.text = address.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        self.contactLabel.text = vendor?.phone_no ?? ""
+        
+        self.emailLabel.text = vendor?.email ?? ""
+        
+        if vendor?.firstName == nil, vendor?.lastName == nil {
+            self.personNameLabel.text = "Mr. \(vendor?.name ?? "")"
+        } else {
+            self.personNameLabel.text = "Mr. \(vendor?.firstName ?? "")  \(vendor?.lastName ?? "")"
+        }
+    }
 }

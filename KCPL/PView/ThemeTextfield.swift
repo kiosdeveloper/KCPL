@@ -65,6 +65,17 @@ class AddressTextField: UITextField {
     }
 }
 
+class CommonTextFieldDelegate : NSObject, UITextFieldDelegate {
+    
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard range.location == 0 else {
+            return true
+        }
+        let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string) as NSString
+        return newString.rangeOfCharacter(from: NSCharacterSet.whitespacesAndNewlines).location != 0
+    }
+}
+
 class AddressTextView: UITextView {
     
     @IBInspectable var cornerRadius: CGFloat = 0

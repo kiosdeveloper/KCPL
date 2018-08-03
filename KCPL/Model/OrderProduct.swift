@@ -15,7 +15,7 @@ class OrderProduct: NSObject, NSCoding {
     var order_id : Int?
     var qty: Int?
     var tax : Double?
-    var price: Int?
+    var price: Double?
     var product_id: Int?
     var image_url: String?
     
@@ -44,11 +44,12 @@ class OrderProduct: NSObject, NSCoding {
         if json[Constant.c_res_qty].type != .null {
             qty = json.dictionaryObject![Constant.c_res_qty] as! Int?
         }
+        if json[Constant.c_res_price].type != .null {
+            price = json.dictionaryObject![Constant.c_res_price] as! Double?
+        }
         if json[Constant.c_res_tax].type != .null {
             tax = json.dictionaryObject![Constant.c_res_tax] as! Double?
-        }
-        if json[Constant.c_res_price].type != .null {
-            price = json.dictionaryObject![Constant.c_res_price] as! Int?
+            tax = (Double(price ?? 0) * tax!) / 100
         }
         if json[Constant.c_res_product_id].type != .null {
             product_id = json.dictionaryObject![Constant.c_res_product_id] as! Int?
@@ -63,7 +64,7 @@ class OrderProduct: NSObject, NSCoding {
         order_id = aDecoder.decodeObject(forKey: Constant.c_res_order_id) as? Int
         qty = aDecoder.decodeObject(forKey: Constant.c_res_qty) as? Int
         tax = aDecoder.decodeObject(forKey: Constant.c_res_tax) as? Double
-        price = aDecoder.decodeObject(forKey: Constant.c_res_price) as? Int
+        price = aDecoder.decodeObject(forKey: Constant.c_res_price) as? Double
         product_id = aDecoder.decodeObject(forKey: Constant.c_res_product_id) as? Int
         image_url = aDecoder.decodeObject(forKey: Constant.c_res_image_url) as? String
     

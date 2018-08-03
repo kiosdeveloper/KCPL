@@ -17,9 +17,9 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
     
     @IBOutlet var tblTrailConstraints: NSLayoutConstraint!
     
-    var dsTitle = [Constant.C_SideMenu_Home,Constant.C_SideMenu_MyCustomers,Constant.C_SideMenu_OrderHistory,Constant.C_SideMenu_Address,Constant.C_SideMenu_About,Constant.C_SideMenu_ContactUs,Constant.C_SideMenu_VisitOurWebsite,Constant.C_SideMenu_Profile,Constant.C_SideMenu_SignOut]
+    var dsTitle = [Constant.C_SideMenu_Home,Constant.C_SideMenu_OrderHistory,Constant.C_SideMenu_Address,Constant.C_SideMenu_About,Constant.C_SideMenu_ContactUs,Constant.C_SideMenu_VisitOurWebsite,Constant.C_SideMenu_Profile,Constant.C_SideMenu_SignOut]
     
-    var dsIcons = ["ic_home","ic_orderHistory","ic_orderHistory","ic_orderHistory","ic_about","ic_contactUs", "ic_visitOurWebsite","ic_username", "ic_signOut"]
+    var dsIcons = ["ic_home","ic_orderHistory","ic_address","ic_about","ic_contactUs", "ic_visitOurWebsite","ic_username", "ic_signOut"]
     
     override func viewDidLoad() {
         
@@ -30,9 +30,11 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
         
 //        viewHeader.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
         
-        if !Util.isSalesApp() {
-            dsTitle.remove(at: 1)
-            dsIcons.remove(at: 1)
+        if Util.isSalesApp() {
+            dsTitle.insert(Constant.C_SideMenu_MyCustomers, at: 1)
+            dsIcons.insert("ic_customer_list", at: 1)
+            dsTitle.insert(Constant.C_SideMenu_Inventory, at: 3)
+            dsIcons.insert("ic_inventory", at: 3)
         }
         
         self.viewHeader.backgroundColor = ConstantsUI.C_Color_Theme
@@ -140,6 +142,12 @@ class leftMenuViewController: AbstractVC, UITableViewDataSource, UITableViewDele
             let vc = AppRouter.sharedRouter().getViewController("OrderHistoryVC") as! OrderHistoryVC
             
             SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
+            
+        case Constant.C_SideMenu_Inventory:
+            let vc = AppRouter.sharedRouter().getAdminViewController("AdminInventoryViewController") as! AdminInventoryViewController
+            
+            SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
+
        
         case Constant.C_SideMenu_Address:
             let vc = AppRouter.sharedRouter().getViewController("DeliveryAddressVC") as! DeliveryAddressVC

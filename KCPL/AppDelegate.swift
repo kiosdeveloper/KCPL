@@ -19,11 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appRouter: AppRouter = AppRouter.sharedRouter()
         appRouter.appWindow = window
         
-        
         appRouter.configSlideNavigation()
         
-        let BarButtonItemAppearance = UIBarButtonItem.appearance()
-    BarButtonItemAppearance.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.clear], for: .normal)
+        Util().configBarButtonColor(color: UIColor.clear)
         
         return true
     }

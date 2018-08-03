@@ -24,9 +24,22 @@ class SignUpVC: UIViewController {
 
     @IBOutlet weak var navigationViewHeight: NSLayoutConstraint!
     
+    let textFieldDelegate = CommonTextFieldDelegate()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.firstNameTextField.delegate = textFieldDelegate
+        self.lastNameTextField.delegate = textFieldDelegate
+        self.companyNameTextField.delegate = textFieldDelegate
+        self.companyAddressTextField.delegate = textFieldDelegate
+        self.mobileNumberTextField.delegate = textFieldDelegate
+        self.emailTextField.delegate = textFieldDelegate
+        self.passwordTextField.delegate = textFieldDelegate
+        self.confirmPasswordTextField.delegate = textFieldDelegate
+        self.gstInNumberTextField.delegate = textFieldDelegate
+        self.deliveryAddressTextField.delegate = textFieldDelegate
+
         self.configLoginButton()
     }
     

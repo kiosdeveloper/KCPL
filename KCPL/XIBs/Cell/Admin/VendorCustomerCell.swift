@@ -27,4 +27,24 @@ class VendorCustomerCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setDataSource(customer: Customers) {
+        self.contactNumberLabel.text = customer.phone ?? ""
+        if customer.firstName == nil, customer.lastName == nil {
+            self.companyNameLabel.text = customer.name ?? ""
+        } else {
+            self.companyNameLabel.text = "\(customer.firstName ?? "")  \(customer.lastName ?? "")"
+        }
+//        self.gradeLabel.text = ""
+    }
+    
+    func setDataSource(vendor: Vendor) {
+        self.contactNumberLabel.text = vendor.phone_no ?? ""
+        if vendor.firstName == nil, vendor.lastName == nil {
+            self.companyNameLabel.text = vendor.name ?? ""
+        } else {
+            self.companyNameLabel.text = "\(vendor.firstName ?? "")  \(vendor.lastName ?? "")"
+        }
+        //        self.gradeLabel.text = ""
+    }
+    
 }

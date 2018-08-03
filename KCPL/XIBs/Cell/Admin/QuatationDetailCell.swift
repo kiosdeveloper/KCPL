@@ -7,10 +7,27 @@
 //
 
 import UIKit
+import SDWebImage
 
 class QuatationDetailCell: UITableViewCell {
 
     @IBOutlet weak var quatationDetailView: UIView!
+    
+    @IBOutlet weak var productNameLabel: UILabel!
+    
+    @IBOutlet weak var productDescriptionLabel: UILabel!
+    
+    @IBOutlet weak var totalLabel: UILabel!
+    
+    @IBOutlet weak var productImageView: UIImageView!
+    
+    @IBOutlet weak var stockLabel: UILabel!
+    
+    @IBOutlet weak var committedLabel: UILabel!
+    
+    @IBOutlet weak var availableLabel: UILabel!
+    
+    @IBOutlet weak var requestedLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +36,9 @@ class QuatationDetailCell: UITableViewCell {
             view.layer.borderWidth = 1.0
             view.clipsToBounds = true
         }
+        if let imageView = self.productImageView {
+            imageView.layer.cornerRadius = imageView.frame.size.width / 2
+        }
         // Initialization code
     }
 
@@ -26,6 +46,14 @@ class QuatationDetailCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setDataSource(product: OrderProduct) {
+        self.productImageView.sd_setImage(with: URL(string: product.image_url ?? ""), placeholderImage: #imageLiteral(resourceName: "item_detail"), completed: nil)
+        self.productNameLabel.text = product.name ?? ""
+        self.productDescriptionLabel.text = ""
+        self.totalLabel.text = ((product.price ?? 0.0) + (product.tax ?? 0.0)).convertCurrencyFormatter()
+        
     }
 
 }

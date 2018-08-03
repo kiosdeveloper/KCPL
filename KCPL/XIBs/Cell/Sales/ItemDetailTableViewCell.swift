@@ -22,6 +22,9 @@ class ItemDetailTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imagesCollectionView: UICollectionView!
     
+    @IBOutlet weak var availableQuantityLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

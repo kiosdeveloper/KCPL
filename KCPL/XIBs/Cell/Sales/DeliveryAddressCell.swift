@@ -22,6 +22,7 @@ class DeliveryAddressCell: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userNumberLabel: UILabel!
     @IBOutlet weak var selectButtonWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var edtiButtonWidthConstraint: NSLayoutConstraint!
     
     var delegate: AddressListDelegate?
 

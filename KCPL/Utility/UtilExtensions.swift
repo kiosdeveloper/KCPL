@@ -31,6 +31,27 @@ extension String {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", REGEX_EMAIL)
         return emailTest.evaluate(with: self)
     }
+    
+    func convertOrderCreatedDate() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSz"
+        let date = dateFormatter.date(from: self)
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        let dateString = dateFormatter.string(from: date!)
+        return dateFormatter.date(from: dateString)!
+    }
+}
+
+extension Double {
+    func convertCurrencyFormatter() -> String {
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        // localize to your grouping and decimal separator
+        currencyFormatter.locale = Locale.current
+        
+        return currencyFormatter.string(for: self)!
+    }
 }
 
 extension UITextField {
@@ -42,6 +63,17 @@ extension UITextField {
         view.addSubview(imgView)
         self.rightView = view
         rightViewMode = .always
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        // as @nhgrif suggested, we can skip the string manipulations if
+        // the beginning of the textView.text is not touched.
+        guard range.location == 0 else {
+            return true
+        }
+        
+        let newString = (textField.text! as NSString).replacingCharacters(in: range, with: text!) as NSString
+        return newString.rangeOfCharacter(from: NSCharacterSet.whitespacesAndNewlines).location != 0
     }
 }
 
@@ -117,4 +149,35 @@ extension UIBarButtonItem {
         badgeLayer?.removeFromSuperlayer()
     }
     
+}
+
+extension Date {
+    func toLocalTime() -> Date {
+        let timezone = TimeZone.current
+        let seconds = TimeInterval(timezone.secondsFromGMT(for: self))
+        return Date(timeInterval: seconds, since: self)
+    }
+    
+    func getElapsedInterval() -> String {
+        let interval = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: self, to: Date())
+        
+        if let year = interval.year, year > 0 {
+            return year == 1 ? "\(year)" + " " + "year ago" :
+                "\(year)" + " " + "years ago"
+        } else if let month = interval.month, month > 0 {
+            return month == 1 ? "\(month)" + " " + "month ago" :
+                "\(month)" + " " + "months ago"
+        } else if let day = interval.day, day > 0 {
+            return day == 1 ? "\(day)" + " " + "day ago" :
+                "\(day)" + " " + "days ago"
+        } else if let hour = interval.hour, hour > 0 {
+            return hour == 1 ? "\(hour)" + " " + "hour ago" :
+                "\(hour)" + " " + "hours ago"
+        }
+        else if let minute = interval.minute, minute > 0 {
+            return minute == 1 ? "\(minute)" + " " + "minute ago" :
+                "\(minute)" + " " + "minutes ago"
+        }
+        return "A moment ago"
+    }
 }

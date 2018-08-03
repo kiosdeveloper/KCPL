@@ -129,7 +129,7 @@ class ServiceManagerModel {
         completion(false, nil)
     }
     
-    //    MARK:- Address
+    //    MARK:- Customer
     func processCustomers(json: JSON?, completion: @escaping (_ isComplete: Bool, _ customers: [Customers]? )-> Void) {
         if let response_json = json {
             
@@ -145,4 +145,39 @@ class ServiceManagerModel {
         }
         completion(false, nil)
     }
+    
+    //    MARK:- Vendor
+    func processVendors(json: JSON?, completion: @escaping (_ isComplete: Bool, _ vendors: [Vendor]? )-> Void) {
+        if let response_json = json {
+            
+            var vendor_arr = [Vendor]()
+            
+            for i in 0 ..< response_json.count {
+                let jsonValue = response_json.arrayValue[i]
+                let aData = Vendor(json: jsonValue)
+                vendor_arr.append(aData)
+            }
+            
+            completion(true, vendor_arr)
+        }
+        completion(false, nil)
+    }
+    
+    // MARK:- Quatation
+    func processQuatation(json: JSON?, completion: @escaping (_ isComplete: Bool, _ customers: [Quatations]? )-> Void) {
+        if let response_json = json {
+            
+            var order_arr = [Quatations]()
+            
+            for i in 0 ..< response_json.count {
+                let jsonValue = response_json.arrayValue[i]
+                let aData = Quatations(json: jsonValue)
+                order_arr.append(aData)
+            }
+            
+            completion(true, order_arr)
+        }
+        completion(false, nil)
+    }
+    
 }

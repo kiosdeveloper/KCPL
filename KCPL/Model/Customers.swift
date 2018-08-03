@@ -17,6 +17,7 @@ class Customers: NSObject, NSCoding {
     var customerId : Int?
     var phone: String?
     var firstName: String?
+    var name: String?
     
     override init () {
         // uncomment this line if your class has been inherited from any other class
@@ -30,6 +31,7 @@ class Customers: NSObject, NSCoding {
         self.customerId = customer.customerId
         self.phone = customer.phone
         self.firstName = customer.firstName
+        self.name = customer.name
     }
     
     init(json: JSON) {
@@ -51,6 +53,9 @@ class Customers: NSObject, NSCoding {
         if json[Constant.c_res_first_name].type != .null {
             firstName = json.dictionaryObject![Constant.c_res_first_name] as! String?
         }
+        if json[Constant.c_res_name].type != .null {
+            name = json.dictionaryObject![Constant.c_res_name] as! String?
+        }
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -60,6 +65,7 @@ class Customers: NSObject, NSCoding {
         customerId = aDecoder.decodeObject(forKey: Constant.c_res_id) as? Int
         phone = aDecoder.decodeObject(forKey: Constant.c_res_phone) as? String
         firstName = aDecoder.decodeObject(forKey: Constant.c_res_first_name) as? String
+        name = aDecoder.decodeObject(forKey: Constant.c_res_name) as? String
     }
     
     public func encode(with aCoder: NSCoder) {
@@ -69,5 +75,6 @@ class Customers: NSObject, NSCoding {
         aCoder.encode(customerId, forKey: Constant.c_res_id)
         aCoder.encode(phone, forKey: Constant.c_res_phone)
         aCoder.encode(firstName, forKey: Constant.c_res_first_name)
+        aCoder.encode(name, forKey: Constant.c_res_name)
     }
 }

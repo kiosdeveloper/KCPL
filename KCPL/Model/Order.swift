@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class Order: NSObject, NSCoding {
     
+    var user: User?
     var confirmationDate: String?
     var expectedDeliveryDate : String?
     var invoiceNo: String?
@@ -32,6 +33,7 @@ class Order: NSObject, NSCoding {
     }
     
     init(order: Order) {
+        self.user = order.user
         self.confirmationDate = order.confirmationDate
         self.expectedDeliveryDate = order.expectedDeliveryDate
         self.invoiceNo = order.invoiceNo
@@ -50,6 +52,10 @@ class Order: NSObject, NSCoding {
     }
     
     init(json: JSON) {
+        super.init()
+        if json[Constant.c_res_user].type != .null {
+            user = self.processUser(json: json[Constant.c_res_user])
+        }
         if json[Constant.c_res_confirmation_date].type != .null {
             confirmationDate = json.dictionaryObject![Constant.c_res_confirmation_date] as! String?
         }
@@ -69,12 +75,11 @@ class Order: NSObject, NSCoding {
             orderId = json.dictionaryObject![Constant.c_res_id] as! Int?
         }
         if json[Constant.c_res_tracking_id].type != .null {
-            if !Util.isSalesApp() {
-                trackingId = json.dictionaryObject![Constant.c_res_tracking_id] as! Int?
-            }
-            else {
+//            if Util.isSalesApp() || Util.isAdminApp() {
                 trackingId = json.dictionaryObject![Constant.c_res_tracking_id] as! String?
-            }
+//            } else {
+//                trackingId = json.dictionaryObject![Constant.c_res_tracking_id] as! Int?
+//            }
         }
         if json[Constant.c_res_created_at].type != .null {
             createdAt = json.dictionaryObject![Constant.c_res_created_at] as! String?
@@ -94,25 +99,25 @@ class Order: NSObject, NSCoding {
         if json[Constant.c_res_ship_to_address].type != .null {
             shipToAddress = json.dictionaryObject![Constant.c_res_ship_to_address] as! String?
         }
-        super.init()
         if json[Constant.c_res_product].type != .null {
             products = self.processProducts(json: json[Constant.c_res_product])
         }
     }
     
     required init(coder aDecoder: NSCoder) {
+        user = aDecoder.decodeObject(forKey: Constant.c_res_user) as? User
         confirmationDate = aDecoder.decodeObject(forKey: Constant.c_res_confirmation_date) as? String
         expectedDeliveryDate = aDecoder.decodeObject(forKey: Constant.c_res_expected_delivery_date) as? String
         invoiceNo = aDecoder.decodeObject(forKey: Constant.c_res_invoice_no) as? String
         shipByAddress = aDecoder.decodeObject(forKey: Constant.c_res_ship_by_address) as? String
         status = aDecoder.decodeObject(forKey: Constant.c_res_status) as? Int
         orderId = aDecoder.decodeObject(forKey: Constant.c_res_id) as? Int
-        if !Util.isSalesApp() {
-            trackingId = aDecoder.decodeObject(forKey: Constant.c_res_tracking_id) as? Int
-        }
-        else {
+//        if !Util.isSalesApp() {
+//            trackingId = aDecoder.decodeObject(forKey: Constant.c_res_tracking_id) as? Int
+//        }
+//        else {
             trackingId = aDecoder.decodeObject(forKey: Constant.c_res_tracking_id) as? String
-        }
+//        }
         createdAt = aDecoder.decodeObject(forKey: Constant.c_res_created_at) as? String
         
         saleById = aDecoder.decodeObject(forKey: Constant.c_res_created_at) as? Int
@@ -124,6 +129,7 @@ class Order: NSObject, NSCoding {
     }
     
     public func encode(with aCoder: NSCoder) {
+        aCoder.encode(user, forKey: Constant.c_res_user)
         aCoder.encode(confirmationDate, forKey: Constant.c_res_confirmation_date)
         aCoder.encode(expectedDeliveryDate, forKey: Constant.c_res_expected_delivery_date)
         aCoder.encode(invoiceNo, forKey: Constant.c_res_invoice_no)
@@ -148,5 +154,9 @@ class Order: NSObject, NSCoding {
             products.append(product)
         }
         return products
+    }
+    
+    func processUser(json: JSON) -> User {
+        return User(json: json)
     }
 }

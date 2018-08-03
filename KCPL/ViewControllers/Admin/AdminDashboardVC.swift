@@ -22,6 +22,10 @@ class AdminDashboardVC: UIViewController {
         self.configNavigationBar()
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.isNavigationBarHidden = false
+//    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -60,6 +64,8 @@ class AdminDashboardVC: UIViewController {
     }
     
     @objc func navSignoutPressed() {
+        UserDefault.removeUser()
+        UserDefault.removeCartProducts()
         AppRouter.sharedRouter().showAdminLogInScreen()
     }
    
