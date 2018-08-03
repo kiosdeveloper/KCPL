@@ -1,5 +1,5 @@
 //
-//  AdminCustomerVendorViewController.swift
+//  AdminCustomerVendorDetailViewController.swift
 //  KCPL
 //
 //  Created by Piyush Sanepara on 11/06/18.
@@ -8,10 +8,12 @@
 
 import UIKit
 
-class AdminCustomerVendorViewController: UIViewController {
+class AdminCustomerVendorDetailViewController: UIViewController {
     
     @IBOutlet weak var customerDetailTableView: UITableView!
     var fromScreenType: ScreenType?
+    var customer: Customers?
+    var vendor: Vendor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,21 +38,27 @@ class AdminCustomerVendorViewController: UIViewController {
     }
 }
 
-extension AdminCustomerVendorViewController: UITableViewDelegate, UITableViewDataSource {
+extension AdminCustomerVendorDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        
+        if fromScreenType == ScreenType.AdminCustomerScreen {
+            return self.customer != nil ? 1 : 0
+        } else if fromScreenType == ScreenType.AdminVendorScreen {
+            return self.vendor != nil ? 1 : 0
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomerVendorDetailCell") as! CustomerVendorDetailCell
         
-        cell.companyNameLabel.text = "Karnavati Corp. Pvt. Ltd."
-        cell.companyAddressLabel.text = "A 111 GIDC, Ramol\nSP Ring Road, Ahmedabad,\nGujarat-382356"
+        if fromScreenType == ScreenType.AdminCustomerScreen {
+            cell.setDataSource(customer: self.customer)
+        } else {
+            cell.setDataSource(vendor: self.vendor)
+        }
         
-        cell.contactLabel.text = "987875645636"
-        cell.emailLabel.text = "kcpl.admin@gmail.com"
-        
-        cell.personNameLabel.text = "Mr. Sahil"
         return cell
     }
     
