@@ -114,6 +114,7 @@ struct Constant {
     static let c_res_description = "description"
     static let c_res_brand_name = "brand_name"
     static let c_res_tax = "tax"
+    static let c_res_percentage_tax = "percentageTax"
     static let c_res_price = "price"
     static let c_res_quantity = "quantity"
     static let c_res_category_name = "category_name"

@@ -12,6 +12,7 @@ class AdminQuataionViewController: UIViewController {
     
     @IBOutlet weak var quatationTableView: UITableView!
     
+    @IBOutlet var sBar: ThemeSearchBar!
     var productsDatasource = [Quatations]()
     var pendingQuatation = [Quatations]()
     var pastQuatation = [Quatations]()
@@ -31,6 +32,7 @@ class AdminQuataionViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.title = " "
+        self.sBar.resignFirstResponder()
     }
     
 //    MARK:- Actions

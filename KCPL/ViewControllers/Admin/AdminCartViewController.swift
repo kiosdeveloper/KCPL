@@ -133,6 +133,8 @@ extension AdminCartViewController: UITableViewDelegate, UITableViewDataSource, C
                         
                         if (cartProductsDatasource.count > 0) {
                             self.cartTableView.deleteRows(at: [indexPath], with: .middle)
+                            UIView.setAnimationsEnabled(false)
+                            self.cartTableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .none)
                         } else {
                             let lastSectionIndexPath = IndexPath(row: 0, section: 1)
                             self.cartTableView.deleteRows(at: [indexPath,lastSectionIndexPath], with: .middle)
@@ -162,6 +164,10 @@ extension AdminCartViewController: UITableViewDelegate, UITableViewDataSource, C
                 
                 if (cartProductsDatasource.count > 0) {
                     self.cartTableView.deleteRows(at: [indexPath], with: .middle)
+                    
+                    UIView.setAnimationsEnabled(false)
+                    self.cartTableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .none)
+                    
                 } else {
                     let lastSectionIndexPath = IndexPath(row: 0, section: 1)
                     self.cartTableView.deleteRows(at: [indexPath,lastSectionIndexPath], with: .middle)

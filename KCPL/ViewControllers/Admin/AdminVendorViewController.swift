@@ -10,6 +10,7 @@ import UIKit
 
 class AdminVendorViewController: UIViewController {
     
+    @IBOutlet var sBar: ThemeSearchBar!
     @IBOutlet weak var vendorTableView: UITableView!
     
     let cellIdentifier = "VendorCustomerCell"
@@ -34,6 +35,7 @@ class AdminVendorViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.title = " "
+        self.sBar.resignFirstResponder()
     }
     
     func configNavigationBar() {

@@ -29,6 +29,7 @@ class QuatationDetailCell: UITableViewCell {
     
     @IBOutlet weak var requestedLabel: UILabel!
     
+    @IBOutlet var quantityLabel: ThemeLabelTitle!
     override func awakeFromNib() {
         super.awakeFromNib()
         if let view = self.quatationDetailView {
@@ -53,6 +54,7 @@ class QuatationDetailCell: UITableViewCell {
         self.productNameLabel.text = product.name ?? ""
         self.productDescriptionLabel.text = ""
         self.totalLabel.text = ((product.price ?? 0.0) + (product.tax ?? 0.0)).convertCurrencyFormatter()
+        self.quantityLabel.text = "Qty " + ("\(product.qty ?? 0)")
         
     }
 

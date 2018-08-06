@@ -10,6 +10,8 @@ import UIKit
 
 class AdminPurchaseViewController: UIViewController,DeliveryAddressDelegate {
     
+    @IBOutlet var sBar: ThemeSearchBar!
+    
     @IBOutlet weak var purchaseTableView: UITableView!
     
     let cellIdentifier = "purchaseCell"
@@ -32,6 +34,7 @@ class AdminPurchaseViewController: UIViewController,DeliveryAddressDelegate {
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.title = " "
+        self.sBar.resignFirstResponder()
     }
     
     //    Delegate Method for reload
@@ -63,17 +66,17 @@ extension AdminPurchaseViewController {
     func getPurchaseOrder() {
         ServiceManager().processService(urlRequest: ComunicateService.Router.GetPurchaseHistory()) { (isSuccess, error , responseData) in
             if isSuccess {
-//                ServiceManagerModel().processOrderList(json: responseData, completion: { (isComplete, order) in
-//                    if isComplete {
-//                        self.purchaseOrderDataSource = order!
-//                        self.filterPurchaseOrderDataSource = self.purchaseOrderDataSource
-//
-//                        self.purchaseTableView.reloadData()
-//                    }
-//                    else {
-//
-//                    }
-//                })
+                ServiceManagerModel().processOrderList(json: responseData, completion: { (isComplete, order) in
+                    if isComplete {
+                        self.purchaseOrderDataSource = order!
+                        self.filterPurchaseOrderDataSource = self.purchaseOrderDataSource
+
+                        self.purchaseTableView.reloadData()
+                    }
+                    else {
+
+                    }
+                })
             } else {
                 error?.configToast(isError: true)
             }

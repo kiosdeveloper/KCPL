@@ -10,6 +10,7 @@ import UIKit
 
 class AdminInventoryViewController: AbstractVC {
     
+    @IBOutlet var sBar: ThemeSearchBar!
     @IBOutlet var inventoryTableview: UITableView!
     
     @IBOutlet var headerView: ThemeShadowView!
@@ -59,6 +60,7 @@ class AdminInventoryViewController: AbstractVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.title = " "
+        self.sBar.resignFirstResponder()
     }
     
     func configPicker() {
@@ -136,7 +138,16 @@ class AdminInventoryViewController: AbstractVC {
         
         if self.selectedProducts.count > 0 {
             
-            self.performSegue(withIdentifier: "showAdminCartFromAdminInventory", sender: screenType)
+            if selectedCustomerId == nil {
+                if screenType == ScreenType.AdminSelectCustomerScreen {
+                    self.performSegue(withIdentifier: "showAdminSelectCustomerFromAdminInventory", sender: screenType)
+                } else {
+                    self.performSegue(withIdentifier: "showAdminSelectVendorFromAdminInventory", sender: screenType)
+                }
+                
+            } else {
+                self.performSegue(withIdentifier: "showAdminCartFromAdminInventory", sender: screenType)
+            }
         } else {
             "Please select any product".configToast(isError: true)
         }
@@ -151,7 +162,18 @@ class AdminInventoryViewController: AbstractVC {
                 toVC.cartProductsDatasource = self.selectedProducts
                 toVC.selectedCustomerId = self.selectedCustomerId
             }
+        } else if segue.identifier == "showAdminSelectCustomerFromAdminInventory" {
+            
+            if let toVC = segue.destination as? AdminSelectCustomerViewController, let screenType = sender as? ScreenType {
+                toVC.cartProductsDatasource = self.selectedProducts
+            }
+        } else if segue.identifier == "showAdminSelectVendorFromAdminInventory" {
+            
+            if let toVC = segue.destination as? AdminSelectVendorViewController, let screenType = sender as? ScreenType {
+                toVC.cartProductsDatasource = self.selectedProducts
+            }
         }
+        
     }
     
 }

@@ -82,6 +82,11 @@ extension AddUpdateAddressVC {
     }
     
     func addAddress() {
+        
+        if userId == 0, let user_id = UserDefault.getUser()?.id {
+           userId = user_id
+        }
+        
         ServiceManager().processService(urlRequest: ComunicateService.Router.AddAddress(self.getParams(), userId: userId)) { (isSuccess, error , responseData) in
             if isSuccess {
                 print(responseData!)

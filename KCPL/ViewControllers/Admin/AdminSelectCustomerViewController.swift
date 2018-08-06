@@ -10,6 +10,7 @@ import UIKit
 
 class AdminSelectCustomerViewController: UIViewController {
     
+    @IBOutlet var sBar: ThemeSearchBar!
     @IBOutlet weak var customerTableView: UITableView!
     
     let cellIdentifier = "SelectCustomerCell"
@@ -18,7 +19,9 @@ class AdminSelectCustomerViewController: UIViewController {
     var filterCustomerArray = [Customers]()
     
     var selectedIndex = 0
-
+    
+    var cartProductsDatasource = [Product]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         customerTableView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
@@ -32,6 +35,7 @@ class AdminSelectCustomerViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.title = " "
+        self.sBar.resignFirstResponder()
     }
     
     //    MARK:- Prepare For Segue
@@ -41,12 +45,23 @@ class AdminSelectCustomerViewController: UIViewController {
                 toVC.selectedCustomerId = self.filterCustomerArray[self.selectedIndex].customerId
                 toVC.fromScreenType = ScreenType.AdminSelectCustomerScreen
             }
+        } else if segue.identifier == "showAdminCartFromAdminSelectCustomer" {
+            if let toVC = segue.destination as? AdminCartViewController {
+                toVC.selectedCustomerId = self.filterCustomerArray[self.selectedIndex].customerId
+                toVC.fromScreenType = ScreenType.AdminSelectCustomerScreen
+                toVC.cartProductsDatasource = self.cartProductsDatasource
+            }
         }
+        
     }
     
 //    MARK:- ACTIONS
     @IBAction func NextPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "showAdminInventoryFromAdminSelectCustomer", sender: nil)
+        if cartProductsDatasource.count > 0 { //Cart Done Already So Open Cart Directly...
+            self.performSegue(withIdentifier: "showAdminCartFromAdminSelectCustomer", sender: nil)
+        } else {
+            self.performSegue(withIdentifier: "showAdminInventoryFromAdminSelectCustomer", sender: nil)
+        }
     }
 }
 

@@ -95,7 +95,7 @@ class Product: NSObject, NSCoding {
         brand_name = aDecoder.decodeObject(forKey: Constant.c_res_brand_name) as? String
         category_name = aDecoder.decodeObject(forKey: Constant.c_res_category_name) as? String
         tax = aDecoder.decodeObject(forKey: Constant.c_res_tax) as? Double
-        percentageTax = aDecoder.decodeObject(forKey: Constant.c_res_tax) as? Double
+        percentageTax = aDecoder.decodeObject(forKey: Constant.c_res_percentage_tax) as? Double
         price = aDecoder.decodeObject(forKey: Constant.c_res_price) as? Int
         imageUrl = aDecoder.decodeObject(forKey: Constant.c_res_image_url) as? String
         quantity = aDecoder.decodeObject(forKey: Constant.c_res_quantity) as? Int
@@ -111,7 +111,7 @@ class Product: NSObject, NSCoding {
         aCoder.encode(brand_name, forKey: Constant.c_res_brand_name)
         aCoder.encode(category_name, forKey: Constant.c_res_category_name)
         aCoder.encode(tax, forKey: Constant.c_res_tax)
-        aCoder.encode(percentageTax, forKey: Constant.c_res_tax)
+        aCoder.encode(percentageTax, forKey: Constant.c_res_percentage_tax)
         aCoder.encode(price, forKey: Constant.c_res_price)
         aCoder.encode(imageUrl, forKey: Constant.c_res_image_url)
         aCoder.encode(quantity, forKey: Constant.c_res_quantity)

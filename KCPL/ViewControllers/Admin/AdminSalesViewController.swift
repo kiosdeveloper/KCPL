@@ -10,6 +10,7 @@ import UIKit
 
 class AdminSalesViewController: UIViewController, DeliveryAddressDelegate {
 
+    @IBOutlet var sBar: ThemeSearchBar!
     @IBOutlet weak var salesTableView: UITableView!
     
     let cellIdentifier = "salesCell"
@@ -30,8 +31,10 @@ class AdminSalesViewController: UIViewController, DeliveryAddressDelegate {
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Sales"
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         self.title = " "
+        self.sBar.resignFirstResponder()
     }
     
     //    Delegate Method for reload

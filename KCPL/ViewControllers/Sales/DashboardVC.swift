@@ -11,6 +11,7 @@ import SDWebImage
 
 class DashboardVC: AbstractVC {
     
+    @IBOutlet var sBar: ThemeSearchBar!
     @IBOutlet weak var itemsCollectionView: UICollectionView!
     
     var categoriesDatasource = [Category]()
@@ -39,6 +40,7 @@ class DashboardVC: AbstractVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.title = " "
+        self.sBar.resignFirstResponder()
     }
     
     func updateBadge() {

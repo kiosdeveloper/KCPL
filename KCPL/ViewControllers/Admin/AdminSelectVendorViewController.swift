@@ -10,6 +10,8 @@ import UIKit
 
 class AdminSelectVendorViewController: UIViewController {
     
+    @IBOutlet var sBar: ThemeSearchBar!
+    
     @IBOutlet weak var vendorTableView: UITableView!
     
     let cellIdentifier = "VendorCell"
@@ -18,7 +20,9 @@ class AdminSelectVendorViewController: UIViewController {
     
     var vendorArray = [Vendor]()
     var filterVendorArray = [Vendor]()
-
+    
+    var cartProductsDatasource = [Product]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         vendorTableView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
@@ -31,6 +35,7 @@ class AdminSelectVendorViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.title = " "
+        self.sBar.resignFirstResponder()
     }
     
     //    MARK:- Prepare For Segue
@@ -40,12 +45,22 @@ class AdminSelectVendorViewController: UIViewController {
                 toVC.selectedCustomerId = self.filterVendorArray[self.selectedIndex].vendorId
                 toVC.fromScreenType = ScreenType.AdminSelectVendorScreen
             }
+        } else if segue.identifier == "showAdminCartFromAdminSelectVendor" {
+            if let toVC = segue.destination as? AdminCartViewController {
+                toVC.selectedCustomerId = self.filterVendorArray[self.selectedIndex].vendorId
+                toVC.fromScreenType = ScreenType.AdminSelectVendorScreen
+                toVC.cartProductsDatasource = self.cartProductsDatasource
+            }
         }
     }
     
     //    MARK:- ACTIONS
     @IBAction func NextPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "showAdminInventoryFromAdminSelectVendor", sender: nil)
+        if cartProductsDatasource.count > 0 { //Cart Done Already So Open Cart Directly...
+            self.performSegue(withIdentifier: "showAdminCartFromAdminSelectVendor", sender: nil)
+        } else {
+            self.performSegue(withIdentifier: "showAdminInventoryFromAdminSelectVendor", sender: nil)
+        }
     }
 }
 

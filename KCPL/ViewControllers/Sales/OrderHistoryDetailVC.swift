@@ -89,7 +89,7 @@ extension OrderHistoryDetailVC: UITableViewDelegate, UITableViewDataSource {
             cell.shippingLable.text = 0.0.convertCurrencyFormatter()
             cell.gstLabel.text = self.countTax().convertCurrencyFormatter()
             cell.totalLabel.text = self.calculateTotalAmount().convertCurrencyFormatter()
-
+//            countSubTotal() + countTax()
             return cell
         }
     }
@@ -109,18 +109,21 @@ extension OrderHistoryDetailVC: UITableViewDelegate, UITableViewDataSource {
     func countTax() -> Double {
         var tax = 0.0
         for product in (self.orderDetail?.products)! {
-            tax = product.tax ?? 0.0 + tax
+//            tax = product.tax ?? 0.0 + tax
+            tax = ((product.tax ?? 0) * Double(product.qty ?? 0)) + tax
         }
         return tax
     }
     
     func calculateTotalAmount() -> Double {
-        var productPrice = 0.0
-        for product in (self.orderDetail?.products)! {
-//            productPrice = Double(product.price! * product.qty!) + product.tax! + productPrice
-            productPrice = (product.price ?? 0 * Double(product.qty ?? 0)) + (product.tax ?? 0.0) + productPrice
-        }
-        return productPrice
+//        var productPrice = 0.0
+//        for product in (self.orderDetail?.products)! {
+////            productPrice = Double(product.price! * product.qty!) + product.tax! + productPrice
+//            productPrice = (product.price ?? 0 * Double(product.qty ?? 0)) + (product.tax ?? 0.0) + productPrice
+//
+//        }
+        
+        return countSubTotal() + countTax() //productPrice
     }
     
     func convertProcessingDate(date: String) -> String {

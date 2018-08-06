@@ -744,6 +744,7 @@
                     <navigationItem key="navigationItem" id="80k-pq-Lks"/>
                     <connections>
                         <outlet property="itemsCollectionView" destination="w9O-zq-ACb" id="k74-fw-I9C"/>
+                        <outlet property="sBar" destination="pNd-NJ-cF4" id="7Zi-LT-T5j"/>
                         <segue destination="QmA-Aj-cYz" kind="show" identifier="showCartFromDashboard" id="osT-mD-yWI"/>
                         <segue destination="2Dj-kg-JTN" kind="show" identifier="showProductListFromDashboard" id="0O2-YY-1Si"/>
                         <segue destination="Lc3-9u-Sub" kind="show" identifier="showNotificationFromDashboard" id="Xxo-sO-dSz"/>
@@ -3019,8 +3020,8 @@
         <image name="radioOn" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mbV-pl-sh7"/>
-        <segue reference="Vib-uS-7Qo"/>
+        <segue reference="ZFO-vP-UJu"/>
+        <segue reference="osT-mD-yWI"/>
         <segue reference="pPf-hi-jE4"/>
     </inferredMetricsTieBreakers>
 </document>

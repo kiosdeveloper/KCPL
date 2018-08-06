@@ -102,6 +102,9 @@ extension DeliveryAddressVC: SlideNavigationControllerDelegate {
 //MARK:- Helper Method
 extension DeliveryAddressVC {
     func getAddressList() {
+        if userId == 0, let user_id = UserDefault.getUser()?.id {
+            userId = user_id
+        }
         ServiceManager().processService(urlRequest: ComunicateService.Router.GetAddressList(userId: self.userId)) { (isSuccess, error , responseData) in
             if isSuccess {
                 ServiceManagerModel().processAddressList(json: responseData, completion: { (isComplete, address) in
@@ -205,6 +208,17 @@ extension DeliveryAddressVC {
                         return
                     }*/
                 }
+                if Util.isAdminApp() {
+                    for viewController in (self.navigationController?.viewControllers ?? []) where viewController is AdminDashboardVC {
+                        UserDefault.removeCartProducts()
+                        "Your order placed successfully.".configToast(isError: false)
+                        
+                        _ = self.navigationController?.popToViewController(viewController, animated: true)
+                        
+                        return
+                    }
+                }
+                
             } else {
                 error?.configToast(isError: true)
             }
@@ -231,6 +245,17 @@ extension DeliveryAddressVC {
                         self.delegate = viewController as? DeliveryAddressDelegate
                         
                         self.delegate?.needToReload()
+                        UserDefault.removeCartProducts()
+                        "Your order placed successfully.".configToast(isError: false)
+                        
+                        _ = self.navigationController?.popToViewController(viewController, animated: true)
+                        
+                        return
+                    }
+                    
+                }// end for loop
+                if Util.isAdminApp() {
+                    for viewController in (self.navigationController?.viewControllers ?? []) where viewController is AdminDashboardVC {
                         UserDefault.removeCartProducts()
                         "Your order placed successfully.".configToast(isError: false)
                         

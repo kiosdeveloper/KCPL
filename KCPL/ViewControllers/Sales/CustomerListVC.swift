@@ -42,6 +42,7 @@ class CustomerListVC: AbstractVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.title = " "
+        self.searchBar.resignFirstResponder()
     }
     
     func configNavigationBar() {
